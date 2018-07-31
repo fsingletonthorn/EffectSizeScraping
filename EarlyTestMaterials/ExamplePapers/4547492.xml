@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH
+	xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2018-07-30T23:44:36Z</responseDate><request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:4547492" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request><GetRecord><record><header><identifier>oai:pubmedcentral.nih.gov:4547492</identifier><datestamp>2015-12-01</datestamp><setSpec>elsevierwt</setSpec><setSpec>pmc-open</setSpec></header><metadata><article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.0/ https://jats.nlm.nih.gov/archiving/1.0/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">J Behav Ther Exp Psychiatry</journal-id>
+      <journal-id journal-id-type="iso-abbrev">J Behav Ther Exp Psychiatry</journal-id>
+      <journal-title-group>
+        <journal-title>Journal of Behavior Therapy and Experimental Psychiatry</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0005-7916</issn>
+      <issn pub-type="epub">1873-7943</issn>
+      <publisher>
+        <publisher-name>Elsevier</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC4547492</article-id>
+      <article-id pub-id-type="pmcid">PMC4547492</article-id>
+      <article-id pub-id-type="pmc-uid">4547492</article-id>
+      <article-id pub-id-type="pmid">26060177</article-id>
+      <article-id pub-id-type="publisher-id">S0005-7916(15)00068-3</article-id>
+      <article-id pub-id-type="doi">10.1016/j.jbtep.2015.05.001</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Investigating the efficacy of attention bias modification in reducing high spider fear: The role of individual differences in initial bias</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Fox</surname>
+            <given-names>Elaine</given-names>
+          </name>
+          <email>elaine.fox@psy.ox.ac.uk</email>
+          <xref rid="aff1" ref-type="aff">a</xref>
+          <xref rid="cor1" ref-type="corresp">∗</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Zougkou</surname>
+            <given-names>Konstantina</given-names>
+          </name>
+          <xref rid="aff2" ref-type="aff">b</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Ashwin</surname>
+            <given-names>Chris</given-names>
+          </name>
+          <xref rid="aff3" ref-type="aff">c</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Cahill</surname>
+            <given-names>Shanna</given-names>
+          </name>
+          <xref rid="aff4" ref-type="aff">d</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="aff1"><label>a</label>Department of Experimental Psychology, University of Oxford, UK</aff>
+      <aff id="aff2"><label>b</label>Department of Psychology, University of Essex, UK</aff>
+      <aff id="aff3"><label>c</label>Department of Psychology, University of Bath, UK</aff>
+      <aff id="aff4"><label>d</label>North Essex Partnership University NHS Trust, UK</aff>
+      <author-notes>
+        <corresp id="cor1"><label>∗</label>Corresponding author. Department of Experimental Psychology, University of Oxford, Tinbergen Building, 9 South Parks Road, Oxford OX1 3UD, UK. Tel.: +44 (0)1865 271424. <email>elaine.fox@psy.ox.ac.uk</email></corresp>
+      </author-notes>
+      <pub-date pub-type="pmc-release">
+        <day>1</day>
+        <month>12</month>
+        <year>2015</year>
+      </pub-date>
+      <!-- PMC Release delay is 0 months and 0 days and was based on <pub-date
+						pub-type="ppub">.-->
+      <pub-date pub-type="ppub">
+        <month>12</month>
+        <year>2015</year>
+      </pub-date>
+      <volume>49</volume>
+      <fpage>84</fpage>
+      <lpage>93</lpage>
+      <history>
+        <date date-type="received">
+          <day>14</day>
+          <month>8</month>
+          <year>2014</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>1</day>
+          <month>5</month>
+          <year>2015</year>
+        </date>
+        <date date-type="accepted">
+          <day>4</day>
+          <month>5</month>
+          <year>2015</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>© 2015 The Authors</copyright-statement>
+        <copyright-year>2015</copyright-year>
+        <license license-type="CC BY-NC-ND" xlink:href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+          <license-p>This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-nc-nd/4.0/).</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <sec>
+          <title>Background and objectives</title>
+          <p>Attention Bias Modification (ABM) targets attention bias (AB) towards threat and is a potential therapeutic intervention for anxiety. The current study investigated whether initial AB (towards or away from spider images) influenced the effectiveness of ABM in spider fear.</p>
+        </sec>
+        <sec>
+          <title>Methods</title>
+          <p>AB was assessed with an attentional probe task consisting of spider and neutral images presented simultaneously followed by a probe in spider congruent or spider incongruent locations. Response time (RT) differences between spider and neutral trials &gt; 25 ms was considered ‘Bias Toward’ threat. RT difference &lt; - 25 ms was considered ‘Bias Away’ from threat, and a difference between −25 ms and +25 ms was considered ‘No Bias’. Participants were categorized into Initial Bias groups using pre-ABM AB scores calculated at the end of the study. 66 participants' (Bias Toward n = 27, Bias Away n = 18, No Bias n = 21) were randomly assigned to ABM-active training designed to reduce or eliminate a bias toward threat and 61 (Bias Toward n = 17, Bias Away n = 18, No Bias n = 26) to ABM-control.</p>
+        </sec>
+        <sec>
+          <title>Results</title>
+          <p>ABM-active had the largest impact on those demonstrating an initial Bias Towards spider images in terms of changing AB and reducing Spider Fear Vulnerability, with the Bias Away group experiencing least benefit from ABM. However, all Initial Bias groups benefited equally from active ABM in a Stress Task.</p>
+        </sec>
+        <sec>
+          <title>Limitations</title>
+          <p>Participants were high spider fearful but not formally diagnosed with a specific phobia. Therefore, results should be confirmed within a clinical population.</p>
+        </sec>
+        <sec>
+          <title>Conclusions</title>
+          <p>Individual differences in Initial Bias may be an important determinant of ABM efficacy.</p>
+        </sec>
+      </abstract>
+      <abstract abstract-type="author-highlights">
+        <title>Highlights</title>
+        <p>
+          <list list-type="simple">
+            <list-item id="u0010">
+              <label>•</label>
+              <p>Attention Bias Modification was administered to a large sample (n = 127) of spider fearful participants.</p>
+            </list-item>
+            <list-item id="u0015">
+              <label>•</label>
+              <p>ABM successfully modified participants' attention for spider-related pictures and fear vulnerability.</p>
+            </list-item>
+            <list-item id="u0020">
+              <label>•</label>
+              <p>Direction of initial bias (Bias Toward, Bias Away, or No Bias) influenced ABM efficacy.</p>
+            </list-item>
+          </list>
+        </p>
+      </abstract>
+      <kwd-group>
+        <title>Keywords</title>
+        <kwd>Spider phobia</kwd>
+        <kwd>Spider fear</kwd>
+        <kwd>Attentional bias</kwd>
+        <kwd>Cognitive bias modification</kwd>
+        <kwd>Attentional training</kwd>
+        <kwd>Threat detection</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <p>Cognitive models of psychopathology suggest that negative biases in information processing are a core feature of many anxiety disorders. Those with clinical anxiety disorders typically show a selective processing bias for threat-relevant information (<xref rid="bib7 bib23" ref-type="bibr">Cisler &amp; Koster, 2010; Mathews &amp; MacLeod, 2005</xref>) and therapeutic interventions, such as Cognitive Behavioural Therapy (CBT), are assumed to work by means of correcting biased information processing (<xref rid="bib9" ref-type="bibr">Clark &amp; Beck, 2010</xref>). Attention bias (AB) for fear-relevant or threat-related material is frequently assessed by means of an attentional probe task (<xref rid="bib20" ref-type="bibr">MacLeod, Mathews, &amp; Tata, 1986</xref>) in which pairs of fear-relevant and neutral images are presented side-by-side for a brief period (typically 500 ms) followed by a neutral probe that participants are required to categorize. An attention bias index (AB-index) is then computed by subtracting mean response times (RTs) when probes appear in the location previously occupied by a fear-relevant stimulus (e.g., spider image) from mean RTs on trials in which the probe follows a neutral stimulus (e.g., butterfly image). A positive attention bias index (AB-index) indicates a bias towards fear-relevant material while a negative AB-index indicates a bias away from fear-relevant stimuli at that particular time-point. Using this AB-index with static presentation times (typically 500 ms) it has been found that a bias towards threat-relevant material (i.e., a positive AB-index) is a core feature of elevated anxiety across a wide range of both clinical and non-clinical populations (<xref rid="bib2" ref-type="bibr">Bar-Haim, Lamy, Pergamin, Bakermans-Kranenburg, &amp; van Ijzendoorn, 2007</xref>).</p>
+    <p>Such attentional bias towards fear-relevant stimuli is often interpreted as reflecting vigilance for threat (at a particular time-point) while a bias away from threat at that time point represents avoidance of fear-relevant stimuli. However, given that we know little about the time course of attention biases, which is clearly a highly dynamic process (<xref rid="bib49" ref-type="bibr">Zvielli, Bernstein, &amp; Koster, 2014a</xref>), the use of theoretical terms such as “vigilance” and “avoidance” are potentially misleading. This is because both those who show a bias toward and a bias away from threat may be characterized by high levels of vigilance with the former group having a problem with disengagement from threat and the latter having a problem with strategic avoidance of threat. Therefore we use the terms “bias towards” and “bias away” throughout this paper rather than the terms “vigilant” and “avoidant”.</p>
+    <p>Different anxiety disorders have quite different trajectories and characteristics, suggesting that a “one size fits all” approach with regard to the nature of information processing biases may not be warranted. While an attention bias for threat at around 500 ms is often assumed to be an important cognitive marker to target in therapy, this may not be equally true for all anxiety disorders. Spider phobia is a good case in point as there is a very mixed set of empirical results and evidence for both a bias towards and a bias away from fear-relevant stimuli across different studies. Using paradigms other than the attentional probe task, it has been shown that high levels of spider fear is associated with an enhanced ability to detect spider-related images (<xref rid="bib8 bib28 bib34 bib40 bib44" ref-type="bibr">Cisler, Ries, &amp; Widner, 2007; Öhman, Flykt, &amp; Esteves, 2001; Reinecke, Rinck, &amp; Becker, 2008; Trippe, Hewig, Heydel, Hecht, &amp; Miltner, 2007; Vrijsen, Fleurkens, Nieuwboer, &amp; Rinck, 2009</xref>). These fast detection abilities observed in visual search tasks have been attributed to the general concept of hyper-vigilance, which describes the tendency to constantly scan the environment for signs of potential threat. While most people are vigilant for potential threat, the prefix <italic>hyper</italic> indicates that this vigilance is strongly enhanced in phobia and high levels of fear. Using various paradigms, there is much evidence consistent with the hypothesis that spider phobia is characterized by a hyper-vigilance for or a deeper engagement with fear-relevant stimuli (<xref rid="bib12 bib15 bib18 bib24 bib29 bib43 bib46 bib47 bib48" ref-type="bibr">Constantine, McNally, &amp; Hornig, 2001; Kindt &amp; Brosschot, 1997; Lavy &amp; van den Hout, 1993; Merckelbach, de Jong, Arntz, &amp; Schouten, 1993; Olatunji, Sawchuk, Lee, Lohr, &amp; Tolin, 2008; Van den Hout, Tenney, Huygens, &amp; de Jong, 1997; Watts, McKenna, Sharrock, &amp; Trezise, 1986; Wenzel &amp; Holt, 1999; Wikstrom, Lundh, Westerlund, &amp; Hogman, 2004</xref>). Using the attentional probe task, <xref rid="bib26" ref-type="bibr">Mogg and Bradley (2006)</xref> presented pairs of photographs of spiders and cats for 200 ms, 500 ms or 2000 ms to two groups of individuals reporting high or low levels of spider fear. They found a positive AB-index (i.e., bias towards spider images) in the spider fearful group <italic>only</italic> in the 200 ms exposure condition with no evidence for AB (either towards or away) at the longer exposures. They concluded that high spider fear is associated with an early vigilance for fear-relevant stimuli that is not maintained over time.</p>
+    <p>In marked contrast to this early bias towards fearful cues, however, several studies have reported evidence consistent with a bias away from fear-relevant stimuli in both generalized social phobia (<xref rid="bib6" ref-type="bibr">Chen, Ehlers, Clark, &amp; Mansell, 2002</xref>) and spider phobia (<xref rid="bib14 bib39" ref-type="bibr">Hermans, Vansteenwegen, &amp; Eelen, 1999; Tolin, Lohr, Lee, &amp; Sawchuk, 1999</xref>). <xref rid="bib39" ref-type="bibr">Tolin et al. (1999)</xref>, for instance, found that spider phobic individuals spent less time viewing spider-related pictures relative to injection-relevant or neutral pictures indicating a bias away from fear-relevant threat. By directly tracking eye-gaze, other research has found that high spider-fearful participants show an initial bias towards spider images, followed by a bias away from these fear-relevant images at later temporal periods (<xref rid="bib31 bib35" ref-type="bibr">Pflugshaupt, Mosimann, Van Wartburg et al., 2005; Rinck &amp; Becker, 2006</xref>). <xref rid="bib35" ref-type="bibr">Rinck and Becker (2006)</xref> reported that spider fearful participants spent a greater proportion of time looking at a spider image during the first 500 ms of picture presentation, but spent less time looking at spiders relative to control participants during the next 500 ms. <xref rid="bib31" ref-type="bibr">Pflugshaupt et al. (2005)</xref> found a similar pattern in that the speed of the first eye fixation to a spider image was quicker in spider fearful individuals compared to controls while subsequent fixations were spatially further away from spiders in the spider fearful relative to the control participants. In a later study, however, this group (<xref rid="bib30" ref-type="bibr">Pflugshaupt, Mosimann, Schmitt et al., 2007</xref>) found a pattern that was more consistent with a general bias away from spider images in spider fearful participants.</p>
+    <p><xref rid="bib5" ref-type="bibr">Cavanagh and Davey (2001)</xref> using a multidimensional scaling approach proposed that phobia is associated with two different ABs – one towards threat and the other away from threat – each reflecting the outcome of a general preference for both threat and safety information. This is consistent with cognitive-motivational theories (<xref rid="bib25" ref-type="bibr">Mogg &amp; Bradley, 1998</xref>) that postulate that hyper-vigilance and avoidance co-occur in phobia in a temporally ordered manner. In other words, highly spider fearful individuals are likely to initially orient towards fear-relevant threat, but then may try to avoid detailed processing of threat in an attempt to reduce their anxious mood. This is an interesting and plausible hypothesis and to date we still know little about the complex dynamics of these fluctuating patterns of bias towards and away from threat. What is likely, however, is that spider phobia is characterized by a frequent flicking back and forth between bias towards and bias away from threat on a trial-by-trial basis (<xref rid="bib50" ref-type="bibr">Zvielli, Bernstein, &amp; Koster, 2014b</xref>) rather than by a temporally-ordered bias towards followed by bias away (cf., <xref rid="bib25" ref-type="bibr">Mogg &amp; Bradley, 1998</xref>) pattern.</p>
+    <p>In this context it is very difficult to determine whether an attentional bias for threat (a positive AB-index) is an appropriate target for therapy in phobic conditions. While AB towards threat is fairly consistent in high trait-anxiety (<xref rid="bib2" ref-type="bibr">Bar-Haim et al., 2007</xref>) this is not the case in spider or social phobia. This is a particularly pertinent point given the rapid development of <italic>attention bias modification</italic> (ABM) techniques designed to alter the habitual deployment of attention to threat-related information in high trait anxiety (<xref rid="bib21" ref-type="bibr">MacLeod, Rutherford, Campbell, Ebsworthy, &amp; Holker, 2002</xref>). One widely used ABM technique employs a variant of the attentional probe task in which the location of the probe always appears in the opposite location to threat - ABM-active - so that people can be “trained” to habitually orient their attention away from specific types of information. The control condition – ABM-control – typically presents the probe equally often following threat-relevant and neutral stimuli just as in the standard attentional probe task, so that no particular AB is encouraged and it is not expected that any existing bias would be modified. This is an excellent control condition in that exactly the same stimuli and responses are required in ABM-active and ABM-control conditions, the only difference being in the contingency between the type of stimulus and the location of the probe. Information processing models predict that if AB towards threat is reduced or eliminated by means of ABM then emotional vulnerability should also decrease. While results of ABM are generally somewhat mixed (<xref rid="bib27" ref-type="bibr">Mogoase, David, &amp; Koster, 2014</xref>, for recent meta-analysis) it has been reported that ABM can reduce emotional vulnerability and reduce symptoms in both non-clinical and clinical populations (<xref rid="bib19 bib27" ref-type="bibr">MacLeod, Koster, &amp; Fox, 2009; Mogoase et al., 2014</xref>, for reviews). Importantly, the mixed results may be explained by the relative inefficiency of current ABM interventions to successfully modify AB in the expected direction. When AB is modified in the appropriate direction (i.e., a bias toward threat is reduced, eliminated, or reversed) the evidence for reduced emotional vulnerability is strong (<xref rid="bib10" ref-type="bibr">Clarke, Notebaert, &amp; MacLeod, 2014</xref>).</p>
+    <p>Just two studies have examined the potential impact of ABM on reducing spider fear. <xref rid="bib33" ref-type="bibr">Reese, McNally, Najmi, and Amir (2010)</xref> assigned people reporting high spider fear to a single session of ABM-active or ABM-control and found that ABM-control (a 50/50 condition in which probes appear equally often near spider-related and neutral stimuli) resulted in increased AB towards spider images while the ABM-active condition led to a reduction and a reversal of the bias from AB towards to AB away from threat. Despite appropriate changes in AB, however, there was no difference in the reduction of spider fear between active and control ABM (cf., <xref rid="bib10" ref-type="bibr">Clarke et al., 2014</xref>), leading the authors to conclude that ABM might not be appropriate for treating spider fear. Interestingly, even though all participants were spider fearful, they did not show a significant bias towards spider images at baseline. One possibility is that some participants may have had a bias towards spider images while others may have had a bias away from spider images at baseline (cf., <xref rid="bib5" ref-type="bibr">Cavanagh &amp; Davey, 2001</xref>). When these groups are averaged together, of course, the impression would be that there is no overall bias present. While speculative, this is one possible reason why ABM had little impact in the <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> study, as it is not clear what the effect of training to direct attention away from fear-relevant material would be on those who already have a bias away from this material.</p>
+    <p>In another study, <xref rid="bib41" ref-type="bibr">Van Bockstaele et al. (2011)</xref> assigned unselected participants to either ‘attend spiders’ or ‘avoid spiders’ ABM conditions. At baseline, both groups showed a small bias away from spider-related images, which reverted to a strong bias towards spider-related images following ‘attend’ training, whereas the ‘avoid’ training group showed a larger bias away from spider images following training. As in the <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> study, however, changes in AB had little impact on self-report and physiological indicators of fear.</p>
+    <p>Thus, two studies have shown that it is possible to modify attention biases in spider fearful individuals but that the resulting changes in bias have little impact on indices of spider fear. This is not what we would expect from an information-processing model (<xref rid="bib10" ref-type="bibr">Clarke et al., 2014</xref>), which would predict that changes in bias toward threat would result in reduced fear vulnerability. It may be that spider fear is not as affected by biases in attention as seems to be the case in other anxiety disorders. Alternatively, very substantive shifts in bias might required to change spider fear vulnerability given the evidence that it takes longer to extinguish conditioned fear responses to evolutionary ancient stimuli – like spiders -relative to positive or neutral stimuli (e.g., <xref rid="bib52" ref-type="bibr">Ohman &amp; Mineka, 2001</xref>). Thus, traditional ABM training may be insufficient to reduce this type of fearful vulnerability. What further complicates the issue, however, is the evidence that spider fear is associated with two types of AB – one towards fear-relevant threat and the other away from fear-relevant threat. This means that typical ABM-active training (i.e., to avoid threat) may not be appropriate for all participants (e.g., those that already show a bias away from threat). Before drawing the conclusion that ABM procedures are ineffective for the treatment of spider fear, therefore, we believe that it is important to investigate ABM with a larger sample size allowing for comparison of subsets of participants with either a bias toward fear-relevant images or a bias away from fear-relevant images to determine whether ABM is differentially effective for these subgroups both in terms of modifying bias and in modifying indices of spider fear vulnerability.</p>
+    <p>The first question that arises is how to determine whether a participant has a bias toward or a bias away from threat as no standard magnitude of AB has been determined as an indication of clear bias. In a comprehensive study of the dynamic nature of AB to threat, it has been shown that, a consistent AB towards threat is not typical of high trait-anxious individuals. While 34% of high trait-anxious participants did show a consistent AB towards a range of different threat categories (e.g., angry faces, aggressive dogs), 20.8% showed a bias away from all categories of threat, and 34% showed a bias towards some categories of threat and a bias away from others (<xref rid="bib49" ref-type="bibr">Zvielli et al., 2014a</xref>). In a careful analysis, <xref rid="bib49" ref-type="bibr">Zvielli et al. (2014a)</xref> concluded that an AB-index &gt;25 ms is the most appropriate and conservative criterion to use as evidence for AB towards threat and an AB-index &lt; −25 ms is an appropriate criterion to indicate an AB away from threat. An AB-index between −25 ms and +25 ms was considered to be the most appropriate criterion to indicate no bias. In a comparison of different cut-off criteria their data showed that the −25 ms and +25 ms criteria maximized the prevalence of bias toward and bias away sub-groups. Therefore, we followed the criteria recommended by <xref rid="bib49" ref-type="bibr">Zvielli et al. (2014a)</xref> to ensure that we would have reasonable sample sizes in each of our Initial Bias groups: Bias Toward, Bias Away, and No Bias.</p>
+    <p>While studies investigating AB using the attentional probe task in relation to trait-anxiety have typically used a presentation time of 500 ms (<xref rid="bib2 bib49" ref-type="bibr">Bar-Haim et al., 2007; Zvielli et al., 2014a</xref>) we used a shorter presentation time of 200 ms. This was because previous studies have failed to find evidence for either bias toward or bias away from fear-relevant threat in spider phobia at presentation times longer than 200 ms (<xref rid="bib26" ref-type="bibr">Mogg &amp; Bradley, 2006</xref>). In our own pilot studies, we found that most spider fearful individuals typically showed a pattern of either bias towards or bias away from spider images at 200 ms, while the pattern of AB with 500 ms was inconsistent and largely insignificant.</p>
+    <p>The primary aim of the current study was to determine whether the efficacy of ABM on a) spider-related AB and b) subjective fear vulnerability would be influenced by the direction of the initial bias (Bias Toward, Bias Away, No Bias) demonstrated by spider fearful participants. We should note that the direction and magnitude of initial bias in the pre-ABM task was not determined until the end of the study when the data were prepared for analysis. Developing a better understanding of whether initial bias makes a difference to the efficacy of ABM is an important first step in ensuring that the most appropriate interventions are designed and used therapeutically and personalized for the particular individual.</p>
+    <sec sec-type="methods" id="sec1">
+      <label>1</label>
+      <title>Method</title>
+      <sec id="sec1.1">
+        <label>1.1</label>
+        <title>Participants</title>
+        <p>The Spider Phobia Questionnaire (SPQ: <xref rid="bib16" ref-type="bibr">Klorman, Hastings, Weerts, Melamed, &amp; Lang, 1974</xref>) was completed by around 350 students at the University of Essex and those scoring above 8 - considered to be indicative of high spider fear <bold>(</bold><xref rid="bib16" ref-type="bibr">Klorman et al., 1974</xref><bold>) –</bold> were invited to participate. Once participants gave informed consent, they were randomly assigned to either ‘active’ attentional training (ABM-Active: n = 70) or to a control condition (ABM-Control: n = 70). Nine participants failed to attend the first session and four were excluded because they were aware of the nature and purpose of the ABM study having completed a similar study in another lab. Thus, 127 participants (102 female/25 male) between the ages of 18 and 55 years took part in the research with 66 in the ABM-Active and 61 in the ABM-Control condition.</p>
+      </sec>
+      <sec id="sec1.2">
+        <label>1.2</label>
+        <title>Apparatus and stimuli</title>
+        <p>Forty-eight photographs of spiders and forty-eight photographs of mushrooms were downloaded from the Internet and converted to grey-scale for use in the attentional probe and the ABM tasks. The size of the spider or mushroom within the frame was matched across all pictures. Each picture measured 3.5 cm by 4 cm and subtended a visual angle of 6° × 8° at a viewing distance of 57 cm with the centre of each picture being 5 cm from fixation. Targets consisted of 2 dots either vertical (:) or horizontal (..) in orientation measuring .5 cm in length that appeared 5 cm from the central fixation.</p>
+        <p>A further 20 photographs of fear-relevant threat-related images (pictures of spiders &amp; spider bites) were used in the Stress Task. They were separated into two sets of 10 and were rated as being highly threatening in a pilot study by a sample of 20 undergraduate students. There was no difference in threat-rating between the two sets of pictures on a scale of 1–9 (mean = 7.8 and 8.1 for set 1 and set 2, respectively, t(19) &lt; 1).</p>
+        <p>Stimuli were presented on a 17-inch monitor with a resolution of 768 × 1024 and connected to a Power Macintosh G3 computer running PsyScope software to display stimuli and record reaction times in milliseconds (<xref rid="bib11" ref-type="bibr">Cohen, MacWhinney, Flatt, &amp; Provost, 1993</xref>). Button-press responses to the attentional probe and ABM procedures were recorded on a USB- based RB-834 response pad with a built in timer that allowed data to be collected with 1- millisecond accuracy. Physiological signals were recorded with an Omron 705CP-II (HEM- 759-E2) monitor that allowed well-calibrated measures of systolic and diastolic blood pressure (mmHg) as well as average heart-rate (bpm).</p>
+      </sec>
+      <sec id="sec1.3">
+        <label>1.3</label>
+        <title>Measures and tasks</title>
+        <sec id="sec1.3.1">
+          <label>1.3.1</label>
+          <title>Spider phobia questionnaire (SPQ)</title>
+          <p>The SPQ is a standardized 31-item true/false questionnaire that is well established as a reliable and valid instrument for the assessment of spider fear (<xref rid="bib16" ref-type="bibr">Klorman et al., 1974</xref>).</p>
+        </sec>
+        <sec id="sec1.3.2">
+          <label>1.3.2</label>
+          <title>Trait anxiety (STAI)</title>
+          <p>The trait-anxiety form of the Spielberger Trait-State Anxiety Inventory is a well-validated 20-item questionnaire developed to measure dispositional trait-anxiety (<xref rid="bib38" ref-type="bibr">Spielberger, Gorsuch, Lushene, Vagg, &amp; Jacobs, 1983</xref>). Participants score each item on a 4-point Likert type scale and the total score ranges from 20 (very low trait-anxiety) to 80 (very high trait-anxiety).</p>
+        </sec>
+        <sec id="sec1.3.3">
+          <label>1.3.3</label>
+          <title>Depression (BDI-II)</title>
+          <p>The Beck Depression Inventory-II (<xref rid="bib4" ref-type="bibr">Beck, Steer, &amp; Brown, 1996</xref>) is a well-validated 21-item questionnaire that provides a measure of depression severity. Participants score each item on a 4-point Likert type scale and total scores of 0–13 are considered to be within the minimal range, 14–19 reflects mild depression, 20–28, moderate depression, while scores from 29 to 63 are considered severe.</p>
+        </sec>
+        <sec id="sec1.3.4">
+          <label>1.3.4</label>
+          <title>Spider fear vulnerability</title>
+          <p>Immediately before and after ABM (ABM-Active and ABM-Control) participants were asked to imagine as vividly as they could being in the presence of a spider and to indicate their feelings on two visual analogue (VAS<bold><italic>)</italic></bold> scales along the dimensions of “anxiety” and “discomfort” by placing an × on a 100 mm line ranging from 0 (not at all) to 100 (extremely). Because these dimensions yielded similar results the scores were combined and averaged to provide a “Fear Vulnerability” score for statistical analysis. Pilot testing with 20 high spider fearful individuals demonstrated a strong relationship between the magnitude of galvanic skin conductance elevation and of fear vulnerability on the VAS scale, (r (19) = .74, p &lt; .001) when observing images of spiders, relative to mushrooms, indicating that this simple measure is a good indicator of fearful reactivity to spider-related threat in fearful individuals.</p>
+        </sec>
+        <sec id="sec1.3.5">
+          <label>1.3.5</label>
+          <title>Stress score</title>
+          <p>A series of 10 highly threatening spider-related images were presented in high resolution on a large computer screen. Each image was presented for 20 s and participants rated each photograph in terms of how stressed and uncomfortable the photograph made them feel on a scale from 1 (not at all stressful/uncomfortable) to 9 (extremely stressful/uncomfortable). Thus, the total “stress” score ranged from 10 (no distress) to 90 (extremely distressed). A pilot study (n = 20) confirmed that this task induced significant discomfort, as measured by both subjective report and physiological response, in those with a high fear of spiders. For instance, a strong positive correlation was found between degree of skin conductance elevation and the stress score (r (19) = .86, p &lt; .001).</p>
+        </sec>
+        <sec id="sec1.3.6">
+          <label>1.3.6</label>
+          <title>Blood pressure<xref rid="fn1" ref-type="fn">1</xref></title>
+          <p>Both systolic (SBP) and diastolic (DPB) blood pressure was measured in mmHg immediately after the ‘stress task’ (see above) both before and after ABM (ABM-Active and ABM-Control).</p>
+        </sec>
+        <sec id="sec1.3.7">
+          <label>1.3.7</label>
+          <title>Heart rate</title>
+          <p>The average heart rate in beats per minute (bpm) was recorded immediately after the ‘stress task’ both before and after ABM (ABM-Active and ABM-Control).</p>
+        </sec>
+        <sec id="sec1.3.8">
+          <label>1.3.8</label>
+          <title>Attentional probe task</title>
+          <p>The pre-ABM probe task consisted of 128 trials delivered in two blocks of 64 trials each. Each trial began with “Next Trial” at the centre of the screen for 500 ms, and participants were told to focus their gaze upon this. Fixation was immediately followed by two pictures, a spider and a mushroom picture, one above fixation and the other below, with each picture type appearing equally often in each location. The pictures were replaced, after 200 ms by a target appearing in the location of one of the pictures. Half the time the target appeared in the top location, and the other half in the bottom location. Half the time the target was horizontal and the other half of the time it was vertical and response mapping was counterbalanced across participants. If the participant made a mistake a 50 Mhz tone was sounded as feedback, followed by the next trial. Across the 128 trials, 64 contained a target appearing in the location of the mushroom pictures while 64 contained a target appearing in the location of the spider pictures. These experimental trials were preceded by 18 practice trials to ensure that participants understood the task. 32 spider images and 32 mushroom images were randomly selected to be included in the pre-ABM (and ABM) sessions and each of these images was presented twice during the pre-ABM session.</p>
+          <p>The post ABM attentional probe task was identical except that half the trials contained pictures that had been presented during the ABM session (ABM-Active and ABM-Control), while the other half involved 32 new pictures (16 spider images and 16 mushroom images) not used in the ABM phase. This ensured that we could assess whether the effects of the ABM training generalized (near-transfer) to a new set of similar images.</p>
+        </sec>
+        <sec id="sec1.3.9">
+          <label>1.3.9</label>
+          <title>Attention bias modification active training condition (ABM-Active)</title>
+          <p>The ABM-Active procedure consisted of the attentional probe task, as described above, that was modified to facilitate the development of an attentional bias to avoid fear-relevant images. As before, each trial contained a photograph of a spider and a mushroom, but this time the probe always appeared in the location of the mushroom image (i.e., in the opposite location to the spider image). The same 16 spider and 16 mushroom images as used in the pre-ABM attentional probe task were used and each was repeated 9 times during the ABM session. Participants completed 576 trials in total, which were delivered in 9 blocks of 64 trials each.</p>
+        </sec>
+        <sec id="sec1.3.10">
+          <label>1.3.10</label>
+          <title>Attention bias modification no – Training control condition (ABM-Control)</title>
+          <p>The ABM-Control procedure was identical to the ABM-active procedure except that now the probe appeared equally often in the location previously occupied by the mushroom and spider pictures. This 50:50 control procedure was not expected to modify or induce any underlying biases.</p>
+        </sec>
+      </sec>
+      <sec id="sec1.4">
+        <label>1.4</label>
+        <title>Procedure</title>
+        <p>Participants were randomly assigned to ABM-Active or ABM-Control groups and neither participants nor the experimenter was aware of which condition the participant had been assigned to until after the experiment. Following informed consent each participant completed the STAI trait anxiety scale and the BDI-II. There were three phases: (1) In the pre-ABM phase, an Omron cuff was attached to the left arm to record heart-rate and blood pressure. Participants completed the Stress Task and VAS scales, following which the arm cuff was removed. The attentional probe task was then completed to measure initial biases in attention towards spider and mushroom targets. (2) Each participant then completed a single session of ABM (active or control). (3) The post-ABM probe task was then presented to measure any changes in attentional bias following each of the ABM conditions (ABM-Active and ABM-Control). The Omron cuff was again placed on the left arm followed by the Stress Task (with a different set of images) and VAS scales. Finally, participants were debriefed and either paid £5 or given course credit for their participation in the study.</p>
+      </sec>
+    </sec>
+    <sec sec-type="results" id="sec2">
+      <label>2</label>
+      <title>Results</title>
+      <sec id="sec2.1">
+        <label>2.1</label>
+        <title>Data preparation</title>
+        <sec id="sec2.1.1">
+          <label>2.1.1</label>
+          <title>Calculation of initial attentional bias index (AB-index)</title>
+          <p>We computed attentional bias prior to ABM by subtracting mean Response Time (RT) of spider congruent image trials from the mean RT of spider incongruent image trials for each participant. To classify each participant's pre-training AB-index as reflecting either No AB, AB Towards or AB Away from spider cues we operationalized a conservative criterion value as outlined by <xref rid="bib49" ref-type="bibr">Zvielli et al. (2014a)</xref>. Specifically, we defined an AB-index &gt; 25 ms as the criterion for AB Towards spider images and an AB-index &lt; −25 ms as the criterion for AB Away from spider images. No Bias was defined as AB-index &gt; −25 ms <italic>and</italic> AB-index &lt; 25 ms (i.e., an AB-index between −25 ms and +25 ms).</p>
+        </sec>
+        <sec id="sec2.1.2">
+          <label>2.1.2</label>
+          <title>Data reduction</title>
+          <p>All trials with incorrect responses (2.9% of pre- and post ABM trials) and RT outliers (i.e. RTs &lt;200 ms or &gt;2000 ms (3.8% of pre and post-ABM trials)), were excluded.</p>
+        </sec>
+        <sec id="sec2.1.3">
+          <label>2.1.3</label>
+          <title>Calculation of attentional bias (AB)</title>
+          <p>In accordance with the traditional computation of sample-level AB, we calculated the direction, magnitude and statistical significance of AB for spider-related images. Prior to the ABM session, mean RTs for the entire sample was just 4 ms faster on spider congruent (644 ms) relative to spider incongruent (648 ms) trials, <underline>t</underline> (126) – 1.1, <underline>p</underline> &lt; .14, Cohen's d = .04,<xref rid="fn2" ref-type="fn">2</xref> demonstrating no overall AB towards spider images. However, the RT difference between congruent and incongruent trials (AB-index) ranged from −105 ms up to +96 ms. There were no correlations between pre-ABM AB-index scores and scores on the SPQ (r = .004, p &lt; .967), pre-ABM Stress Score (r = .103, p &lt; .250) and pre-ABM Spider Fear Vulnerability ratings (r = .102, p &lt; .254). To further explore whether AB prior to ABM might be associated in a non-linear (V-shaped) way around the zero point (i.e., no difference between spider congruent and incongruent trials) we conducted two separate correlations between SPQ scores and AB-index for those with a positive AB-index (&gt;+ 1 ms) and those with a negative AB-index (&lt;−1 ms). Neither correlation reached significance (r(71) = −.01 and r(56) = −.14, respectively). Interestingly, Trait Anxiety did correlate with the magnitude of both a positive AB-index (r(71) = .33, p &lt; .01) and a negative AB-index (r(56) = −.26, p &lt; .05).</p>
+        </sec>
+        <sec id="sec2.1.4">
+          <label>2.1.4</label>
+          <title>Classification of initial attentional bias groups</title>
+          <p>Initial bias groups were determined based on the AB-index of &gt;25 ms and &lt;−25 ms criterion cut-offs at the pre-ABM session and this calculation was made after all testing had been completed when data was being prepared for analysis. Participants expressed the following patterns of attention bias in the pre-ABM session: a) 35% of participants (n = 44) demonstrated AB Towards spider-related images; b) 28% (n = 36) demonstrated AB Away from spider-related images; and c) 37% of participants (n = 47) demonstrated No Bias either towards, or away, from spider-related images. <xref rid="tbl1" ref-type="table">Table 1</xref> shows that anxiety and depression-related variables did not differ among the three initial bias groups.</p>
+        </sec>
+        <sec id="sec2.1.5">
+          <label>2.1.5</label>
+          <title>Impact of ABM as a function of initial AB groups on change in attention bias</title>
+          <p>The distribution of participants with different directions of initial bias did not differ across the ABM-active (AB Towards n = 27, AB Away n = 18, No Bias n = 21) and ABM-control (AB Towards n = 17, AB Away n = 18, No Bias n = 26) conditions, Chi-Squared = 2.61, p = .271. A pre-ABM bias index was computed by subtracting mean Response Time (RT) of spider congruent image trials from the mean RT of spider incongruent image trials for each participant for each initial bias group. Preliminary analyses of the post-ABM AB-index demonstrated that the pattern of results was similar for both old and new items on the post-ABM attentional probe task. Therefore, to simply analysis, post-ABM attentional bias scores for new and old items were combined since the pattern of results did not differ between these items. The bias scores on these items were combined to make a single post-ABM AB-index by subtracting mean RTs of (old and new) spider congruent image trials from the mean RTs of (old and new) spider incongruent image trials for each participant. A pre-to-post AB change score was also computed by subtracting post-ABM AB-index scores from pre-ABM AB-index scores to evaluate the magnitude of change in AB from before to after ABM.</p>
+          <p>The AB indices for each Initial Bias group as a function of ABM before and after a single session of ABM (active or control) are shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref>. A 2 (ABM Group: ABM-active, ABM-control) X 3 (Initial Bias: AB Towards, AB Away, No Bias) X 2 (Session: Pre-ABM, Post ABM) ANOVA was conducted with the AB-index as the dependent variable. There were main effects for ABM Group, F (1,121) = 16.7, p &lt; .000, partial η<sup>2</sup> = .122, and Initial Bias, F(2,121) = 69.9, p &lt; .000, partial η<sup>2</sup> = .536, as well as an ABM Group × Session interaction, F(1,121) = 31.0, p &lt; .001, partial η<sup>2</sup> = .204, which was subsumed within a 3-way interaction between ABM Group, Session and Initial Bias, F(2, 121) = 3.07, p &lt; .05, partial η<sup>2</sup> = .048. This interaction was confirmed by an ABM Group × Initial Bias interaction, F(2, 121) = 3.1, p &lt; .05, partial η<sup>2</sup> = .048, using the pre-to-post AB change score as the dependent variable.</p>
+          <p>To further explore the nature of this interaction two 1-way ANOVAs were computed with Initial Bias (AB Towards, AB Away, No Bias) as a between-subjects factor and the pre-to-post AB change score as the dependent variable for each ABM Group. There were main effects of Initial Bias for both ABM-active, F(2, 65) = 64.5, p &lt; .001, partial η<sup>2</sup> = .672 and ABM-control groups, F((2, 60) = 37.6, p &lt; .001, partial η<sup>2</sup> = .565). A series of planned t-tests revealed greater changes in AB in ABM-active relative to ABM-control conditions for the AB Toward (t(42) = 5,4, p &lt; .001, Cohen's d = 7.5) and No Bias (t(45) = 2.5, p &lt; .02, Cohen's d = 3.27) groups, with no difference in the AB Away (t(34) = 1.9, p &lt; .07, Cohen's d = 2.96) group. Another way of looking at the data is to examine the number of participants from each Initial Bias group who moved to another bias group using the same criterion for the post-ABM AB-index (i.e., Bias Toward = &gt; +25 ms; Bias Away = &lt; −25 ms; No Bias = &gt; −25 ms to &lt; + 25 ms). These data are shown in <xref rid="fig2" ref-type="fig">Fig. 2</xref> and demonstrate that the Bias Toward group had the largest number of participants shifting bias category following ABM-active training.</p>
+        </sec>
+      </sec>
+      <sec id="sec2.2">
+        <label>2.2</label>
+        <title>Impact of ABM as a function of the different initial AB groups on emotional reactivity</title>
+        <p>The impact of the initial bias on the degree of change in emotional reactivity to fear-relevant images was assessed by means of comparing performance on the ‘Stress Task’ and on the VAS ‘Spider Fear Vulnerability’ ratings when imagining being in the presence of a live spider for each of the ABM training groups (see <xref rid="tbl2 tbl3" ref-type="table">Tables 2 and 3</xref> for mean scores).</p>
+        <sec id="sec2.2.1">
+          <label>2.2.1</label>
+          <title>Impact of ABM on change on the stress task</title>
+          <p>A 2 (ABM Group: ABM-active, ABM-placebo) × 3 (Initial Bias: AB Towards, AB Away, no bias) × 2 (Session: Pre-ABM, Post ABM) ANOVA demonstrated main effects of ABM Group, F(1, 121) = 26.2, p &lt; .00, partial η<sup>2</sup> = .178, and Session, F(1, 121) = 50.3, p &lt; .000, partial η<sup>2</sup> = .294. There was an ABM Group × Session interaction, F(1, 121) = 43.9, p &lt; .00, partial η<sup>2</sup> = .266, which was not further qualified by the type of Initial Bias for the ‘Stress Task’. This was confirmed by analysis of the pre-to-post Stress Task change score as the dependent variable, F((2, 60) = 37.6, p &lt; .001, partial η<sup>2</sup> = .565). As shown in <xref rid="tbl2" ref-type="table">Table 2</xref>, the level of stress decreased following ABM-active training but not following ABM-control for all Initial Bias groups.</p>
+          <sec id="sec2.2.1.1">
+            <label>2.2.1.1</label>
+            <title>Impact of ABM on change in spider fear vulnerability</title>
+            <p>A 2 (ABM Group: ABM-active, ABM-placebo) × 3 (Initial Bias: AB Towards, AB Away, no bias) × 2 (Session: Pre-ABM, Post ABM) ANOVA demonstrated main effects of ABM Group, F(1, 121) = 16.1, p &lt; .00, partial η<sup>2</sup> = .118, and Initial Bias F(2,121) = 3.9, p &lt; .024, partial η<sup>2</sup> = .060. There was an ABM Group × Session interaction, F(1, 121) = 6.3, p &lt; .000, partial η<sup>2</sup> = .049, which was further qualified by the type of Initial Bias, F(2,121) = 15.1, p &lt; .000, partial η<sup>2</sup> = .200. This interaction was confirmed by an ABM Group × Initial Bias interaction, F(2, 121) = 15.1, p &lt; .001, partial η<sup>2</sup> = .200, using the pre-to-post change in spider fear vulnerability score as the dependent variable. See <xref rid="tbl3" ref-type="table">Table 3</xref> for detailed statistics.</p>
+            <p>To further explore the nature of this interaction two 1-way ANOVAs were computed with Initial Bias (AB towards, AB away, No Bias) as a between-subjects factor and the pre-to-post change in fear vulnerability scores as the dependent variable for each ABM Group. There was a main effect of Initial Bias for the ABM-active, F(2, 65) = 16.9, p &lt; .001, partial η<sup>2</sup> = .349 but not the ABM-control group, F((2, 60) = 2.2, p &lt; .122, partial η<sup>2</sup> = .015). A series of planned t-tests revealed a greater reduction in fear vulnerability in the ABM-active relative to ABM-control condition for the AB Toward (t(42) = −5.1, p &lt; .001, Cohen's d = −1.63) group. However, for the AB Away group there was a significant <italic>increase</italic> in fear vulnerability following active relative to control ABM, (t(34) = 3.5, p &lt; .001, Cohen's d = 1.19), group with no difference in the No Bias (t(45) &lt; 1, p &lt; .48, Cohen's d = −.235) group.</p>
+          </sec>
+        </sec>
+        <sec id="sec2.2.2">
+          <label>2.2.2</label>
+          <title>Predictors of post ABM stress and spider fear vulnerability</title>
+          <p>Two regression analyses were computed in order to determine whether ABM Group; SPQ scores, and the pre-to-post AB change predicted the degree of change in Stress and Spider Fear Vulnerability ratings following a single session of ABM. These three variables were entered into the regression in a fixed order as predictors. For post-ABM Stress ratings as the outcome measure, the overall regression equation was significant, Adjusted R<sup>2</sup> = .251, R<sup>2</sup> Change = .268, F Change (3, 123) = 15.0, p &lt; .001. The only predictor that was significantly related to Stress ratings was ABM Group (B = 14.9, Beta = .51, p &lt; .001, partial correlation = .484). Partial correlations between the outcome measure (change in stress ratings) and SPQ scores (r = .024) and bias change scores (r = −.032) were not significant. A similar regression was run with post-ABM Spider Fear Vulnerability ratings as the outcome variable with the same three predictors. The overall regression equation was significant, Adjusted R<sup>2</sup> = .137, R<sup>2</sup> Change = .157, F Change (3, 123) = 7.6, p &lt; .001. The only predictor that was significantly related to change in Fear Vulnerability was change in bias (B = −.079, Beta = −.310, p &lt; .001, partial correlation = −.301). Partial correlations between the outcome measure (change in fear vulnerability ratings) and SPQ scores (r = −.14) and ABM group (r = .134) were not significant.</p>
+        </sec>
+      </sec>
+    </sec>
+    <sec sec-type="discussion" id="sec3">
+      <label>3</label>
+      <title>Discussion</title>
+      <p>A single session of ABM-active training resulted in a significant change in AB for all the Initial Bias groups. This change was significantly greater in the active ABM condition relative to the control ABM condition for the Bias Toward and the No Bias groups, but not for the Bias Away group (see <xref rid="fig1" ref-type="fig">Fig. 1</xref>). ABM-active also resulted in a marked decrease in ratings on our Stress Task for all Initial Bias groups with no decrease following a session of ABM-control. The nature of the initial AB expressed had little impact on the effectiveness of ABM-active on reducing stress ratings. However, a reduction in Spider Fear Vulnerability following ABM-active only occurred for the initial Bias Toward group with an increase in Fear Vulnerability ratings following ABM-control for this group. ABM-active actually led to an increase in Fear Vulnerability in those who initially expressed a Bias Away from spider images. Thus, while stress ratings did decrease following ABM-active in this group, the ratings of spider fear vulnerability actually increased to a significant extent following a session of ABM-active, relative to ABM-control. Interestingly, a regression analysis demonstrated that the magnitude of change in fear vulnerability following ABM was predicted by the magnitude of change in AB from before to after ABM supporting the assumption of information processing models of emotion vulnerability (<xref rid="bib10" ref-type="bibr">Clarke et al., 2014</xref>).</p>
+      <p>These results add to the only other study using ABM with spider fearful individuals (<xref rid="bib33" ref-type="bibr">Reese et al., 2010</xref>). Ignoring the direction of initial bias for the moment, both studies found a small non-significant pre-training AB towards spider images (9 ms and 4 ms, respectively) that reversed to a bias away following active relative to control ABM. The results of both studies are also very similar in terms of the impact of ABM-active on AB with significant ABM Group × Session interactions in both studies indicating that spider fearful individuals demonstrate a significantly lower AB for spider threat following ABM-active relative to ABM-control training. However, the pattern of results across the two studies differed in terms of measures of post-ABM mood. <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> found no reduction in spider fear in the ABM-active, relative to the ABM-control group and instead found a general increase in distress across several visual analogue scales following both ABM conditions. In contrast, the current study found that ABM-active training led to a significant reduction in the level of stress, as well as the degree of fear vulnerability relative to an ABM-control condition. The current study had a larger sample size than the <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> study (&gt;60 compared to 20 per group) and therefore there was greater statistical power to pick up a small to medium effect size.</p>
+      <p>The more important finding of the present study, however, is the demonstration that the efficacy of ABM was influenced by the direction of an individual's initial bias for threat. Those showing an initial bias towards spider-related images (as defined by a conservative criterion of a minimum speeding of 25 ms on spider congruent relative to incongruent trials: <xref rid="bib49" ref-type="bibr">Zvielli et al., 2014a</xref>) benefited the most from ABM, with a significant reduction in AB after active training that was accompanied by a reduction in subjective feelings of spider fear vulnerability when imagining that they were in the presence of a live spider (parallelling the overall results) as well as a reduction of stress ratings on the Stress Task. ABM-active training also resulted in a change in bias for those with no initial bias for threat (mean differences between spider congruent and incongruent trials were between −25 ms and +25 ms) training (either ‘active’ or ‘placebo’) in that the average post-ABM AB-index was a bias away from threat of −14 ms. This change in bias was also accompanied by a reduction in post-ABM stress ratings, but not fear vulnerability ratings. Despite a significant change in bias in this (and other) groups the mean AB scores following ABM all fall within the No Bias criterion that we used to categorize participants into Initial Bias groups as shown in <xref rid="fig1" ref-type="fig">Fig. 1</xref>. <xref rid="fig2" ref-type="fig">Fig. 2</xref> shows the numbers of people in each Initial Bias group that changed from their original category to another category following ABM that was calculated according to the same criterion. There is no clear statistical test that is appropriate here but examination of the data demonstrate that only 1 participant in the Bias Toward group were still categorized as “bias toward” following active ABM confirming the findings that ABM was most successful for those with an initial bias to selectively attend towards threat.</p>
+      <p>Interestingly, participants with an initial Bias Toward spider images who were exposed to an ABM-control condition showed a reduction in the degree of AB from before to after ABM training but this was accompanied by an <italic>increase</italic> in fear vulnerability when imagining that they were in the presence of a spider after training. It is not clear why level of fear vulnerability increased for this group following a session of ABM-control. While the ABM-control condition is designed not to induce any particular bias because of the 50:50 ratio, it nevertheless is that case that a participant's attention is drawn towards a location recently occupied by a highly fear-relevant stimuli on half of the trials. The ABM-active condition, in contrast, draws attention away from threat on 100% of trials. This contingency in the ABM-control condition may have led to increasing feelings of anxiety and discomfort. This seems to be a plausible explanation but is not consistent with the observed reduction in the degree of AB toward threat in this group, which according to information processing models should be associated with a reduction in emotional reactivity (<xref rid="bib10" ref-type="bibr">Clark et al., 2014</xref>).</p>
+      <p>Participants with an initial Bias Away from threat at baseline (an average slowing of more than 25 ms on spider congruent relative to incongruent trials) were the group that showed the least benefit form ABM. They showed reduced AB away from spider threat following ABM-active training along with increased levels of reported fear vulnerability when imagining that they were in the presence of a spider. It's difficult to explain why those with an initial Bias Away did not show an increased AB away from threat following ABM. There may have been some regression to the mean operating here. Alternatively, exposing spider-avoidant participants to a computer-based task involving lots of fear-relevant images might break down their typical attention bias (a safety AB) thus leading to increased processing of the feared object and a related increase in fear vulnerability. We should note, however, that this group did show a reduction in stress ratings on the Stress Task that is difficult to reconcile with this explanation.</p>
+      <p>In summary, this study indicates that spider fearful individuals do not benefit equally from ABM training. Specifically, differences in initial bias may mask the impact of ABM interventions in groups with specific fears and that the overall non-significant bias of just 4 ms at baseline is misleading. It is possible that the same pattern would hold for the <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> data. While they did not examine different direction of initial bias they did find a very similar overall pattern of results as our study in terms of impact on AB alongside an increase in anxiety and discomfort following ABM-active – which is the pattern we found for those who initially expressed a Bias Away from spider threat. While obviously speculative, it is possible that there were a high proportion of participants who showed a Bias Away from threat in the <xref rid="bib33" ref-type="bibr">Reese et al. (2010)</xref> study and this group may have driven the results in terms of ABM induced increases in distress following training.</p>
+      <p>There are a number of limitations to the present study that should be noted. First, we presented a single session of ABM and it is likely that multiple-sessions are required to produce stronger and long-lasting therapeutic effects (but see <xref rid="bib13" ref-type="bibr">Hakamata et al., 2010</xref>). Second, we assessed the impact of ABM immediately following training and it will be important for future research to include longer-term follow-up assessments. Third, we recruited a sub-clinical group of individuals who reported high spider fear and therefore caution in generalizing these results to a clinical population is warranted. A careful analysis of the direction of pre-existing AB in clinical phobias would be of particular interest. We know that a bias away from threat is common in clinical phobia (<xref rid="bib6 bib30" ref-type="bibr">Chen et al., 2002; Pflugshaupt et al., 2007</xref>) but there has been no examination to our knowledge of the proportion of those who express the different type of biases. Given the results of <xref rid="bib49" ref-type="bibr">Zvielli et al. (2014a)</xref> showing that high levels of trait-anxiety are associated with a range of AB (Bias Toward, Bias Away and No Bias) and the current study showing that spider fear is also associated with a variety of pre-existing biases (Bias Toward, Bias Away and No Bias) it is important to investigate this issue further in clinical populations. This becomes a particularly critical research question when one considers the possibility that these differences in AB may have an impact on the efficacy of therapeutic interventions. It is also important to develop appropriate ways to categorize participants into different Initial Bias groups in future research. This paper represents a first step in this direction. One of the reviewer's of this paper suggested using a high confidence threshold of + or −10 ms to categorize the No Bias group, rather than the &gt; −25 ms – &lt; 25 ms that we used on the basis of empirical evidence (<xref rid="bib49" ref-type="bibr">Zvielli et al., 2014a</xref>). While this is an interesting suggestion, we felt on balance that it was more appropriate to use the criteria as outlined by <xref rid="bib49" ref-type="bibr">Zvielli et al. (2014a)</xref> on empirical grounds. We did look at our data with this high confidence criterion and found that the pattern of results was largely similar with some effects not now reaching significance probably because of the lower statistical power induced by losing some participants with this criterion. Future studies could usefully investigate these questions with the use of such high confidence criteria to determine when no bias is being expressed.</p>
+      <p>There are many challenges to such a research agenda not least of which is the fact that the test-retest reliability of the attentional probe task is often low (<xref rid="bib36 bib45" ref-type="bibr">Schmukle, 2005; Waechter, Nelson, Wright, Hyatt, &amp; Oakman, 2014</xref>) indicating that the attentional probe task is not a highly reliable measure of AB. In a careful analysis of this issue, it has been shown that there are a number of approaches that researchers can take to improve the reliability of the dot probe in clinical populations (<xref rid="bib32" ref-type="bibr">Price et al., 2014</xref>). One way forward is to capture the dynamic nature of AB by examining AB at the level of individual trials rather than overall means of threat-congruent and incongruent trials across hundreds of trials (<xref rid="bib50" ref-type="bibr">Zvielli et al., 2014b</xref>). This trial-level bias score (TL-BS) is calculated by subtracting contiguous pairs of threat-congruent and threat-incongruent trials in the standard attentional probe task and therefore provides repeated estimates of AB at the trial level. <xref rid="bib50" ref-type="bibr">Zvielli et al. (2014b)</xref> calculated a TL-BS in a population of spider phobic participants and found a pattern of highly dynamic temporal variability ranging from a bias away from spider stimuli to a bias towards spider stimuli. Importantly, in a follow-up experiment with smoking-related material the split-half reliability of the new TL-BS measure was found to be much higher (r = .31 to .67) than is typically found with the traditional sample level AB (r = .06: <xref rid="bib36 bib45" ref-type="bibr">Schmukle, 2005; Waechter et al., 2014</xref>). The number of trials was too low to compute split-half reliability in the spider phobia sample. Future research is needed to further examine the direction and dynamic nature of AB to refine a variety of (hopefully) more reliable measures of fear-relevant biases in attention. The development of more reliable paradigms to assess AB is essential in order to conduct a detailed investigation of the impact of therapeutic interventions on clinical symptoms and the role that pre-existing individual differences in AB might play in efficacy of interventions such as ABM.</p>
+      <p>With these limitations in mind, our finding that ABM reduced certain aspects of spider fear, especially for those with a strong initial vigilance for spiders, is important as many people do not seek help for fear of spiders and yet this condition can cause significant distress and interference with daily life. The fact that ABM can be successfully implemented via the Internet, in a person's own home (<xref rid="bib21" ref-type="bibr">MacLeod et al., 2007</xref>) opens the possibility that these interventions may be of benefit in helping people deal with a profound fear of spiders. We conclude that it is too soon to conclude that ABM will not be of benefit for those with specific phobias. A promising line of future research would examine whether initial pre-treatment patterns of AB correlate with, or predict, therapeutic outcomes (<xref rid="bib30" ref-type="bibr">Pflugshaupt et al., 2007</xref>) and this research agenda will be dependent on the development of more reliable measures of AB.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <title>References</title>
+      <ref id="bib2">
+        <element-citation publication-type="journal" id="sref2">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bar-Haim</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Lamy</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Pergamin</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Bakermans-Kranenburg</surname>
+              <given-names>M.J.</given-names>
+            </name>
+            <name>
+              <surname>van Ijzendoorn</surname>
+              <given-names>M.H.</given-names>
+            </name>
+          </person-group>
+          <article-title>Threat-related attentional bias in anxious and nonanxious individuals: a meta-analytic study</article-title>
+          <source>Psychological Bulletin</source>
+          <volume>133</volume>
+          <issue>1</issue>
+          <year>2007</year>
+          <fpage>1</fpage>
+          <lpage>24</lpage>
+          <pub-id pub-id-type="pmid">17201568</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib4">
+        <element-citation publication-type="book" id="sref4">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Beck</surname>
+              <given-names>A.T.</given-names>
+            </name>
+            <name>
+              <surname>Steer</surname>
+              <given-names>R.A.</given-names>
+            </name>
+            <name>
+              <surname>Brown</surname>
+              <given-names>G.K.</given-names>
+            </name>
+          </person-group>
+          <chapter-title>Manual for the beck depression inventory-II</chapter-title>
+          <year>1996</year>
+          <publisher-name>Psychological Corporation</publisher-name>
+          <publisher-loc>San Antonio, TX</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="bib5">
+        <element-citation publication-type="journal" id="sref5">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cavanagh</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Davey</surname>
+              <given-names>G.C.L.</given-names>
+            </name>
+          </person-group>
+          <article-title>The use of stimulus dimensions in judgement making in spider fearful and nonfearful individuals</article-title>
+          <source>Behavior Research and Therapy</source>
+          <volume>39</volume>
+          <year>2001</year>
+          <fpage>1199</fpage>
+          <lpage>1211</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib6">
+        <element-citation publication-type="journal" id="sref6">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chen</surname>
+              <given-names>Y.P.</given-names>
+            </name>
+            <name>
+              <surname>Ehlers</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Clark</surname>
+              <given-names>D.A.</given-names>
+            </name>
+            <name>
+              <surname>Mansell</surname>
+              <given-names>W.</given-names>
+            </name>
+          </person-group>
+          <article-title>Patients with generalized social phobia direct their attention away from faces</article-title>
+          <source>Behavior Research and Therapy</source>
+          <volume>40</volume>
+          <year>2002</year>
+          <fpage>677</fpage>
+          <lpage>687</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib7">
+        <element-citation publication-type="journal" id="sref7">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cisler</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.H.W.</given-names>
+            </name>
+          </person-group>
+          <article-title>Mechanisms of attentional biases towards threat in anxiety disorders: an integrative review</article-title>
+          <source>Clinical Psychology Review</source>
+          <volume>30</volume>
+          <issue>2</issue>
+          <year>2010</year>
+          <fpage>203</fpage>
+          <lpage>216</lpage>
+          <pub-id pub-id-type="pmid">20005616</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib8">
+        <element-citation publication-type="journal" id="sref8">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cisler</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Ries</surname>
+              <given-names>B.J.</given-names>
+            </name>
+            <name>
+              <surname>Widner</surname>
+              <given-names>R.L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Examining information processing biases in spider phobia using the rapid serial visual presentation paradigm</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>21</volume>
+          <issue>8</issue>
+          <year>2007</year>
+          <fpage>977</fpage>
+          <lpage>990</lpage>
+          <pub-id pub-id-type="pmid">17275254</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib9">
+        <element-citation publication-type="journal" id="sref9">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Clark</surname>
+              <given-names>D.A.</given-names>
+            </name>
+            <name>
+              <surname>Beck</surname>
+              <given-names>A.T.</given-names>
+            </name>
+          </person-group>
+          <article-title>Cognitive theory and therapy of anxiety and depression: convergence with neurobiological findings</article-title>
+          <source>Trends in Cognitive Sciences</source>
+          <volume>14</volume>
+          <issue>9</issue>
+          <year>2010</year>
+          <fpage>418</fpage>
+          <lpage>424</lpage>
+          <pub-id pub-id-type="pmid">20655801</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib10">
+        <element-citation publication-type="journal" id="sref10">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Clarke</surname>
+              <given-names>P.J.F.</given-names>
+            </name>
+            <name>
+              <surname>Notebaert</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>MacLeod</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Absence of evidence or evidence of absence: reflecting on therapeutic implementations of attentional bias modification</article-title>
+          <source>BMC Psychiatry</source>
+          <volume>14</volume>
+          <year>2014</year>
+          <fpage>8,</fpage>
+          <pub-id pub-id-type="pmid">24423043</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib51">
+        <element-citation publication-type="book" id="sref51">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cohen</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <chapter-title>Statistical power analysis for the behavioral sciences</chapter-title>
+          <edition>2nd ed.</edition>
+          <year>1988</year>
+          <publisher-name>Lawrence Erlbaum Associates</publisher-name>
+          <publisher-loc>Hillsdale: New Jersey</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="bib11">
+        <element-citation publication-type="journal" id="sref11">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Cohen</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>MacWhinney</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Flatt</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Provost</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>PsyScope: an interactive graphical system for designing and controlling experiments in the psychology laboratory using Macintosh computers</article-title>
+          <source>Behavior Research Methods, Instruments, and Computers</source>
+          <volume>25</volume>
+          <year>1993</year>
+          <fpage>257</fpage>
+          <lpage>271</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib12">
+        <element-citation publication-type="journal" id="sref12">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Constantine</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>McNally</surname>
+              <given-names>R.J.</given-names>
+            </name>
+            <name>
+              <surname>Hornig</surname>
+              <given-names>C.D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Snake fear and the pictorial emotional Stroop paradigm</article-title>
+          <source>Cognitive Therapy and Research</source>
+          <volume>25</volume>
+          <year>2001</year>
+          <fpage>757</fpage>
+          <lpage>764</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib13">
+        <element-citation publication-type="journal" id="sref13">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hakamata</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Lissek</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Bar-Haim</surname>
+              <given-names>Y.</given-names>
+            </name>
+            <name>
+              <surname>Britton</surname>
+              <given-names>J.C.</given-names>
+            </name>
+            <name>
+              <surname>Fox</surname>
+              <given-names>N.A.</given-names>
+            </name>
+            <name>
+              <surname>Leibenluft</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Attention bias modification treatment: a meta-analysis toward the establishment of a novel treatment for anxiety</article-title>
+          <source>Biological Psychiatry</source>
+          <volume>68</volume>
+          <year>2010</year>
+          <fpage>982</fpage>
+          <lpage>990</lpage>
+          <pub-id pub-id-type="pmid">20887977</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib14">
+        <element-citation publication-type="journal" id="sref14">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hermans</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Vansteenwegen</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Eelen</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Eye movement registration as a continuous index of attention deployment: data from a group of spider anxious students</article-title>
+          <source>Cognition and Emotion</source>
+          <volume>13</volume>
+          <year>1999</year>
+          <fpage>419</fpage>
+          <lpage>434</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib15">
+        <element-citation publication-type="journal" id="sref15">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kindt</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Brosschot</surname>
+              <given-names>J.F.</given-names>
+            </name>
+          </person-group>
+          <article-title>Phobia-related cognitive bias for pictorial and linguistic stimuli</article-title>
+          <source>Journal of Abnormal Psychology</source>
+          <volume>106</volume>
+          <year>1997</year>
+          <fpage>644</fpage>
+          <lpage>648</lpage>
+          <pub-id pub-id-type="pmid">9358695</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib16">
+        <element-citation publication-type="journal" id="sref16">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Klorman</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Hastings</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Weerts</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Melamed</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Lang</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Psychometric description of some specific fear questionnaires</article-title>
+          <source>Behavior Therapy</source>
+          <volume>5</volume>
+          <year>1974</year>
+          <fpage>401</fpage>
+          <lpage>409</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib18">
+        <element-citation publication-type="journal" id="sref18">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lavy</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>van den Hout</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Selective attention evidenced by pictorial and linguistic Stroop tasks</article-title>
+          <source>Behaviour Therapy</source>
+          <volume>24</volume>
+          <year>1993</year>
+          <fpage>645</fpage>
+          <lpage>657</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib19">
+        <element-citation publication-type="journal" id="sref19">
+          <person-group person-group-type="author">
+            <name>
+              <surname>MacLeod</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.H.</given-names>
+            </name>
+            <name>
+              <surname>Fox</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Whither cognitive bias modification research? Commentary on the special section articles</article-title>
+          <source>Journal of Abnormal Psychology</source>
+          <volume>118</volume>
+          <issue>1</issue>
+          <year>2009</year>
+          <fpage>89</fpage>
+          <lpage>99</lpage>
+          <pub-id pub-id-type="pmid">19222317</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib20">
+        <element-citation publication-type="journal" id="sref20">
+          <person-group person-group-type="author">
+            <name>
+              <surname>MacLeod</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Mathews</surname>
+              <given-names>A.M.</given-names>
+            </name>
+            <name>
+              <surname>Tata</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Attentional bias in emotional disorders</article-title>
+          <source>Journal of Abnormal Psychology</source>
+          <volume>95</volume>
+          <year>1986</year>
+          <fpage>15</fpage>
+          <lpage>20</lpage>
+          <pub-id pub-id-type="pmid">3700842</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib21">
+        <element-citation publication-type="journal" id="sref21">
+          <person-group person-group-type="author">
+            <name>
+              <surname>MacLeod</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Rutherford</surname>
+              <given-names>E.</given-names>
+            </name>
+            <name>
+              <surname>Campbell</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Ebsworthy</surname>
+              <given-names>G.</given-names>
+            </name>
+            <name>
+              <surname>Holker</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Selective attention and emotional vulnerability: assessing the causal basis of their association through the experimental manipulation of attentional bias</article-title>
+          <source>Journal of Abnormal Psychology</source>
+          <volume>111</volume>
+          <year>2002</year>
+          <fpage>107</fpage>
+          <lpage>123</lpage>
+          <pub-id pub-id-type="pmid">11866165</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib23">
+        <element-citation publication-type="journal" id="sref23">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mathews</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>MacLeod</surname>
+              <given-names>C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Cognitive vulnerability to emotional disorders</article-title>
+          <source>Annual Review of Clinical Psychology</source>
+          <volume>1</volume>
+          <year>2005</year>
+          <fpage>167</fpage>
+          <lpage>195</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib24">
+        <element-citation publication-type="journal" id="sref24">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Merckelbach</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>de Jong</surname>
+              <given-names>P.J.</given-names>
+            </name>
+            <name>
+              <surname>Arntz</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Schouten</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>The role of evaluating learning and disgust sensitivity in the etiology and treatment of spider phobia</article-title>
+          <source>Advances in Behaviour Research and Therapy</source>
+          <volume>15</volume>
+          <year>1993</year>
+          <fpage>243</fpage>
+          <lpage>255</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib25">
+        <element-citation publication-type="journal" id="sref25">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mogg</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Bradley</surname>
+              <given-names>B.P.</given-names>
+            </name>
+          </person-group>
+          <article-title>A cognitive-motivational analysis of anxiety</article-title>
+          <source>Behaviour Research and Therapy</source>
+          <volume>36</volume>
+          <year>1998</year>
+          <fpage>809</fpage>
+          <lpage>848</lpage>
+          <pub-id pub-id-type="pmid">9701859</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib26">
+        <element-citation publication-type="journal" id="sref26">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mogg</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>Bradley</surname>
+              <given-names>B.P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Time course of attentional bias for fear-relevant stimuli in spider-fearful individuals</article-title>
+          <source>Behaviour Research and Therapy</source>
+          <volume>44</volume>
+          <year>2006</year>
+          <fpage>1241</fpage>
+          <lpage>1250</lpage>
+          <pub-id pub-id-type="pmid">16870133</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib27">
+        <element-citation publication-type="journal" id="sref27">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mogoase</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>David</surname>
+              <given-names>D.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.H.W.</given-names>
+            </name>
+          </person-group>
+          <article-title>Clinical efficacy of attention bias modification procedures: an up-dated meta-analysis</article-title>
+          <source>Journal of Clinical Psychology</source>
+          <year>2014</year>
+        </element-citation>
+      </ref>
+      <ref id="bib28">
+        <element-citation publication-type="journal" id="sref28">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Öhman</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Flykt</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Esteves</surname>
+              <given-names>F.</given-names>
+            </name>
+          </person-group>
+          <article-title>Emotion drives attention: detecting the snake in the grass</article-title>
+          <source>Journal of Experimental Psychology: General</source>
+          <volume>130</volume>
+          <year>2001</year>
+          <fpage>466</fpage>
+          <lpage>478</lpage>
+          <pub-id pub-id-type="pmid">11561921</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib52">
+        <label>52</label>
+        <element-citation publication-type="journal" id="sref52">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Ohman</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Mineka</surname>
+              <given-names>S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Fears, phobias, and preparedness: Toward an evolved module of fear and fear learning</article-title>
+          <source>Psychological Review</source>
+          <volume>108</volume>
+          <year>2001</year>
+          <fpage>483</fpage>
+          <lpage>522</lpage>
+          <pub-id pub-id-type="pmid">11488376</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib29">
+        <element-citation publication-type="journal" id="sref29">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Olatunji</surname>
+              <given-names>B.O.</given-names>
+            </name>
+            <name>
+              <surname>Sawchuk</surname>
+              <given-names>C.N.</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>T.C.</given-names>
+            </name>
+            <name>
+              <surname>Lohr</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Tolin</surname>
+              <given-names>D.F.</given-names>
+            </name>
+          </person-group>
+          <article-title>Information processing biases in spider phobia: application of the Stroop and “White Noise” paradigm</article-title>
+          <source>Journal of Behavior Therapy and Experimental Psychiatry</source>
+          <volume>39</volume>
+          <year>2008</year>
+          <fpage>187</fpage>
+          <lpage>200</lpage>
+          <pub-id pub-id-type="pmid">17548048</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib30">
+        <element-citation publication-type="journal" id="sref30">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pflugshaupt</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Mosimann</surname>
+              <given-names>U.P.</given-names>
+            </name>
+            <name>
+              <surname>Schmitt</surname>
+              <given-names>W.J.</given-names>
+            </name>
+            <name>
+              <surname>von Wartburg</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Wurtz</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Lüthi</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>To look or not to look at threat? Scanpath differences within a group of spider phobics</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>21</volume>
+          <year>2007</year>
+          <fpage>353</fpage>
+          <lpage>366</lpage>
+          <pub-id pub-id-type="pmid">16814514</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib31">
+        <element-citation publication-type="journal" id="sref31">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Pflugshaupt</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Mosimann</surname>
+              <given-names>U.P.</given-names>
+            </name>
+            <name>
+              <surname>Von Wartburg</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Schmitt</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Nyffeler</surname>
+              <given-names>T.</given-names>
+            </name>
+            <name>
+              <surname>Müri</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <article-title>Hypervigilance-avoidance pattern in spider phobia</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>19</volume>
+          <issue>1</issue>
+          <year>2005</year>
+          <fpage>105</fpage>
+          <lpage>116</lpage>
+          <pub-id pub-id-type="pmid">15488370</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib32">
+        <element-citation publication-type="journal" id="sref32">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Price</surname>
+              <given-names>R.B.</given-names>
+            </name>
+            <name>
+              <surname>Kuckerta</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Siegle</surname>
+              <given-names>G.J.</given-names>
+            </name>
+            <name>
+              <surname>Ladouceur</surname>
+            </name>
+            <name>
+              <surname>Silk</surname>
+              <given-names>J.S.</given-names>
+            </name>
+            <name>
+              <surname>Ryan</surname>
+              <given-names>N.D.</given-names>
+            </name>
+          </person-group>
+          <article-title>Empirical recommendations for improving the stability of the dot-probe task in clinical research</article-title>
+          <source>Psychological Assessment</source>
+          <year>2014</year>
+          <comment>Advance online publication</comment>
+          <ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.1037/pas0000036" id="intref0015">http://dx.doi.org/10.1037/pas0000036</ext-link>
+        </element-citation>
+      </ref>
+      <ref id="bib33">
+        <element-citation publication-type="journal" id="sref33">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Reese</surname>
+              <given-names>H.E.</given-names>
+            </name>
+            <name>
+              <surname>McNally</surname>
+              <given-names>R.J.</given-names>
+            </name>
+            <name>
+              <surname>Najmi</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Amir</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <article-title>Attention training for reducing spider fear in spider-fearful individuals</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>24</volume>
+          <year>2010</year>
+          <fpage>657</fpage>
+          <lpage>662</lpage>
+          <pub-id pub-id-type="pmid">20510577</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib34">
+        <element-citation publication-type="journal" id="sref34">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Reinecke</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Rinck</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Becker</surname>
+              <given-names>E.S.</given-names>
+            </name>
+          </person-group>
+          <article-title>How preferential is the preferential encoding of threatening stimuli? Working memory biases in specific anxiety and the attentional blink</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>22</volume>
+          <year>2008</year>
+          <fpage>655</fpage>
+          <lpage>670</lpage>
+          <pub-id pub-id-type="pmid">17681743</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib35">
+        <element-citation publication-type="journal" id="sref35">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rinck</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Becker</surname>
+              <given-names>E.S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Spider fearful individuals attend to threat, then quickly avoid it: evidence from eye movements</article-title>
+          <source>Journal of Abnormal Psychology</source>
+          <volume>115</volume>
+          <issue>2</issue>
+          <year>2006</year>
+          <fpage>231</fpage>
+          <lpage>238</lpage>
+          <pub-id pub-id-type="pmid">16737388</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib36">
+        <element-citation publication-type="journal" id="sref36">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Schmukle</surname>
+              <given-names>S.C.</given-names>
+            </name>
+          </person-group>
+          <article-title>Unreliability of the dot probe task</article-title>
+          <source>European Journal of Personality</source>
+          <volume>19</volume>
+          <year>2005</year>
+          <fpage>595</fpage>
+          <lpage>605</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib38">
+        <element-citation publication-type="book" id="sref38">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Spielberger</surname>
+              <given-names>C.D.</given-names>
+            </name>
+            <name>
+              <surname>Gorsuch</surname>
+              <given-names>R.L.</given-names>
+            </name>
+            <name>
+              <surname>Lushene</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Vagg</surname>
+              <given-names>P.R.</given-names>
+            </name>
+            <name>
+              <surname>Jacobs</surname>
+              <given-names>G.A.</given-names>
+            </name>
+          </person-group>
+          <chapter-title>Manual for the state-trait anxiety inventory, STAI (Form Y): Self-evaluation questionnaire</chapter-title>
+          <year>1983</year>
+          <publisher-name>Consulting Psychologists Press</publisher-name>
+          <publisher-loc>Palo Alto, CA</publisher-loc>
+        </element-citation>
+      </ref>
+      <ref id="bib39">
+        <element-citation publication-type="journal" id="sref39">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Tolin</surname>
+              <given-names>D.F.</given-names>
+            </name>
+            <name>
+              <surname>Lohr</surname>
+              <given-names>J.M.</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>T.C.</given-names>
+            </name>
+            <name>
+              <surname>Sawchuk</surname>
+              <given-names>C.N.</given-names>
+            </name>
+          </person-group>
+          <article-title>Visual avoidance in specific phobia</article-title>
+          <source>Behaviour Research and Therapy</source>
+          <volume>37</volume>
+          <year>1999</year>
+          <fpage>63</fpage>
+          <lpage>70</lpage>
+          <pub-id pub-id-type="pmid">9922558</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib40">
+        <element-citation publication-type="journal" id="sref40">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Trippe</surname>
+              <given-names>R.H.</given-names>
+            </name>
+            <name>
+              <surname>Hewig</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Heydel</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Hecht</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>Miltner</surname>
+              <given-names>W.H.R.</given-names>
+            </name>
+          </person-group>
+          <article-title>Attentional blink to emotional and threatening pictures in spider phobics: electrophysiology and behaviour</article-title>
+          <source>Brain Research</source>
+          <volume>1148</volume>
+          <year>2007</year>
+          <fpage>149</fpage>
+          <lpage>160</lpage>
+          <pub-id pub-id-type="pmid">17367765</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib41">
+        <element-citation publication-type="journal" id="sref41">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van Bockstaele</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Verschurere</surname>
+              <given-names>B.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.,H.W.</given-names>
+            </name>
+            <name>
+              <surname>Tibboel</surname>
+              <given-names>H.</given-names>
+            </name>
+            <name>
+              <surname>De Houwer</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Crombez</surname>
+              <given-names>G.</given-names>
+            </name>
+          </person-group>
+          <article-title>Effect of attention training on self-reported, implicit, physiological and behavioural measures of spider fear</article-title>
+          <source>Journal of Behavioural Therapy and Experimental Psychiatry</source>
+          <volume>42</volume>
+          <year>2011</year>
+          <fpage>211</fpage>
+          <lpage>218</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib43">
+        <element-citation publication-type="journal" id="sref43">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Van den Hout</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Tenney</surname>
+              <given-names>N.</given-names>
+            </name>
+            <name>
+              <surname>Huygens</surname>
+              <given-names>K.</given-names>
+            </name>
+            <name>
+              <surname>de Jong</surname>
+              <given-names>P.</given-names>
+            </name>
+          </person-group>
+          <article-title>Preconscious processing bias in specific phobia</article-title>
+          <source>Behaviour Research and Therapy</source>
+          <volume>35</volume>
+          <year>1997</year>
+          <fpage>29</fpage>
+          <lpage>34</lpage>
+          <pub-id pub-id-type="pmid">9009041</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib44">
+        <element-citation publication-type="journal" id="sref44">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Vrijsen</surname>
+              <given-names>J.N.</given-names>
+            </name>
+            <name>
+              <surname>Fleurkens</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>Nieuwboer</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Rinck</surname>
+              <given-names>M.</given-names>
+            </name>
+          </person-group>
+          <article-title>Attentional bias to moving spiders in spider fearful individuals</article-title>
+          <source>Journal of Anxiety Disorders</source>
+          <volume>23</volume>
+          <year>2009</year>
+          <fpage>541</fpage>
+          <lpage>545</lpage>
+          <pub-id pub-id-type="pmid">19097852</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib45">
+        <element-citation publication-type="journal" id="sref45">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Waechter</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Nelson</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Wright</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Hyatt</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Oakman</surname>
+              <given-names>J.</given-names>
+            </name>
+          </person-group>
+          <article-title>Measuring attentional bias to threat: reliability of dot probe and eye movement indices</article-title>
+          <source>Cognitive Therapy and Research</source>
+          <volume>38</volume>
+          <year>2014</year>
+          <fpage>313</fpage>
+          <lpage>333</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib46">
+        <element-citation publication-type="journal" id="sref46">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Watts</surname>
+              <given-names>F.</given-names>
+            </name>
+            <name>
+              <surname>McKenna</surname>
+              <given-names>F.P.</given-names>
+            </name>
+            <name>
+              <surname>Sharrock</surname>
+              <given-names>R.</given-names>
+            </name>
+            <name>
+              <surname>Trezise</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Colour-naming of phobia-related words</article-title>
+          <source>British Journal of Psychology</source>
+          <volume>77</volume>
+          <year>1986</year>
+          <fpage>97</fpage>
+          <lpage>108</lpage>
+          <pub-id pub-id-type="pmid">2869817</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib47">
+        <element-citation publication-type="journal" id="sref47">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wenzel</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Holt</surname>
+              <given-names>C.S.</given-names>
+            </name>
+          </person-group>
+          <article-title>Dot probe performance in two specific phobias</article-title>
+          <source>British Journal of Clinical Psychology</source>
+          <volume>38</volume>
+          <year>1999</year>
+          <fpage>407</fpage>
+          <lpage>410</lpage>
+          <pub-id pub-id-type="pmid">10590828</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib48">
+        <element-citation publication-type="journal" id="sref48">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wikstrom</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Lundh</surname>
+              <given-names>L.</given-names>
+            </name>
+            <name>
+              <surname>Westerlund</surname>
+              <given-names>J.</given-names>
+            </name>
+            <name>
+              <surname>Hogman</surname>
+              <given-names>L.</given-names>
+            </name>
+          </person-group>
+          <article-title>Preattentive bias for snake words in snake phobia?</article-title>
+          <source>Behavior Research and Therapy</source>
+          <volume>31</volume>
+          <year>2004</year>
+          <fpage>87</fpage>
+          <lpage>95</lpage>
+        </element-citation>
+      </ref>
+      <ref id="bib49">
+        <element-citation publication-type="journal" id="sref49">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zvielli</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Bernstein</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.H.W.</given-names>
+            </name>
+          </person-group>
+          <article-title>Dynamics of attentional bias to threat in anxious adults: towards and/or away?</article-title>
+          <source>Plos One</source>
+          <volume>9</volume>
+          <issue>8</issue>
+          <year>2014</year>
+          <fpage>e104025</fpage>
+          <pub-id pub-id-type="pmid">25093664</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="bib50">
+        <element-citation publication-type="journal" id="sref50">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zvielli</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Bernstein</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Koster</surname>
+              <given-names>E.H.W.</given-names>
+            </name>
+          </person-group>
+          <article-title>Temporal dynamics of attentional bias</article-title>
+          <comment>Advance online publication</comment>
+          <source>Clinical Psychological Science</source>
+          <year>2014</year>
+        </element-citation>
+      </ref>
+    </ref-list>
+    <ack id="ack0010">
+      <title>Acknowledgements</title>
+      <p>This work was supported by a project grant from the <funding-source id="gs1">Wellcome Trust</funding-source> (ref: 076701/Z/05/Z) awarded to Elaine Fox, while she was at the University of Essex. Elaine Fox is currently supported by an ERC Advanced Investigator Award (Ref: 324176 – CogBIAS Project) and is now at the University of Oxford. Chris Ashwin is now at the Department of Psychology, University of Bath. Address all correspondence to Elaine Fox, Department of Experimental Psychology, University of Oxford, Tinbergen Building, 9 South Parks Road, Oxford OX1 3UD, UK or via email (<ext-link ext-link-type="uri" xlink:href="mailto:elaine.fox@psy.ox.ac.uk" id="intref0010">elaine.fox@psy.ox.ac.uk</ext-link>).</p>
+    </ack>
+    <fn-group>
+      <fn id="fn1">
+        <label>1</label>
+        <p>Physiological measures (blood pressure and heart-rate) were taken for a larger study looking into physiological baseline measures of different clinical conditions and are not directly relevant for present purposes. As a matter of interest, we did analyse whether any differential changes occurred on these measures following the different ABM training conditions and found no significant effects. Therefore, physiological measures will not be discussed any further.</p>
+      </fn>
+      <fn id="fn2">
+        <label>2</label>
+        <p>Note that Cohen's d was calculated using the pooled variance as the denominator for all repeated measures comparisons (<xref rid="bib51" ref-type="bibr">Cohen, 1988</xref>).</p>
+      </fn>
+    </fn-group>
+  </back>
+  <floats-group>
+    <fig id="fig1">
+      <label>Fig. 1</label>
+      <caption>
+        <p>Mean AB scores before (pre-ABM) and after (post-ABM) a single session of ABM for each of the Initial Bias groups (Bias Toward, Bias Away and No Bias).</p>
+      </caption>
+      <graphic xlink:href="gr1"/>
+    </fig>
+    <fig id="fig2">
+      <label>Fig. 2</label>
+      <caption>
+        <p>Numbers and percentages of participants distributed across ‘Bias Toward’ ‘Bias Away’ and ‘No Bias’ categories following either active or control ABM for each of the Initial Bias groups.</p>
+      </caption>
+      <graphic xlink:href="gr2"/>
+    </fig>
+    <table-wrap id="tbl1" position="float">
+      <label>Table 1</label>
+      <caption>
+        <p>Scores on the Spider Phobia Questionnaire (SPQ), Spielberger Trait Anxiety Inventory, and Beck Depression Inventory (BDI:II) as a function of Initial Bias prior to assignment to attention training condition.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th/>
+            <th>AB toward<hr/></th>
+            <th>AB away<hr/></th>
+            <th>No bias<hr/></th>
+            <th><italic>F</italic> (2, 124)</th>
+          </tr>
+          <tr>
+            <th>(n = 44)</th>
+            <th>(n = 36)</th>
+            <th>(n = 47)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>SPQ</td>
+            <td align="char">18.1 (4.7)</td>
+            <td align="char">18.0 (4.6)</td>
+            <td align="char">17.8 (5.4)</td>
+            <td>&lt;1</td>
+          </tr>
+          <tr>
+            <td>Trait Anxiety</td>
+            <td align="char">38.3 (12.5)</td>
+            <td align="char">38.9 (13.2)</td>
+            <td align="char">33.4 (10.4)</td>
+            <td>2.8, p &lt; .061</td>
+          </tr>
+          <tr>
+            <td>BDI:II</td>
+            <td align="char">6.0 (3.5)</td>
+            <td align="char">5.3 (2.1)</td>
+            <td align="char">5.2 (2.6)</td>
+            <td>&lt;1</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <table-wrap id="tbl2" position="float">
+      <label>Table 2</label>
+      <caption>
+        <p>Mean Scores and Standard Deviations (in brackets) for the three initial bias groups: AB Toward, AB Away and No Bias for pre- and post-ABM assessment periods for scores on the Stress Task for those in the ABM-Active and ABM-control groups. <italic>d refers to Cohen's d values</italic>.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th/>
+            <th>Pre-ABM</th>
+            <th>Post-ABM</th>
+            <th>Pre to post change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4">AB Towards</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>71.5 (5.2)</td>
+            <td>53.5 (14.1)</td>
+            <td>t(26) = 7.4, p &lt; .001, d = 1.42</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>70.2 (4.7)</td>
+            <td>69.1 (11.3)</td>
+            <td>t(16) &lt; 1, p &lt; .66, d = 0.11</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(42) &lt; 1</td>
+            <td>t(42) = −3.8</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>p &lt; .41</td>
+            <td>p &lt; .001</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = 0.26</td>
+            <td>d = −1.22</td>
+            <td/>
+          </tr>
+          <tr>
+            <td colspan="4">AB Away</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>68.3 (7.3)</td>
+            <td>53.1 (15.2)</td>
+            <td>t(17) = 4.4, p &lt; .001, d = 1.04</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>69.5 (5.4)</td>
+            <td>71.6 (15.7)</td>
+            <td>t(17) &lt; 1, p &lt; .55, d = 0.14</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(34) &lt; 1</td>
+            <td>t(34) = −3.6</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>p &lt; .57</td>
+            <td>p &lt; .001</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = −0.19</td>
+            <td>d = −1.98</td>
+            <td/>
+          </tr>
+          <tr>
+            <td colspan="4">No Bias</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>70.7 (6.4)</td>
+            <td>56.7 (12.2)</td>
+            <td>t(20) = 4.6, p &lt; .001, d = 1.01</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>70.0 (5.1)</td>
+            <td>67.3 (10.7)</td>
+            <td>t(25) = 1.2, p &lt; .22, d = 0.24</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(45) &lt; 1</td>
+            <td>t(45) = −3.2</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>p &lt; .66</td>
+            <td>p &lt; .002</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = 0.12</td>
+            <td>d = −0.92</td>
+            <td/>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <table-wrap id="tbl3" position="float">
+      <label>Table 3</label>
+      <caption>
+        <p>Mean Scores and Standard Deviations (in brackets) for the three initial bias groups: AB Toward, AB Away and No Bias for pre- and post-ABM assessment periods for scores on the Anxiety/Discomfort Scale for those in the ABM-Active and ABM-control groups. <italic>d refers to Cohen's d values</italic>.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th/>
+            <th>Pre-ABM</th>
+            <th>Post-ABM</th>
+            <th>Pre to post change</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4">AB Towards</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>63.1 (11.3)</td>
+            <td>48.9 (9.1)</td>
+            <td>t(26) = 5.4, p &lt; .001, d = 1.04</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>59.7 (11.9)</td>
+            <td>65.0 (8.1)</td>
+            <td>t(16) = −2.21,p &lt; .001, d = 0.54</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(42) &lt; 1</td>
+            <td>t(42) = −6.0</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>P &lt; .87</td>
+            <td>p &lt; .001</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = 0.29</td>
+            <td>d = −1.90</td>
+            <td/>
+          </tr>
+          <tr>
+            <td colspan="4">AB Away</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>56.9 (5.7)</td>
+            <td>62.9 (6.9)</td>
+            <td>t(17) = −4.6, p &lt; .001, d = 1.09</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>65.0 (8.3)</td>
+            <td>63.4 (6.3)</td>
+            <td>t(17) &lt; 1, p &lt; .37, d = 0.22</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(34) = −3.4</td>
+            <td>t(34) &lt; 1</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>p &lt; .002</td>
+            <td>p &lt; .98</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = −1.1</td>
+            <td>d = −0.10</td>
+            <td/>
+          </tr>
+          <tr>
+            <td colspan="4">No Bias</td>
+          </tr>
+          <tr>
+            <td> ABM-Active</td>
+            <td>54.4 (11.2)</td>
+            <td>51.5 (14.4)</td>
+            <td>t(20) = 1.1, p &lt; .288, d = .24</td>
+          </tr>
+          <tr>
+            <td> ABM-Control</td>
+            <td>60.7 (9.6)</td>
+            <td>60.7 (12.4)</td>
+            <td>t(25) &gt; 1, p &lt; .99, d = 0.0</td>
+          </tr>
+          <tr>
+            <td/>
+            <td>t(45) = −2.1</td>
+            <td>t(45) = −2.4</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>p &lt; .044</td>
+            <td>p &lt; .022</td>
+            <td/>
+          </tr>
+          <tr>
+            <td/>
+            <td>d = −0.60</td>
+            <td>d = −0.68</td>
+            <td/>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+  </floats-group>
+</article>
+
+</metadata></record></GetRecord></OAI-PMH>
