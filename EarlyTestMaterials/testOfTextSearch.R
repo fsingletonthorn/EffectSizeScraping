@@ -1,9 +1,12 @@
-install.packages('XML')
-install.packages("oai")
-install.packages("xml2")
+# install.packages('XML')
+# install.packages("oai")
+# install.packages("xml2")
+# devtools::install_github('dantonnoriega/xmltools')
 library(XML)
 library(xml2)
-library("oai")
+library(oai)
+library(magrittr)
+library(xmltools)
 
 # remeber for rolling assignment of names: 
 for(i in 1:2) {
@@ -18,8 +21,12 @@ abc2xyz
 xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547492.xml")
 xmlFile <- xmlParse("EarlyTestMaterials/ExamplePapers/4547492.xml")
 
+
+
 xmlRoot(xmlTreeParse(xmlFile, isURL = FALSE))
 
+
+xml_view_trees(xmlFile)
 
 # Extracting xml full ID 
 # e.g., "oai:pubmedcentral.nih.gov:4547492"
@@ -32,7 +39,6 @@ PMCID <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]
 # DOI ## NOTE THAT THIS WILL BREAK IF OTHER FILES HAVE DIFFERENT STRUCTURES 
 # <article-id pub-id-type="doi">10.1016/j.jbtep.2015.05.001</article-id>
 DOI <- unlist(xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][[6]][1])
-
 
 # Abbreviated journal ID 
 # e.g., "J Behav Ther Exp Psychiatry"
