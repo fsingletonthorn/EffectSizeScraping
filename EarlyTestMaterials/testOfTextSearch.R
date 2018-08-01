@@ -1,6 +1,8 @@
 install.packages('XML')
 install.packages("oai")
+install.packages("xml2")
 library(XML)
+library(xml2)
 library("oai")
 
 # remeber for rolling assignment of names: 
@@ -11,11 +13,13 @@ abc1xyz
 abc2xyz
 
 
-
-
 # starting again: 
 # extracting full files
 xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547492.xml")
+xmlFile <- xmlParse("EarlyTestMaterials/ExamplePapers/4547492.xml")
+
+xmlRoot(xmlTreeParse(xmlFile, isURL = FALSE))
+
 
 # Extracting xml full ID 
 # e.g., "oai:pubmedcentral.nih.gov:4547492"
@@ -25,7 +29,7 @@ ID <- xmlList[["GetRecord"]][["record"]][["header"]][["identifier"]]
 PMCID <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["article-id"]][["text"]]
 
 # Extracting DOI
-# DOI 
+# DOI ## NOTE THAT THIS WILL BREAK IF OTHER FILES HAVE DIFFERENT STRUCTURES 
 # <article-id pub-id-type="doi">10.1016/j.jbtep.2015.05.001</article-id>
 DOI <- unlist(xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][[6]][1])
 
@@ -56,13 +60,7 @@ articleContribGroup <- NULL
 articleHead <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]]
 articleBody<- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["body"]]
 
-
-
-
-
-
-  
-  
+  xmlValue(xmlRoot(getNodeSet(xmlFile, "//getRecords")))
   
 
 # later to update it will be possible to just compare the master list with those 
