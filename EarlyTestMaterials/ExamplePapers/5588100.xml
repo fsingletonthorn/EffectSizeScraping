@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH
+	xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2018-08-02T07:33:55Z</responseDate><request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:5588100" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request><GetRecord><record><header><identifier>oai:pubmedcentral.nih.gov:5588100</identifier><datestamp>2017-09-18</datestamp><setSpec>onclett</setSpec><setSpec>pmc-open</setSpec></header><metadata><article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.0/ https://jats.nlm.nih.gov/archiving/1.0/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Oncol Lett</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Oncol Lett</journal-id>
+      <journal-id journal-id-type="publisher-id">OL</journal-id>
+      <journal-title-group>
+        <journal-title>Oncology Letters</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1792-1074</issn>
+      <issn pub-type="epub">1792-1082</issn>
+      <publisher>
+        <publisher-name>D.A. Spandidos</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC5588100</article-id>
+      <article-id pub-id-type="pmcid">PMC5588100</article-id>
+      <article-id pub-id-type="pmc-uid">5588100</article-id>
+      <article-id pub-id-type="pmid">28927045</article-id>
+      <article-id pub-id-type="doi">10.3892/ol.2017.6516</article-id>
+      <article-id pub-id-type="publisher-id">OL-0-0-6516</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Articles</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Correlation analysis between expression of PCNA, Ki-67 and COX-2 and X-ray features in mammography in breast cancer</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Qiu</surname>
+            <given-names>Xiaoming</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mei</surname>
+            <given-names>Jixin</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Yin</surname>
+            <given-names>Jianjun</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wang</surname>
+            <given-names>Hong</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wang</surname>
+            <given-names>Jinqi</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Xie</surname>
+            <given-names>Ming</given-names>
+          </name>
+          <xref ref-type="aff" rid="af1-ol-0-0-6516"/>
+          <xref rid="c1-ol-0-0-6516" ref-type="corresp"/>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-ol-0-0-6516">Department of Radiology, Huangshi Central Hospital, Affiliated Hospital of Hubei Polytechnic University, Edong Healthcare Group, Huangshi, Hubei 435000, P.R. China</aff>
+      <author-notes>
+        <corresp id="c1-ol-0-0-6516"><italic>Correspondence to</italic>: Dr Ming Xie, Department of Radiology, Huangshi Central Hospital, Affiliated Hospital of Hubei Polytechnic University, Edong Healthcare Group, 141 Tianjin Road, Huangshi, Hubei 435000, P.R. China, E-mail: <email>d1741698yuehua@163.com</email></corresp>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <month>9</month>
+        <year>2017</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>04</day>
+        <month>7</month>
+        <year>2017</year>
+      </pub-date>
+      <pub-date pub-type="pmc-release">
+        <day>04</day>
+        <month>7</month>
+        <year>2017</year>
+      </pub-date>
+      <!-- PMC Release delay is 0 months and 0 days and was based on the <pub-date pub-type="epub"/>. -->
+      <volume>14</volume>
+      <issue>3</issue>
+      <fpage>2912</fpage>
+      <lpage>2918</lpage>
+      <history>
+        <date date-type="received">
+          <day>23</day>
+          <month>2</month>
+          <year>2017</year>
+        </date>
+        <date date-type="accepted">
+          <day>18</day>
+          <month>4</month>
+          <year>2017</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright: © Qiu et al.</copyright-statement>
+        <copyright-year>2017</copyright-year>
+        <license license-type="open-access">
+          <license-p>This is an open access article distributed under the terms of the <ext-link ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs License</ext-link>, which permits use and distribution in any medium, provided the original work is properly cited, the use is non-commercial and no modifications or adaptations are made.</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>This study investigated expression of proliferating cell nuclear antigen (PCNA), proliferation-associated nuclear antigen (Ki-67) and cyclooxygenase-2 (COX-2) in tissues of breast invasive ductal carcinoma, and analyzed the correlations between these indexes and X-ray features in mammography. A total of 90 patients who were admitted to Huangshi Central Hospital and diagnosed as breast invasive ductal carcinoma from January 2014 to January 2016 were selected. The expression of PCNA, Ki-67 and COX-2 in cancer tissues and cancer-adjacent normal tissues of patients were detected by immunohistochemical staining, and X-ray features in mammography of patients were observed. By using Spearman correlation analysis, the correlations between expression of PCNA, Ki-67 and COX-2 and X-ray features in mammography in breast cancer were investigated. As a result, the positive expression rates of PCNA, Ki-67 and COX-2 in cancer tissues of the patient groups were respectively 42.2, 45.6 and 51.1%, which were significantly higher than those in cancer-adjacent normal tissues of the control group (p&lt;0.05). PCNA, Ki-67 and COX-2 expression in cancer tissues of the patient group was associated with clinical staging and lymphatic metastasis (p&lt;0.05), but had no correlation with age and tumor size (p&gt;0.05). PCNA, Ki-67 and COX-2 expression in cancer tissues of the patient group had no correlation with the existence of lumps and localized density-increased shadows (p&gt;0.05), but were associated with manifestations of architectural distortion, calcification as well as skin and nipple depression (p&lt;0.05). Spearman correlation analysis revealed that there was a significantly positive correlation between the expression of PCNA and COX-2 in cancer tissues of the patient group (r=0.676, p&lt;0.05); there was a significantly positive correlation between the expression of Ki-67 and COX-2 (r=0.724, p&lt;0.05); PCNA expression had no obvious correlation with the expression of Ki-67 (p&gt;0.05). In conclusion, PCNA, Ki-67 and COX-2 expression is of great significance in the occurrence, invasion and metastasis of breast invasive ductal carcinoma. There is a strong correlation between PCNA, Ki-67 and COX-2 expression levels and X-ray features in mammography in breast invasive ductal carcinoma. The application of X-ray features in mammography can evaluate the expression levels of PCNA, Ki-67 and COX-2 in tissues of breast invasive ductal carcinoma, thereby prospectively predicting biological behavior of these cancer cells and patient prognosis.</p>
+      </abstract>
+      <kwd-group>
+        <kwd>breast cancer</kwd>
+        <kwd>proliferating cell nuclear antigen</kwd>
+        <kwd>proliferation-associated nuclear antigen (Ki-67)</kwd>
+        <kwd>breast X-ray photography technique</kwd>
+        <kwd>cyclooxygenase-2</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec sec-type="intro">
+      <title>Introduction</title>
+      <p>Breast cancer is a common, worldwide malignant tumor of women. The number of female breast cancer patients in China remains stubbornly high, and the mortality rate is also relatively high; moreover, the occurrence of this disease increasingly tends to affect the young population. Due to the occult feature of breast cancer, most patients are at an advanced stage when they are diagnosed. Therefore, how to accurately diagnose breast cancer at an early stage without treatment delay for the treatment to improve patient prognosis has become a hot issue in the diagnosis and treatment of breast cancer in recent years (<xref rid="b1-ol-0-0-6516" ref-type="bibr">1</xref>). The technique of breast X-ray photography is an important imaging examination method, which plays an auxiliary role in the early diagnosis of breast cancer (<xref rid="b2-ol-0-0-6516" ref-type="bibr">2</xref>). Studies have shown that (<xref rid="b3-ol-0-0-6516" ref-type="bibr">3</xref>–<xref rid="b5-ol-0-0-6516" ref-type="bibr">5</xref>) related cancer factors affect the biological behavior of tumor cells to a certain extent, which is closely associated with the recurrence and metastasis of cancer cells. Thus, this investigation focuses on whether there is a correlation between the clinical features of breast X-ray photography techniques and related cancer factors, how to predict the biological behavior of breast cancer cells and patients prognosis by using X-ray features in mammography combined with related cancer factors. This study mainly aims to investigate proliferating cell nuclear antigen (PCNA), proliferation-associated nuclear antigen (Ki-67) and cyclooxygenase-2 (COX-2) expression in breast invasive ductal carcinoma tissue, and to analyze the correlations between these indexes and X-ray features in mammography, in order to provide more valuable reference for the growth, recurrence, metastasis and prognosis of breast cancer, thereby benefiting clinical diagnosis and treatment in such patients.</p>
+    </sec>
+    <sec sec-type="materials|methods">
+      <title>Materials and methods</title>
+      <sec>
+        <title/>
+        <sec>
+          <title>General data</title>
+          <p>A total of 90 patients who were admitted to Huangshi Central Hospital with confirmed breast invasive ductal carcinoma from January 2014 to January 2016 were selected as the patient group. All patients were women with single unilateral invasive breast cancer lesions. Patients were aged from 29 to 73 years, with an average of 56.7±1.6 years; for clinical staging, there were 60 cases in stages I+II and 30 cases in stages III+IV; for lymphatic metastasis, there were 40 cases with metastasis and 50 cases without metastasis; for tumor diameter, there were 33 cases with the tumor size &lt;2 cm and 57 cases with the size ≥2 cm; there were 48 cases with cancer in the left breast and 42 cases with disease in the right breast. The selected patients did not receive any intervention therapy before operation, and breast invasive ductal carcinoma was confirmed by pathology after operation (<xref rid="b6-ol-0-0-6516" ref-type="bibr">6</xref>). Additionally, 40 patients who had cancer-adjacent normal breast tissues being more than 5 cm far away from cancer tissues confirmed by pathology were selected as the normal control group. All patients were women, aged from 30 to 72 years, with an average of 56.2±1.4 years. This study was approved by the Ethics Committee of Huangshi Central Hospital. Signed written informed consents were obtained from all participants before the study.</p>
+        </sec>
+        <sec>
+          <title>Methods</title>
+          <p>i) The expressions of PCNA, Ki-67 and COX-2 in cancer-adjacent normal breast tissues and cancer tissues were detected by immunohistochemical staining SP method. The above staining procedures were operated, respectively according to the instructions of EnVision kits (Biosharp, Hefei, China) of rabbit polyclonal PCNA antibody (dilution, 1:100; cat. no. ab18197); rabbit polyclonal Ki-67 antibody (dilution, 1:100; cat. no. ab92742) and rabbit polyclonal COX-2 antibody (dilution, 1:100; cat. no. ab52237) (all purchased from Abcam, Cambridge, MA, USA), followed by observing staining results and ⅱ) patients were routinely examined by full-field digital mammography (MAMMOMAT 3000; Siemens AG, Munich, Germany) before operation. Images were jointly read and diagnostically analyzed by two radiologists who were engaged in the X-ray diagnosis of breast cancer. The occurrence of lump lesion of patients including burr, calcification, asymmetric dense shadow and gland structure disorder were mainly observed, and the above results were compared with the corresponding pathological indexes for analysis.</p>
+        </sec>
+        <sec>
+          <title>Evaluation criteria</title>
+          <p>Using a semi-quantitative scoring method combined with the Berry grading method (<xref rid="b7-ol-0-0-6516" ref-type="bibr">7</xref>): the positive expression of PCNA, Ki-67 and COX-2 was stained in the cytoplasm; the scores were recorded, respectively, according to the positive cell rate and positive cell staining intensity; the expression level was determined according to the staining degree scores: staining the same as negative control, score 0; staining light yellow, score 1; staining brown yellow, score 2; staining reddish brown, score 3. The scores were recorded according to the proportion of positive cells in the observed cells: positive cell number ≤10%, score 1; ≥11 - ≤50% positive, score 2; ≥51 - ≤75% positive, score 3; positive cell number &gt;75%, score 4. The product of two item scores: 0–3 scores (−), 4–5 scores (+), 6–7 scores (++), &gt;8 scores (+++); the score ≤3 represented negative, and the score &gt;3 represented positive.</p>
+        </sec>
+        <sec>
+          <title>Statistical analysis</title>
+          <p>SPSS 20.0 software (IBM Corporation, Armonk, New York, NY, USA) was used for statistical analysis. For enumeration data, the Chi-square test was adopted for the comparison of positive rate between groups; for measurement data, t-test was utilized for the comparison between groups. Spearman correlation test was used for correlation analysis, and the test level was α=0.05.</p>
+        </sec>
+      </sec>
+    </sec>
+    <sec sec-type="results">
+      <title>Results</title>
+      <sec>
+        <title/>
+        <sec>
+          <title>Expression of PCNA, Ki-67 and COX-2 in breast cancer tissues</title>
+          <p>The positive expression products of PCNA, Ki-67 and COX-2 were brown yellow particles, mainly located in the cytoplasm (<xref rid="f1-ol-0-0-6516" ref-type="fig">Figs. 1</xref>–<xref rid="f3-ol-0-0-6516" ref-type="fig">3</xref>). The positive expression rate of PCNA in cancer tissues of the patient group was 42.2%, which was significantly higher than 2.5% in cancer-adjacent normal tissues of the control group (p&lt;0.05, <xref rid="tI-ol-0-0-6516" ref-type="table">Table I</xref>). The positive expression rate of Ki-67 in cancer tissues of the patient group was 45.6%, which was significantly higher than 2.5% in cancer-adjacent normal tissues of the control group (p&lt;0.05, <xref rid="tII-ol-0-0-6516" ref-type="table">Table II</xref>). The positive expression rate of COX-2 in cancer tissues of the patient group was 51.1%, which was significantly higher than the 2.5% in cancer-adjacent normal tissues of the control group (p&lt;0.05, <xref rid="tIII-ol-0-0-6516" ref-type="table">Table III</xref>).</p>
+        </sec>
+        <sec>
+          <title>Relationships between PCNA, Ki-67 and COX-2 and clinicopathological features of breast cancer patients</title>
+          <p>PCNA, Ki-67 and COX-2 expression in cancer tissues of the patient group was associated with clinical staging and lymphatic metastasis (p&lt;0.05), but had no correlation with age and tumor size (p&gt;0.05, <xref rid="tIV-ol-0-0-6516" ref-type="table">Table IV</xref>).</p>
+        </sec>
+        <sec>
+          <title>Digital mammography X-ray photography features of the patient group</title>
+          <p>Among 90 cases in the patient group, 70 cases manifested as lumps with different sizes; there were 8 cases of mass shape calcification, 6 cases of cluster calcification, 14 cases of vascular calcification, 18 cases of sand-like calcification, 14 cases of thick rod-shaped calcification and 20 cases of line like branching calcification (<xref rid="f4-ol-0-0-6516" ref-type="fig">Fig. 4</xref>); there were 63 cases with manifestations of architectural distortion, 41 cases with localized density-increased shadow and 68 cases with skin and nipple depression.</p>
+        </sec>
+        <sec>
+          <title>Relationships between X-ray photography features and PCNA, Ki-67 and COX-2 expression in breast invasive ductal carcinoma</title>
+          <p>PCNA, Ki-67 and COX-2 expression in cancer tissues of the patient group had no correlation with the existence of lumps and localized density-increased shadows (p&gt;0.05), but were associated with manifestations of architectural distortion, calcification as well as skin and nipple depression (p&lt;0.05, <xref rid="tV-ol-0-0-6516" ref-type="table">Table V</xref>).</p>
+        </sec>
+        <sec>
+          <title>Correlations among PCNA, Ki-67 and COX-2 expression</title>
+          <p>Spearman correlation analysis revealed that there was significantly positive correlation between the expression of PCNA and COX-2 in cancer tissues of the patient group (r=0.676, p&lt;0.05, <xref rid="f5-ol-0-0-6516" ref-type="fig">Fig. 5</xref>); there was significantly positive correlation between the expression of Ki-67 and COX-2 (r=0.724, p&lt;0.05, <xref rid="f6-ol-0-0-6516" ref-type="fig">Fig. 6</xref>); PCNA expression had no obvious correlation with the expression of Ki-67 (p&gt;0.05).</p>
+        </sec>
+      </sec>
+    </sec>
+    <sec sec-type="discussion">
+      <title>Discussion</title>
+      <p>The occurrence and development of breast cancer is associated with multiple factors, especially for some patho-biological factor indicators including HER-2 and P53 (<xref rid="b1-ol-0-0-6516" ref-type="bibr">1</xref>,<xref rid="b8-ol-0-0-6516" ref-type="bibr">8</xref>,<xref rid="b9-ol-0-0-6516" ref-type="bibr">9</xref>). With the rapid development of modern biological techniques, many biological factor indexes have been found (<xref rid="b10-ol-0-0-6516" ref-type="bibr">10</xref>,<xref rid="b11-ol-0-0-6516" ref-type="bibr">11</xref>). As one kind of acidic protein in the nucleus, PCNA is an indispensable coenzyme for eukaryotic cells to synthesize DNA. PCNA can be used to measure cell proliferation activity; the higher the proliferation activity is, the larger the tension between cells, resulting in lower adhesion, which promotes tumor cells being separated from primary lesions, and metastasizing (<xref rid="b12-ol-0-0-6516" ref-type="bibr">12</xref>). The results of this study indicated that the positive expression rate of PCNA in cancer tissues of the patient group was 42.2%, which was significantly higher than the 2.5% in the cancer-adjacent normal tissues of the control group (p&lt;0.05). PCNA expression in cancer tissues of the patient group were associated with clinical staging and lymphatic metastasis (p&lt;0.05), but had no correlation with age and tumor size (p&gt;0.05), suggesting that PCNA expression is closely related to the occurrence and development of breast cancer, which is consistent with the conclusions of other international medical researchers (<xref rid="b13-ol-0-0-6516" ref-type="bibr">13</xref>,<xref rid="b14-ol-0-0-6516" ref-type="bibr">14</xref>).</p>
+      <p>Ki-67 is a kind of nuclear antigen, the quantity of which generated from cell proliferation is closely associated with mitosis (<xref rid="b15-ol-0-0-6516" ref-type="bibr">15</xref>). Previous studies have confirmed that (<xref rid="b16-ol-0-0-6516" ref-type="bibr">16</xref>) Ki-67 is highly expressed in gastric, prostate and liver cancer and other multiple tumor cells, and there are close correlations between it and the development and prognosis of the above tumors. This study revealed that the positive expression rate of Ki-67 in cancer tissues of the patient group was 45.6%, which was significantly higher than the 2.5% in the cancer adjacent normal tissues of the control group (p&lt;0.05). Ki-67 expression in cancer tissues of the patient group were associated with clinical staging and lymphatic metastasis (p&lt;0.05), but had no correlation with age and tumor size (p&gt;0.05), suggesting that Ki-67 expression is closely related to the clinical staging and lymphatic metastasis of breast cancer, thus, the more severe the clinical staging is, the higher the positive expression rate of Ki-67 will be.</p>
+      <p>As an important antigen that can promote malignant tumor angiogenesis and cell proliferation, COX-2 greatly affects prognosis of tumor patients (<xref rid="b17-ol-0-0-6516" ref-type="bibr">17</xref>). COX-2 belongs to an inducible enzyme, which is not easily detected in normal tissue, but under the stimulation of oncogenes and other stimuli, its inducible expression can occur rapidly (<xref rid="b18-ol-0-0-6516" ref-type="bibr">18</xref>,<xref rid="b19-ol-0-0-6516" ref-type="bibr">19</xref>). This study showed that the positive expression rate of COX-2 in cancer tissues of the patient group was 51.1%, which was significantly higher than the 2.5% in cancer-adjacent normal tissues of the control group (p&lt;0.05). COX-2 expression in cancer tissues of the patient group was associated with clinical staging and lymphatic metastasis (p&lt;0.05), but had no correlation with age and tumor size (p&gt;0.05), suggesting that COX-2 can promote the occurrence and development of breast tumors, which involves inducing tumor cell proliferation, inhibiting tumor cell apoptosis, suppressing anti-tumor immune response <italic>in vivo</italic>, promoting malignant tumor angiogenesis and other multiple mechanisms.</p>
+      <p>Further analysis indicated that there was a significantly positive correlation between the expression of PCNA and COX-2 in cancer tissues of the patient group (r=0.676, p&lt;0.05); there was significantly positive correlation between the expression of Ki-67 and COX-2 (r=0.724, p&lt;0.05); PCNA expression had no obvious correlation with the expression of Ki-67 (p&gt;0.05). The results further demonstrated the relationships among PCNA, Ki-67 and COX-2.</p>
+      <p>Breast X-ray mammography is characterized by simple operation and low cost in examining benign and malignant breast diseases, which also has a relatively high sensitivity and accuracy in the detection of microcalcifications. The results of breast X-ray photography for the 90 patients showed that the typical X-ray in patients with breast cancer was manifested by lumps in different sizes, malignant calcification, manifestations of architectural distortion, localized density-increased shadow, skin and nipple depression. The relationships between X-ray photography features and PCNA, Ki-67 and COX-2 expression in breast invasive ductal carcinoma were primarily investigated in this study, which showed that PCNA, Ki-67 and COX-2 expression in cancer tissues of the patient group had no correlation with the existences of lump and localized density-increased shadow (p&gt;0.05), but were associated with manifestations of architectural distortion, calcification as well as skin and nipple depression (p&lt;0.05). Therefore, it can be speculated that the infiltration of breast cancer with manifestations of architectural distortion, calcification as well as skin and nipple depression is stronger, and the malignancy degree is also higher, which shows poor clinical prognosis.</p>
+      <p>In conclusion, expression of PCNA, Ki-67 and COX-2 is a significant predictor for the occurrence, invasion and metastasis of breast invasive ductal carcinoma. There is a correlation between PCNA, Ki-67 and COX-2 expression levels and X-ray features in mammography in breast invasive ductal carcinoma. The application of X-ray features in mammography can evaluate the expression levels of PCNA, Ki-67 and COX-2 in tissues of breast invasive ductal carcinoma, thereby prospectively predicting biological behavior of these cancer cells and patients prognosis.</p>
+    </sec>
+  </body>
+  <back>
+    <ref-list>
+      <title>References</title>
+      <ref id="b1-ol-0-0-6516">
+        <label>1</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sawair</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Hassona</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Irwin</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Stephenson</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Hamilton</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Maxwell</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Gordon</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Leonard</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Napier</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>p53, Cyclin D1, p21 (WAF1) and Ki-67 (MIB1) expression at invasive tumour fronts of oral squamous cell carcinomas and development of local recurrence</article-title>
+          <source>Asian Pac J Cancer Prev</source>
+          <volume>17</volume>
+          <fpage>1243</fpage>
+          <lpage>1249</lpage>
+          <year>2016</year>
+          <pub-id pub-id-type="doi">10.7314/APJCP.2016.17.3.1243</pub-id>
+          <?supplied-pmid 27039754?>
+          <pub-id pub-id-type="pmid">27039754</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b2-ol-0-0-6516">
+        <label>2</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Choi</surname>
+              <given-names>BB</given-names>
+            </name>
+            <name>
+              <surname>Shu</surname>
+              <given-names>KS</given-names>
+            </name>
+          </person-group>
+          <article-title>Metaplastic carcinoma of the breast: Multimodality imaging and histopathologic assessment</article-title>
+          <source>Acta Radiol</source>
+          <volume>53</volume>
+          <fpage>5</fpage>
+          <lpage>11</lpage>
+          <year>2012</year>
+          <pub-id pub-id-type="doi">10.1258/ar.2011.110341</pub-id>
+          <?supplied-pmid 22090465?>
+          <pub-id pub-id-type="pmid">22090465</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b3-ol-0-0-6516">
+        <label>3</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nishimura</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Osako</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Okumura</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Hayashi</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Arima</surname>
+              <given-names>N</given-names>
+            </name>
+          </person-group>
+          <article-title>Clinical significance of Ki-67 in neoadjuvant chemotherapy for primary breast cancer as a predictor for chemosensitivity and for prognosis</article-title>
+          <source>Breast Cancer</source>
+          <volume>17</volume>
+          <fpage>269</fpage>
+          <lpage>275</lpage>
+          <year>2010</year>
+          <pub-id pub-id-type="doi">10.1007/s12282-009-0161-5</pub-id>
+          <?supplied-pmid 19730975?>
+          <pub-id pub-id-type="pmid">19730975</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b4-ol-0-0-6516">
+        <label>4</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bukholm</surname>
+              <given-names>IR</given-names>
+            </name>
+            <name>
+              <surname>Bukholm</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Holm</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Nesland</surname>
+              <given-names>JM</given-names>
+            </name>
+          </person-group>
+          <article-title>Association between histology grade, expression of HsMCM2, and cyclin A in human invasive breast carcinomas</article-title>
+          <source>J Clin Pathol</source>
+          <volume>56</volume>
+          <fpage>368</fpage>
+          <lpage>373</lpage>
+          <year>2003</year>
+          <pub-id pub-id-type="doi">10.1136/jcp.56.5.368</pub-id>
+          <?supplied-pmid 12719458?>
+          <pub-id pub-id-type="pmid">12719458</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b5-ol-0-0-6516">
+        <label>5</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wojnar</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Pula</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Piotrowska</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Jethon</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Kujawa</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Kobierzycki</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Rys</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Podhorska-Okolow</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Dziegiel</surname>
+              <given-names>P</given-names>
+            </name>
+          </person-group>
+          <article-title>Correlation of intensity of MT-I/II expression with Ki-67 and MCM-2 proteins in invasive ductal breast carcinoma</article-title>
+          <source>Anticancer Res</source>
+          <volume>31</volume>
+          <fpage>3027</fpage>
+          <lpage>3033</lpage>
+          <year>2011</year>
+          <?supplied-pmid 21868554?>
+          <pub-id pub-id-type="pmid">21868554</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b6-ol-0-0-6516">
+        <label>6</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sankpal</surname>
+              <given-names>NV</given-names>
+            </name>
+            <name>
+              <surname>Willman</surname>
+              <given-names>MW</given-names>
+            </name>
+            <name>
+              <surname>Fleming</surname>
+              <given-names>TP</given-names>
+            </name>
+            <name>
+              <surname>Mayfield</surname>
+              <given-names>JD</given-names>
+            </name>
+            <name>
+              <surname>Gillanders</surname>
+              <given-names>WE</given-names>
+            </name>
+          </person-group>
+          <article-title>Transcriptional repression of epithelial cell adhesion molecule contributes to p53 control of breast cancer invasion</article-title>
+          <source>Cancer Res</source>
+          <volume>69</volume>
+          <fpage>753</fpage>
+          <lpage>757</lpage>
+          <year>2009</year>
+          <pub-id pub-id-type="doi">10.1158/0008-5472.CAN-08-2708</pub-id>
+          <?supplied-pmid 19141643?>
+          <pub-id pub-id-type="pmid">19141643</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b7-ol-0-0-6516">
+        <label>7</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chae</surname>
+              <given-names>SW</given-names>
+            </name>
+            <name>
+              <surname>Sohn</surname>
+              <given-names>JH</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>Choi</surname>
+              <given-names>YJ</given-names>
+            </name>
+            <name>
+              <surname>Park</surname>
+              <given-names>YL</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Cho</surname>
+              <given-names>YH</given-names>
+            </name>
+            <name>
+              <surname>Pyo</surname>
+              <given-names>JS</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>JH</given-names>
+            </name>
+          </person-group>
+          <article-title>Overexpressions of Cyclin B1, cdc2, p16 and p53 in human breast cancer: The clinicopathologic correlations and prognostic implications</article-title>
+          <source>Yonsei Med J</source>
+          <volume>52</volume>
+          <fpage>445</fpage>
+          <lpage>453</lpage>
+          <year>2011</year>
+          <pub-id pub-id-type="doi">10.3349/ymj.2011.52.3.445</pub-id>
+          <?supplied-pmid 21488187?>
+          <pub-id pub-id-type="pmid">21488187</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b8-ol-0-0-6516">
+        <label>8</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Park</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Chang</surname>
+              <given-names>SK</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>JY</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>BM</given-names>
+            </name>
+            <name>
+              <surname>Shin</surname>
+              <given-names>HS</given-names>
+            </name>
+          </person-group>
+          <article-title>Risk factors for distant metastasis as a primary site of treatment failure in early-stage breast cancer</article-title>
+          <source>Chonnam Med J</source>
+          <volume>50</volume>
+          <fpage>96</fpage>
+          <lpage>101</lpage>
+          <year>2014</year>
+          <pub-id pub-id-type="doi">10.4068/cmj.2014.50.3.96</pub-id>
+          <?supplied-pmid 25568845?>
+          <pub-id pub-id-type="pmid">25568845</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b9-ol-0-0-6516">
+        <label>9</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Penault-Llorca</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>André</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Sagan</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Lacroix-Triki</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Denoux</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Verriele</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Jacquemier</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Baranzelli</surname>
+              <given-names>MC</given-names>
+            </name>
+            <name>
+              <surname>Bibeau</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Antoine</surname>
+              <given-names>M</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Ki67 expression and docetaxel efficacy in patients with estrogen receptor-positive breast cancer</article-title>
+          <source>J Clin Oncol</source>
+          <volume>27</volume>
+          <fpage>2809</fpage>
+          <lpage>2815</lpage>
+          <year>2009</year>
+          <pub-id pub-id-type="doi">10.1200/JCO.2008.18.2808</pub-id>
+          <?supplied-pmid 19380452?>
+          <pub-id pub-id-type="pmid">19380452</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b10-ol-0-0-6516">
+        <label>10</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Lialiaris</surname>
+              <given-names>TS</given-names>
+            </name>
+            <name>
+              <surname>Kouskoukis</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Georgiou</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Tripsianis</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Fiska</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Giatromanolaki</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Chrisafi</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Sivridis</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Vamvakopoulou</surname>
+              <given-names>DN</given-names>
+            </name>
+            <name>
+              <surname>Soutopoulou</surname>
+              <given-names>DO</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Expression of 6 common antigenic markers in invasive ductal breast carcinoma: Potential clinical implications</article-title>
+          <source>Appl Immunohistochem Mol Morphol</source>
+          <volume>19</volume>
+          <fpage>106</fpage>
+          <lpage>111</lpage>
+          <year>2011</year>
+          <pub-id pub-id-type="doi">10.1097/PAI.0b013e3181e181b1</pub-id>
+          <?supplied-pmid 20724920?>
+          <pub-id pub-id-type="pmid">20724920</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b11-ol-0-0-6516">
+        <label>11</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wasielewski</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Elstrodt</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Klijn</surname>
+              <given-names>JG</given-names>
+            </name>
+            <name>
+              <surname>Berns</surname>
+              <given-names>EM</given-names>
+            </name>
+            <name>
+              <surname>Schutte</surname>
+              <given-names>M</given-names>
+            </name>
+          </person-group>
+          <article-title>Thirteen new p53 gene mutants identified among 41 human breast cancer cell lines</article-title>
+          <source>Breast Cancer Res Treat</source>
+          <volume>99</volume>
+          <fpage>97</fpage>
+          <lpage>101</lpage>
+          <year>2006</year>
+          <pub-id pub-id-type="doi">10.1007/s10549-006-9186-z</pub-id>
+          <?supplied-pmid 16541312?>
+          <pub-id pub-id-type="pmid">16541312</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b12-ol-0-0-6516">
+        <label>12</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Juríková</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Danihel</surname>
+              <given-names>Ľ</given-names>
+            </name>
+            <name>
+              <surname>Polák</surname>
+              <given-names>Š</given-names>
+            </name>
+            <name>
+              <surname>Varga</surname>
+              <given-names>I</given-names>
+            </name>
+          </person-group>
+          <article-title>Ki67, PCNA, and MCM proteins: Markers of proliferation in the diagnosis of breast cancer</article-title>
+          <source>Acta Histochem</source>
+          <volume>118</volume>
+          <fpage>544</fpage>
+          <lpage>552</lpage>
+          <year>2016</year>
+          <pub-id pub-id-type="doi">10.1016/j.acthis.2016.05.002</pub-id>
+          <?supplied-pmid 27246286?>
+          <pub-id pub-id-type="pmid">27246286</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b13-ol-0-0-6516">
+        <label>13</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bouchbika</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Benchakroun</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Taleb</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Jouhadi</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Tawfiq</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Sahraoui</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Benider</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Association between overexpression of Her-2 and other clinicopathologic prognostic factors in breast cancer in Morocco</article-title>
+          <source>J Cancer Ther</source>
+          <volume>3</volume>
+          <fpage>787</fpage>
+          <lpage>792</lpage>
+          <year>2012</year>
+          <pub-id pub-id-type="doi">10.4236/jct.2012.325099</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b14-ol-0-0-6516">
+        <label>14</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Qu</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Liu</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Wang</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Xiong</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Zhang</surname>
+              <given-names>CL</given-names>
+            </name>
+            <name>
+              <surname>Gao</surname>
+              <given-names>DS</given-names>
+            </name>
+          </person-group>
+          <article-title>Glial cell line-derived neurotrophic factor promotes proliferation of neuroglioma cells by up-regulation of cyclins PCNA and Ki-67</article-title>
+          <source>Eur Rev Med Pharmacol Sci</source>
+          <volume>19</volume>
+          <fpage>2070</fpage>
+          <lpage>2075</lpage>
+          <year>2015</year>
+          <?supplied-pmid 26125271?>
+          <pub-id pub-id-type="pmid">26125271</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b15-ol-0-0-6516">
+        <label>15</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Masubuchi</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Tada</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Maruya</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Osamura</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Kamata</surname>
+              <given-names>SE</given-names>
+            </name>
+            <name>
+              <surname>Miura</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Fushimi</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Takahashi</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Kawakita</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Kishimoto</surname>
+              <given-names>S</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Clinicopathological significance of androgen receptor, HER2, Ki-67 and EGFR expressions in salivary duct carcinoma</article-title>
+          <source>Int J Clin Oncol</source>
+          <volume>20</volume>
+          <fpage>35</fpage>
+          <lpage>44</lpage>
+          <year>2015</year>
+          <pub-id pub-id-type="doi">10.1007/s10147-014-0674-6</pub-id>
+          <?supplied-pmid 24553861?>
+          <pub-id pub-id-type="pmid">24553861</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b16-ol-0-0-6516">
+        <label>16</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Alshenawy</surname>
+              <given-names>HA</given-names>
+            </name>
+          </person-group>
+          <article-title>Evaluation of p16, human papillomavirus capsid protein L1 and Ki-67 in cervical intraepithelial lesions: Potential utility in diagnosis and prognosis</article-title>
+          <source>Pathol Res Pract</source>
+          <volume>210</volume>
+          <fpage>916</fpage>
+          <lpage>921</lpage>
+          <year>2014</year>
+          <pub-id pub-id-type="doi">10.1016/j.prp.2014.07.007</pub-id>
+          <?supplied-pmid 25149503?>
+          <pub-id pub-id-type="pmid">25149503</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b17-ol-0-0-6516">
+        <label>17</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mansourian</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Haghjooy-Javanmard</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Eshraghi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Vaseghi</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Hayatshahi</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Thomas</surname>
+              <given-names>J</given-names>
+            </name>
+          </person-group>
+          <article-title>Statins use and risk of breast cancer recurrence and death: A systematic review and meta-analysis of observational studies</article-title>
+          <source>J Pharm Pharm Sci</source>
+          <volume>19</volume>
+          <fpage>72</fpage>
+          <lpage>81</lpage>
+          <year>2016</year>
+          <pub-id pub-id-type="doi">10.18433/J3202B</pub-id>
+          <?supplied-pmid 27096694?>
+          <pub-id pub-id-type="pmid">27096694</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b18-ol-0-0-6516">
+        <label>18</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Di Francesco</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Dovizio</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Trenti</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Marcantoni</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Moore</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Ogaora</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>McCarthy</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Tacconelli</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Bruno</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Alberti</surname>
+              <given-names>S</given-names>
+            </name>
+            <etal/>
+          </person-group>
+          <article-title>Dysregulated post-transcriptional control of COX-2 gene expression in gestational diabetic endothelial cells</article-title>
+          <source>Br J Pharmacol</source>
+          <volume>172</volume>
+          <fpage>4575</fpage>
+          <lpage>4587</lpage>
+          <year>2015</year>
+          <pub-id pub-id-type="doi">10.1111/bph.13241</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="b19-ol-0-0-6516">
+        <label>19</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kim</surname>
+              <given-names>HN</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>EH</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>MH</given-names>
+            </name>
+            <name>
+              <surname>Kundu</surname>
+              <given-names>JK</given-names>
+            </name>
+            <name>
+              <surname>Na</surname>
+              <given-names>HK</given-names>
+            </name>
+            <name>
+              <surname>Cha</surname>
+              <given-names>YN</given-names>
+            </name>
+            <name>
+              <surname>Surh</surname>
+              <given-names>YJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Sulforaphane inhibits phorbol ester-stimulated IKK-NF-κB signaling and COX-2 expression in human mammary epithelial cells by targeting NF-κB activating kinase and ERK</article-title>
+          <source>Cancer Lett</source>
+          <volume>351</volume>
+          <fpage>41</fpage>
+          <lpage>49</lpage>
+          <year>2014</year>
+          <pub-id pub-id-type="doi">10.1016/j.canlet.2014.03.037</pub-id>
+          <?supplied-pmid 24747121?>
+          <pub-id pub-id-type="pmid">24747121</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <floats-group>
+    <fig id="f1-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 1.</label>
+      <caption>
+        <p>PCNA expression (magnification, ×400). (A) Positive expression of PCNA in cancer tissues (magnification, ×400). (B) Negative expression of PCNA in cancer-adjacent tissues (magnification, ×400). PCNA, proliferating cell nuclear antigen.</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g00"/>
+    </fig>
+    <fig id="f2-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 2.</label>
+      <caption>
+        <p>Ki-67 expression (magnification, ×400). (A) Positive expression of Ki-67 in cancer tissues (magnification, ×400). (B) Negative expression of Ki-67 in cancer-adjacent tissues (magnification, ×400).</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g01"/>
+    </fig>
+    <fig id="f3-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 3.</label>
+      <caption>
+        <p>COX-2 expression (magnification, ×400). (A) Positive expression of COX-2 in cancer tissues (magnification, ×400). (B) Negative expression of COX-2 in cancer-adjacent tissues (magnification, ×400). COX-2, cyclooxygenase-2.</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g02"/>
+    </fig>
+    <fig id="f4-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 4.</label>
+      <caption>
+        <p>Various calcified morphologies. Black arrows indicated: (A) Mass shape calcification. (B) Cluster calcification. (C) Vascular calcification. (D) Sand-like calcification. (E) Thick rod-shaped calcification. (F) Line like branching calcification.</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g03"/>
+    </fig>
+    <fig id="f5-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 5.</label>
+      <caption>
+        <p>Correlation between the expression of PCNA and COX-2. PCNA, proliferating cell nuclear antigen; COX-2, cyclooxygenase-2.</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g04"/>
+    </fig>
+    <fig id="f6-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Figure 6.</label>
+      <caption>
+        <p>Correlation between the expression of Ki-67 and COX-2. COX-2, cyclooxygenase-2.</p>
+      </caption>
+      <graphic xlink:href="ol-14-03-2912-g05"/>
+    </fig>
+    <table-wrap id="tI-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Table I.</label>
+      <caption>
+        <p>Expression of PCNA in cancer tissues and cancer adjacent normal tissues (case).</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="left" valign="bottom" rowspan="1" colspan="1">Groups</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">n</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">+</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">++</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">+++</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">Positive rate (%)</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">−</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Patient</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">90</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">9</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">14</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">15</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">42.2</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">52</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Control</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">40</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">1</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  2.5</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">39</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">P-value</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn id="tfn1-ol-0-0-6516">
+          <p>PCNA, proliferating cell nuclear antigen.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap id="tII-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Table II.</label>
+      <caption>
+        <p>Expression of Ki-67 in cancer tissues and cancer adjacent normal tissues (case).</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="left" valign="bottom" rowspan="1" colspan="1">Groups</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">n</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">+</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">++</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">+++</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">Positive rate (%)</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">−</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Patient</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">90</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">10</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">15</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">16</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">45.6</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">49</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Control</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">40</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  1</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  2.5</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">39</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">P-value</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <table-wrap id="tIII-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Table III.</label>
+      <caption>
+        <p>Expression of COX-2 in cancer tissues and cancer adjacent normal tissues (case).</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Groups</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">n</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">+</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">++</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">+++</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">Positive rate (%)</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">−</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Patient</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">90</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">12</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">16</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">18</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">51.1</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">44</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Control</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">40</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  1</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  0</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  2.5</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">39</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">P-value</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn id="tfn2-ol-0-0-6516">
+          <p>COX-2, cyclooxygenase-2.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap id="tIV-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Table IV.</label>
+      <caption>
+        <p>Relationships between PCNA, Ki-67 and COX-2 and clinicopathological features of breast cancer patients.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Clinicopathological feature</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">n</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">Positive case of PCNA</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">P-value</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">Positive case of Ki-67</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">P-value</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">Positive case of COX-2</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">P-value</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Age</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  ≤60 years</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">46</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">20</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">21</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">24</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  &gt;60 years</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">44</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">18</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">20</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">22</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Tumor size (cm)</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  &lt;2</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">33</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">22</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  ≥2</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">57</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">22</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">24</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Clinical staging</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  I+II</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">60</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">13</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">15</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">17</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  III</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">30</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">25</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">26</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">29</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Lymphatic metastasis</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">40</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">28</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">27</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">30</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">50</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">10</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">14</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">16</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn id="tfn3-ol-0-0-6516">
+          <p>PCNA, proliferating cell nuclear antigen; COX-2, cyclooxygenase-2.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+    <table-wrap id="tV-ol-0-0-6516" orientation="portrait" position="float">
+      <label>Table V.</label>
+      <caption>
+        <p>Relationships between X-ray photography features and PCNA, Ki-67 and COX-2 expressions in breast invasive ductal carcinoma.</p>
+      </caption>
+      <table frame="hsides" rules="groups">
+        <thead>
+          <tr>
+            <th align="left" valign="bottom" rowspan="1" colspan="1">Clinicopathological feature</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">n</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">Positive case of PCNA</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">P-value</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">Positive case of Ki-67</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">P-value</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">Positive case of COX-2</th>
+            <th align="center" valign="bottom" rowspan="1" colspan="1">P-value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Lump</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">70</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">22</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">23</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">20</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">23</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Calcification</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">80</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">35</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">36</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">42</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">10</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  3</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">  5</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">  4</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Architectural distortion</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">63</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">28</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">32</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">34</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">27</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">11</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">  9</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">12</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Localized density-increased shadow</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&gt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">41</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">18</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">22</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">23</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">49</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">20</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">19</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">23</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">Skin and nipple depression</td>
+            <td rowspan="1" colspan="1"/>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">&lt;0.05</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  Yes</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">68</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">31</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">36</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">37</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+          <tr>
+            <td align="left" valign="top" rowspan="1" colspan="1">  No</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">21</td>
+            <td align="center" valign="top" rowspan="1" colspan="1">  7</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">  5</td>
+            <td rowspan="1" colspan="1"/>
+            <td align="center" valign="top" rowspan="1" colspan="1">  9</td>
+            <td rowspan="1" colspan="1"/>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn id="tfn4-ol-0-0-6516">
+          <p>PCNA, proliferating cell nuclear antigen; COX-2, cyclooxygenase-2.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+  </floats-group>
+</article>
+
+</metadata></record></GetRecord></OAI-PMH>

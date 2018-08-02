@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH
+	xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2018-08-02T05:30:40Z</responseDate><request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:4879183" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request><GetRecord><record><header><identifier>oai:pubmedcentral.nih.gov:4879183</identifier><datestamp>2016-06-02</datestamp><setSpec>npgopen</setSpec><setSpec>pmc-open</setSpec></header><metadata><article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.0/ https://jats.nlm.nih.gov/archiving/1.0/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">Mol Psychiatry</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Mol. Psychiatry</journal-id>
+      <journal-title-group>
+        <journal-title>Molecular Psychiatry</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1359-4184</issn>
+      <issn pub-type="epub">1476-5578</issn>
+      <publisher>
+        <publisher-name>Nature Publishing Group</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC4879183</article-id>
+      <article-id pub-id-type="pmcid">PMC4879183</article-id>
+      <article-id pub-id-type="pmc-uid">4879183</article-id>
+      <article-id pub-id-type="pmid">26122586</article-id>
+      <article-id pub-id-type="pii">mp201569</article-id>
+      <article-id pub-id-type="doi">10.1038/mp.2015.69</article-id>
+      <article-id pub-id-type="pmid">26122586</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Original Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Subcortical brain alterations in major depressive disorder: findings from the ENIGMA Major Depressive Disorder working group</article-title>
+        <alt-title alt-title-type="running">Subcortical volume alterations in depression</alt-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schmaal</surname>
+            <given-names>L</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+          <xref ref-type="corresp" rid="caf1">*</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Veltman</surname>
+            <given-names>D J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>van Erp</surname>
+            <given-names>T G M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Sämann</surname>
+            <given-names>P G</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Frodl</surname>
+            <given-names>T</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">4</xref>
+          <xref ref-type="aff" rid="aff5">5</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Jahanshad</surname>
+            <given-names>N</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff6">6</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Loehrer</surname>
+            <given-names>E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">7</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Tiemeier</surname>
+            <given-names>H</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">7</xref>
+          <xref ref-type="aff" rid="aff8">8</xref>
+          <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-4395-1397</contrib-id>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hofman</surname>
+            <given-names>A</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">7</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Niessen</surname>
+            <given-names>W J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff9">9</xref>
+          <xref ref-type="aff" rid="aff10">10</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Vernooij</surname>
+            <given-names>M W</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">7</xref>
+          <xref ref-type="aff" rid="aff9">9</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Ikram</surname>
+            <given-names>M A</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff7">7</xref>
+          <xref ref-type="aff" rid="aff9">9</xref>
+          <xref ref-type="aff" rid="aff11">11</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wittfeld</surname>
+            <given-names>K</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff12">12</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Grabe</surname>
+            <given-names>H J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff12">12</xref>
+          <xref ref-type="aff" rid="aff13">13</xref>
+          <xref ref-type="aff" rid="aff14">14</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Block</surname>
+            <given-names>A</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff13">13</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hegenscheid</surname>
+            <given-names>K</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff15">15</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Völzke</surname>
+            <given-names>H</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff16">16</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hoehn</surname>
+            <given-names>D</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Czisch</surname>
+            <given-names>M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Lagopoulos</surname>
+            <given-names>J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff17">17</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hatton</surname>
+            <given-names>S N</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff17">17</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hickie</surname>
+            <given-names>I B</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff17">17</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Goya-Maldonado</surname>
+            <given-names>R</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff18">18</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Krämer</surname>
+            <given-names>B</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff18">18</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Gruber</surname>
+            <given-names>O</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff18">18</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Couvy-Duchesne</surname>
+            <given-names>B</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff19">19</xref>
+          <xref ref-type="aff" rid="aff20">20</xref>
+          <xref ref-type="aff" rid="aff21">21</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Rentería</surname>
+            <given-names>M E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff22">22</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Strike</surname>
+            <given-names>L T</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff19">19</xref>
+          <xref ref-type="aff" rid="aff20">20</xref>
+          <xref ref-type="aff" rid="aff21">21</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mills</surname>
+            <given-names>N T</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff22">22</xref>
+          <xref ref-type="aff" rid="aff23">23</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>de Zubicaray</surname>
+            <given-names>G I</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff20">20</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>McMahon</surname>
+            <given-names>K L</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff21">21</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Medland</surname>
+            <given-names>S E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff24">24</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Martin</surname>
+            <given-names>N G</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff22">22</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Gillespie</surname>
+            <given-names>N A</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff25">25</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wright</surname>
+            <given-names>M J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff19">19</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hall</surname>
+            <given-names>G B</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff26">26</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>MacQueen</surname>
+            <given-names>G M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff27">27</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Frey</surname>
+            <given-names>E M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff4">4</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Carballedo</surname>
+            <given-names>A</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff28">28</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>van Velzen</surname>
+            <given-names>L S</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>van Tol</surname>
+            <given-names>M J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff29">29</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>van der Wee</surname>
+            <given-names>N J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff30">30</xref>
+          <xref ref-type="aff" rid="aff31">31</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Veer</surname>
+            <given-names>I M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff32">32</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Walter</surname>
+            <given-names>H</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff32">32</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schnell</surname>
+            <given-names>K</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff33">33</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schramm</surname>
+            <given-names>E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff34">34</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Normann</surname>
+            <given-names>C</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff34">34</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Schoepf</surname>
+            <given-names>D</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff35">35</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Konrad</surname>
+            <given-names>C</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff36">36</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Zurowski</surname>
+            <given-names>B</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff37">37</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Nickson</surname>
+            <given-names>T</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff38">38</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>McIntosh</surname>
+            <given-names>A M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff38">38</xref>
+          <xref ref-type="aff" rid="aff39">39</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Papmeyer</surname>
+            <given-names>M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff38">38</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Whalley</surname>
+            <given-names>H C</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff38">38</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Sussmann</surname>
+            <given-names>J E</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff38">38</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Godlewska</surname>
+            <given-names>B R</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff40">40</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Cowen</surname>
+            <given-names>P J</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff40">40</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Fischer</surname>
+            <given-names>F H</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff41">41</xref>
+          <xref ref-type="aff" rid="aff42">42</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Rose</surname>
+            <given-names>M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff41">41</xref>
+          <xref ref-type="aff" rid="aff43">43</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Penninx</surname>
+            <given-names>B W J H</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Thompson</surname>
+            <given-names>P M</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff6">6</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Hibar</surname>
+            <given-names>D P</given-names>
+          </name>
+          <xref ref-type="aff" rid="aff6">6</xref>
+        </contrib>
+        <on-behalf-of>for the ENIGMA-Major Depressive Disorder Working Group<xref ref-type="author-notes" rid="note1"><sup>44</sup></xref></on-behalf-of>
+        <aff id="aff1"><label>1</label><institution>Department of Psychiatry and Neuroscience Campus Amsterdam, VU University Medical Center</institution>, Amsterdam, <country>The Netherlands</country></aff>
+        <aff id="aff2"><label>2</label><institution>Department of Psychiatry and Human Behavior, University of California</institution>, Irvine, CA, <country>USA</country></aff>
+        <aff id="aff3"><label>3</label><institution>Max Planck Institute of Psychiatry</institution>, Munich, <country>Germany</country></aff>
+        <aff id="aff4"><label>4</label><institution>Department of Psychiatry, University of Regensburg</institution>, Regensburg, <country>Germany</country></aff>
+        <aff id="aff5"><label>5</label><institution>Department of Psychiatry, University of Dublin, Trinity College</institution>, Dublin, <country>Ireland</country></aff>
+        <aff id="aff6"><label>6</label><institution>Imaging Genetics Center, Department of Neurology, Keck School of Medicine, University of Southern California</institution>, Marina del Rey, CA, <country>USA</country></aff>
+        <aff id="aff7"><label>7</label><institution>Department of Epidemiology, Erasmus MC University Medical Center</institution>, Rotterdam, <country>The Netherlands</country></aff>
+        <aff id="aff8"><label>8</label><institution>Department of Psychiatry, Erasmus MC University Medical Center</institution>, Rotterdam, <country>The Netherlands</country></aff>
+        <aff id="aff9"><label>9</label><institution>Departments of Radiology and Medical Informatics, Erasmus MC University Medical Center</institution>, Rotterdam, <country>The Netherlands</country></aff>
+        <aff id="aff10"><label>10</label><institution>Imaging Science and Technology, Faculty of Applied Sciences, Delft University of Technology</institution>, Delft, <country>The Netherlands</country></aff>
+        <aff id="aff11"><label>11</label><institution>Department of Neurology, Erasmus MC University Medical Center</institution>, Rotterdam, <country>The Netherlands</country></aff>
+        <aff id="aff12"><label>12</label><institution>German Center for Neurodegenerative Diseases (DZNE)</institution>, Rostock/Greifswald, <country>Germany</country></aff>
+        <aff id="aff13"><label>13</label><institution>Department of Psychiatry and Psychotherapy, University Medicine Greifswald</institution>, Greifswald, <country>Germany</country></aff>
+        <aff id="aff14"><label>14</label><institution>Helios Hospital Stralsund</institution>, Stralsund, <country>Germany</country></aff>
+        <aff id="aff15"><label>15</label><institution>Institute of Diagnostic Radiology and Neuroradiology, University Medicine Greifswald</institution>, Greifswald, <country>Germany</country></aff>
+        <aff id="aff16"><label>16</label><institution>Institute for Community Medicine, University Medicine Greifswald</institution>, Greifswald, <country>Germany</country></aff>
+        <aff id="aff17"><label>17</label><institution>Clinical Research Unit, Brain and Mind Research Institute, University of Sydney</institution>, Camperdown, <country>Australia</country></aff>
+        <aff id="aff18"><label>18</label><institution>Center for Translational Research in Systems Neuroscience and Psychiatry, Department of Psychiatry and Psychotherapy, University Medical Center</institution>, Goettingen, <country>Germany</country></aff>
+        <aff id="aff19"><label>19</label><institution>NeuroImaging Genetics, QIMR Berghofer Medical Research Institute</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff20"><label>20</label><institution>School of Psychology, University of Queensland</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff21"><label>21</label><institution>Center for Advanced Imaging, University of Queensland</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff22"><label>22</label><institution>Genetic Epidemiology, QIMR Berghofer Medical Research Institute</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff23"><label>23</label><institution>Queensland Brain Institute, University of Queensland</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff24"><label>24</label><institution>Quantitative Genetics, QIMR Berghofer Medical Research Institute</institution>, Brisbane, QLD, <country>Australia</country></aff>
+        <aff id="aff25"><label>25</label><institution>Virginia Institute for Psychiatric and Behavioral Genetics, Virginia Commonwealth University</institution>, Richmond, VA, <country>USA</country></aff>
+        <aff id="aff26"><label>26</label><institution>Department of Psychology, Neuroscience and Behaviour, McMaster University</institution>, Hamilton, ON, <country>Canada</country></aff>
+        <aff id="aff27"><label>27</label><institution>Department of Psychiatry, Mathison Centre for Mental Health Research and Education, Hotchkiss Brain Institute, Cumming School of Medicine, University of Calgary</institution>, Calgary, AB, <country>Canada</country></aff>
+        <aff id="aff28"><label>28</label><institution>Department of Psychiatry and Institute of Neuroscience, University of Dublin, Trinity College Dublin</institution>, Dublin, <country>Ireland</country></aff>
+        <aff id="aff29"><label>29</label><institution>University of Groningen, University Medical Center Groningen, NeuroImaging Center</institution>, Groningen, <country>The Netherlands</country></aff>
+        <aff id="aff30"><label>30</label><institution>Department of Psychiatry, Leiden University Medical Center, Leiden University</institution>, Leiden, <country>The Netherlands</country></aff>
+        <aff id="aff31"><label>31</label><institution>Leiden Institute for Brain and Cognition</institution>, Leiden, <country>The Netherlands</country></aff>
+        <aff id="aff32"><label>32</label><institution>Department of Psychiatry and Psychotherapy, Division of Mind and Brain Research, Charité Universitätsmedizin Berlin</institution>, Berlin, <country>Germany</country></aff>
+        <aff id="aff33"><label>33</label><institution>Department of General Psychiatry, University Hospital Heidelberg</institution>, Heidelberg, <country>Germany</country></aff>
+        <aff id="aff34"><label>34</label><institution>Department of Psychiatry and Psychotherapy, University Medical Center Freiburg</institution>, Freiburg im Breisgau, <country>Germany</country></aff>
+        <aff id="aff35"><label>35</label><institution>Department of Psychiatry, University of Bonn</institution>, Bonn, <country>Germany</country></aff>
+        <aff id="aff36"><label>36</label><institution>Department of Psychiatry and Psychotherapy, Philipps-University Marburg,</institution> Marburg, <country>Germany</country></aff>
+        <aff id="aff37"><label>37</label><institution>Center for Integrative Psychiatry, University of Lübeck</institution>, Lübeck, <country>Germany</country></aff>
+        <aff id="aff38"><label>38</label><institution>Division of Psychiatry, University of Edinburgh</institution>, Edinburgh, <country>UK</country></aff>
+        <aff id="aff39"><label>39</label><institution>Centre for Cognitive Ageing and Cognitive Epidemiology, University of Edinburgh</institution>, Edinburgh, <country>UK</country></aff>
+        <aff id="aff40"><label>40</label><institution>University Department of Psychiatry, Warneford Hospital</institution>, Oxford, <country>UK</country></aff>
+        <aff id="aff41"><label>41</label><institution>Department of Psychosomatic Medicine, Center for Internal Medicine and Dermatology, Charité Universitätsmedizin</institution>, Berlin, <country>Germany</country></aff>
+        <aff id="aff42"><label>42</label><institution>Institute for Social Medicine, Epidemology and Health Economics, Charité Universitätsmedizin</institution>, Berlin, <country>Germany</country></aff>
+        <aff id="aff43"><label>43</label><institution>Department of Quantitative Health Sciences, University of Massachusetts Medical School</institution>, Worcester, MA, <country>USA</country></aff>
+      </contrib-group>
+      <author-notes>
+        <corresp id="caf1"><label>*</label><institution>Department of Psychiatry and Neuroscience Campus Amsterdam, VU University Medical Center</institution>, P.O. Box 74077, Amsterdam 1070 BB, <country>The Netherlands</country>. E-mail: <email>l.schmaal@ggzingeest.nl</email></corresp>
+        <fn fn-type="present-address" id="note1">
+          <label>44</label>
+          <p>The members of the collaboration can be found in <ext-link ext-link-type="uri" xlink:href="http://enigma.ini.usc.edu/ongoing/enigma-mdd-working-group/">http://enigma.ini.usc.edu/ongoing/enigma-mdd-working-group/</ext-link>.</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="ppub">
+        <month>06</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>30</day>
+        <month>06</month>
+        <year>2015</year>
+      </pub-date>
+      <volume>21</volume>
+      <issue>6</issue>
+      <fpage>806</fpage>
+      <lpage>812</lpage>
+      <history>
+        <date date-type="received">
+          <day>27</day>
+          <month>10</month>
+          <year>2014</year>
+        </date>
+        <date date-type="rev-recd">
+          <day>13</day>
+          <month>03</month>
+          <year>2015</year>
+        </date>
+        <date date-type="accepted">
+          <day>01</day>
+          <month>04</month>
+          <year>2015</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Copyright © 2016 Macmillan Publishers Limited</copyright-statement>
+        <copyright-year>2016</copyright-year>
+        <copyright-holder>Macmillan Publishers Limited</copyright-holder>
+        <license license-type="open-access" xlink:href="http://creativecommons.org/licenses/by/4.0/">
+          <!--author-paid-->
+          <license-p>This work is licensed under a Creative Commons Attribution 4.0 International License. The images or other third party material in this article are included in the article's Creative Commons license, unless indicated otherwise in the credit line; if the material is not included under the Creative Commons license, users will need to obtain permission from the license holder to reproduce the material. To view a copy of this license, visit <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link></license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>The pattern of structural brain alterations associated with major depressive disorder (MDD) remains unresolved. This is in part due to small sample sizes of neuroimaging studies resulting in limited statistical power, disease heterogeneity and the complex interactions between clinical characteristics and brain morphology. To address this, we meta-analyzed three-dimensional brain magnetic resonance imaging data from 1728 MDD patients and 7199 controls from 15 research samples worldwide, to identify subcortical brain volumes that robustly discriminate MDD patients from healthy controls. Relative to controls, patients had significantly lower hippocampal volumes (Cohen's <italic>d</italic>=−0.14, % difference=−1.24). This effect was driven by patients with recurrent MDD (Cohen's <italic>d</italic>=−0.17, % difference=−1.44), and we detected no differences between first episode patients and controls. Age of onset ⩽21 was associated with a smaller hippocampus (Cohen's <italic>d</italic>=−0.20, % difference=−1.85) and a trend toward smaller amygdala (Cohen's <italic>d</italic>=−0.11, % difference=−1.23) and larger lateral ventricles (Cohen's <italic>d</italic>=0.12, % difference=5.11). Symptom severity at study inclusion was not associated with any regional brain volumes. Sample characteristics such as mean age, proportion of antidepressant users and proportion of remitted patients, and methodological characteristics did not significantly moderate alterations in brain volumes in MDD. Samples with a higher proportion of antipsychotic medication users showed larger caudate volumes in MDD patients compared with controls. This currently largest worldwide effort to identify subcortical brain alterations showed robust smaller hippocampal volumes in MDD patients, moderated by age of onset and first episode versus recurrent episode status.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <sec>
+      <title>Introduction</title>
+      <p>With a lifetime prevalence of &gt;16%,<sup><xref ref-type="bibr" rid="bib1">1</xref></sup> major depressive disorder (MDD) is a very common psychiatric disease and is among the leading causes of disability worldwide.<sup><xref ref-type="bibr" rid="bib2">2</xref></sup> Despite intensive research aimed at identifying neurobiological substrates of depression in the last decades, our understanding of the pathophysiological mechanisms underlying depression is still rudimentary. Widely available structural magnetic resonance imaging has led to hypotheses of (para-)limbic circuits being involved in MDD, but still the exact pattern of structural brain alterations associated with MDD remains unresolved, perhaps due to small sample sizes, disease heterogeneity and the complex interactions between clinical characteristics and brain morphology. Therefore, in the current study we meta-analyzed structural magnetic resonance imaging data of a very large sample (<italic>n</italic>=8927) to identify subcortical brain volumes that robustly discriminate MDD patients from healthy controls.</p>
+      <p>Many studies have found structural alterations in various subcortical brain regions in MDD. To date, volumetric differences have not always been consistent and are poorly replicated for some regions; moreover, sample sizes are often small, limiting the power to detect subtle brain differences. Meta–analyses represent useful tools to identify the most robust findings across studies, and indicate that morphological changes in MDD are regional rather than global.<sup><xref ref-type="bibr" rid="bib3">3</xref>, <xref ref-type="bibr" rid="bib4">4</xref>, <xref ref-type="bibr" rid="bib5">5</xref></sup> Hippocampal volume reduction (one of the most extensively studied regions) in MDD has been one of the most widely replicated findings.<sup><xref ref-type="bibr" rid="bib3">3</xref></sup> However, the association between MDD and hippocampal volume reduction is likely complex, and hippocampal volumes may be smaller, on average, in patients with recurrent MDD compared to patients early in the course of adult-onset MDD.<sup><xref ref-type="bibr" rid="bib6">6</xref></sup> Other factors may modulate the effect size of morphological changes in the hippocampus in MDD, including disease severity, childhood maltreatment, age of onset, antidepressant medication and illness duration.<sup><xref ref-type="bibr" rid="bib6">6</xref>, <xref ref-type="bibr" rid="bib7">7</xref></sup></p>
+      <p>Amygdala volume abnormalities in MDD are inconsistently reported and may depend on the illness phase, medication use and family history of MDD. A current first episode and antidepressant use has been associated with enlarged amygdala volume (for example, van Eijndhoven <italic>et al.</italic>,<sup><xref ref-type="bibr" rid="bib8">8</xref></sup> Frodl <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib9">9</xref></sup> and Hamilton <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib10">10</xref></sup>), but a greater number of episodes and a family history of MDD have been associated with smaller amygdala volume (for example, Hronenberg <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib11">11</xref></sup> and Saleh <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib12">12</xref></sup>). Other brain regions have been less extensively investigated, including prefrontal areas, thalamus and striatum.</p>
+      <p>Sources of inconsistency in prior findings are multifactorial. Demographic characteristics of the samples such as age and sex may partly explain differences in effect sizes across studies. Clinical characteristics of MDD samples are another major source of heterogeneity. Moreover, differences in data acquisition protocols and processing, differences in statistical analyses performed and potential publication bias further complicate the interpretation of findings from retrospective meta-analyses. For instance, different automated or manual segmentation algorithms may show subtle differences in their estimates of subcortical volumes.<sup><xref ref-type="bibr" rid="bib13">13</xref></sup></p>
+      <p>To address the limited statistical power of prior studies and overcome some of the issues of retrospective meta-analyses based on aggregated results from single studies, we initiated the Major Depressive Disorder Working Group within the Enhancing Neuro Imaging Genetics through Meta-Analysis (ENIGMA) consortium. This is an international collaboration currently evaluating 15 research samples from six different countries worldwide, including neuroimaging data from 1728 MDD patients and 7199 healthy individuals. The primary aim of our ENIGMA-MDD Working Group is to identify imaging markers that robustly discriminate MDD patients from healthy controls using an individual participant data (IPD)-based meta-analysis. This IPD-based meta-analytic approach applied to data from our consortium provided us with the opportunity to plan <italic>a priori</italic>, standardize and harmonize data processing and statistical models across all samples, and to assess the influence of participant-level covariates, not all of which are reported in the literature, thereby addressing some of the limitations related to retrospective meta-analyses. Imaging markers identified through our consortium could help to prioritize brain measures for future genetic analyses, and may enhance our understanding of the etiology of MDD.</p>
+      <p>Here, we investigated subcortical gray matter, lateral ventricle and total intracranial volume (ICV) alterations in MDD patients compared to healthy individuals by performing the largest meta-analysis to date. As additional exploratory analyses, we examined potential modulating effects of demographic, clinical and methodological characteristics on morphological differences in MDD patients.</p>
+    </sec>
+    <sec>
+      <title>Subjects and methods</title>
+      <sec>
+        <title>Samples</title>
+        <p>The ENIGMA-MDD Working Group includes 15 international samples with neuroimaging and clinical data from MDD patients and healthy controls (participating sites are shown in <xref ref-type="supplementary-material" rid="sup1">Supplementary Figure S1</xref>). None of the research groups that we approached refused to participate in the ENIGMA-MDD consortium. Moreover, we are continuously encouraging new research groups to join in on our ongoing consortium work to increase our sample size and thereby increase statistical power and generalizability of our results. Detailed demographics for each sample are found in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S1</xref> and clinical characteristics in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S2</xref>. Exclusion criteria for study enrollment in each sample are given in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S3</xref>. In total, we analyzed data from 8927 people including 1728 MDD patients and 7199 healthy controls. All participating sites obtained approval from local institutional review boards and ethics committees. All study participants provided written informed consent at their local institution.</p>
+      </sec>
+      <sec>
+        <title>Image processing and analysis</title>
+        <p>Structural T1-weighted magnetic resonance imaging brain scans were acquired at each site and analyzed locally using the fully automated and validated segmentation software FreeSurfer.<sup><xref ref-type="bibr" rid="bib14">14</xref></sup> Image acquisition parameters and software descriptions for each sample are given in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S4</xref>. The segmentations of seven subcortical gray matter regions (nucleus accumbens, amygdala, caudate, hippocampus, pallidum, putamen and thalamus), lateral ventricles and total ICV were visually inspected for accuracy following standardized protocols designed to facilitate harmonized image analysis across multiple sites (<ext-link ext-link-type="uri" xlink:href="http://enigma.ini.usc.edu/protocols/imaging-protocols/">http://enigma.ini.usc.edu/protocols/imaging-protocols/</ext-link>). Further details on image exclusion criteria and quality control can be found in <xref ref-type="supplementary-material" rid="sup1">Supplementary Information SI1</xref>.</p>
+      </sec>
+      <sec>
+        <title>Statistical framework of meta-analysis</title>
+        <p>We examined patient versus control group differences within each sample using multiple linear regression models, where the mean ((left+right)/ 2) region of interest volume was the outcome measure and a binary indicator of diagnosis (0=controls, 1=patients) was the predictor of interest. All models were controlled for age, sex and ICV. Additional covariates were included whenever necessary to control for scanner differences. Effect size estimates were calculated using Cohen's <italic>d</italic>-metric computed from the <italic>t</italic>-statistic of the diagnosis indicator variable from the regression models. Throughout the manuscript we report uncorrected <italic>P</italic>-values with a significance threshold determined by Bonferroni correction for testing nine regions of interest (<italic>P</italic>=0.05/9=5.6 × 10<sup>−3</sup>).</p>
+        <p>To explore the influence of sex on subcortical brain volume differences between patients and controls, we performed diagnosis-by-sex interaction effects within each sample. To further investigate the sources of regional brain changes in MDD, we performed separate stratified meta-analyses comparing age of onset (early onset ⩽21 years, late onset &gt;21 years<sup><xref ref-type="bibr" rid="bib15">15</xref></sup>) and stage of illness (first and recurrent episode patients). Further, we investigated whether symptom severity at the time of scanning was associated with brain changes using the 17-item Hamilton Depression Rating Scale (HDRS-17<sup><xref ref-type="bibr" rid="bib16">16</xref></sup>) and the Beck Depression Inventory (BDI-II<sup><xref ref-type="bibr" rid="bib17">17</xref></sup>).</p>
+        <p>All regression models and effect size estimates were fit at each site separately and a final Cohen's <italic>d</italic>-effect size estimate was obtained using an inverse variance-weighted random-effect meta-analysis model in R (metafor package, version 1.9-1<sup><xref ref-type="bibr" rid="bib18">18</xref></sup>). The meta-analysis of symptom severity scores was an exception: severity scores were treated as continuous variables, so effect sizes were in terms of Pearson's <italic>r,</italic> a partial-correlation after removing nuisance variables (age, sex, ICV and scan center). The final meta-analyzed Pearson's <italic>r</italic> was estimated following the same inverse variance-weighted random-effect meta-analysis model used for all other meta-analyses. See <xref ref-type="supplementary-material" rid="sup1">Supplementary Information SI1</xref> for full meta-analysis details.</p>
+      </sec>
+      <sec>
+        <title>Moderator analyses with meta-regression</title>
+        <p>We tested whether mean age of each sample (<xref ref-type="supplementary-material" rid="sup1">Supplementary Table S1</xref>), magnetic resonance field strength, FreeSurfer version used for image processing (<xref ref-type="supplementary-material" rid="sup1">Supplementary Table S4</xref>), percentage of patients acutely depressed, percentage of patients with a co-occurring anxiety disorder, percentage of patients taking antidepressants and the percentage of patients taking antipsychotics (<xref ref-type="supplementary-material" rid="sup1">Supplementary Table S2</xref>) explained a significant proportion of the variance in effect sizes across sites in the meta-analysis. Each moderator variable was separately included as a fixed effect predictor in a meta-regression model.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Results</title>
+      <sec>
+        <title>Effect sizes for group differences in subcortical volumes</title>
+        <sec>
+          <title>Comparison of brain volumes in MDD patients and healthy controls</title>
+          <p>In our primary analysis, we assessed case-control differences between all MDD patients (<italic>n</italic>=1728) compared with all healthy controls (<italic>n</italic>=7199) across nine brain structures (<xref ref-type="fig" rid="fig1">Figure 1</xref>). Only mean hippocampal volume was significantly lower in MDD patients compared to healthy controls (Cohen's <italic>d</italic> (95% confidence interval): <italic>d</italic>=−0.14 (−0.22, −0.06); <italic>P</italic>-value=4.60 × 10<sup>−4</sup>, % difference=−1.25). Case-control differences for all structures are listed in <xref rid="tbl1" ref-type="table">Table 1</xref>. No significant diagnosis-by-sex interaction effects on any of the region of interest volumes were observed (<xref ref-type="supplementary-material" rid="sup1">Supplementary Table S16</xref>).</p>
+        </sec>
+        <sec>
+          <title>Influence of recurrence status on brain volume</title>
+          <p>We examined how the current stage of a depressed patient may relate to brain volumes by splitting the sample into first episode (<italic>n</italic>=583) and recurrent episode patients (<italic>n</italic>=1119) and compared to healthy controls (<xref ref-type="fig" rid="fig2">Figure 2a</xref>). We did not detect any significant differences between first episode patients and healthy controls (all <italic>P</italic>-values &gt;0.3). Recurrent episode patients showed lower mean hippocampal volume than controls (<italic>d</italic>=−0.17 (−0.25, −0.10); <italic>P</italic>-value=1.12 × 10<sup>−5</sup>, % difference=−1.44). Full meta-analyzed recurrence status differences are listed in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S5</xref> and <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S6</xref>. Relative to the full MDD sample, recurrent patients showed larger effect sizes compared to controls. However, no significant differences were detected between recurrent and first episode patients (<xref ref-type="supplementary-material" rid="sup1">Supplementary Table S7</xref>).</p>
+        </sec>
+        <sec>
+          <title>Influence of age of onset of depression on brain volume</title>
+          <p>We examined how the age of onset modulates volumetric brain changes (<xref ref-type="fig" rid="fig2">Figure 2b</xref>). Patients with an early age of onset (⩽21 years; <italic>n</italic>=541) showed significantly lower mean hippocampal volumes than controls (<italic>d</italic>=−0.20 (−0.31, −0.10); <italic>P</italic>-value=2.31 × 10<sup>−4</sup>, % difference=−1.85). In addition, we found lower amygdala volume (<italic>d</italic>=−0.12 (−0.23, −0.01); <italic>P</italic>-value=0.033, % difference=−1.23) and higher mean lateral ventricle volume (<italic>d</italic>=0.14 (0.04, 0.25); <italic>P</italic>-value=0.009, % difference=5.11) in early onset patients compared to controls, but neither survived correction for multiple comparisons. Although sample sizes were too small to split first and recurrent episode patients into early and late onset groups, only about half (57%) of the early onset MDD patients had a recurrent episode, and the percentage of recurrent episode patients did not moderate the result of smaller hippocampal volumes in early onset MDD patients (<italic>P</italic>=0.54), suggesting that this effect is at least partly independent of recurrence status. Patients with a late age of onset (&gt;21 years; <italic>n</italic>=997) showed no detectable brain volumetric differences compared to controls. Full age of onset effect sizes are listed in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S8</xref> and <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S9</xref>. The effect sizes in early episode patients are larger than those obtained when considering the full sample. However, there were no detectable differences between early and late onset patients (see <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S10</xref>).</p>
+        </sec>
+      </sec>
+      <sec>
+        <title>Association of MDD symptoms severity with subcortical volumes</title>
+        <p>We did not detect any significant associations between symptom severity at study inclusion and brain volumes using the HDRS-17 (<italic>n</italic>=667) and BDI-II (<italic>n</italic>=667) questionnaires. Full effect sizes of severity scores are available in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S11</xref> and <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S12</xref>.</p>
+      </sec>
+      <sec>
+        <title>Moderator analyses</title>
+        <p>Using meta-regression, we tested whether hypothesized moderating factors influenced the effect size estimates of all brain volumes across samples included in the meta-analysis. Mean age of each sample, magnetic resonance field strength, percent of patients with a co-occurring anxiety disorder, and percent of acutely depressed patients in each sample did not moderate differences for subcortical volumes. We found an influence of the FreeSurfer version used at each site on amygdala volume (β=−0.31; <italic>P</italic>-value=0.049), but this was not significant after correcting for multiple comparisons. We also found an influence of percentage of patients taking antidepressants on hippocampal effect size estimates (β=−0.0023; <italic>P</italic>-value=0.038), but again this was not significant after correction for multiple comparisons. Finally, we found a near-significant effect of antipsychotic drug use on mean caudate volume (β=0.016; <italic>P</italic>-value=6.71 × 10<sup>−3</sup>), implying that caudate volume of depressed patients was greater as the percentage of patients taking antipsychotic drugs was higher (<xref ref-type="supplementary-material" rid="sup1">Supplementary Figure S7</xref>). Full results from each of the moderator analyses are available in <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S15</xref>.</p>
+      </sec>
+      <sec>
+        <title>Power analysis</title>
+        <p>With 1728 MDD patients and 7199 controls, we were able to detect brain volume differences as small as Cohen's <italic>d</italic>=0.0751 at a nominal significance level <italic>P</italic>-value=0.05 and 80% power (and Cohen's <italic>d</italic>=0.0968 at our study significance threshold <italic>P</italic>-value=5.6 × 10<sup>−3</sup>). On the basis of the final meta-analyzed effect sizes found in this study, to detect mean differences in hippocampal volumes between MDD patients and controls, a study in the general MDD population at large would require 802 subjects per group to have 80% power to detect a difference at <italic>P</italic>-value=0.05. When focusing analyses on recurrent MDD patients and controls, 545 subjects per group would be needed to provide 80% power to detect a difference in hippocampal volume at <italic>P</italic>-value=0.05. When focusing analyses on early age of onset MDD patients (⩽21 years) and controls, 394 subjects per group would be needed to have 80% power to detect a difference in hippocampal volume at <italic>P</italic>-value=0.05. See <xref ref-type="supplementary-material" rid="sup1">Supplementary Information SI2</xref> for full details of the power analysis.</p>
+      </sec>
+    </sec>
+    <sec>
+      <title>Discussion</title>
+      <p>This worldwide effort to identify subcortical gray matter, lateral ventricle and total ICV alterations associated with MDD using an IPD-based meta-analytic approach showed robust reductions in hippocampal volume (1.24%) in MDD patients compared with healthy controls. These hippocampal volume reductions were mainly present in recurrent and/or early onset (⩽21 years) MDD, whereas hippocampal volume reductions were absent in first episode patients and less pronounced in patients with later age of onset (&gt;21 years) MDD. Furthermore, smaller amygdala volume and larger lateral ventricles volume were found in early onset MDD, but neither survived correction for multiple comparisons.</p>
+      <p>Our finding of smaller hippocampal volume in MDD is in line with previous retrospective meta-analyses of aggregated data.<sup><xref ref-type="bibr" rid="bib3">3</xref>, <xref ref-type="bibr" rid="bib4">4</xref>, <xref ref-type="bibr" rid="bib5">5</xref>, <xref ref-type="bibr" rid="bib6">6</xref></sup> This robust finding of smaller hippocampal volume is often linked to the ‘neurotrophic hypothesis of depression'. This proposes that elevated glucocorticoid levels associated with chronic hyperactivity of the hypothalamic–pituitary–adrenal axis in MDD may induce brain atrophy via remodeling and downregulation of growth factors including brain-derived neurotrophic factor.<sup><xref ref-type="bibr" rid="bib19">19</xref></sup> This process may preferentially target the hippocampus, a major site in the glucocorticoid negative feedback loop of the hypothalamic–pituitary–adrenal axis with high expression of glucocorticoid receptors.<sup><xref ref-type="bibr" rid="bib20">20</xref></sup> In animal models of depression, stress-induced increases in glucocorticoid levels may result in regression of dendritic processes, inhibition of neurogenesis and loss of neurons.<sup><xref ref-type="bibr" rid="bib21">21</xref></sup> We only observed hippocampal volume deficits in recurrent MDD and not in first episode patients. There is also direct evidence from longitudinal studies that hippocampal volume progressively decreases during the course of the disease, beyond levels expected from normal aging.<sup><xref ref-type="bibr" rid="bib22">22</xref></sup> We also found that hippocampal volume reductions were more pronounced in early onset patients (⩽21 years), consistent with prior findings of smaller hippocampal volume in early onset depression.<sup><xref ref-type="bibr" rid="bib23">23</xref></sup> Several factors, including early life stress, temperamental low effortful control and family history of depression have been linked to early onset depression,<sup><xref ref-type="bibr" rid="bib24">24</xref>, <xref ref-type="bibr" rid="bib25">25</xref>, <xref ref-type="bibr" rid="bib26">26</xref></sup> as well as smaller hippocampal volume.<sup><xref ref-type="bibr" rid="bib27">27</xref>, <xref ref-type="bibr" rid="bib28">28</xref></sup></p>
+      <p>Patterns of abnormal hippocampal development may predate adolescent depression onset<sup><xref ref-type="bibr" rid="bib29">29</xref></sup> and smaller hippocampal volumes have been found to predict a protracted response to antidepressant treatment over weeks<sup><xref ref-type="bibr" rid="bib30">30</xref>, <xref ref-type="bibr" rid="bib31">31</xref></sup>and a more severe long-term illness course,<sup><xref ref-type="bibr" rid="bib32">32</xref></sup> so morphological hippocampal alterations may represent risk markers for depression, recurrence and chronicity. As we only observed hippocampal volume reduction in recurrent patients and no subcortical volume alterations in first episode patients, the current finding of smaller hippocampal volume in early onset depression may reflect a longer illness duration and/or greater number of episodes in patients with early onset MDD instead of a premorbid vulnerability factor. Nonetheless, as only about half (57%) of the early onset patients in our meta-analysis had a recurrent episode and as the percentage of recurrent episode patients did not moderate the result of smaller hippocampal volumes in early onset patients (<italic>post hoc</italic> test, <italic>P</italic>=0.54), we conclude that early disease onset is (in part) independently associated with lower hippocampal volumes. Unfortunately, for many of the samples complete information on the exact number of episodes and duration of each episode was not available and simply calculating disease burden as current age minus age of onset is unsatisfactory, given the relapsing and remitting nature of MDD. Clearly, there is a continued need for longitudinal studies tracking hippocampal volume changes over the disease course, to further elucidate whether hippocampal abnormalities result from prolonged duration of chronic stress (that is, ‘scarring‘), represent a vulnerability factor for MDD, or both.</p>
+      <p>Prior structural neuroimaging studies in depression have yielded conflicting results regarding alterations in amygdala volume (for example, van Eijndhoven <italic>et al.</italic>,<sup><xref ref-type="bibr" rid="bib8">8</xref></sup> Frodl <italic>et al.</italic>,<sup><xref ref-type="bibr" rid="bib9">9</xref></sup> Kronenberg <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib11">11</xref></sup> and Hickie <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib33">33</xref></sup>). Our meta-analysis suggested smaller amygdala volume in early onset MDD, but this effect was not significant after correction for multiple comparisons. This is consistent with a previous retrospective meta-analysis of aggregated amygdala volume data by Hamilton <italic>et al.,</italic><sup><xref ref-type="bibr" rid="bib10">10</xref></sup> which also failed to detect a reliable difference in amygdala volume between depressed patients and controls. However, prior meta-analyses have shown larger amygdala volume in samples with a higher proportion of patients taking antidepressants.<sup><xref ref-type="bibr" rid="bib3">3</xref>, <xref ref-type="bibr" rid="bib10">10</xref></sup> We could not replicate this result in the current meta-analysis.</p>
+      <p>Furthermore, our controlled meta-analysis could not replicate findings of smaller caudate and putamen volumes observed in prior smaller meta-analyses.<sup><xref ref-type="bibr" rid="bib3">3</xref>, <xref ref-type="bibr" rid="bib5">5</xref></sup> Our current observations suggest that subcortical alterations in MDD are either very small or limited to the hippocampus (and to a lesser extent the amygdala) rather than widespread. Reduced hippocampal volume is not specific to MDD, as it has been observed in other psychiatric disorders, such as schizophrenia, posttraumatic stress disorder, borderline personality disorder and obsessive-compulsive disorder.<sup><xref ref-type="bibr" rid="bib34">34</xref></sup> Interestingly, IPD-based meta-analytic studies of both schizophrenia<sup><xref ref-type="bibr" rid="bib35">35</xref></sup> and bipolar disorder (Hibar <italic>et al.</italic>, submitted), using highly similar protocols, reported more widespread alterations in subcortical volumes. Generally, detrimental effects of schizophrenia and bipolar disorder on subcortical brain volumes appear greater than those in MDD, although a study design directly comparing patients with these disorders is clearly needed to resolve this.</p>
+      <p>The current study is the first to meta-analyze the relationship between symptom severity at study inclusion and subcortical volumes in MDD patients. Previous studies have yielded conflicting results; most studies found no correlations between depressive symptom severity and brain volume (for example, Kronenberg <italic>et al.</italic>,<sup><xref ref-type="bibr" rid="bib11">11</xref></sup> Hickie <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib36">36</xref></sup> and Frodl <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib37">37</xref></sup>), but some studies found positive<sup><xref ref-type="bibr" rid="bib8">8</xref>, <xref ref-type="bibr" rid="bib38">38</xref></sup> as well as inverse associations<sup><xref ref-type="bibr" rid="bib39">39</xref></sup> with, for example, amygdala and hippocampal volumes. Our meta-analyses, based on the HDRS-17 (<italic>n</italic>=667) and BDI-II (<italic>n</italic>=667) questionnaires, found no evidence of association between symptom severity and subcortical gray matter volumes. As severity of an entire depressive episode is not fully characterized by depression severity at study inclusion and given the predictive value of hippocampal volume,<sup><xref ref-type="bibr" rid="bib30">30</xref>, <xref ref-type="bibr" rid="bib31">31</xref>, <xref ref-type="bibr" rid="bib32">32</xref></sup> this result awaits further investigation in prospective longitudinal treatment designs.</p>
+      <p>With respect to the moderating effects of medication use, no significant effect of the percentage of patients taking antidepressants was observed, only a trend-wise lower hippocampal volume in MDD patients in samples with a higher percentage of patients taking antidepressants. Antidepressant treatment may block hippocampal atrophy, to some extent, by enhancing synaptic plasticity, neurotrophic processes and putatively neurogenesis,<sup><xref ref-type="bibr" rid="bib40">40</xref></sup> which appears to contradict our current observation. However, confounding interactions between antidepressant use and clinical characteristics cannot be ruled out, as samples with a higher percentage of antidepressant users are likely to include more severe MDD patients. Indeed, when performing a <italic>post hoc</italic> analysis, the trend effect of lower hippocampal volume in antidepressant medication users compared to controls disappeared when controlling for recurrence in the regression model. However, intervention studies with pre- and post-antidepressant treatment comparisons are needed to clarify the impact of antidepressant use on hippocampal volume.</p>
+      <p>We found that an increase in the percentage of patients taking antipsychotic drugs was associated with larger caudate volume in depressed patients relative to controls. This is in line with prior observations of caudate enlargement following antipsychotic treatment in patients with schizophrenia and can occur as early as 3 weeks post-exposure<sup><xref ref-type="bibr" rid="bib41">41</xref>, <xref ref-type="bibr" rid="bib42">42</xref></sup> (but see Crespo-Facorro <italic>et al.</italic><sup><xref ref-type="bibr" rid="bib43">43</xref></sup>).</p>
+      <p>A key strength of our study is the IPD meta-analytic approach, which increased the power to detect small effects by combining data from 8927 individuals, while ensuring low methodological heterogeneity by standardizing brain segmentation techniques and statistical models across all participating samples. Moreover, this IPD-based approach allowed us to systematically investigate the effects of clinical characteristics such as recurrence status, age of onset and severity of symptoms on brain alterations in MDD patients.</p>
+      <p>Nonetheless, our study has some limitations. First, we could not directly examine the influence of remission of MDD on brain volume. In most studies, the majority of patients were acutely depressed at the time of scanning, yielding groups of remitted patients that were too small to properly investigate how remission relates to brain volume. However, the proportion of MDD patients in remission at each site had no moderating effect on differences in brain volume when examined in a meta-regression analysis (see <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S15</xref>). Moreover, an additional meta-analysis including only samples with a current diagnosis of MDD patients at the time of scanning revealed very similar results (see <xref ref-type="supplementary-material" rid="sup1">Supplementary Table S13</xref>), so remission status presumably did not have a major impact on our current findings. A second limitation is the variety of questionnaires used by the different sites to assess severity of depressive symptoms; scores from different studies were not directly comparable. Because pooling results from different severity measures in a meta-analysis may lead to biased results,<sup><xref ref-type="bibr" rid="bib44">44</xref></sup> we limited the meta-analysis with respect to severity of symptoms to a selection of studies using the same instrument, which considerably reduced the sample size. Finally, we restricted our analyses to subcortical gray matter, lateral ventricle and total ICVs and did not include cortical measures. As efforts such as the current one require significant work in harmonization and quality control by all sites, the current study is only a first step toward identifying robust brain volume alterations in MDD patients. Because prior studies have shown a potentially important role of especially the anterior cingulate cortex,<sup><xref ref-type="bibr" rid="bib45">45</xref></sup> the important next step within our consortium will be examining cortical brain alterations associated with MDD.</p>
+      <p>Despite these limitations, results of this first initiative of the ENIGMA-MDD working group clearly indicate a key role of the hippocampus in the pathophysiology of MDD, showing robust hippocampal volume reductions particularly in recurrent and early onset MDD. Brain changes in other subcortical regions in MDD were less evident. Our findings together with the observations of associations between smaller hippocampal volume and executive impairments,<sup><xref ref-type="bibr" rid="bib37">37</xref></sup> learning and memory deficits<sup><xref ref-type="bibr" rid="bib36">36</xref></sup> and worse treatment response<sup><xref ref-type="bibr" rid="bib46">46</xref></sup> in MDD, suggest that the hippocampus is a prime target region for future research aimed at further unraveling the pathophysiology of MDD and improving treatment.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>Acknowledgments, funding sources, conflict of interest and author contributions can be found in <xref ref-type="supplementary-material" rid="sup1">Supplementary Information SI3</xref>.</p>
+    </ack>
+    <fn-group>
+      <fn>
+        <p><xref ref-type="supplementary-material" rid="sup1">Supplementary Information</xref> accompanies the paper on the Molecular Psychiatry website (http://www.nature.com/mp)</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <ref id="bib1">
+        <mixed-citation publication-type="journal">Kessler RC, Angermeyer M, Anthony JC, DE Graaf R, Demyttenaere K, Gasquet I et al. <article-title>Lifetime prevalence and age-of-onset distributions of mental disorders in the World Health Organization's World Mental Health Survey Initiative</article-title>. <source>World Psychiatry</source>
+<year>2007</year>; <volume>6</volume>: <fpage>168</fpage>–176.<pub-id pub-id-type="pmid">18188442</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib2">
+        <mixed-citation publication-type="journal">Murray CJL, Vos T, Lozano R, Naghavi M, Flaxman AD, Michaud C et al. <article-title>Disability-adjusted life years (DALYs) for 291 diseases and injuries in 21 regions, 1990-2010: a systematic analysis for the Global Burden of Disease Study 2010</article-title>. <source>Lancet</source>
+<year>2012</year>; <volume>380</volume>: <fpage>2197</fpage>–2223.<pub-id pub-id-type="pmid">23245608</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib3">
+        <mixed-citation publication-type="journal">Arnone D, McIntosh AM, Ebmeier KP, Munafò MR, Anderson IM. <article-title>Magnetic resonance imaging studies in unipolar depression: systematic review and meta-regression analyses</article-title>. <source>Eur Neuropsychopharmacol</source>
+<year>2012</year>; <volume>22</volume>: <fpage>1</fpage>–16.<pub-id pub-id-type="pmid">21723712</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib4">
+        <mixed-citation publication-type="journal">Lorenzetti V, Allen NB, Fornito A, Yücel M. <article-title>Structural brain abnormalities in major depressive disorder: a selective review of recent MRI studies</article-title>. <source>J Affect Disord</source>
+<year>2009</year>; <volume>117</volume>: <fpage>1</fpage>–17.<pub-id pub-id-type="pmid">19237202</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib5">
+        <mixed-citation publication-type="journal">Koolschijn PCMP, van Haren NEM, Lensvelt-Mulders GJLM, Hulshoff Pol HE, Kahn RS. <article-title>Brain volume abnormalities in major depressive disorder: a meta-analysis of magnetic resonance imaging studies</article-title>. <source>Hum Brain Mapp</source>
+<year>2009</year>; <volume>30</volume>: <fpage>3719</fpage>–3735.<pub-id pub-id-type="pmid">19441021</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib6">
+        <mixed-citation publication-type="journal">McKinnon MC, Yucel K, Nazarov A, MacQueen GM. <article-title>A meta-analysis examining clinical predictors of hippocampal volume in patients with major depressive disorder</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2009</year>; <volume>34</volume>: <fpage>41</fpage>–54.<pub-id pub-id-type="pmid">19125212</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib7">
+        <mixed-citation publication-type="journal">Frodl T, O'Keane V. <article-title>How does the brain deal with cumulative stress? A review with focus on developmental stress, HPA axis function and hippocampal structure in humans</article-title>. <source>Neurobiol Dis</source>
+<year>2013</year>; <volume>52</volume>: <fpage>24</fpage>–37.<pub-id pub-id-type="pmid">22426398</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib8">
+        <mixed-citation publication-type="journal">van Eijndhoven P, van Wingen G, van Oijen K, Rijpkema M, Goraj B, Jan Verkes R et al. <article-title>Amygdala volume marks the acute state in the early course of depression</article-title>. <source>Biol Psychiatry</source>
+<year>2009</year>; <volume>65</volume>: <fpage>812</fpage>–818.<pub-id pub-id-type="pmid">19028381</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib9">
+        <mixed-citation publication-type="journal">Frodl T, Meisenzahl E, Zetzsche T, Bottlender R, Born C, Groll C et al. <article-title>Enlargement of the amygdala in patients with a first episode of major depression</article-title>. <source>Biol Psychiatry</source>
+<year>2002</year>; <volume>51</volume>: <fpage>708</fpage>–714.<pub-id pub-id-type="pmid">11983184</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib10">
+        <mixed-citation publication-type="journal">Hamilton JP, Siemer M, Gotlib IH. <article-title>Amygdala volume in major depressive disorder: a meta-analysis of magnetic resonance imaging studies</article-title>. <source>Mol Psychiatry</source>
+<year>2008</year>; <volume>13</volume>: <fpage>993</fpage>–1000.<pub-id pub-id-type="pmid">18504424</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib11">
+        <mixed-citation publication-type="journal">Kronenberg G, Tebartz van Elst L, Regen F, Deuschle M, Heuser I, Colla M et al. <article-title>Reduced amygdala volume in newly admitted psychiatric in-patients with unipolar major depression</article-title>. <source>J Psychiatr Res</source>
+<year>2009</year>; <volume>43</volume>: <fpage>1112</fpage>–1117.<pub-id pub-id-type="pmid">19394960</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib12">
+        <mixed-citation publication-type="journal">Saleh K, Carballedo A, Lisiecka D, Fagan AJ, Connolly G, Boyle G et al. <article-title>Impact of family history and depression on amygdala volume</article-title>. <source>Psychiatry Res</source>
+<year>2012</year>; <volume>203</volume>: <fpage>24</fpage>–30.<pub-id pub-id-type="pmid">22867951</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib13">
+        <mixed-citation publication-type="journal">Morey RA, Petty CM, Xu Y, Hayes JP, Wagner HR 2nd, Lewis DV et al. <article-title>A comparison of automated segmentation and manual tracing for quantifying hippocampal and amygdala volumes</article-title>. <source>Neuroimage</source>
+<year>2009</year>; <volume>45</volume>: <fpage>855</fpage>–866.<pub-id pub-id-type="pmid">19162198</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib14">
+        <mixed-citation publication-type="journal">Fischl B, Salat DH, Busa E, Albert M, Dieterich M, Haselgrove C et al. <article-title>Whole brain segmentation: automated labeling of neuroanatomical structures in the human brain</article-title>. <source>Neuron</source>
+<year>2002</year>; <volume>33</volume>: <fpage>341</fpage>–355.<pub-id pub-id-type="pmid">11832223</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib15">
+        <mixed-citation publication-type="journal">Benazzi F. <article-title>Classifying mood disorders by age-at-onset instead of polarity</article-title>. <source>Prog Neuropsychopharmacol Biol Psychiatry</source>
+<year>2009</year>; <volume>33</volume>: <fpage>86</fpage>–93.<pub-id pub-id-type="pmid">18992784</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib16">
+        <mixed-citation publication-type="journal">Hamilton M. <article-title>A rating scale for depression</article-title>. <source>Journal Neurol Neurosurg Psychiatry</source>
+<year>1960</year>; <volume>23</volume>: <fpage>56</fpage>–62.</mixed-citation>
+      </ref>
+      <ref id="bib17">
+        <mixed-citation publication-type="journal">Beck AT, Steer RA, Ball R, Ranieri W. <article-title>Comparison of Beck depression inventories -IA and -II in psychiatric outpatients</article-title>. <source>J Pers Assess</source>
+<year>1996</year>; <volume>67</volume>: <fpage>588</fpage>–597.<pub-id pub-id-type="pmid">8991972</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib18">
+        <mixed-citation publication-type="journal">Viechtbauer W. <article-title>Conducting meta-analyses in R with the metafor Package</article-title>. <source>J Stat Softw</source>
+<year>2010</year>; <volume>36</volume>: <fpage>3</fpage>.</mixed-citation>
+      </ref>
+      <ref id="bib19">
+        <mixed-citation publication-type="journal">Campbell S, MacQueen G. <article-title>The role of the hippocampus in the pathophysiology of major depression</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2004</year>; <volume>29</volume>: <fpage>417</fpage>–426.<pub-id pub-id-type="pmid">15644983</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib20">
+        <mixed-citation publication-type="journal">Sapolsky RM, Krey LC, McEwen BS. <article-title>Glucocorticoid-sensitive hippocampal neurons 4 are involved in terminating the adrenocortical stress response</article-title>. <source>Proc Natl Acad Sci USA</source>
+<year>1984</year>; <volume>81</volume>: <fpage>6174</fpage>–6177.<pub-id pub-id-type="pmid">6592609</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib21">
+        <mixed-citation publication-type="journal">Tata DA, Anderson BJ. <article-title>The effects of chronic glucocorticoid exposure on dendritic length, synapse numbers and glial volume in animal models: implications for hippocampal volume reductions in depression</article-title>. <source>Physiol Behav</source>
+<year>2010</year>; <volume>99</volume>: <fpage>186</fpage>–193.<pub-id pub-id-type="pmid">19786041</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib22">
+        <mixed-citation publication-type="journal">Frodl TS, Koutsouleris N, Bottlender R, Born C, Jäger M, Scupin I et al. <article-title>Depression-related variation in brain morphology over 3 years: effects of stress</article-title>? <source>Arch Gen Psychiatry</source>
+<year>2008</year>; <volume>65</volume>: <fpage>1156</fpage>–1165.<pub-id pub-id-type="pmid">18838632</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib23">
+        <mixed-citation publication-type="journal">Caetano SC, Fonseca M, Hatch JP, Olvera RL, Nicoletti M, Hunter K et al. <article-title>Medial temporal lobe abnormalities in pediatric unipolar depression</article-title>. <source>Neurosci Lett</source>
+<year>2007</year>; <volume>427</volume>: <fpage>142</fpage>–147.<pub-id pub-id-type="pmid">17949901</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib24">
+        <mixed-citation publication-type="journal">Oldehinkel AJ, Ormel J, Verhulst FC, Nederhof E. <article-title>Childhood adversities and adolescent depression: a matter of both risk and resilience</article-title>. <source>Dev Psychopathol</source>
+<year>2014</year>; <volume>26</volume>: <fpage>1067</fpage>–1075.<pub-id pub-id-type="pmid">24933401</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib25">
+        <mixed-citation publication-type="journal">Patton GC, Coffey C, Posterino M, Carlin JB, Bowes G. <article-title>Life events and early onset depression: cause or consequence</article-title>? <source>Psychol Med</source>
+<year>2003</year>; <volume>33</volume>: <fpage>1203</fpage>–1210.<pub-id pub-id-type="pmid">14580075</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib26">
+        <mixed-citation publication-type="journal">Bufferd SJ, Dougherty LR, Olino TM, Dyson MW, Laptook RS, Carlson GA et al. <article-title>Predictors of the onset of depression in young children: a multi-method, multi-informant longitudinal study from ages 3 to 6</article-title>. <source>J Child Psychol Psychiatry</source>
+<year>2014</year>; <volume>55</volume>: <fpage>1279</fpage>–1287.<pub-id pub-id-type="pmid">24828086</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib27">
+        <mixed-citation publication-type="journal">Rao U, Chen LA, Bidesi AS, Shad MU, Thomas MA, Hammen CL et al. <article-title>Hippocampal changes associated with early-life adversity and vulnerability to depression</article-title>. <source>Biol Psychiatry</source>
+<year>2010</year>; <volume>67</volume>: <fpage>357</fpage>–364.<pub-id pub-id-type="pmid">20015483</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib28">
+        <mixed-citation publication-type="journal">Whittle S, Yücel M, Fornito A, Barrett A, Wood SJ, Lubman DI et al. <article-title>Neuroanatomical correlates of temperament in early adolescents</article-title>. <source>J Am Acad Child Adolesc Psychiatry</source>
+<year>2008</year>; <volume>47</volume>: <fpage>682</fpage>–693.<pub-id pub-id-type="pmid">18434920</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib29">
+        <mixed-citation publication-type="journal">Whittle S, Lichter R, Dennison M, Vijayakumar N, Schwartz O, Byrne ML et al. <article-title>Structural brain development and depression onset during adolescence: a prospective longitudinal study</article-title>. <source>Am J Psychiatry</source>
+<year>2014</year>; <volume>171</volume>: <fpage>564</fpage>–571.<pub-id pub-id-type="pmid">24577365</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib30">
+        <mixed-citation publication-type="journal">Sämann PG, Höhn D, Chechko N, Kloiber S, Lucae S, Ising M et al. <article-title>Prediction of antidepressant treatment response from gray matter volume across diagnostic categories</article-title>. <source>Eur Neuropsychopharmacol</source>
+<year>2013</year>; <volume>23</volume>: <fpage>1503</fpage>–1515.<pub-id pub-id-type="pmid">23920122</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib31">
+        <mixed-citation publication-type="journal">Soriano-Mas C, Hernández-Ribas R, Pujol J, Urretavizcaya M, Deus J, Harrison BJ et al. <article-title>Cross-sectional and longitudinal assessment of structural brain alterations in melancholic depression</article-title>. <source>Biol Psychiatry</source>
+<year>2011</year>; <volume>69</volume>: <fpage>318</fpage>–325.<pub-id pub-id-type="pmid">20875637</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib32">
+        <mixed-citation publication-type="journal">Frodl T, Jäger M, Smajstrlova I, Born C, Bottlender R, Palladino T et al. <article-title>Effect of hippocampal and amygdala volumes on clinical outcomes in major depression: a 3-year prospective magnetic resonance imaging study</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2008</year>; <volume>33</volume>: <fpage>423</fpage>–430.<pub-id pub-id-type="pmid">18787661</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib33">
+        <mixed-citation publication-type="journal">Hickie IB, Naismith SL, Ward PB, Scott EM, Mitchell PB, Schofield PR et al. <article-title>Serotonin transporter gene status predicts caudate nucleus but not amygdala or hippocampal volumes in older persons with major depression</article-title>. <source>J Affect Disord</source>
+<year>2007</year>; <volume>98</volume>: <fpage>137</fpage>–142.<pub-id pub-id-type="pmid">16930719</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib34">
+        <mixed-citation publication-type="journal">Geuze E, Vermetten E, Bremner JD. <article-title>MR-based <italic>in vivo</italic> hippocampal volumetrics: 2. Findings in neuropsychiatric disorders</article-title>. <source>Mol Psychiatry</source>
+<year>2005</year>; <volume>10</volume>: <fpage>160</fpage>–184.<pub-id pub-id-type="pmid">15356639</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib35">
+        <mixed-citation publication-type="other">Van Erp TGM, Hibar DP, Rasmussen JM, Glahn DC, Pearlson GD, Andreassen OA et al. <article-title>A prospective meta-analysis comparing subcortical brain volume abnormalities in 2,028 patients with schizophrenia and 2,540 controls via the ENIGMA Consortium</article-title>. <source>Mol Psychiatry</source>
+<year>2015</year> (in press).</mixed-citation>
+      </ref>
+      <ref id="bib36">
+        <mixed-citation publication-type="journal">Hickie I, Naismith S, Ward PB, Turner K, Scott E, Mitchell P et al. <article-title>Reduced hippocampal volumes and memory loss in patients with early- and late-onset depression</article-title>. <source>Br J Psychiatry</source>
+<year>2005</year>; <volume>186</volume>: <fpage>197</fpage>–202.<pub-id pub-id-type="pmid">15738499</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib37">
+        <mixed-citation publication-type="journal">Frodl T, Schaub A, Banac S, Charypar M, Jäger M, Kümmler P et al. <article-title>Reduced hippocampal volume correlates with executive dysfunctioning in major depression</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2006</year>; <volume>31</volume>: <fpage>316</fpage>–323.<pub-id pub-id-type="pmid">16951734</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib38">
+        <mixed-citation publication-type="journal">Cheng YQ, Xu J, Chai P, Li HJ, Luo CR, Yang T et al. <article-title>Brain volume alteration and the correlations with the clinical characteristics in drug-naive first-episode MDD patients: a voxel-based morphometry study</article-title>. <source>Neurosci Lett</source>
+<year>2010</year>; <volume>480</volume>: <fpage>30</fpage>–34.<pub-id pub-id-type="pmid">20594947</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib39">
+        <mixed-citation publication-type="journal">Vasic N, Walter H, Hose A, Wolf RC. <article-title>Gray matter reduction associated with psychopathology and cognitive dysfunction in unipolar depression: a voxel-based morphometry study</article-title>. <source>J Affect Disord</source>
+<year>2008</year>; <volume>109</volume>: <fpage>107</fpage>–116.<pub-id pub-id-type="pmid">18191459</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib40">
+        <mixed-citation publication-type="journal">Pilar-Cuellar F, Vidal R, Díaz A, Castro E, dos Anjos S, Pascual-Brazo J et al. <article-title>Neural plasticity and proliferation in the generation of antidepressant effects: hippocampal implication</article-title>. <source>Neural Plast</source>
+<year>2013</year>; <volume>2013</volume>: <fpage>537265</fpage>.<pub-id pub-id-type="pmid">23862076</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib41">
+        <mixed-citation publication-type="journal">Deng MY, McAlonan GM, Cheung C, Chiu CP, Law CW, Cheung V et al. <article-title>A naturalistic study of grey matter volume increase after early treatment in anti-psychotic naive, newly diagnosed schizophrenia</article-title>. <source>Psychopharmacology</source>
+<year>2009</year>; <volume>206</volume>: <fpage>437</fpage>–446.<pub-id pub-id-type="pmid">19641900</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib42">
+        <mixed-citation publication-type="journal">Chua SE, Deng Y, Chen EY, Law CW, Chiu CP, Cheung C et al. <article-title>Early striatal hypertrophy in first-episode psychosis within 3 weeks of initiating antipsychotic drug treatment</article-title>. <source>Psychol Med</source>
+<year>2009</year>; <volume>39</volume>: <fpage>793</fpage>–800.<pub-id pub-id-type="pmid">18713487</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib43">
+        <mixed-citation publication-type="journal">Crespo-Facorro B, Roiz-Santiáñez R, Pérez-Iglesias R, Pelayo-Terán JM, Rodríguez-Sánchez JM, Tordesillas-Gutiérrez D et al. <article-title>Effect of antipsychotic drugs on brain morphometry. A randomized controlled one-year follow-up study of haloperidol, risperidone and olanzapine</article-title>. <source>Prog Neuropsychopharmacol Biol Psychiatry</source>
+<year>2008</year>; <volume>32</volume>: <fpage>1936</fpage>–1943.<pub-id pub-id-type="pmid">18930104</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib44">
+        <mixed-citation publication-type="journal">Puhan MA, Soesilo I, Guyatt GH, Schunemann HJ. <article-title>Combining scores from different patient reported outcome measures in meta-analyses: when is it justified</article-title>? <source>Health Qual Life Outcomes</source>
+<year>2006</year>; <volume>4</volume>: <fpage>94</fpage>.<pub-id pub-id-type="pmid">17156420</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib45">
+        <mixed-citation publication-type="journal">Hajek T, Kozeny J, Kopecek M, Alda M, Hoschl C. <article-title>Reduced subgenual cingulate volumes in mood disorders: a meta-analysis</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2008</year>; <volume>33</volume>: <fpage>91</fpage>–99.<pub-id pub-id-type="pmid">18330455</pub-id></mixed-citation>
+      </ref>
+      <ref id="bib46">
+        <mixed-citation publication-type="journal">MacQueen GM. <article-title>Magnetic resonance imaging and prediction of outcome in patients with major depressive disorder</article-title>. <source>J Psychiatry Neurosci</source>
+<year>2009</year>; <volume>34</volume>: <fpage>343</fpage>–349.<pub-id pub-id-type="pmid">19721844</pub-id></mixed-citation>
+      </ref>
+    </ref-list>
+    <sec sec-type="supplementary-material" id="sup1">
+      <title>Supplementary Material</title>
+      <supplementary-material content-type="local-data" id="xob1">
+        <label>Supplementary Information</label>
+        <media xlink:href="mp201569x1.doc">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="xob2">
+        <label>Supplementary Tables</label>
+        <media xlink:href="mp201569x2.doc">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="xob3">
+        <label>Supplementary Figures</label>
+        <media xlink:href="mp201569x3.doc">
+          <caption>
+            <p>Click here for additional data file.</p>
+          </caption>
+        </media>
+      </supplementary-material>
+    </sec>
+  </back>
+  <floats-group>
+    <fig id="fig1">
+      <label>Figure 1</label>
+      <caption>
+        <p>Cohen's <italic>d-</italic>effect sizes 95% CI and for differences in subcortical brain volumes between major depressive disorder (MDD) patients and healthy control subjects. Effect sizes were corrected for age, sex and intracranial volume (ICV). The effect size for ICV was corrected for age and sex. *<italic>P</italic>&lt;0.05 corrected. CI, confidence interval.</p>
+      </caption>
+      <graphic xlink:href="mp201569f1"/>
+    </fig>
+    <fig id="fig2">
+      <label>Figure 2</label>
+      <caption>
+        <p>(<bold>a</bold>) Cohen's <italic>d</italic>-effect sizes 95% CI for differences in subcortical brain volumes between recurrent major depressive disorder (MDD) patients and healthy control subjects (striped pattern) and between first episode MDD patients and healthy controls (no pattern). (<bold>b</bold>) Cohen's <italic>d</italic>-effect sizes 95% CI for differences in subcortical brain volumes between early onset (⩽21) MDD patients and healthy control subjects (no pattern) and between later onset (&gt;21) MDD patients and healthy controls (striped pattern). Effect sizes were corrected for age, sex and intracranial volume (ICV). *<italic>P</italic>&lt;0.05 corrected, **<italic>P</italic>&lt;0.05. CI, confidence interval.</p>
+      </caption>
+      <graphic xlink:href="mp201569f2"/>
+    </fig>
+    <table-wrap id="tbl1">
+      <label>Table 1</label>
+      <caption>
+        <title>Full meta-analytic results for each mean structure for the MDD patients versus controls comparison controlling for age, sex, scan center and ICV</title>
+      </caption>
+      <table frame="hsides" rules="groups" border="1">
+        <colgroup>
+          <col align="left"/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+          <col align="char" char="."/>
+        </colgroup>
+        <thead valign="bottom">
+          <tr>
+            <th align="left" valign="top" charoff="50"> </th>
+            <th align="center" valign="top" char="." charoff="50"><italic>Cohen's d<xref ref-type="fn" rid="t1-fn2">a</xref></italic>
+<italic>(MDD—CTL)</italic></th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>Standard error</italic>
+            </th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>95% CI</italic>
+            </th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>% Difference</italic>
+            </th>
+            <th align="center" valign="top" char="." charoff="50">P<italic>-value</italic></th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>I</italic>
+              <sup>
+                <italic>2</italic>
+              </sup>
+            </th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>Number of controls</italic>
+            </th>
+            <th align="center" valign="top" char="." charoff="50">
+              <italic>Number of patients</italic>
+            </th>
+          </tr>
+        </thead>
+        <tbody valign="top">
+          <tr>
+            <td align="left" valign="top" charoff="50">Lateral ventricles</td>
+            <td align="char" valign="top" char="." charoff="50">0.056</td>
+            <td align="char" valign="top" char="." charoff="50">0.037</td>
+            <td align="char" valign="top" char="." charoff="50">−0.017–0.129</td>
+            <td align="char" valign="top" char="." charoff="50">1.345</td>
+            <td align="char" valign="top" char="." charoff="50">0.130</td>
+            <td align="char" valign="top" char="." charoff="50">12.162</td>
+            <td align="center" valign="top" char="." charoff="50">7058</td>
+            <td align="center" valign="top" char="." charoff="50">1689</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Thalamus</td>
+            <td align="char" valign="top" char="." charoff="50">−0.044</td>
+            <td align="char" valign="top" char="." charoff="50">0.038</td>
+            <td align="char" valign="top" char="." charoff="50">−0.119–0.031</td>
+            <td align="char" valign="top" char="." charoff="50">−0.398</td>
+            <td align="char" valign="top" char="." charoff="50">0.250</td>
+            <td align="char" valign="top" char="." charoff="50">15.067</td>
+            <td align="center" valign="top" char="." charoff="50">7046</td>
+            <td align="center" valign="top" char="." charoff="50">1682</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Caudate</td>
+            <td align="char" valign="top" char="." charoff="50">−0.023</td>
+            <td align="char" valign="top" char="." charoff="50">0.050</td>
+            <td align="char" valign="top" char="." charoff="50">−0.121–0.074</td>
+            <td align="char" valign="top" char="." charoff="50">−0.232</td>
+            <td align="char" valign="top" char="." charoff="50">0.641</td>
+            <td align="char" valign="top" char="." charoff="50">45.729</td>
+            <td align="center" valign="top" char="." charoff="50">7034</td>
+            <td align="center" valign="top" char="." charoff="50">1681</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Putamen</td>
+            <td align="char" valign="top" char="." charoff="50">0.012</td>
+            <td align="char" valign="top" char="." charoff="50">0.034</td>
+            <td align="char" valign="top" char="." charoff="50">−0.054–0.078</td>
+            <td align="char" valign="top" char="." charoff="50">0.104</td>
+            <td align="char" valign="top" char="." charoff="50">0.722</td>
+            <td align="char" valign="top" char="." charoff="50">0.005</td>
+            <td align="center" valign="top" char="." charoff="50">6957</td>
+            <td align="center" valign="top" char="." charoff="50">1656</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Pallidum</td>
+            <td align="char" valign="top" char="." charoff="50">−0.001</td>
+            <td align="char" valign="top" char="." charoff="50">0.034</td>
+            <td align="char" valign="top" char="." charoff="50">−0.067–0.065</td>
+            <td align="char" valign="top" char="." charoff="50">−0.049</td>
+            <td align="char" valign="top" char="." charoff="50">0.972</td>
+            <td align="char" valign="top" char="." charoff="50">0.000</td>
+            <td align="center" valign="top" char="." charoff="50">7018</td>
+            <td align="center" valign="top" char="." charoff="50">1657</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Hippocampus</td>
+            <td align="char" valign="top" char="." charoff="50">−0.144</td>
+            <td align="char" valign="top" char="." charoff="50">0.041</td>
+            <td align="char" valign="top" char="." charoff="50">−0.225 to −0.064</td>
+            <td align="char" valign="top" char="." charoff="50">−1.245</td>
+            <td align="char" valign="top" char="." charoff="50">4.60 × 10<sup>−4</sup></td>
+            <td align="char" valign="top" char="." charoff="50">24.813</td>
+            <td align="center" valign="top" char="." charoff="50">7040</td>
+            <td align="center" valign="top" char="." charoff="50">1700</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Amygdala</td>
+            <td align="char" valign="top" char="." charoff="50">−0.060</td>
+            <td align="char" valign="top" char="." charoff="50">0.036</td>
+            <td align="char" valign="top" char="." charoff="50">−0.132–0.011</td>
+            <td align="char" valign="top" char="." charoff="50">−0.658</td>
+            <td align="char" valign="top" char="." charoff="50">0.097</td>
+            <td align="char" valign="top" char="." charoff="50">10.152</td>
+            <td align="center" valign="top" char="." charoff="50">7060</td>
+            <td align="center" valign="top" char="." charoff="50">1696</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">Accumbens</td>
+            <td align="char" valign="top" char="." charoff="50">−0.019</td>
+            <td align="char" valign="top" char="." charoff="50">0.034</td>
+            <td align="char" valign="top" char="." charoff="50">−0.085–0.047</td>
+            <td align="char" valign="top" char="." charoff="50">−0.203</td>
+            <td align="char" valign="top" char="." charoff="50">0.569</td>
+            <td align="char" valign="top" char="." charoff="50">0.000</td>
+            <td align="center" valign="top" char="." charoff="50">6967</td>
+            <td align="center" valign="top" char="." charoff="50">1652</td>
+          </tr>
+          <tr>
+            <td align="left" valign="top" charoff="50">ICV</td>
+            <td align="char" valign="top" char="." charoff="50">−0.029</td>
+            <td align="char" valign="top" char="." charoff="50">0.052</td>
+            <td align="char" valign="top" char="." charoff="50">−0.131–0.073</td>
+            <td align="char" valign="top" char="." charoff="50">−0.212</td>
+            <td align="char" valign="top" char="." charoff="50">0.575</td>
+            <td align="char" valign="top" char="." charoff="50">51.476</td>
+            <td align="center" valign="top" char="." charoff="50">7199</td>
+            <td align="center" valign="top" char="." charoff="50">1728</td>
+          </tr>
+        </tbody>
+      </table>
+      <table-wrap-foot>
+        <fn id="t1-fn1">
+          <p>Abbreviations: CI, confidence intervals; CTL, control; ICV, intracranial volume; MDD, major depressive disorder.</p>
+        </fn>
+        <fn id="t1-fn2">
+          <label>a</label>
+          <p>Included samples: all samples.</p>
+        </fn>
+        <fn id="t1-fn3">
+          <p>Adjusted Cohen's <italic>d</italic> is reported.</p>
+        </fn>
+      </table-wrap-foot>
+    </table-wrap>
+  </floats-group>
+</article>
+
+</metadata></record></GetRecord></OAI-PMH>
