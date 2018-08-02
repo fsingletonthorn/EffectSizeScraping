@@ -44,7 +44,6 @@ DOI <- unlist(xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["fr
 # extracting the element of the dataframe which is 1 below the "article attribute" called "doi"
 DOI <- DOI[which(names(DOI) == "article-id..attrs.pub-id-type")[DOI[which(names(DOI) == "article-id..attrs.pub-id-type")] == "doi"]-1]
 
-
 # Abbreviated journal ID 
 # e.g., "J Behav Ther Exp Psychiatry"
 journalId <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["journal-meta"]][["journal-id"]][["text"]]
@@ -52,7 +51,7 @@ journalId <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["fro
 ## Extracting full journal title
 journal <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["journal-meta"]][["journal-title-group"]][["journal-title"]]
 
-# issue volume  NEEED TO FIX THIS ! ! ! ! !  ! !  ! ! !
+# issue volume
 issue <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["issue"]]
 volume <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["volume"]]
 
@@ -98,15 +97,24 @@ for(j in 1:length(sections)){
   titles[j]<-sections[[j]][['title']]
 }
 
+## possibly find a way of letting these self title
 
 # seperating the sections out - this will break if these sections are not similarly titled
-if(sum(titles == "Introduction")>0) introSection <- list(introSection, sections[[which(titles == "Introduction")]])
+if(sum(titles == "Introduction")>0) {
+  introSection <- list(introSection, sections[[which(titles == "Introduction")]])
+}
 
-if(sum((titles == "Method")|(titles == "Subjects and methods")|(titles == "Materials and Methods")) >0) methodsSection <- sections[[which((titles == "Method")|(titles == "Subjects and methods") |(titles == "Materials and Methods")>0)]]
+if(sum((titles == "Method")|(titles == "Subjects and methods")|(titles == "Materials and Methods")|(titles == "Methods")) >0) {
+  methodsSection <- sections[[which((titles == "Method")|(titles == "Subjects and methods") |(titles == "Materials and Methods")|(titles == "Methods"))]]
+}
 
-if(sum(titles == "Results")>0) resultsSection <- sections[[which(titles == "Results")]]
+if(sum(titles == "Results")>0) {
+  resultsSection <- sections[[which(titles == "Results")]]
+}
 
-if(sum(titles == "Discussion")>0) discussionSection <- sections[[which(titles == "Discussion")]]
+if(sum(titles == "Discussion")>0) {
+  discussionSection <- sections[[which(titles == "Discussion")]]
+}
 
   # clearing from memory
 body <- NULL
@@ -161,7 +169,6 @@ extractedEtasResults  <- extractEffects(resultsText, patternEta)
 extractedDsDiscussion <- extractEffects(discussionText, patternD)
 extractedRsDiscussion  <- extractEffects(discussionText, patternR)
 extractedEtasDiscussion  <- extractEffects(discussionText, patternEta)
-
 
 
 
