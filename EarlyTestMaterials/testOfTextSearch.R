@@ -82,11 +82,8 @@ authors <- data.frame(firstNames, lastNames)
 # Extracting text 
 # probably don't need head ~ head <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]]
 body <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["body"]]
-# gathering locations of 'ps' i.e., paragraphs, the first file I looked at doesn't have a section head for the intro - this may or may not be consistent 
-lPs<-which(names(body)=="p")
 
-# setting these to be the body paragraphs
-introSection <- body[lPs]
+
 # gathering locations of sections 
 lCs<-which(names(body)=="sec")
 
@@ -98,14 +95,28 @@ for(j in 1:length(sections)){
 }
 
 ## possibly find a way of letting these self title
+# gathering locations of 'ps' i.e., paragraphs, the first file I looked at doesn't have a section head for the intro - this may or may not be consistent 
+lPs<-which(names(body)=="p")
+
+# setting these to be the body paragraphs
+unlabSection <- body[lPs]
+
+# search strings for each of the sections of the paper 
+introNames <- ("Introduction|Background")
+methodsNames <- ("method")
+resultsNames<-("result")
+discussionNames<-("discussion|conclusion")
 
 # seperating the sections out - this will break if these sections are not similarly titled
-if(sum(titles == "Introduction")>0) {
-  introSection <- list(introSection, sections[[which(titles == "Introduction")]])
+if(sum(str_detect(titles, regex(introNames, ignore_case = T)))>0) {
+  introSection <- list(introSection, sections[[which(str_detect(titles, regex(introNames, ignore_case = T)))]])
 }
 
-if(sum((titles == "Method")|(titles == "Subjects and methods")|(titles == "Materials and Methods")|(titles == "Methods")) >0) {
-  methodsSection <- sections[[which((titles == "Method")|(titles == "Subjects and methods") |(titles == "Materials and Methods")|(titles == "Methods"))]]
+if(sum(str_detect(titles,(regex(methodsNames, ignore_case = T))))>0) {
+  methodsSection <- list()
+  for(j in which(str_detect(titles, regex(titles, ignore_case = T)))) {
+  methodsSection <- list(methodsSection, sections[[j]])
+  }
 }
 
 if(sum(titles == "Results")>0) {
@@ -115,6 +126,11 @@ if(sum(titles == "Results")>0) {
 if(sum(titles == "Discussion")>0) {
   discussionSection <- sections[[which(titles == "Discussion")]]
 }
+
+# for each sec, grepl for includes the relavant inforamtion, if not save in "unlabled XML section".
+# at each point, save a vector of the lables that have been used, and add all of those that have been used (to make sure that they do not get duped)
+# and check that each one has actually been picked
+
 
   # clearing from memory
 body <- NULL
@@ -127,17 +143,17 @@ resultsText <- paste(unlist(resultsSection), collapse=' ')
 discussionText <-  paste(unlist(discussionSection), collapse=' ')
 
 # specifying patterns to match - includes either "-" or "\u2212" which are alternative minus signs, captures whitespace which is removed later
-#         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(df)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
-patternD <- "(?<=((\\s|\\()[d]\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?[=]\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
-patternR <-  "(?<=((\\s|\\()([r]s?\\(?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\)?\\s?\\s?[=]\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,})"
-patternEta <- "(?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?[=]\\s?\\s?))(\\-?\u2212?\\s?\\d*\\.?\\d{1,})" 
+#         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(\d\d)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
+patternD <- "(?<=((\\s|\\()[d]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
+patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
+patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\seta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
 
 # it may be possible to add in other text versions of this (e.g., "correlation coefficient of")
 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return numeric vector of extracted effect sizes
 extractEffects <- function(inputText, pattern) {
   # extracting all text which matches pattern
-  extracted <- str_extract_all(inputText,  pattern, simplify = T)
+  extracted <- str_extract_all(inputText,  regex(pattern, ignore_case = TRUE), simplify = T)
   # removing whitespace that can be captured in the regular expressions above
   extracted <- str_remove_all(extracted, "\\s")
   # replacing unicode minus sign with R recognised hyphen/minus sign
@@ -149,6 +165,8 @@ extractEffects <- function(inputText, pattern) {
 extractedDsAbstract <- extractEffects(abstractText, patternD)
 extractedRsAbstract <- extractEffects(abstractText, patternR)
 extractedEtasAbstract <- extractEffects(abstractText, patternEta)
+
+extractEffects("n  = 32; Pearson Correlation coefficient = -0.16,  P  > 0.05", patternR)
 
 # Extracting from intro
 extractedDsIntro <- extractEffects(introText, patternD)
@@ -169,8 +187,6 @@ extractedEtasResults  <- extractEffects(resultsText, patternEta)
 extractedDsDiscussion <- extractEffects(discussionText, patternD)
 extractedRsDiscussion  <- extractEffects(discussionText, patternR)
 extractedEtasDiscussion  <- extractEffects(discussionText, patternEta)
-
-
 
 
 # later to update it will be possible to just compare the master list with those 
