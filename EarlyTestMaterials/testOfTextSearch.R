@@ -15,9 +15,11 @@ assign(paste0("abc",i,"xyz"), i)
 abc1xyz
 abc2xyz
 
+# bulk download avaliable at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/ 
 
 
-### ADD OPTION TO INCLUDE OR DISCARD EFFECT SIZES IN ABSTRACT / each section - AND TO REMOVE THEM IF THEY ARE REPEATED, or just to report if the values show up in both
+### ADD OPTION TO INCLUDE OR DISCARD EFFECT SIZES IN ABSTRACT / each section
+# - AND TO REMOVE THEM IF THEY ARE REPEATED, or just to report if the values show up in both
 
 
 # starting again: 
@@ -28,15 +30,22 @@ abc2xyz
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4879183.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/5341264.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/5588100.xml")
-xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547424.xml")
+# xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547424.xml")
+# xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/3659440.xml")
+xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/5110632.xml")
+
+xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC3778923.nxml")
+
 
 
 # Extracting xml full ID 
 # e.g., "oai:pubmedcentral.nih.gov:4547492"
-ID <- xmlList[["GetRecord"]][["record"]][["header"]][["identifier"]]
+# manual DL version - ID <- xmlList[["GetRecord"]][["record"]][["header"]][["identifier"]]
+ID <- xmlList[["front"]][["article-meta"]][["title-group"]][["article-title"]]
 
 # Extracting PMCID 
-PMCID <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["article-id"]][["text"]]
+# manual DL version - PMCID <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["article-id"]][["text"]]
+PMCID <- xmlList[["front"]][["article-meta"]][["article-id"]][["text"]]
 
 # Extracting DOI
 # <article-id pub-id-type="doi">10.1016/j.jbtep.2015.05.001</article-id>
@@ -94,49 +103,69 @@ for(j in 1:length(sections)){
   titles[j]<-sections[[j]][['title']]
 }
 
-## possibly find a way of letting these self title
-# gathering locations of 'ps' i.e., paragraphs, the first file I looked at doesn't have a section head for the intro - this may or may not be consistent 
-lPs<-which(names(body)=="p")
-
-# setting these to be the body paragraphs
-unlabSection <- body[lPs]
 
 # search strings for each of the sections of the paper 
 introNames <- ("Introduction|Background")
-methodsNames <- ("method")
+methodsNames <- ("method|aims|measur")
 resultsNames<-("result")
-discussionNames<-("discussion|conclusion")
+discussionNames<-("discussion|conclusion|conclud")
 
-# seperating the sections out - this will break if these sections are not similarly titled
-if(sum(str_detect(titles, regex(introNames, ignore_case = T)))>0) {
-  introSection <- list(introSection, sections[[which(str_detect(titles, regex(introNames, ignore_case = T)))]])
-}
 
-if(sum(str_detect(titles,(regex(methodsNames, ignore_case = T))))>0) {
-  methodsSection <- list()
-  for(j in which(str_detect(titles, regex(titles, ignore_case = T)))) {
-  methodsSection <- list(methodsSection, sections[[j]])
+# gathering locations of 'ps' i.e., paragraphs 
+lPs<-which(names(body)=="p")
+
+# anything that is not under a section will be put in unlab (i.e., unlabled) 
+unlabSection <- body[lPs]
+
+
+##### THIS SECTION HAS NOT BEEN TESTED - no articles have had additional sections that should not be includd in the other bits
+
+if(sum(!str_detect(titles, regex(paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"), ignore_case = T)))>0) {
+  for(j in which(str_detect(titles, regex(introNames, ignore_case = T)))) {
+    unlabSection[[length(introSection)+1]] <- list(sections[[j]])
   }
 }
 
-if(sum(titles == "Results")>0) {
-  resultsSection <- sections[[which(titles == "Results")]]
+# seperating the sections by, if there are any sections titled matching the section heads
+# looping through each of the sections that match the names and putting them in a list -
+introSection <- list()
+if(sum(str_detect(titles,(regex(introNames, ignore_case = T))))>0) {
+  for(j in which(str_detect(titles, regex(introNames, ignore_case = T)))) {
+    introSection[[length(introSection)+1]] <- list(sections[[j]])
+  }
 }
 
-if(sum(titles == "Discussion")>0) {
-  discussionSection <- sections[[which(titles == "Discussion")]]
+methodsSection <- list()
+if(sum(str_detect(titles,(regex(methodsNames, ignore_case = T))))>0) {
+  for(j in which(str_detect(titles, regex(methodsNames, ignore_case = T)))) {
+    methodsSection[[length(methodsSection)+1]] <- list(sections[[j]])
+  }
 }
 
-# for each sec, grepl for includes the relavant inforamtion, if not save in "unlabled XML section".
-# at each point, save a vector of the lables that have been used, and add all of those that have been used (to make sure that they do not get duped)
-# and check that each one has actually been picked
+resultsSection <- list()
+if(sum(str_detect(titles,(regex(resultsNames, ignore_case = T))))>0) {
+  for(j in which(str_detect(titles, regex(resultsNames, ignore_case = T)))) {
+    resultsSection[[length(resultsSection)+1]] <- list(sections[[j]])
+  }
+}
+
+
+discussionSection <- list()
+if(sum(str_detect(titles,(regex(discussionNames, ignore_case = T))))>0) {
+  for(j in which(str_detect(titles, regex(discussionNames, ignore_case = T)))) {
+    discussionSection[[length(discussionSection)+1]] <- list(sections[[j]])
+  }
+}
+
 
 
   # clearing from memory
 body <- NULL
 
 # saving the text of each section
+
 abstractText <- paste(unlist(xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]][["front"]][["article-meta"]][["abstract"]]), collapse=' ')
+unlabText<- paste(unlist(unlabSection), collapse =' ')
 introText <- paste(unlist(introSection), collapse=' ')
 methodsText <-paste(unlist(methodsSection), collapse=' ')
 resultsText <- paste(unlist(resultsSection), collapse=' ')
@@ -146,12 +175,14 @@ discussionText <-  paste(unlist(discussionSection), collapse=' ')
 #         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(\d\d)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
 patternD <- "(?<=((\\s|\\()[d]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
-patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\seta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
+patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\s?eta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
 
 # it may be possible to add in other text versions of this (e.g., "correlation coefficient of")
 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return numeric vector of extracted effect sizes
 extractEffects <- function(inputText, pattern) {
+  # removing newline breaks
+  inputText <- str_remove_all(inputText, "\\n")
   # extracting all text which matches pattern
   extracted <- str_extract_all(inputText,  regex(pattern, ignore_case = TRUE), simplify = T)
   # removing whitespace that can be captured in the regular expressions above
@@ -161,12 +192,16 @@ extractEffects <- function(inputText, pattern) {
   return(as.numeric(extracted))
 }
 
-# Extracting from abstract 
+
+# Extracting from sections which were not covered above 
+extractedDsIntro <- extractEffects(introText, patternD)
+extractedRsIntro <- extractEffects(introText, patternR)
+extractedEtasIntro <- extractEffects(introText, patternEta)
+
+# Extracting from abstract which were not covered above 
 extractedDsAbstract <- extractEffects(abstractText, patternD)
 extractedRsAbstract <- extractEffects(abstractText, patternR)
 extractedEtasAbstract <- extractEffects(abstractText, patternEta)
-
-extractEffects("n  = 32; Pearson Correlation coefficient = -0.16,  P  > 0.05", patternR)
 
 # Extracting from intro
 extractedDsIntro <- extractEffects(introText, patternD)

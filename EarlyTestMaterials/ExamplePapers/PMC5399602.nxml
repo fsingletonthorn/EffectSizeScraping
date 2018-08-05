@@ -1,0 +1,910 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD v1.0 20120330//EN" "JATS-archivearticle1.dtd">
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" article-type="review-article"><?properties open_access?><front><journal-meta><journal-id journal-id-type="nlm-ta">Alzheimers Dement</journal-id><journal-id journal-id-type="iso-abbrev">Alzheimers Dement</journal-id><journal-title-group><journal-title>Alzheimer's &#x00026; Dementia</journal-title></journal-title-group><issn pub-type="ppub">1552-5260</issn><issn pub-type="epub">1552-5279</issn><publisher><publisher-name>Elsevier, Inc</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmid">27490018</article-id><article-id pub-id-type="pmc">5399602</article-id><article-id pub-id-type="publisher-id">S1552-5260(16)30064-4</article-id><article-id pub-id-type="doi">10.1016/j.jalz.2016.06.004</article-id><article-categories><subj-group subj-group-type="heading"><subject>Featured Article</subject></subj-group></article-categories><title-group><article-title>METACOHORTS for the study of vascular disease and its contribution
+to cognitive decline and neurodegeneration: An initiative of the Joint Programme for
+Neurodegenerative Disease Research</article-title></title-group><contrib-group><contrib contrib-type="author"><collab>METACOHORTS Consortium<email>joanna.wardlaw@ed.ac.uk</email><contrib-group><contrib contrib-type="author"><name><surname>Dichgans</surname><given-names>Martin</given-names></name></contrib><contrib contrib-type="author"><name><surname>Wardlaw</surname><given-names>Joanna</given-names></name></contrib><contrib contrib-type="author"><name><surname>Smith</surname><given-names>Eric</given-names></name></contrib><contrib contrib-type="author"><name><surname>Zietemann</surname><given-names>Vera</given-names></name></contrib><contrib contrib-type="author"><name><surname>Seshadri</surname><given-names>Sudha</given-names></name></contrib><contrib contrib-type="author"><name><surname>Sachdev</surname><given-names>Perminder</given-names></name></contrib><contrib contrib-type="author"><name><surname>Biessels</surname><given-names>Geert Jan</given-names></name></contrib><contrib contrib-type="author"><name><surname>Fazekas</surname><given-names>Franz</given-names></name></contrib><contrib contrib-type="author"><name><surname>Benavente</surname><given-names>Oscar</given-names></name></contrib><contrib contrib-type="author"><name><surname>Pantoni</surname><given-names>Leonardo</given-names></name></contrib><contrib contrib-type="author"><name><surname>De Leeuw</surname><given-names>Frank-Erik</given-names></name></contrib><contrib contrib-type="author"><name><surname>Norrving</surname><given-names>Bo</given-names></name></contrib><contrib contrib-type="author"><name><surname>Matthews</surname><given-names>Paul</given-names></name></contrib><contrib contrib-type="author"><name><surname>Chen</surname><given-names>Christopher</given-names></name></contrib><contrib contrib-type="author"><name><surname>Mok</surname><given-names>Vincent</given-names></name></contrib><contrib contrib-type="author"><name><surname>D&#x000fc;ring</surname><given-names>Marco</given-names></name></contrib><contrib contrib-type="author"><name><surname>Whiteley</surname><given-names>Will</given-names></name></contrib><contrib contrib-type="author"><name><surname>Shuler</surname><given-names>Kirsten</given-names></name></contrib><contrib contrib-type="author"><name><surname>Alonso</surname><given-names>Alvaro</given-names></name></contrib><contrib contrib-type="author"><name><surname>Black</surname><given-names>Sandra E.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Brayne</surname><given-names>Carol</given-names></name></contrib><contrib contrib-type="author"><name><surname>Chabriat</surname><given-names>Hugues</given-names></name></contrib><contrib contrib-type="author"><name><surname>Cordonnier</surname><given-names>Charlotte</given-names></name></contrib><contrib contrib-type="author"><name><surname>Doubal</surname><given-names>Fergus</given-names></name></contrib><contrib contrib-type="author"><name><surname>Duzel</surname><given-names>Emrah</given-names></name></contrib><contrib contrib-type="author"><name><surname>Ewers</surname><given-names>Michael</given-names></name></contrib><contrib contrib-type="author"><name><surname>Frayne</surname><given-names>Richard</given-names></name></contrib><contrib contrib-type="author"><name><surname>Hachinski</surname><given-names>Vladimir</given-names></name></contrib><contrib contrib-type="author"><name><surname>Ikram</surname><given-names>Mohammad Arfan</given-names></name></contrib><contrib contrib-type="author"><name><surname>Jessen</surname><given-names>Frank</given-names></name></contrib><contrib contrib-type="author"><name><surname>Jouvent</surname><given-names>Eric</given-names></name></contrib><contrib contrib-type="author"><name><surname>Linn</surname><given-names>Jennifer</given-names></name></contrib><contrib contrib-type="author"><name><surname>O'Brien</surname><given-names>John</given-names></name></contrib><contrib contrib-type="author"><name><surname>van Oostenbrugge</surname><given-names>Robert</given-names></name></contrib><contrib contrib-type="author"><name><surname>Malik</surname><given-names>Rainer</given-names></name></contrib><contrib contrib-type="author"><name><surname>Mazoyer</surname><given-names>Bernard</given-names></name></contrib><contrib contrib-type="author"><name><surname>Schmidt</surname><given-names>Reinhold</given-names></name></contrib><contrib contrib-type="author"><name><surname>Sposato</surname><given-names>Luciano A.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Stephan</surname><given-names>Blossom</given-names></name></contrib><contrib contrib-type="author"><name><surname>Swartz</surname><given-names>Richard H.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Vernooij</surname><given-names>Meike</given-names></name></contrib><contrib contrib-type="author"><name><surname>Viswanathan</surname><given-names>Anand</given-names></name></contrib><contrib contrib-type="author"><name><surname>Werring</surname><given-names>David</given-names></name></contrib><contrib contrib-type="author"><name><surname>Abe</surname><given-names>Koji</given-names></name></contrib><contrib contrib-type="author"><name><surname>Allan</surname><given-names>Louise</given-names></name></contrib><contrib contrib-type="author"><name><surname>Arba</surname><given-names>Francesco</given-names></name><role>on behalf of the VISTA Collaboration: H.-C. Diener (Chair), S. Davis, G. Hankey, K.R. Lees, B. Ovbiagele, C. Weir</role></contrib><contrib contrib-type="author"><name><surname>Bae</surname><given-names>Hee-Joon</given-names></name></contrib><contrib contrib-type="author"><name><surname>Bath</surname><given-names>Philip MW.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Bordet</surname><given-names>Regis</given-names></name></contrib><contrib contrib-type="author"><name><surname>Breteler</surname><given-names>Monique</given-names></name></contrib><contrib contrib-type="author"><name><surname>Choi</surname><given-names>Seong</given-names></name></contrib><contrib contrib-type="author"><name><surname>Deary</surname><given-names>Ian</given-names></name></contrib><contrib contrib-type="author"><name><surname>DeCarli</surname><given-names>Charles</given-names></name></contrib><contrib contrib-type="author"><name><surname>Ebmeier</surname><given-names>Klaus</given-names></name></contrib><contrib contrib-type="author"><name><surname>Feng</surname><given-names>Lei</given-names></name></contrib><contrib contrib-type="author"><name><surname>Greenberg</surname><given-names>Steven M.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Ihara</surname><given-names>Masafumi</given-names></name></contrib><contrib contrib-type="author"><name><surname>Kalaria</surname><given-names>Rajesh</given-names></name></contrib><contrib contrib-type="author"><name><surname>Kim</surname><given-names>SanYun</given-names></name></contrib><contrib contrib-type="author"><name><surname>Lim</surname><given-names>Jae-Sung</given-names></name></contrib><contrib contrib-type="author"><name><surname>Lindley</surname><given-names>Richard I.</given-names></name></contrib><contrib contrib-type="author"><name><surname>Mead</surname><given-names>Gillian</given-names></name></contrib><contrib contrib-type="author"><name><surname>Murray</surname><given-names>Alison</given-names></name></contrib><contrib contrib-type="author"><name><surname>Quinn</surname><given-names>Terry</given-names></name></contrib><contrib contrib-type="author"><name><surname>Ritchie</surname><given-names>Craig</given-names></name></contrib><contrib contrib-type="author"><name><surname>Sacco</surname><given-names>Ralph</given-names></name></contrib><contrib contrib-type="author"><name><surname>Al-Shahi Salman</surname><given-names>Rustam</given-names></name></contrib><contrib contrib-type="author"><name><surname>Sprigg</surname><given-names>Nikola</given-names></name></contrib><contrib contrib-type="author"><name><surname>Sudlow</surname><given-names>Cathie</given-names></name></contrib><contrib contrib-type="author"><name><surname>Thomas</surname><given-names>Alan</given-names></name></contrib><contrib contrib-type="author"><name><surname>van Boxtel</surname><given-names>Martin</given-names></name></contrib><contrib contrib-type="author"><name><surname>van der Grond</surname><given-names>Jeroen</given-names></name></contrib><contrib contrib-type="author"><name><surname>van der Lugt</surname><given-names>Aad</given-names></name></contrib><contrib contrib-type="author"><name><surname>Yang</surname><given-names>Yuan-Han</given-names></name></contrib></contrib-group></collab><xref rid="fn1" ref-type="fn">1</xref><xref rid="cor1" ref-type="corresp">&#x02217;</xref></contrib></contrib-group><author-notes><corresp id="cor1"><label>&#x02217;</label>Corresponding author. Tel.: +44-131-465-9570</corresp><fn id="fn1"><label>1</label><p id="ntpara0020">A full listing of the authors for this
+manuscript can be found in the <xref rid="appsec1" ref-type="sec">appendix</xref> at the end of this
+article.</p></fn></author-notes><pub-date pub-type="pmc-release"><day>1</day><month>12</month><year>2016</year></pub-date><!-- PMC Release delay is 0 months and 0 days and was based on <pub-date
+						pub-type="ppub">.--><pub-date pub-type="ppub"><month>12</month><year>2016</year></pub-date><volume>12</volume><issue>12</issue><fpage>1235</fpage><lpage>1249</lpage><permissions><copyright-statement>&#x000a9; 2016 The Authors</copyright-statement><copyright-year>2016</copyright-year><license license-type="CC BY" xlink:href="http://creativecommons.org/licenses/by/4.0/"><license-p>This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).</license-p></license></permissions><abstract id="abs0010"><p>Dementia is a global problem and major target for
+health care providers. Although up to 45% of cases are primarily or partly due
+to cerebrovascular disease, little is known of these mechanisms or treatments
+because most dementia research still focuses on pure Alzheimer's disease. An
+improved understanding of the vascular contributions to neurodegeneration and
+dementia, particularly by small vessel disease, is hampered by imprecise data,
+including the incidence and prevalence of symptomatic and clinically &#x0201c;silent&#x0201d;
+cerebrovascular disease, long-term outcomes (cognitive, stroke, or functional),
+and risk factors. New large collaborative studies with long follow-up are
+expensive and time consuming, yet substantial data to advance the field are
+available. In an initiative funded by the Joint Programme for Neurodegenerative
+Disease Research, 55 international experts surveyed and assessed available data,
+starting with European cohorts, to promote data sharing to advance understanding
+of how vascular disease affects brain structure and function, optimize methods
+for cerebrovascular disease in neurodegeneration research, and focus future
+research on gaps in knowledge. Here, we summarize the results and
+recommendations from this initiative. We identified data from over 90 studies,
+including over 660,000 participants, many being additional to neurodegeneration
+data initiatives. The enthusiastic response means that cohorts from North
+America, Australasia, and the Asia Pacific Region are included, creating a truly
+global, collaborative, data sharing platform, linked to major national dementia
+initiatives. Furthermore, the revised World Health Organization International
+Classification of Diseases version 11 should facilitate recognition of
+vascular-related brain damage by creating one category for all cerebrovascular
+disease presentations and thus accelerate identification of targets for dementia
+prevention.</p></abstract><kwd-group id="kwrds0010"><title>Keywords</title><kwd>Dementia</kwd><kwd>Cerebrovascular disease</kwd><kwd>Small vessel disease</kwd><kwd>Neurodegeneration, Cohorts, Survey</kwd></kwd-group></article-meta></front><body><sec id="sec1"><label>1</label><title>Introduction</title><p>Worldwide, nearly 36 million people are estimated to be living
+with dementia. This is expected to triple by 2050. Cerebrovascular disease
+causes up to 45% of all dementias alone or in conjunction with Alzheimer's
+disease (AD) <xref rid="bib1" ref-type="bibr">[1]</xref>, <xref rid="bib2" ref-type="bibr">[2]</xref>. Despite vascular risk factor reduction being an
+achievable target for public health intervention in many countries, and some
+recent evidence of success in preventing dementia <xref rid="bib3" ref-type="bibr">[3]</xref>, knowledge about vascular contributions
+to dementia remains modest.</p><p>Many studies, from the early 1990s onward <xref rid="bib4" ref-type="bibr">[4]</xref>, have demonstrated that
+cognitive impairment and dementia are both common and under-recognized after
+stroke <xref rid="bib5" ref-type="bibr">[5]</xref>. The
+concept of &#x0201c;vascular cognitive impairment&#x0201d; was introduced in 1994 <xref rid="bib6" ref-type="bibr">[6]</xref>, covering a spectrum of
+cognitive impairment after stroke to cognitive impairment in association with
+otherwise asymptomatic cerebrovascular disease. The most common vascular
+contributor to dementia is cerebral small vessel disease (SVD) <xref rid="bib7" ref-type="bibr">[7]</xref>, a condition that affects
+perforating vessels, thence white and gray matter, and accelerates
+neurodegenerative processes. Vascular dementia reflects the global effects of
+vascular disease on the brain, not just of multiple individual infarcts.
+<xref rid="bib8" ref-type="bibr">[8]</xref>, <xref rid="bib9" ref-type="bibr">[9]</xref> It
+results in stroke, cognitive decline and dementia, plus neuropsychiatric
+symptoms, gait, balance <xref rid="bib8" ref-type="bibr">[8]</xref>, <xref rid="bib9" ref-type="bibr">[9]</xref>, and continence problems <xref rid="bib10" ref-type="bibr">[10]</xref>, necessitating a larger framework for
+targeted, comprehensive studies <xref rid="bib11" ref-type="bibr">[11]</xref>.</p><p>In 2006, the National Institute for Neurological Disorders and
+Stroke and the Canadian Stroke Network convened a multidisciplinary research
+group to recommend standards for the study of vascular cognitive impairment
+<xref rid="bib11" ref-type="bibr">[11]</xref>. In 2013
+the Alzheimer's Association convened an expert working group, which summarized
+the state of vascular cognitive impairment science and identified areas where
+new knowledge is needed <xref rid="bib12" ref-type="bibr">[12]</xref>. However, despite strong and unanimous evidence for the
+major burden of vascular cognitive impairment on both patients and their
+caregivers <xref rid="bib13" ref-type="bibr">[13]</xref>,
+most dementia research largely overlooks vascular disease as a cause. In part,
+this reflects that clinicians and researchers working on dementia, stroke,
+physical, or psychiatric manifestations are still too often segregated. &#x0201c;Stroke&#x0201d;
+and &#x0201c;dementia&#x0201d; (both syndromes, not pathological diagnoses) present to different
+clinical specialists (<xref rid="fig1" ref-type="fig">Fig.&#x000a0;1</xref>); stroke specialists
+under-recognize the cognitive impact of stroke, whereas dementia specialists
+under-recognize vascular inputs to dementia pathophysiology. This separation
+also affects research and funding initiatives, for example, vascular disease was
+rarely mentioned in a report on 169 European studies considered relevant to
+neurodegenerative disease research <xref rid="bib14" ref-type="bibr">[14]</xref>. Better diagnostic criteria for the different cognitive
+profiles of vascular and AD are also needed <xref rid="bib15" ref-type="bibr">[15]</xref>.</p><p>The recognition of an important role for cerebrovascular disease
+in dementia opens major therapeutic opportunities. Vascular risk factor
+reduction and stroke prevention may already be reducing dementia incidence
+<xref rid="bib3" ref-type="bibr">[3]</xref>, <xref rid="bib16" ref-type="bibr">[16]</xref>.
+Increased government and public concern about dementia, as well as better
+grouping of codes for different cerebrovascular disease presentations in the
+revised International Classification of Disease (ICD) codes version 11 (ICD-11,
+release 2018, <ext-link ext-link-type="uri" xlink:href="http://www.who.int/classifications/icd/revision/en/" id="intref0010">http://www.who.int/classifications/icd/revision/en/</ext-link>), will
+help advance understanding of cerebrovascular disease and its impact on
+neurodegeneration.</p><p>Here, we report on an initiative funded by the JPND to promote
+efficient use of available data in which we identified information, relevant to
+vascular disease, available in different types of studies that could provide
+large, statistically robust, generalizable data sets, and create platforms for
+future mechanistic, epidemiological research, or clinical trials <xref rid="bib17" ref-type="bibr">[17]</xref>. We used the exemplar
+survey data to identify major gaps in knowledge, methodological issues and
+suggest priority actions to advance the field.</p></sec><sec id="sec2"><label>2</label><title>Method</title><p>We convened a group of experts in stroke and cerebrovascular
+disease, AD, epidemiology, psychology, neuroimaging, and clinical trials
+(<xref rid="appsec2" ref-type="sec">Appendix</xref>). We
+designed a survey aiming to capture information about data available in cohorts
+relevant to vascular contributions to neurodegeneration. A &#x0201c;relevant cohort&#x0201d;
+could comprise patients with stroke/transient ischaemic attack (TIA), or
+suspected cognitive impairment or dementia, or healthy subjects, from a hospital
+or geographical population, and would have information on vascular disease
+and/or risk factors, and one or more of the following: cognitive data, long-term
+outcomes (including physical function and mood), neuroimaging including
+biomarkers of vascular disease and/or neurodegeneration, physiological measures
+(e.g., blood pressure, vascular stiffness), or biomarker samples with a relevant
+vascular link. The study could be completed or ongoing, cross-sectional or
+longitudinal, observational, or a clinical trial. The minimum sample for
+inclusion was 50 participants, with no age or geographical limits.</p><p>The survey (<xref rid="appsec2" ref-type="sec">Supplementary Material</xref>), designed for online delivery,
+sought information on whether participants were healthy or recruited from a
+stroke or memory or other relevant clinic or participated in a clinical trial.
+Data were collected on demographics, medical history, risk factors, cognition,
+brain imaging, physiological measures, comorbidities at inclusion, duration and
+frequency of follow-up, follow-up assessments, outcome events, whether the study
+was completed or ongoing, availability of bio- or genetic samples for further
+analysis, interest of investigators in data sharing, and whether approvals for
+sharing were already in place.</p><p>The survey was piloted by three members of the expert group
+(JMW, MD, and ES), before being distributed widely. It ran from November 15,
+2014 until August 31, 2015 with updates for ongoing studies to November 2015. We
+initially invited participation from investigators of studies in Europe through
+the JPND Vascular Disease group, relevant studies listed in the JPND report
+<xref rid="bib14" ref-type="bibr">[14]</xref>, networks,
+and studies known to them, for example, Dementia Platform UK, the German Center
+for Neurodegenerative Diseases (DZNE), and &#x0201c;Constances&#x0201d; in France; however,
+investigators based in North America, Australasia, and the Asia Pacific Region
+also expressed interest and were included. We recognized that the survey was
+unlikely to capture all studies but aimed to capture a broad sample,
+particularly from the vascular disease perspective (including clinical trials),
+as these are under-represented in other dementia initiatives <xref rid="bib14" ref-type="bibr">[14]</xref>, <xref rid="bib18" ref-type="bibr">[18]</xref>, <xref rid="bib19" ref-type="bibr">[19]</xref>, <xref rid="bib20" ref-type="bibr">[20]</xref>.</p><p>We performed descriptive statistics and meta-analyses (random
+effects methods) <xref rid="bib21" ref-type="bibr">[21]</xref>. For detailed analyses of cognition in relation to
+stroke, we used studies that collected data on stroke and cognition from
+subjects without prestroke dementia in community-based studies or in subjects
+with stroke (hospital-based post-stroke cognitive impairment cohorts). Responses
+were received from 68 investigators (some provided data on several studies).
+Samples were updated to include ongoing recruitment to December 01, 2015. Five
+incomplete responses were removed from further analysis (for full details, see
+<xref rid="appsec2" ref-type="sec">Supplementary
+Material</xref>).</p><p>Fifty-five experts (<xref rid="appsec2" ref-type="sec">Appendix</xref>) discussed the data to identify
+knowledge gaps requiring new data, implications of ICD-11 disease codes
+(<ext-link ext-link-type="uri" xlink:href="http://www.who.int/classifications/icd/revision/en/" id="intref0015">http://www.who.int/classifications/icd/revision/en/</ext-link>), agree
+early targets for shared data analysis, and plan future&#x000a0;analyses of existing
+data and new research initiatives.</p></sec><sec id="sec3"><label>3</label><title>Results</title><p>The survey collected data on a total of 96 studies, including
+167,064 participants, or 667,064 with UK Biobank <xref rid="bib22" ref-type="bibr">[22]</xref> (186,000 and 686,000, respectively
+including target samples in ongoing studies; <xref rid="tbl1" ref-type="table">Table&#x000a0;1</xref>;
+<xref rid="appsec2" ref-type="sec">Supplementary
+Table&#x000a0;1</xref>). The sample size ranged from 41 to 29,852 (excluding
+UK Biobank). The mean age was 72, range 15 to 106&#x000a0;years. There were 84
+observational studies (11 cross sectional and 73 longitudinal) and 12 randomized
+clinical trials. The main types of studies overlapped (some recruited from
+several sources by various methods, <xref rid="tbl2" ref-type="table">Table&#x000a0;2</xref>) but, in general,
+most studies could be attributed to the following categories: community-based
+cohorts including population studies (32 studies, of which 28 were suitable for
+analyzing incident post-stroke dementia, sample size &#x0003e;600,000 subjects),
+hospital-based stroke clinics (i.e., stroke and TIA services, 26 studies, 12
+suitable for analyzing incident post-stroke dementia, &#x0223c;4700 subjects),
+hospital-based memory clinics (15 studies, &#x0223c;20,000 subjects), and randomized
+clinical trials (12 trials, &#x0223c;20,000 subjects); 38 studies were ongoing
+(recruiting or long-term follow-up, <xref rid="tbl2" ref-type="table">Table&#x000a0;2</xref>). Some studies recruiting from mixed sources
+(<xref rid="tbl2" ref-type="table">Table&#x000a0;2</xref>,
+<xref rid="appsec2" ref-type="sec">Supplementary
+Table&#x000a0;1</xref>) were not included in detailed analysis in the
+following section (or in <xref rid="tbl1" ref-type="table">Table&#x000a0;1</xref>), yet provide other relevant information (details in
+<xref rid="appsec2" ref-type="sec">Supplementary
+Material</xref>). The longest duration of follow-up so far was more
+than 5 years (<xref rid="fig2" ref-type="fig">Fig.&#x000a0;2</xref>). Sixty-seven studies
+were based in Europe, 17 in North America, and 12 in the Asia Pacific Region
+(excluding 2 incomplete entries).</p><p>Most cohorts (&#x0223c;86/96) did neither appear in the JPND report of
+169 cohort studies <xref rid="bib14" ref-type="bibr">[14]</xref> nor overlap by more than 20% with other recent
+initiatives, for example, Cohort Studies of Memory in an International
+Consortium (COSMIC) <xref rid="bib18" ref-type="bibr">[18]</xref>, Virtual International Stroke Trials Archive (VISTA)
+Cognition <xref rid="bib22" ref-type="bibr">[22]</xref>, or
+the Consortium of Studies of Post-Stroke Cognitive Decline and Dementia
+(STROKOG; <xref rid="bib23" ref-type="bibr">[23]</xref>).
+This lack of overlap indicates a gap in information about vascular disease in
+neurodegeneration when viewed from &#x0201c;traditional&#x0201d; neurodegenerative perspectives
+and shows that there is a large amount of data available for sharing and
+meta-analyses if it could be brought together efficiently and
+effectively.</p><sec id="sec3.1"><label>3.1</label><title>Data sources</title><sec id="sec3.1.1"><label>3.1.1</label><title>Community cohorts</title><p>Community-based (including population-based) cohorts are
+the best way to determine the relative contribution of vascular and
+other pathologies to the development of dementia and cognitive aging.
+They permit assessment of risk factor levels
+<italic>before</italic> the development of cognitive
+impairment or dementia, and hence, risk factor measurement is less
+likely to be affected by disease or its treatment. These cohorts often
+have repeated measures, starting in midlife, so, the impact of
+cumulative exposures, including during specific ages, can be explored.
+In contrast, clinical studies usually recruit from one extreme of the
+population distribution of vascular susceptibility; these studies may
+generate hypotheses that can be tested in population-based
+cohorts.</p><p>We gathered data from a representative sample of 32
+community-based cohorts (<xref rid="appsec2" ref-type="sec">Supplementary Table&#x000a0;1</xref>, <xref rid="appsec2" ref-type="sec">Supplementary Fig.&#x000a0;1</xref>; 28 suitable
+for analysis) that defined the extent of vascular compromise, and
+structural brain injury in each person using serial brain imaging, and
+also measured global and domain-specific cognitive performance, mood,
+and physical function. Most studies prospectively followed their
+participants using health record linkage, questionnaires, or repeated
+examinations, to detect progression to cognitive impairment, stroke, or
+dementia. Most studies include biobanking, and a few have prospective
+postmortem brain banks. The community-based studies were either
+geographically population-based or recruited through advertisement and
+other strategies.</p><p>Most studies were conducted in the past three decades in
+North America and Europe, studied older participants (mean age
+70&#x000a0;years), and used brain magnetic resonance imaging (MRI). Sample size
+ranged from around 100 to 500,000 participants (median: 1400; Q1&#x02013;Q3:
+400&#x02013;9500), with imaging planned for &#x0223c;150,000. However, there are
+limitations. The imaging protocols, hence sensitivity to vascular
+pathology, varied, particularly in the older studies. Vascular risk
+factor assessment covered common risk factors, but interim TIA, clinical
+stroke, and stroke subtype were ascertained with varying degrees of
+rigor ranging from surveillance for incident events with direct
+participant examination and consensus review by study investigators,
+through medical records linkage, to self-reported events. Data on
+lipids, inflammatory markers, and renal function were missing from about
+half the studies. There was considerable variation in methods and timing
+used to assess vascular and cognitive outcomes. Data from a wider age
+span starting in youth to mid adulthood, diverse race, ethnic, and
+geographic origins, but using common protocols for cognition, physical
+function, minimum standard physiological measures, and MRI, are
+needed.</p></sec><sec id="sec3.1.2"><label>3.1.2</label><title>Post-stroke cognitive impairment
+cohorts</title><p>In hospital-based series, about 20% of stroke patients
+have dementia after stroke, and the cumulative incidence of dementia
+after the first year is about 3% pa <xref rid="bib24" ref-type="bibr">[24]</xref>. The survey identified 26
+hospital-based cohorts recruiting from stroke/TIA &#x000b1; other services
+(<xref rid="tbl2" ref-type="table">Table&#x000a0;2</xref>). Twelve had data suitable for analysis
+comprising studies that recruited patients presenting to hospital with
+ischemic stroke or TIA, followed longitudinally with cognitive and other
+measures. These studies collectively included &#x0003e;4134 subjects
+currently (planned &#x0003e;4700), and nearly 90% have structural
+neuroimaging. Most assessed educational attainment (although few
+assessed premorbid intelligence quotient), most used the Montreal
+Cognitive Assessment (MoCA) and all collected details of vascular
+disease and vascular risk factors (<xref rid="appsec2" ref-type="sec">Supplementary Fig.&#x000a0;2</xref>). Of note,
+several cohorts include amyloid-positron emission tomography imaging,
+thus enabling assessment of the interactions between vascular and
+amyloid pathology in cognitive decline.</p><p>These data, if combined, would help overcome many gaps
+in knowledge remaining from previous post-stroke cognitive impairment
+studies <xref rid="bib5" ref-type="bibr">[5]</xref>, <xref rid="bib25" ref-type="bibr">[25]</xref>: poor generalizability due to small sample
+and inclusion of high-functioning ischemic, nondysphasic, stroke
+patients, with an informant; or various entry restrictions, for example,
+inclusion of TIAs only, or first-only strokes, rather than any stroke.
+The variety of cognitive, physical, and physiological assessment tools
+and lack of prestroke cognition or contemporaneous mood data restrict
+comparisons. There is little information on concomitant AD pathology, or
+on biomarkers of vascular dementia, or pathology specimens to determine
+true proportions of vascular disease, and imaging acquisitions vary. As
+with population studies, agreed standards for future studies would
+increase research efficiency.</p></sec><sec id="sec3.1.3"><label>3.1.3</label><title>Memory clinics</title><p>Patients attending a memory clinic represent a highly
+relevant population to study vascular contributions to cognitive decline
+and dementia. Most patients attending memory clinics have vascular
+lesions co-occurring with other pathologies, in particular,
+Alzheimer-type processes. However, there is limited evidence from
+longitudinal studies and randomized controlled trials (RCTs) in memory
+clinic-based cohorts to determine how much the vascular lesions
+contribute to cognitive profiles, predict prognosis, or should influence
+treatment. Extrapolation of observations from, for example,
+population-based studies, may not be valid because disease predictive
+factors in a relatively healthy population may not necessarily predict
+disease progression among individuals affected by the disease, or vice
+versa.</p><p>We identified 15 cohorts that included memory clinic
+patients (<xref rid="tbl2" ref-type="table">Table&#x000a0;2</xref>, <xref rid="appsec2" ref-type="sec">Supplementary Fig.&#x000a0;3</xref>), some
+providing data only on memory <xref rid="bib26" ref-type="bibr">[26]</xref>, whereas others included other
+clinical presentations <xref rid="bib27" ref-type="bibr">[27]</xref>. Cohort sizes were generally modest, with 8 of
+15 cohorts including &#x02264;200 patients, although baseline data are available
+on 19,144 patients of mean age of 73&#x000a0;years. All studies collected data
+on demographics, risk factors for vascular disease including education.
+Cognitive test results and neuroimaging (mostly MRI or computed
+tomography) were available from most patients in all cohorts. However,
+diagnostic criteria for mild cognitive impairment (MCI) and dementia,
+and its subtypes, varied across cohorts. Moreover, although most of the
+studies collected longitudinal data, both timing and content of
+follow-up varied substantially.</p><p>Unfortunately, substantial gaps in knowledge remain,
+such as the extent to which different pathologies may have differential
+prognostic impact in different stages of the dementia process. For
+example, larger studies at different disease stages across multiple
+clinics would help to determine if white matter hyperintensity (WMH)
+burden is indeed a stronger predictor of progressive brain atrophy in
+people with MCI and early AD than in later stages <xref rid="bib28" ref-type="bibr">[28]</xref>, <xref rid="bib29" ref-type="bibr">[29]</xref>.
+Further studies are needed to determine how much co-occurring
+pathologies affect risk-benefit ratios of treatments that are typically
+used to reduce vascular risk, such as antithrombotic drugs. For example,
+randomized trials of aspirin in patients with AD observed rates of
+intracerebral hemorrhage that were much higher than those in people
+without AD <xref rid="bib30" ref-type="bibr">[30]</xref>.</p></sec><sec id="sec3.1.4"><label>3.1.4</label><title>Physical function</title><p>Gait and balance disorders are common in elderly people,
+increasing rapidly from around 15% at the age of 60 years to &#x0003e;50% at
+age of &#x02265;80&#x000a0;years <xref rid="bib31" ref-type="bibr">[31]</xref>, <xref rid="bib32" ref-type="bibr">[32]</xref>, <xref rid="bib33" ref-type="bibr">[33]</xref>. They are often
+multifactorial and increase falls, institutionalization, and mortality
+<xref rid="bib31" ref-type="bibr">[31]</xref>, <xref rid="bib32" ref-type="bibr">[32]</xref>, <xref rid="bib34" ref-type="bibr">[34]</xref>. For example, Parkinson's disease,
+impairs gait, and balance <xref rid="bib35" ref-type="bibr">[35]</xref>, but vascular cerebral disorders also disturb
+gait and may contribute to Parkinsonian symptoms <xref rid="bib36" ref-type="bibr">[36]</xref>, <xref rid="bib37" ref-type="bibr">[37]</xref>,
+particularly in SVD where gait is the second commonest symptom after
+cognitive disturbance <xref rid="bib38" ref-type="bibr">[38]</xref>, <xref rid="bib39" ref-type="bibr">[39]</xref>. The Leukoaraiosis and
+Disability in the Elderly Study (LADIS) showed that gait and balance
+were correlated with WMH severity <xref rid="bib8" ref-type="bibr">[8]</xref>. As gait represents a complex
+higher order form of motor functioning, impaired gait and cognition are
+closely intertwined <xref rid="bib31" ref-type="bibr">[31]</xref>.</p><p>However, gait and balance were rarely assessed in
+population-based or hospital-based post-stroke or memory studies. The
+survey found very limited information, but such details were poorly
+captured in the questionnaire. For example, none of five studies from
+general geriatric clinics mentioned recording gait, walking, or
+movement. Under &#x0201c;other,&#x0201d; no study mentioned these words either. Seven
+other studies mentioned &#x0201c;gait&#x0201d; (<xref rid="appsec2" ref-type="sec">Supplementary Table&#x000a0;1</xref>, ABC1936,
+ABC1921, CASPER, ONDRI, PURE-MIND, RUN DMC, STRIDE) although we
+recognize that some studies that did not specifically mention gait do
+collect such data. This suggests that problems of gait and balance are
+under-recognized compared with other features of vascular
+neurodegeneration and hence are poorly assessed in vascular-focused
+clinics for older people, despite representing a major problem for older
+people, their families, hospitals, and social services.</p></sec><sec id="sec3.1.5"><label>3.1.5</label><title>Clinical trials</title><p>Many acute stroke and stroke prevention RCTs have not
+collected cognitive data because of the following: (1) they focused on
+the physical consequences of stroke; (2) cognitive testing was
+considered too laborious and not applicable to participants whose
+vision, speech, or hand function were impaired; or (3) there was no
+informant, thus excluding significant proportions of patients from
+testing <xref rid="bib40" ref-type="bibr">[40]</xref>.</p><p>The survey collected data from 12 RCTs, testing
+treatments for acute ischemic or hemorrhagic stroke or secondary
+prevention of ischemic stroke (<xref rid="appsec2" ref-type="sec">Supplementary Table&#x000a0;1</xref>). The sample
+size ranged from 41 to 4750, total current sample 20,035 (planned sample
+22,314), of which 12,439 will have detailed neuroimaging. The mean
+participant age is 71.6&#x000a0;years, and 58.5% are men. Most trials
+consistently recorded baseline vascular risk factors including blood
+pressure, and outcomes such as recurrent vascular events and functional
+outcome assessed using the modified Rankin Scale. However, cognitive
+tests varied (eight used the mini-mental state examination [MMSE], one
+the MoCA, five the Telephone Interview of Cognitive Assessment (TICS),
+and two a more detailed assessment), none tested premorbid intelligence
+quotient although four trials recorded educational attainment, few
+assessed mood, and none corrected for imaging features such as WMH
+burden (a predictor of post-stroke cognitive impairment). The latest
+follow-up was at 12&#x000a0;months in all but two trials (latest assessment 24
+and 36&#x000a0;months in one trial each), substantially shorter than that in the
+other study types (<xref rid="fig2" ref-type="fig">Fig.&#x000a0;2</xref>).</p><p>An individual patient data meta-analysis of cognition
+after stroke in these trials, which are typical of many stroke treatment
+or prevention trials, would be hampered by lack of consistency in
+cognitive measures and of long-term data, despite providing exemplary
+vascular risk factor and vascular outcome assessments. Inadequate
+attention has been given to assessing cognition after stroke in RCTs to
+date. Agreement on pragmatic and rapid ways to assess important
+cognitive domains such as executive function and processing speed, not
+just memory, and to correct for premorbid cognition, depression, and WMH
+burden on imaging, are essential to advance understanding of cognitive
+trajectories after stroke. There is an opportunity to progress by
+including cognitive tests in ongoing multicentre stroke trials where
+feasible as pragmatic methods are becoming available.</p></sec></sec><sec id="sec3.2"><label>3.2</label><title>Methods for assessing vascular effects on
+cognition and neurodegeneration</title><p>Vascular disease requires different methods compared with
+other types of neurodegeneration or dementia research. Two key methods,
+which differ substantially in their requirements for vascular disease and
+neurodegenerative pathologies such as AD, are the assessment of neuroimaging
+and cognition. Integrated cerebrovascular disease codes are essential to
+bridge clinical presentations. All are discussed here.</p><sec id="sec3.2.1"><label>3.2.1</label><title>Imaging, protocols, and analysis
+methods</title><p>In the 1990s, landmark neuroepidemiological studies
+showed that clinically silent cerebrovascular lesions detected only on
+MRI, including lacunes and WMH of presumed vascular origin, were
+associated with cognitive impairment and an increased risk of future
+stroke and dementia <xref rid="bib41" ref-type="bibr">[41]</xref>, <xref rid="bib42" ref-type="bibr">[42]</xref>. More recent studies have incorporated
+advanced imaging modalities that interrogate physiological and molecular
+changes&#x02014;such as structural and functional connectivity with diffusion
+tensor imaging and functional MRI, cerebral perfusion, and molecular
+markers such as amyloid deposition&#x02014;with larger sample sizes to increase
+statistical power for subgroup analyses and to predict clinical
+events.</p><p>Our synthesis of cohort studies identified many
+participants in community-dwelling settings and clinical studies on
+stroke who have cognitive data and undergone or will undergo
+neuroimaging, predominantly brain MRI (<xref rid="tbl1" ref-type="table">Table&#x000a0;1</xref>, <xref rid="appsec2" ref-type="sec">Supplementary
+Table&#x000a0;1</xref>). We identified five major areas where there
+are currently limitations, gaps in knowledge, or unrealized
+opportunities for harmonization and collaboration of neuroimaging
+methods.</p><p>First, vascular lesion definitions and terminology
+require standardization, to enable cross-cohort comparisons and
+meta-analysis. This need has largely been met by the recent STandards
+for ReportIng Vascular ChangEs Neuroimaging (STRIVE) <xref rid="bib44" ref-type="bibr">[44]</xref>; however, updates
+will become necessary for new neuroimaging methods that bring new
+imaging markers or increased sensitivity of known markers.</p><p>Second, to harmonize and compare findings across
+studies, full details of neuroimaging acquisition and analysis methods
+should be reported. New studies could adopt successful, validated
+methods recommended by STandards for ReportIng Vascular ChangEs
+Neuroimaging or used previously if the full methodological details were
+available. Imaging protocols could be shared through a single, publicly
+available website.</p><p>Third, reliability and accuracy of lesion classification
+would be improved through sharing of (exemplary) MRI data across cohorts
+with appropriate anonymization. For visual rating, a shared MRI
+repository could be used to train new raters using expert consensus as
+the gold standard. For computational analysis, for example, of MRI WMH,
+a repository could allow developers access to MRI images showing a range
+of lesions, from different vendors and field strengths, to derive or
+validate processing methods.</p><p>Fourth, there is great need for integrating information
+on vascular and neurodegenerative pathology from cohorts recruited
+through different settings, leveraging the expertise of stroke and
+dementia specialists in vascular and neurodegenerative disease.
+Integrating data across geographic and race/ethnic backgrounds would
+also help to more reliably identify and explore differences in
+subclinical vascular brain injury.</p><p>Fifth, more collaboration would enhance innovative
+methods for neuroimaging post-processing and data analysis. One example
+is the increasing emphasis on integrated data analysis to determine
+total SVD burden and effects on brain connectivity, neurodegeneration,
+and cognition (<xref rid="fig3" ref-type="fig">Fig.&#x000a0;3</xref>). Advances in
+machine learning and graph theory&#x02013;based network analysis provide new
+opportunities to accelerate image analysis for large-scale studies. A
+multidisciplinary approach including neuroepidemiologists and clinical
+researchers on the one hand, and computer scientists, mathematicians and
+biomedical engineers on the other hand, is required.</p></sec><sec id="sec3.2.2"><label>3.2.2</label><title>Cognition</title><p>There are particular challenges in the assessment of
+cognition in patients with cerebrovascular diseases, rendering detailed
+neuropsychological approaches (typically used in studies of dementia)
+impractical. Fatigue is common after stroke, limiting patient tolerance
+of prolonged tests. Patients may have dysphasia, impaired hand function,
+or visual deficits, making some tests impossible, even if comprehension
+is preserved. Depression and apathy are common in SVD and affect
+cognitive test performance. Many brief cognitive screening tests focus
+on memory, although vascular disease, in particular SVD, typically
+results in <italic>subcortical</italic> cognitive impairments, for
+example, loss of frontal and executive function <xref rid="bib7" ref-type="bibr">[7]</xref>, <xref rid="bib43" ref-type="bibr">[43]</xref>, and may
+occur in a stepwise manner reflecting sudden vascular events.</p><p>The survey shows huge variability in cognitive outcome
+measures in stroke/TIA patients (<xref rid="tbl1" ref-type="table">Table&#x000a0;1</xref>, <xref rid="appsec2" ref-type="sec">Supplementary
+Material</xref>). About 25% of studies used a diagnosis of
+dementia or MCI, another 25% used a single cognitive test (most commonly
+MoCA, MMSE, or the revised Addenbrooke's cognitive examination); less
+than 10% assessed the premorbid (i.e., optimal early adulthood)
+cognitive status; and few assessed cognition immediately before the
+stroke. Of cognitive domains assessed in these studies, there was an
+almost equal distribution among memory, executive functions, reaction
+time, visuospatial function, with many accounting also for depression
+and anxiety.</p><p>Longitudinal observational studies included patients
+with different cognitive impairment or dementia diagnoses, but of note,
+about half the studies did not assign a specific dementia type and the
+diagnostic criteria for MCI, AD, vascular cognitive impairment (VCI),
+and dementia varied. The most commonly used criteria were the National
+Institutes of Aging-Alzheimer's Association for MCI and AD,
+<italic>Diagnostic and Statistical Manual of Mental Disorders, IV
+Edition</italic> for dementia, and the American Heart
+Association/American Stroke Association for VCI. However, with the
+exception of the widely used <italic>Diagnostic and Statistical
+Manual of Mental Disorders, IV Edition</italic> criteria for
+dementia, most studies used widely differing criteria for other
+categories of cognitive disorders, perhaps reflecting the difficulties
+and complexity of cognitive assessment in vascular disease. Most
+community-based and longitudinal observational studies used the MMSE,
+which is insensitive to vascular cognitive decline. A stepwise approach
+to determining the cognitive test approach to vascular disease is
+suggested in <xref rid="tbl3" ref-type="table">Table&#x000a0;3</xref>.</p><p>The importance of assessing cognitive profiles (without
+worsening the complexity of categorization) is emphasized by recent
+findings in SVD patients of memory loss (a cortical dysfunction)
+<xref rid="bib7" ref-type="bibr">[7]</xref>, <xref rid="bib44" ref-type="bibr">[44]</xref>, suggesting that SVD affects not just white
+and deep gray matter but also the (connected) cerebral cortex
+(<xref rid="fig3" ref-type="fig">Fig.&#x000a0;3</xref>)
+<xref rid="bib45" ref-type="bibr">[45]</xref>, <xref rid="bib46" ref-type="bibr">[46]</xref>, <xref rid="bib44" ref-type="bibr">[44]</xref>. Lower connectivity within cerebral
+networks was associated with cognitive impairment and dementia
+<xref rid="bib47" ref-type="bibr">[47]</xref>, <xref rid="bib48" ref-type="bibr">[48]</xref>; WMHs were associated with less brain
+activation in the frontal cortex on fludeoxyglucose-positron emission
+tomography <xref rid="bib49" ref-type="bibr">[49]</xref>, <xref rid="bib50" ref-type="bibr">[50]</xref>, <xref rid="bib51" ref-type="bibr">[51]</xref>. Mood disorders and apathy are common after
+stroke, affect cognitive test performance (and more fundamentally,
+patient participation in research), and may reflect impaired
+connectivity. Integrating the results from different cohorts that
+investigate these underlying mechanisms and consequences is essential to
+understand the full impact of vascular disease on brain function and
+progression toward the complete spectrum of cognitive
+impairments.</p></sec><sec id="sec3.2.3"><label>3.2.3</label><title>Relevance and mapping to next generation
+disease coding, ICD-11</title><p>Accurate and uniformly applied diagnoses are essential
+in health care and research. The World Health Organization has the main
+responsibility for the global classification systems, a core
+constitutional task. ICD-10 was published about 25&#x000a0;years ago. Major
+advances in the understanding of diseases have occurred since then,
+making ICD-10 outdated in several areas. The revision of ICD-10 into
+ICD-11 is currently in its final stage.</p><p>A major change from ICD-10 to ICD-11 is that
+cerebrovascular diseases will no longer be split across different
+chapters, but will constitute &#x0201c;one single section&#x0201d; in
+<italic>Diseases of the Nervous System</italic>. ICD-11 will
+also, for the first time, include definitions of all cerebrovascular
+diagnostic codes including definitions of transient ischemic attack and
+the different main types of stroke. It will also encompass
+cerebrovascular diseases not causing acute neurological dysfunction:
+<italic>silent cerebral infarcts</italic>, <italic>cerebral
+microbleeds</italic>, and <italic>silent white matter
+abnormalities associated with vascular disease</italic>. The term
+&#x0201c;silent&#x0201d; denotes that these entities have not caused acute neurologic
+symptoms (and hence are not &#x0201c;strokes&#x0201d;) but are important for brain
+function, affect prognosis, and should not be regarded only as
+incidental imaging findings.</p><p>The final ICD-11 classification is expected to be
+approved for governmental use by the World Health Assembly for release
+in 2018, but the prefinal beta draft is officially available at the
+World Health Organization website <xref rid="bib52" ref-type="bibr">[52]</xref>. For several research purposes,
+it is recommended that the ICD-11 terminology and definitions be
+considered and may be applied already at this stage.</p></sec></sec></sec><sec id="sec4"><label>4</label><title>Discussion</title><p>Our initiative identified more than 90 cohort studies, including
+over 660,000 participants, many outside current neurodegeneration data
+initiatives, most with consent for data sharing, providing substantial scope for
+data mining. We acknowledge that our survey is incomplete. However, we consider
+it sufficiently representative to draw important conclusions. The segregation of
+stroke and dementia remains prevalent 10 years after the National Institute of
+Neurological Disorders and Stroke-Canadian Stroke Network (NINDS-CSN) standards
+<xref rid="bib11" ref-type="bibr">[11]</xref>, in spite
+of recognition that larger frameworks and better diagnostic criteria for
+dementias are urgently needed <xref rid="bib1" ref-type="bibr">[1]</xref>, <xref rid="bib53" ref-type="bibr">[53]</xref>. Even among the survey respondents
+(likely &#x0201c;cerebrovascular disease enthusiasts&#x0201d;), there was a large gap between
+&#x0201c;stroke&#x0201d; and &#x0201c;dementia,&#x0201d; and sparse overlap with the JPND report <xref rid="bib14" ref-type="bibr">[14]</xref>. Although stroke
+clinic&#x02013;based studies and RCTs were trying to collect at least some cognitive
+data, the methods for testing cognition in such environments are suboptimal.
+Meanwhile, the memory clinic&#x02013;based cohorts collected relatively little
+information on vascular disease. Undoubtedly, the role of vascular disease in
+neurodegeneration remains under-recognized, and under-funded <xref rid="bib54" ref-type="bibr">[54]</xref>, a situation that can no
+longer be justified: vascular risk factor reduction prevents stroke and may also
+prevent dementia <xref rid="bib3" ref-type="bibr">[3]</xref>
+further evidenced by declining dementia incidence paralleling declining stroke
+incidence <xref rid="bib16" ref-type="bibr">[16]</xref>.
+Fortunately, perspectives may be evolving. A recent call for new conceptual
+formulations of AD and dementia cites the need to account for mixed pathologies
+and known risk factors (many of which are also stroke risk factors)
+<xref rid="bib55" ref-type="bibr">[55]</xref>.
+Furthermore, ICD-11 should help identify all cerebrovascular disease
+presentations. Standardized diagnostic workup and data collection would
+facilitate studies on diagnosis, prognosis, and treatment of vascular factors in
+a memory clinic setting, and similarly, studies of cognition, gait, and balance
+in a stroke clinic setting (<xref rid="tbl4" ref-type="table">Table&#x000a0;4</xref>). &#x0201c;Transnosological&#x0201d;
+research units, integrating specialists in neurovascular and neurodegenerative
+disorders would facilitate a global approach to dementia prevention.</p><p>These survey data provide a framework for addressing
+interactions between the two leading causes of cognitive decline and dementia:
+vascular disease and neurodegeneration. Epidemiological studies and RCTs are
+highly complementary when viewed as large data sets en masse. Observational
+studies indicate that the most critical period for elevated blood pressure with
+regard to cognitive decline is midlife, whereas blood pressure&#x02013;lowering trials
+mostly included older patients with follow-up periods too short to detect an
+effect. Population studies inform hospital-based post-stroke dementia studies
+(and vice versa), often have repeated measures gathered over many years,
+enabling the impact of cumulative exposures, and of exposure during specific
+ages, to be explored. Important early life information is present in these
+studies, for example, birth weight, childhood cognition, socioeconomic data, for
+subjects now aged 50 to 70 years, enabling assessment of early life factors on
+cerebrovascular disease and dementia risk. Capturing information on both
+vascular and neurodegenerative disease from mixed sources improves
+generalizability (e.g., RUN DMC; FUTURE; Lund Stroke Registry, <xref rid="appsec2" ref-type="sec">Supplementary Table&#x000a0;1</xref>).
+Combining studies that focus on populations in different epidemiological
+&#x0201c;windows&#x0201d; relative to the expression of disease enhances mechanisms' discovery
+and can relate systemic disease risk (obesity, metabolic, and cardiovascular
+disease) to cerebrovascular disease and dementia. Cohort meta-analyses would
+help clarify long-term event rates, their prediction, risk factors, and
+variation between populations and improve design of RCTs. Existing studies may
+provide well-phenotyped &#x0201c;trial ready&#x0201d; subjects with prospective consent for
+future research. The challenges involved in harmonization and analysis of large,
+diverse data sets are substantial (<xref rid="tbl4" ref-type="table">Table&#x000a0;4</xref>), but methods to overcome this are ongoing
+<xref rid="bib56" ref-type="bibr">[56]</xref>, and the
+potential rewards are huge. Work already ongoing as a result of this initiative
+is listed in <xref rid="appsec2" ref-type="sec">Supplementary
+Table&#x000a0;2</xref>.</p><p>Agreeing on a unified cognitive assessment, which can be applied
+easily in cerebrovascular disease, is sensitive to relevant domains and relevant
+to patients, could have as much impact on identifying treatment to prevent VCI
+as the Rankin Scale <xref rid="bib57" ref-type="bibr">[57]</xref> has had on finding acute stroke treatments: without the
+common language for functional outcome provided by the Rankin scale, it is
+arguable that stroke units, thrombolysis, hemicraniectomy, and thrombectomy
+would not have become guideline acute stroke interventions in as little as
+20&#x000a0;years. Currently, most stroke RCTs, with few exceptions <xref rid="bib58" ref-type="bibr">[58]</xref>, do not assess cognition.
+The evaluation of cognition in stroke patients is complex, difficult, with no
+&#x0201c;best cognitive test&#x0201d;. The 2006 collaborative consensus <xref rid="bib11" ref-type="bibr">[11]</xref> proposed three cognitive
+protocols with different lengths, one being a brief test for use in large
+observational studies and RCTs. Pragmatic, rapid, validated, tools sensitive to
+cognitive domains affected by vascular disease early on, are required, like the
+MoCA <xref rid="bib59" ref-type="bibr">[59]</xref>. Online
+cognitive tests, for example, the UK Biobank Cognitive Testing Enhancement, are
+too complex for many stroke patients. In any case, a stepwise approach is needed
+to assess vascular effects on neurodegeneration (<xref rid="tbl3" ref-type="table">Table&#x000a0;3</xref>). Simple, sensitive, cognitive
+scales for use in telephone interviews, validated in patients with
+cerebrovascular disease, are needed (<xref rid="tbl4" ref-type="table">Table&#x000a0;4</xref>) <xref rid="bib60" ref-type="bibr">[60]</xref>.</p><p>Several large national initiatives will address dementia
+prevention in line with the 2013 G8 Dementia Summit. These draw largely on
+healthy or presymptomatic disease populations and offer new opportunities for
+systematic, prospective evaluations of people at scale, and often long-term
+sample biobanking, genetics, and imaging, enabling some powerful study designs.
+These include the Rhineland study (Germany, DZNE, n&#x000a0;=&#x000a0;40,000), the Canadian
+Longitudinal Study on Aging (50,000 individuals), the Canadian Alliance for
+Healthy Hearts and Minds and Prospective Urban Rural Epidemiological MIND
+(PURE-MIND, 11,200 persons), and the UK Biobank <xref rid="bib61" ref-type="bibr">[61]</xref> (500,000 people aged 40&#x02013;70, 100,000
+with detailed imaging). These long-term initiatives are complemented by several
+national and regional efforts to establish disease-based cohorts, for example,
+the Canadian Consortium on Neurodegeneration in Aging (1400 persons; AD, mixed
+dementia, MCI, and VCI), or to combine existing cohorts, for example, the DPUK
+<xref rid="bib62" ref-type="bibr">[62]</xref>, (29 UK
+community cohorts), Cohort Studies of Memory in an International Consortium
+(COSMIC) <xref rid="bib18" ref-type="bibr">[18]</xref>,
+Virtual International Stroke Trials Archive (VISTA) Cognition <xref rid="bib22" ref-type="bibr">[22]</xref>, and STROKOG
+<xref rid="bib23" ref-type="bibr">[23]</xref>. Other
+regions should be encouraged and are creating large repositories of data&#x02014;Asia
+Pacific Region, Central and America <xref rid="bib63" ref-type="bibr">[63]</xref>, Russia, Africa <xref rid="bib64" ref-type="bibr">[64]</xref>, and Australasia <xref rid="bib18" ref-type="bibr">[18]</xref>.</p><p>Governments, funders, and the public recognize the importance of
+sharing publicly funded data. Data from combined analyses of cohorts would
+provide larger samples, more robust data on individual cognitive and physical
+outcomes, and the interplay between brain and body to maintain healthy, active
+populations into old age. The 2015 World Stroke Proclamation on preventable
+dementias <xref rid="bib1" ref-type="bibr">[1]</xref> has
+been endorsed by several international Alzheimer's, neurological, psychiatric,
+and heart associations. Funding for cerebrovascular disease research should more
+closely match that spent on dementia or cardiac disease <xref rid="bib54" ref-type="bibr">[54]</xref>. Researchers should work
+together to operationalize assessment of vascular effects on neurodegeneration;
+stroke should move from &#x0201c;stroke-related&#x0201d; to &#x0201c;anything vascular related including
+cognition or other effects&#x0201d; <xref rid="bib52" ref-type="bibr">[52]</xref>; and dementia should move from AD to &#x0201c;any disorder,
+arising in or outside the brain, that progressively diminishes cognitive
+function&#x0201d;.</p></sec></body><back><ref-list id="cebib0010"><title>References</title><ref id="bib1"><label>1</label><element-citation publication-type="journal" id="sref1"><person-group person-group-type="author"><name><surname>Hachinski</surname><given-names>V.</given-names></name></person-group><article-title>Stroke and potentially preventable dementias
+proclamation: updated World Stroke Day
+Proclamation</article-title><source>Stroke</source><volume>46</volume><year>2015</year><fpage>3039</fpage><lpage>3040</lpage><pub-id pub-id-type="pmid">26504189</pub-id></element-citation></ref><ref id="bib2"><label>2</label><element-citation publication-type="journal" id="sref2"><person-group person-group-type="author"><name><surname>O'Brien</surname><given-names>J.T.</given-names></name><name><surname>Thomas</surname><given-names>A.</given-names></name></person-group><article-title>Vascular dementia</article-title><source>Lancet</source><volume>386</volume><year>2015</year><fpage>1698</fpage><lpage>1706</lpage><pub-id pub-id-type="pmid">26595643</pub-id></element-citation></ref><ref id="bib3"><label>3</label><element-citation publication-type="journal" id="sref3"><person-group person-group-type="author"><name><surname>Ngandu</surname><given-names>T.</given-names></name><name><surname>Lehtisalo</surname><given-names>J.</given-names></name><name><surname>Solomon</surname><given-names>A.</given-names></name><name><surname>Levalahti</surname><given-names>E.</given-names></name><name><surname>Ahtiluoto</surname><given-names>S.</given-names></name><name><surname>Antikainen</surname><given-names>R.</given-names></name></person-group><article-title>A 2 year multidomain intervention of diet, exercise,
+cognitive training, and vascular risk monitoring versus control
+to prevent cognitive decline in at-risk elderly people (FINGER):
+a randomised controlled trial</article-title><source>Lancet</source><volume>385</volume><year>2015</year><fpage>2255</fpage><lpage>2263</lpage><pub-id pub-id-type="pmid">25771249</pub-id></element-citation></ref><ref id="bib4"><label>4</label><element-citation publication-type="journal" id="sref4"><person-group person-group-type="author"><name><surname>Tatemichi</surname><given-names>T.K.</given-names></name><name><surname>Foulkes</surname><given-names>M.A.</given-names></name><name><surname>Mohr</surname><given-names>J.P.</given-names></name><name><surname>Hewitt</surname><given-names>J.R.</given-names></name><name><surname>Hier</surname><given-names>D.B.</given-names></name><name><surname>Price</surname><given-names>T.R.</given-names></name></person-group><article-title>Dementia in stroke survivors in the Stroke Data Bank
+cohort. Prevalence, incidence, risk factors, and computed
+tomographic findings</article-title><source>Stroke</source><volume>21</volume><year>1990</year><fpage>858</fpage><lpage>866</lpage><pub-id pub-id-type="pmid">2349588</pub-id></element-citation></ref><ref id="bib5"><label>5</label><element-citation publication-type="journal" id="sref5"><person-group person-group-type="author"><name><surname>Pendlebury</surname><given-names>S.T.</given-names></name><name><surname>Rothwell</surname><given-names>P.M.</given-names></name></person-group><article-title>Prevalence, incidence, and factors associated with
+pre-stroke and post-stroke dementia: a systematic review and
+meta-analysis</article-title><source>Lancet Neurol</source><volume>8</volume><year>2009</year><fpage>1006</fpage><lpage>1018</lpage><pub-id pub-id-type="pmid">19782001</pub-id></element-citation></ref><ref id="bib6"><label>6</label><element-citation publication-type="journal" id="sref6"><person-group person-group-type="author"><name><surname>Hachinski</surname><given-names>V.</given-names></name></person-group><article-title>Vascular dementia: a radical
+redefinition</article-title><source>Dementia</source><volume>5</volume><year>1994</year><fpage>130</fpage><lpage>132</lpage><pub-id pub-id-type="pmid">8087166</pub-id></element-citation></ref><ref id="bib7"><label>7</label><element-citation publication-type="journal" id="sref7"><person-group person-group-type="author"><name><surname>Pantoni</surname><given-names>L.</given-names></name></person-group><article-title>Cerebral small vessel disease: from pathogenesis and
+clinical characteristics to therapeutic
+challenges</article-title><source>Lancet Neurol</source><volume>9</volume><year>2010</year><fpage>689</fpage><lpage>701</lpage><pub-id pub-id-type="pmid">20610345</pub-id></element-citation></ref><ref id="bib8"><label>8</label><element-citation publication-type="journal" id="sref8"><person-group person-group-type="author"><name><surname>Baezner</surname><given-names>H.</given-names></name><name><surname>Blahak</surname><given-names>C.</given-names></name><name><surname>Poggesi</surname><given-names>A.</given-names></name><name><surname>Pantoni</surname><given-names>L.</given-names></name><name><surname>Inzitari</surname><given-names>D.</given-names></name><name><surname>Chabriat</surname><given-names>H.</given-names></name></person-group><article-title>Association of gait and balance disorders with
+age-related white matter changes: the LADIS study</article-title><source>Neurology</source><volume>70</volume><year>2008</year><fpage>935</fpage><lpage>942</lpage><pub-id pub-id-type="pmid">18347315</pub-id></element-citation></ref><ref id="bib9"><label>9</label><element-citation publication-type="journal" id="sref9"><person-group person-group-type="author"><name><surname>Ahmad</surname><given-names>H.</given-names></name><name><surname>Cerchiai</surname><given-names>N.</given-names></name><name><surname>Mancuso</surname><given-names>M.</given-names></name><name><surname>Casani</surname><given-names>A.P.</given-names></name><name><surname>Bronstein</surname><given-names>A.M.</given-names></name></person-group><article-title>Are white matter abnormalities associated with
+&#x0201c;unexplained dizziness&#x0201d;?</article-title><source>J Neurol Sci</source><volume>358</volume><year>2015</year><fpage>428</fpage><lpage>431</lpage><pub-id pub-id-type="pmid">26412160</pub-id></element-citation></ref><ref id="bib10"><label>10</label><element-citation publication-type="journal" id="sref10"><person-group person-group-type="author"><name><surname>Hachinski</surname><given-names>V.</given-names></name></person-group><article-title>World Stroke Day 2008: &#x0201c;Little strokes, big
+trouble&#x0201d;</article-title><source>Stroke</source><volume>39</volume><year>2008</year><fpage>2407</fpage><lpage>2420</lpage><pub-id pub-id-type="pmid">18723419</pub-id></element-citation></ref><ref id="bib11"><label>11</label><element-citation publication-type="journal" id="sref11"><person-group person-group-type="author"><name><surname>Hachinski</surname><given-names>V.</given-names></name><name><surname>Iadecola</surname><given-names>C.</given-names></name><name><surname>Petersen</surname><given-names>R.C.</given-names></name><name><surname>Breteler</surname><given-names>M.M.</given-names></name><name><surname>Nyenhuis</surname><given-names>D.L.</given-names></name><name><surname>Black</surname><given-names>S.E.</given-names></name></person-group><article-title>National Institute of Neurological Disorders and
+Stroke-Canadian Stroke Network vascular cognitive impairment
+harmonization standards</article-title><source>Stroke</source><volume>37</volume><year>2006</year><fpage>2220</fpage><lpage>2241</lpage><pub-id pub-id-type="pmid">16917086</pub-id></element-citation></ref><ref id="bib12"><label>12</label><element-citation publication-type="journal" id="sref12"><person-group person-group-type="author"><name><surname>Snyder</surname><given-names>H.M.</given-names></name><name><surname>Corriveau</surname><given-names>R.A.</given-names></name><name><surname>Craft</surname><given-names>S.</given-names></name><name><surname>Faber</surname><given-names>J.E.</given-names></name><name><surname>Greenberg</surname><given-names>S.M.</given-names></name><name><surname>Knopman</surname><given-names>D.</given-names></name></person-group><article-title>Vascular contributions to cognitive impairment and
+dementia including Alzheimer's disease</article-title><source>Alzheimers Dement</source><volume>11</volume><year>2015</year><fpage>710</fpage><lpage>717</lpage><pub-id pub-id-type="pmid">25510382</pub-id></element-citation></ref><ref id="bib13"><label>13</label><element-citation publication-type="journal" id="sref13"><person-group person-group-type="author"><name><surname>Lodder</surname><given-names>J.</given-names></name></person-group><article-title>Poststroke cognition and the fight against the hard
+problem: vascular neurologists, enter the arena!</article-title><source>Stroke</source><volume>38</volume><year>2007</year><fpage>7</fpage><lpage>8</lpage><pub-id pub-id-type="pmid">17158332</pub-id></element-citation></ref><ref id="bib14"><label>14</label><element-citation publication-type="book" id="sref14"><person-group person-group-type="author"><collab>JPND Action Group</collab></person-group><chapter-title>Longitudinal cohort studies in
+neurodegeneration</chapter-title><year>2013</year><fpage>1</fpage><lpage>92</lpage><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="http://www.neurodegenerationresearch.eu/uploads/media/JPNDAGLCS_Final_Report_Oct_2013-version_07_01_14.pdf" id="intref0025">http://www.neurodegenerationresearch.eu/uploads/media/JPNDAGLCS_Final_Report_Oct_2013-version_07_01_14.pdf</ext-link><comment>Accessed January 13, 2016</comment></element-citation></ref><ref id="bib15"><label>15</label><element-citation publication-type="journal" id="sref15"><person-group person-group-type="author"><name><surname>Sachdev</surname><given-names>P.</given-names></name><name><surname>Kalaria</surname><given-names>R.</given-names></name><name><surname>O'Brien</surname><given-names>J.</given-names></name><name><surname>Skoog</surname><given-names>I.</given-names></name><name><surname>Alladi</surname><given-names>S.</given-names></name><name><surname>Black</surname><given-names>S.E.</given-names></name></person-group><article-title>Diagnostic criteria for vascular cognitive disorders:
+a VASCOG statement</article-title><source>Alzheimer Dis Assoc Disord</source><volume>28</volume><year>2014</year><fpage>206</fpage><lpage>218</lpage><pub-id pub-id-type="pmid">24632990</pub-id></element-citation></ref><ref id="bib16"><label>16</label><element-citation publication-type="journal" id="sref16"><person-group person-group-type="author"><name><surname>Norton</surname><given-names>S.</given-names></name><name><surname>Matthews</surname><given-names>F.E.</given-names></name><name><surname>Barnes</surname><given-names>D.E.</given-names></name><name><surname>Yaffe</surname><given-names>K.</given-names></name><name><surname>Brayne</surname><given-names>C.</given-names></name></person-group><article-title>Potential for primary prevention of Alzheimer's
+disease: an analysis of population-based data</article-title><source>Lancet Neurol</source><volume>13</volume><year>2014</year><fpage>788</fpage><lpage>794</lpage><pub-id pub-id-type="pmid">25030513</pub-id></element-citation></ref><ref id="bib17"><label>17</label><element-citation publication-type="journal" id="sref17"><person-group person-group-type="author"><collab>Prospective Studies
+Collaboration</collab></person-group><article-title>Age-specific relevance of usual blood pressure to
+vascular mortality: a meta-analysis of individual data for one
+million adults in 61 prospective studies</article-title><source>Lancet</source><volume>360</volume><year>2002</year><fpage>1903</fpage><lpage>1913</lpage><pub-id pub-id-type="pmid">12493255</pub-id></element-citation></ref><ref id="bib18"><label>18</label><element-citation publication-type="journal" id="sref18"><person-group person-group-type="author"><name><surname>Sachdev</surname><given-names>P.S.</given-names></name><name><surname>Lipnicki</surname><given-names>D.M.</given-names></name><name><surname>Kochan</surname><given-names>N.A.</given-names></name><name><surname>Crawford</surname><given-names>J.D.</given-names></name><name><surname>Rockwood</surname><given-names>K.</given-names></name><name><surname>Xiao</surname><given-names>S.</given-names></name></person-group><article-title>COSMIC (Cohort Studies of Memory in an International
+Consortium): an international consortium to identify risk and
+protective factors and biomarkers of cognitive ageing and
+dementia in diverse ethnic and sociocultural
+groups</article-title><source>BMC Neurol</source><volume>13</volume><year>2013</year><fpage>165</fpage><pub-id pub-id-type="pmid">24195705</pub-id></element-citation></ref><ref id="bib19"><label>19</label><element-citation publication-type="journal" id="sref19"><person-group person-group-type="author"><name><surname>Lees</surname><given-names>R.</given-names></name><name><surname>Fearon</surname><given-names>P.</given-names></name><name><surname>Harrison</surname><given-names>J.K.</given-names></name><name><surname>Broomfield</surname><given-names>N.M.</given-names></name><name><surname>Quinn</surname><given-names>T.J.</given-names></name></person-group><article-title>Cognitive and mood assessment in stroke research:
+focused review of contemporary studies</article-title><source>Stroke</source><volume>43</volume><year>2012</year><fpage>1678</fpage><lpage>1680</lpage><pub-id pub-id-type="pmid">22535271</pub-id></element-citation></ref><ref id="bib20"><label>20</label><element-citation publication-type="journal" id="sref20"><person-group person-group-type="author"><name><surname>Bath</surname><given-names>P.M.</given-names></name><name><surname>Geeganage</surname><given-names>C.</given-names></name><name><surname>Gray</surname><given-names>L.J.</given-names></name><name><surname>Collier</surname><given-names>T.</given-names></name><name><surname>Pocock</surname><given-names>S.J.</given-names></name></person-group><article-title>Use of ordinal outcomes in vascular prevention trials:
+Comparison with binary outcomes in published
+trials</article-title><source>Stroke</source><volume>39</volume><year>2008</year><fpage>2817</fpage><lpage>2823</lpage><pub-id pub-id-type="pmid">18669897</pub-id></element-citation></ref><ref id="bib21"><label>21</label><element-citation publication-type="journal" id="sref21"><person-group person-group-type="author"><name><surname>Neyeloff</surname><given-names>J.L.</given-names></name><name><surname>Fuchs</surname><given-names>S.C.</given-names></name><name><surname>Moreira</surname><given-names>L.B.</given-names></name></person-group><article-title>Meta-analyses and Forest plots&#x000a0;using a microsoft excel
+spreadsheet: step-by-step guide&#x000a0;focusing on descriptive data
+analysis</article-title><source>BMC Res Notes</source><volume>5</volume><year>2012</year><fpage>52</fpage><pub-id pub-id-type="pmid">22264277</pub-id></element-citation></ref><ref id="bib22"><label>22</label><element-citation publication-type="book" id="sref22"><person-group person-group-type="author"><collab>Virtual International Stroke Trials
+Archive</collab></person-group><chapter-title>Virtual International Stroke Trials Archive
+(VISTA)&#x02014;Cognition</chapter-title><year>2015</year><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="http://www.vista.gla.ac.uk/index.php/vista-cognition" id="intref0030">http://www.vista.gla.ac.uk/index.php/vista-cognition</ext-link><comment>Accessed January 31, 2016</comment></element-citation></ref><ref id="bib23"><label>23</label><element-citation publication-type="book" id="sref23"><person-group person-group-type="author"><collab>Consortium of Studies of Post-Stroke Cognitive
+Decline and Dementia</collab></person-group><chapter-title>Consortium of Studies of Post-Stroke Cognitive Decline
+and Dementia (STROKOG)</chapter-title><year>2015</year><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="https://cheba.unsw.edu.au/group/strokog" id="intref0035">https://cheba.unsw.edu.au/group/strokog</ext-link><comment>Accessed April 1, 2016</comment></element-citation></ref><ref id="bib24"><label>24</label><element-citation publication-type="journal" id="sref24"><person-group person-group-type="author"><name><surname>Pendlebury</surname><given-names>S.T.</given-names></name></person-group><article-title>Stroke-related dementia: rates, risk factors and
+implications for future research</article-title><source>Maturitas</source><volume>64</volume><year>2009</year><fpage>165</fpage><lpage>171</lpage><pub-id pub-id-type="pmid">19818568</pub-id></element-citation></ref><ref id="bib25"><label>25</label><element-citation publication-type="journal" id="sref25"><person-group person-group-type="author"><name><surname>Makin</surname><given-names>S.</given-names></name><name><surname>Turpin</surname><given-names>S.</given-names></name><name><surname>Dennis</surname><given-names>M.</given-names></name><name><surname>Wardlaw</surname><given-names>J.</given-names></name></person-group><article-title>Cognitive impairment after lacunar stroke: systematic
+review and meta-analysis of incidence, prevalence and comparison
+with other stroke sub-types</article-title><source>J Neurol Neurosurg Psychiatry</source><volume>84</volume><year>2013</year><fpage>893</fpage><lpage>900</lpage><pub-id pub-id-type="pmid">23457225</pub-id></element-citation></ref><ref id="bib26"><label>26</label><element-citation publication-type="journal" id="sref26"><person-group person-group-type="author"><name><surname>Aalten</surname><given-names>P.</given-names></name><name><surname>Ramakers</surname><given-names>I.</given-names></name><name><surname>Biessels</surname><given-names>G.</given-names></name><name><surname>De Deyn</surname><given-names>P.</given-names></name><name><surname>Koek</surname><given-names>H.L.</given-names></name><name><surname>OldeRikkert</surname><given-names>M.</given-names></name></person-group><article-title>The Dutch Parelsnoer Institute&#x02014;Neurodegenerative
+diseases; methods, design and baseline results</article-title><source>BMC Neurol</source><volume>14</volume><year>2014</year><fpage>1060</fpage></element-citation></ref><ref id="bib27"><label>27</label><element-citation publication-type="journal" id="sref27"><person-group person-group-type="author"><name><surname>Inzitari</surname><given-names>D.</given-names></name><name><surname>Pracucci</surname><given-names>G.</given-names></name><name><surname>Poggesi</surname><given-names>A.</given-names></name><name><surname>Carlucci</surname><given-names>G.</given-names></name><name><surname>Barkhof</surname><given-names>F.</given-names></name><name><surname>Chabriat</surname><given-names>H.</given-names></name></person-group><article-title>Changes in white matter as determinant of global
+functional decline in older independent outpatients: three year
+follow-up of LADIS (leukoaraiosis and disability) study
+cohort</article-title><source>BMJ</source><volume>339</volume><year>2009</year><fpage>279</fpage><lpage>282</lpage></element-citation></ref><ref id="bib28"><label>28</label><element-citation publication-type="journal" id="sref28"><person-group person-group-type="author"><name><surname>Barnes</surname><given-names>J.</given-names></name><name><surname>Carmichael</surname><given-names>O.T.</given-names></name><name><surname>Leung</surname><given-names>K.K.</given-names></name><name><surname>Schwarz</surname><given-names>C.</given-names></name><name><surname>Ridgway</surname><given-names>G.R.</given-names></name><name><surname>Bartlett</surname><given-names>J.W.</given-names></name></person-group><article-title>Vascular and Alzheimer's disease markers independently
+predict brain atrophy rate in Alzheimer's Disease Neuroimaging
+Initiative controls</article-title><source>Neurobiol Aging</source><volume>34</volume><year>2013</year><fpage>1996</fpage><lpage>2002</lpage><pub-id pub-id-type="pmid">23522844</pub-id></element-citation></ref><ref id="bib29"><label>29</label><element-citation publication-type="journal" id="sref29"><person-group person-group-type="author"><name><surname>Kandiah</surname><given-names>N.</given-names></name><name><surname>Chander</surname><given-names>R.J.</given-names></name><name><surname>Ng</surname><given-names>A.</given-names></name><name><surname>Wen</surname><given-names>M.C.</given-names></name><name><surname>Cenina</surname><given-names>A.R.</given-names></name><name><surname>Assam</surname><given-names>P.N.</given-names></name></person-group><article-title>Association between white matter hyperintensity and
+medial temporal atrophy at various stages of Alzheimer's
+disease</article-title><source>Eur J Neurol</source><volume>22</volume><year>2015</year><fpage>150</fpage><lpage>155</lpage><pub-id pub-id-type="pmid">25142829</pub-id></element-citation></ref><ref id="bib30"><label>30</label><element-citation publication-type="journal" id="sref30"><person-group person-group-type="author"><name><surname>Thoonsen</surname><given-names>H.</given-names></name><name><surname>Richard</surname><given-names>E.</given-names></name><name><surname>Bentham</surname><given-names>P.</given-names></name><name><surname>Gray</surname><given-names>R.</given-names></name><name><surname>van Geloven</surname><given-names>N.</given-names></name><name><surname>De Haan</surname><given-names>R.J.</given-names></name></person-group><article-title>Aspirin in Alzheimer's disease: increased risk of
+intracerebral hemorrhage: cause for concern?</article-title><source>Stroke</source><volume>41</volume><year>2010</year><fpage>2690</fpage><lpage>2692</lpage><pub-id pub-id-type="pmid">20930165</pub-id></element-citation></ref><ref id="bib31"><label>31</label><element-citation publication-type="journal" id="sref31"><person-group person-group-type="author"><name><surname>Snijders</surname><given-names>A.H.</given-names></name><name><surname>van de Warrenburg</surname><given-names>B.P.</given-names></name><name><surname>Giladi</surname><given-names>N.</given-names></name><name><surname>Bloem</surname><given-names>B.R.</given-names></name></person-group><article-title>Neurological gait disorders in elderly people:
+clinical approach and classification</article-title><source>Lancet Neurol</source><volume>6</volume><year>2007</year><fpage>63</fpage><lpage>74</lpage><pub-id pub-id-type="pmid">17166803</pub-id></element-citation></ref><ref id="bib32"><label>32</label><element-citation publication-type="journal" id="sref32"><person-group person-group-type="author"><name><surname>Verghese</surname><given-names>J.</given-names></name><name><surname>LeValley</surname><given-names>A.</given-names></name><name><surname>Hall</surname><given-names>C.B.</given-names></name><name><surname>Katz</surname><given-names>M.J.</given-names></name><name><surname>Ambrose</surname><given-names>A.F.</given-names></name><name><surname>Lipton</surname><given-names>R.B.</given-names></name></person-group><article-title>Epidemiology of gait disorders in community-residing
+older adults</article-title><source>J Am Geriatr Soc</source><volume>54</volume><year>2006</year><fpage>255</fpage><lpage>261</lpage><pub-id pub-id-type="pmid">16460376</pub-id></element-citation></ref><ref id="bib33"><label>33</label><element-citation publication-type="journal" id="sref33"><person-group person-group-type="author"><name><surname>Mahlknecht</surname><given-names>P.</given-names></name><name><surname>Kiechl</surname><given-names>S.</given-names></name><name><surname>Bloem</surname><given-names>B.R.</given-names></name><name><surname>Willeit</surname><given-names>J.</given-names></name><name><surname>Scherfler</surname><given-names>C.</given-names></name><name><surname>Gasperi</surname><given-names>A.</given-names></name></person-group><article-title>Prevalence and burden of gait disorders in elderly men
+and women aged 60-97 years: a population-based
+study</article-title><source>PLoS One</source><volume>8</volume><year>2013</year><fpage>e69627</fpage><pub-id pub-id-type="pmid">23894511</pub-id></element-citation></ref><ref id="bib34"><label>34</label><element-citation publication-type="journal" id="sref34"><person-group person-group-type="author"><name><surname>Callisaya</surname><given-names>M.L.</given-names></name><name><surname>Beare</surname><given-names>R.</given-names></name><name><surname>Phan</surname><given-names>T.</given-names></name><name><surname>Blizzard</surname><given-names>L.</given-names></name><name><surname>Thrift</surname><given-names>A.G.</given-names></name><name><surname>Chen</surname><given-names>J.</given-names></name></person-group><article-title>Progression of white matter hyperintensities of
+presumed vascular origin increases the risk of falls in older
+people</article-title><source>J Gerontol A Biol Sci Med Sci</source><volume>70</volume><year>2015</year><fpage>360</fpage><lpage>366</lpage><pub-id pub-id-type="pmid">25199911</pub-id></element-citation></ref><ref id="bib35"><label>35</label><element-citation publication-type="journal" id="sref35"><person-group person-group-type="author"><name><surname>Bennett</surname><given-names>D.A.</given-names></name><name><surname>Beckett</surname><given-names>L.A.</given-names></name><name><surname>Murray</surname><given-names>A.M.</given-names></name><name><surname>Shannon</surname><given-names>K.M.</given-names></name><name><surname>Goetz</surname><given-names>C.G.</given-names></name><name><surname>Pilgrim</surname><given-names>D.M.</given-names></name></person-group><article-title>Prevalence of parkinsonian signs and associated
+mortality in a community population of older
+people</article-title><source>N Engl J Med</source><volume>334</volume><year>1996</year><fpage>71</fpage><lpage>76</lpage><pub-id pub-id-type="pmid">8531961</pub-id></element-citation></ref><ref id="bib36"><label>36</label><element-citation publication-type="journal" id="sref36"><person-group person-group-type="author"><name><surname>Buchman</surname><given-names>A.S.</given-names></name><name><surname>Leurgans</surname><given-names>S.E.</given-names></name><name><surname>Nag</surname><given-names>S.</given-names></name><name><surname>Bennett</surname><given-names>D.A.</given-names></name><name><surname>Schneider</surname><given-names>J.A.</given-names></name></person-group><article-title>Cerebrovascular disease pathology and parkinsonian
+signs in old age</article-title><source>Stroke</source><volume>42</volume><year>2011</year><fpage>3183</fpage><lpage>3189</lpage><pub-id pub-id-type="pmid">21885844</pub-id></element-citation></ref><ref id="bib37"><label>37</label><element-citation publication-type="journal" id="sref37"><person-group person-group-type="author"><name><surname>de Laat</surname><given-names>K.F.</given-names></name><name><surname>van Norden</surname><given-names>A.G.</given-names></name><name><surname>Gons</surname><given-names>R.A.</given-names></name><name><surname>van Uden</surname><given-names>I.W.</given-names></name><name><surname>Zwiers</surname><given-names>M.P.</given-names></name><name><surname>Bloem</surname><given-names>B.R.</given-names></name></person-group><article-title>Cerebral white matter lesions and lacunar infarcts
+contribute to the presence of mild parkinsonian
+signs</article-title><source>Stroke</source><volume>43</volume><year>2012</year><fpage>2574</fpage><lpage>2579</lpage><pub-id pub-id-type="pmid">22858727</pub-id></element-citation></ref><ref id="bib38"><label>38</label><element-citation publication-type="journal" id="sref38"><person-group person-group-type="author"><name><surname>Okroglic</surname><given-names>S.</given-names></name><name><surname>Widmann</surname><given-names>C.N.</given-names></name><name><surname>Urbach</surname><given-names>H.</given-names></name><name><surname>Scheltens</surname><given-names>P.</given-names></name><name><surname>Heneka</surname><given-names>M.T.</given-names></name></person-group><article-title>Clinical symptoms and risk factors in cerebral
+microangiopathy patients</article-title><source>PLoS One</source><volume>8</volume><year>2013</year><fpage>e53455</fpage><pub-id pub-id-type="pmid">23393549</pub-id></element-citation></ref><ref id="bib39"><label>39</label><element-citation publication-type="journal" id="sref39"><person-group person-group-type="author"><name><surname>Pantoni</surname><given-names>L.</given-names></name><name><surname>Garcia</surname><given-names>J.H.</given-names></name></person-group><article-title>The significance of cerebral white matter
+abnormalities 100 years after Binswanger's report</article-title><source>Stroke</source><volume>26</volume><year>1995</year><fpage>1293</fpage><lpage>1301</lpage><pub-id pub-id-type="pmid">7604429</pub-id></element-citation></ref><ref id="bib40"><label>40</label><element-citation publication-type="journal" id="sref40"><person-group person-group-type="author"><name><surname>Pendlebury</surname><given-names>S.T.</given-names></name><name><surname>Chen</surname><given-names>P.J.</given-names></name><name><surname>Welch</surname><given-names>S.J.</given-names></name><name><surname>Cuthbertson</surname><given-names>F.C.</given-names></name><name><surname>Wharton</surname><given-names>R.M.</given-names></name><name><surname>Mehta</surname><given-names>Z.</given-names></name></person-group><article-title>Methodological factors in determining risk of dementia
+after transient ischemic attack and stroke: (II) effect of
+attrition on follow-up</article-title><source>Stroke</source><volume>46</volume><year>2015</year><fpage>1494</fpage><lpage>1500</lpage><pub-id pub-id-type="pmid">25953366</pub-id></element-citation></ref><ref id="bib41"><label>41</label><element-citation publication-type="journal" id="sref41"><person-group person-group-type="author"><name><surname>Vermeer</surname><given-names>S.E.</given-names></name><name><surname>Longstreth</surname><given-names>W.T.</given-names><suffix>Jr.</suffix></name><name><surname>Koudstaal</surname><given-names>P.J.</given-names></name></person-group><article-title>Silent brain infarcts: a systematic
+review</article-title><source>Lancet Neurol</source><volume>6</volume><year>2007</year><fpage>611</fpage><lpage>619</lpage><pub-id pub-id-type="pmid">17582361</pub-id></element-citation></ref><ref id="bib42"><label>42</label><element-citation publication-type="journal" id="sref42"><person-group person-group-type="author"><name><surname>Debette</surname><given-names>S.</given-names></name><name><surname>Markus</surname><given-names>H.S.</given-names></name></person-group><article-title>The clinical importance of white matter
+hyperintensities on brain magnetic resonance imaging: systematic
+review and meta-analysis</article-title><source>BMJ</source><volume>341</volume><year>2010</year><fpage>c3666</fpage><pub-id pub-id-type="pmid">20660506</pub-id></element-citation></ref><ref id="bib43"><label>43</label><element-citation publication-type="journal" id="sref43"><person-group person-group-type="author"><name><surname>de Groot</surname><given-names>J.C.</given-names></name><name><surname>de Leeuw</surname><given-names>F.E.</given-names></name><name><surname>Oudkerk</surname><given-names>M.</given-names></name><name><surname>van Gijn</surname><given-names>J.</given-names></name><name><surname>Hofman</surname><given-names>A.</given-names></name><name><surname>Jolles</surname><given-names>J.</given-names></name></person-group><article-title>Cerebral white matter lesions and cognitive function:
+the Rotterdam Scan Study</article-title><source>Ann Neurol</source><volume>47</volume><year>2000</year><fpage>145</fpage><lpage>151</lpage><pub-id pub-id-type="pmid">10665484</pub-id></element-citation></ref><ref id="bib44"><label>44</label><element-citation publication-type="journal" id="sref44"><person-group person-group-type="author"><name><surname>Tuladhar</surname><given-names>A.M.</given-names></name><name><surname>Reid</surname><given-names>A.T.</given-names></name><name><surname>Shumskaya</surname><given-names>E.</given-names></name><name><surname>de Laat</surname><given-names>K.F.</given-names></name><name><surname>van Norden</surname><given-names>A.G.</given-names></name><name><surname>van Dijk</surname><given-names>E.J.</given-names></name></person-group><article-title>Relationship between white matter hyperintensities,
+cortical thickness, and cognition</article-title><source>Stroke</source><volume>46</volume><year>2015</year><fpage>425</fpage><lpage>432</lpage><pub-id pub-id-type="pmid">25572411</pub-id></element-citation></ref><ref id="bib45"><label>45</label><element-citation publication-type="journal" id="sref45"><person-group person-group-type="author"><name><surname>Duering</surname><given-names>M.</given-names></name><name><surname>Righart</surname><given-names>R.</given-names></name><name><surname>Csanadi</surname><given-names>E.</given-names></name><name><surname>Jouvent</surname><given-names>E.</given-names></name><name><surname>Herve</surname><given-names>D.</given-names></name><name><surname>Chabriat</surname><given-names>H.</given-names></name></person-group><article-title>Incident subcortical infarcts induce focal thinning in
+connected cortical regions</article-title><source>Neurology</source><volume>79</volume><year>2012</year><fpage>2025</fpage><lpage>2028</lpage><pub-id pub-id-type="pmid">23054230</pub-id></element-citation></ref><ref id="bib46"><label>46</label><element-citation publication-type="journal" id="sref46"><person-group person-group-type="author"><name><surname>Duering</surname><given-names>M.</given-names></name><name><surname>Righart</surname><given-names>R.</given-names></name><name><surname>Wollenweber</surname><given-names>F.A.</given-names></name><name><surname>Zietemann</surname><given-names>V.</given-names></name><name><surname>Gesierich</surname><given-names>B.</given-names></name><name><surname>Dichgans</surname><given-names>M.</given-names></name></person-group><article-title>Acute infarcts cause focal thinning in remote cortex
+via degeneration of connecting fiber tracts</article-title><source>Neurology</source><volume>84</volume><year>2015</year><fpage>1685</fpage><lpage>1692</lpage><pub-id pub-id-type="pmid">25809303</pub-id></element-citation></ref><ref id="bib47"><label>47</label><element-citation publication-type="journal" id="sref47"><person-group person-group-type="author"><name><surname>Lawrence</surname><given-names>A.J.</given-names></name><name><surname>Chung</surname><given-names>A.W.</given-names></name><name><surname>Morris</surname><given-names>R.G.</given-names></name><name><surname>Markus</surname><given-names>H.S.</given-names></name><name><surname>Barrick</surname><given-names>T.R.</given-names></name></person-group><article-title>Structural network efficiency is associated with
+cognitive impairment in small-vessel disease</article-title><source>Neurology</source><volume>83</volume><year>2014</year><fpage>304</fpage><lpage>311</lpage><pub-id pub-id-type="pmid">24951477</pub-id></element-citation></ref><ref id="bib48"><label>48</label><element-citation publication-type="journal" id="sref48"><person-group person-group-type="author"><name><surname>Tuladhar</surname><given-names>A.M.</given-names></name><name><surname>van Uden</surname><given-names>I.W.</given-names></name><name><surname>Rutten-Jacobs</surname><given-names>L.C.</given-names></name><name><surname>Lawrence</surname><given-names>A.</given-names></name><name><surname>van der Holst</surname><given-names>H.</given-names></name><name><surname>van Norden</surname><given-names>A.</given-names></name></person-group><article-title>Structural network efficiency predicts conversion to
+dementia</article-title><source>Neurology</source><volume>86</volume><year>2016</year><fpage>1112</fpage><lpage>1119</lpage><pub-id pub-id-type="pmid">26888983</pub-id></element-citation></ref><ref id="bib49"><label>49</label><element-citation publication-type="journal" id="sref49"><person-group person-group-type="author"><name><surname>Lo</surname><given-names>R.Y.</given-names></name><name><surname>Jagust</surname><given-names>W.J.</given-names></name></person-group><article-title>Vascular burden and Alzheimer disease pathologic
+progression</article-title><source>Neurology</source><volume>79</volume><year>2012</year><fpage>1349</fpage><lpage>1355</lpage><pub-id pub-id-type="pmid">22972646</pub-id></element-citation></ref><ref id="bib50"><label>50</label><element-citation publication-type="journal" id="sref50"><person-group person-group-type="author"><name><surname>Haight</surname><given-names>T.J.</given-names></name><name><surname>Landau</surname><given-names>S.M.</given-names></name><name><surname>Carmichael</surname><given-names>O.</given-names></name><name><surname>Schwarz</surname><given-names>C.</given-names></name><name><surname>DeCarli</surname><given-names>C.</given-names></name><name><surname>Jagust</surname><given-names>W.J.</given-names></name></person-group><article-title>Dissociable effects of Alzheimer disease and white
+matter hyperintensities on brain metabolism</article-title><source>JAMA Neurol</source><volume>70</volume><year>2013</year><fpage>1039</fpage><lpage>1045</lpage><pub-id pub-id-type="pmid">23779022</pub-id></element-citation></ref><ref id="bib51"><label>51</label><element-citation publication-type="journal" id="sref51"><person-group person-group-type="author"><name><surname>Tullberg</surname><given-names>M.</given-names></name><name><surname>Fletcher</surname><given-names>E.</given-names></name><name><surname>DeCarli</surname><given-names>C.</given-names></name><name><surname>Mungas</surname><given-names>D.</given-names></name><name><surname>Reed</surname><given-names>B.R.</given-names></name><name><surname>Harvey</surname><given-names>D.J.</given-names></name></person-group><article-title>White matter lesions impair frontal lobe function
+regardless of their location</article-title><source>Neurology</source><volume>63</volume><year>2004</year><fpage>246</fpage><lpage>253</lpage><pub-id pub-id-type="pmid">15277616</pub-id></element-citation></ref><ref id="bib52"><label>52</label><element-citation publication-type="book" id="sref52"><person-group person-group-type="author"><collab>World Health Organisation</collab></person-group><chapter-title>ICD-11 Beta Draft</chapter-title><year>2015</year><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="http://apps.who.int/classifications/icd11/browse/f/en" id="intref0040">http://apps.who.int/classifications/icd11/browse/f/en</ext-link><comment>Accessed January16, 2016</comment></element-citation></ref><ref id="bib53"><label>53</label><element-citation publication-type="journal" id="sref53"><person-group person-group-type="author"><name><surname>Hachinski</surname><given-names>V.</given-names></name></person-group><article-title>Stroke and vascular cognitive impairment: a
+transdisciplinary, translational and transactional
+approach</article-title><source>Stroke</source><volume>38</volume><year>2007</year><fpage>1396</fpage><lpage>1403</lpage><pub-id pub-id-type="pmid">17347469</pub-id></element-citation></ref><ref id="bib54"><label>54</label><element-citation publication-type="book" id="sref54"><person-group person-group-type="author"><collab>Medical Research Council</collab></person-group><chapter-title>MRC workshop on neurovascular ageing in health and
+disease: interplay of the CNS and vascular system</chapter-title><year>2015</year><publisher-name>Medical Research Council</publisher-name><publisher-loc>London, UK</publisher-loc><fpage>1</fpage><lpage>34</lpage></element-citation></ref><ref id="bib55"><label>55</label><element-citation publication-type="journal" id="sref55"><person-group person-group-type="author"><name><surname>Khachaturian</surname><given-names>Z.S.</given-names></name><name><surname>Mesulam</surname><given-names>M.M.</given-names></name><name><surname>Khachaturian</surname><given-names>A.S.</given-names></name><name><surname>Mohs</surname><given-names>R.C.</given-names></name></person-group><article-title>The special topics section of Alzheimer's &#x00026;
+Dementia</article-title><source>Alzheimers Dement</source><volume>11</volume><year>2015</year><fpage>1261</fpage><lpage>1264</lpage><pub-id pub-id-type="pmid">26589667</pub-id></element-citation></ref><ref id="bib56"><label>56</label><element-citation publication-type="book" id="sref56"><person-group person-group-type="author"><name><surname>Mathers</surname><given-names>J.C.</given-names></name><name><surname>Deary</surname><given-names>I.J.</given-names></name><name><surname>Kuh</surname><given-names>D.</given-names></name><name><surname>Lord</surname><given-names>J.M.</given-names></name><name><surname>Khaw</surname><given-names>K.T.</given-names></name><name><surname>Lara</surname><given-names>J.</given-names></name></person-group><chapter-title>Guidelines for biomarkers of healthy
+ageing</chapter-title><year>2015</year><fpage>1</fpage><lpage>93</lpage><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="https://www.mrc.ac.uk/documents/pdf/biomarkers-of-healthy-ageing/" id="intref0045">https://www.mrc.ac.uk/documents/pdf/biomarkers-of-healthy-ageing/</ext-link><comment>Accessed January 15, 2016</comment></element-citation></ref><ref id="bib57"><label>57</label><element-citation publication-type="journal" id="sref57"><person-group person-group-type="author"><name><surname>Rankin</surname><given-names>J.</given-names></name></person-group><article-title>Cerebral vascular accidents in patients over the age
+of 60. II. Prognosis</article-title><source>Scott Med J</source><volume>2</volume><year>1957</year><fpage>200</fpage><lpage>215</lpage><pub-id pub-id-type="pmid">13432835</pub-id></element-citation></ref><ref id="bib58"><label>58</label><element-citation publication-type="journal" id="sref58"><person-group person-group-type="author"><name><surname>Pearce</surname><given-names>L.A.</given-names></name><name><surname>McClure</surname><given-names>L.A.</given-names></name><name><surname>Anderson</surname><given-names>D.C.</given-names></name><name><surname>Jacova</surname><given-names>C.</given-names></name><name><surname>Sharma</surname><given-names>M.</given-names></name><name><surname>Hart</surname><given-names>R.G.</given-names></name></person-group><article-title>Effects of long-term blood pressure lowering and dual
+antiplatelet treatment on cognitive function in patients with
+recent lacunar stroke: a secondary analysis from the SPS3
+randomised trial</article-title><source>Lancet Neurol</source><volume>13</volume><year>2014</year><fpage>1177</fpage><lpage>1185</lpage><pub-id pub-id-type="pmid">25453457</pub-id></element-citation></ref><ref id="bib59"><label>59</label><element-citation publication-type="journal" id="sref59"><person-group person-group-type="author"><name><surname>Chiti</surname><given-names>G.</given-names></name><name><surname>Pantoni</surname><given-names>L.</given-names></name></person-group><article-title>Use of Montreal Cognitive Assessment in patients with
+stroke</article-title><source>Stroke</source><volume>45</volume><year>2014</year><fpage>3135</fpage><lpage>3140</lpage><pub-id pub-id-type="pmid">25116881</pub-id></element-citation></ref><ref id="bib60"><label>60</label><element-citation publication-type="journal" id="sref60"><person-group person-group-type="author"><name><surname>Castanho</surname><given-names>T.C.</given-names></name><name><surname>Amorim</surname><given-names>L.</given-names></name><name><surname>Zihl</surname><given-names>J.</given-names></name><name><surname>Palha</surname><given-names>J.A.</given-names></name><name><surname>Sousa</surname><given-names>N.</given-names></name><name><surname>Santos</surname><given-names>N.C.</given-names></name></person-group><article-title>Telephone-based screening tools for mild cognitive
+impairment and dementia in aging studies: a review of validated
+instruments</article-title><source>Front Aging Neurosci</source><volume>6</volume><year>2014</year><fpage>16</fpage><pub-id pub-id-type="pmid">24611046</pub-id></element-citation></ref><ref id="bib61"><label>61</label><element-citation publication-type="journal" id="sref61"><person-group person-group-type="author"><name><surname>Sudlow</surname><given-names>C.</given-names></name><name><surname>Gallacher</surname><given-names>J.</given-names></name><name><surname>Allen</surname><given-names>N.</given-names></name><name><surname>Beral</surname><given-names>V.</given-names></name><name><surname>Burton</surname><given-names>P.</given-names></name><name><surname>Danesh</surname><given-names>J.</given-names></name></person-group><article-title>UK biobank: an open access resource for identifying
+the causes of a wide range of complex diseases of middle and old
+age</article-title><source>PLoS Med</source><volume>12</volume><year>2015</year><fpage>e1001779</fpage><pub-id pub-id-type="pmid">25826379</pub-id></element-citation></ref><ref id="bib62"><label>62</label><element-citation publication-type="book" id="sref62"><person-group person-group-type="author"><collab>Dementias Platforms UK and Medical Research
+Council</collab></person-group><chapter-title>Dementias Platforms UK (DPUK)</chapter-title><year>2015</year><comment>Available at:</comment><ext-link ext-link-type="uri" xlink:href="http://www.dementiasplatform.uk/" id="intref0050">http://www.dementiasplatform.uk/</ext-link><comment>Accessed January 31, 2016</comment></element-citation></ref><ref id="bib63"><label>63</label><element-citation publication-type="journal" id="sref63"><person-group person-group-type="author"><name><surname>Sposato</surname><given-names>L.A.</given-names></name><name><surname>Coppola</surname><given-names>M.L.</given-names></name><name><surname>Altamirano</surname><given-names>J.</given-names></name><name><surname>Borrego Guerrero</surname><given-names>B.</given-names></name><name><surname>Casanova</surname><given-names>J.</given-names></name><name><surname>De Martino</surname><given-names>M.</given-names></name></person-group><article-title>Program for the epidemiological evaluation of stroke
+in Tandil, Argentina (PREVISTA) study: rationale and
+design</article-title><source>Int J Stroke</source><volume>8</volume><year>2013</year><fpage>591</fpage><lpage>597</lpage><pub-id pub-id-type="pmid">24024917</pub-id></element-citation></ref><ref id="bib64"><label>64</label><element-citation publication-type="journal" id="sref64"><person-group person-group-type="author"><name><surname>Akinyemi</surname><given-names>R.O.</given-names></name><name><surname>Allan</surname><given-names>L.</given-names></name><name><surname>Owolabi</surname><given-names>M.O.</given-names></name><name><surname>Akinyemi</surname><given-names>J.O.</given-names></name><name><surname>Ogbole</surname><given-names>G.</given-names></name><name><surname>Ajani</surname><given-names>A.</given-names></name></person-group><article-title>Profile and determinants of vascular cognitive
+impairment in African stroke survivors: the CogFAST Nigeria
+Study</article-title><source>J Neurol Sci</source><volume>346</volume><year>2014</year><fpage>241</fpage><lpage>249</lpage><pub-id pub-id-type="pmid">25238666</pub-id></element-citation></ref></ref-list><sec id="appsec1"><label>Appendix</label><title>Authors</title><p>Study co-ordination, analysis and paper preparation: Martin
+Dichgans (1, Institute for Stroke and Dementia Research (ISD), Klinikum der
+Universit&#x000e4;t M&#x000fc;nchen, Ludwig-Maximilians-University LMU, Munich Germany; 2,
+German Centre for Neurodegenerative Diseases (DZNE, Munich), Munich Germany; and
+3, Munich Cluster for Systems Neurology (SyNergy), Munich, Germany); Joanna
+Wardlaw (Centre for Clinical Brain Sciences, University of Edinburgh, UK); Eric
+Smith (University of Calgary, Canada); Vera Zietemann (Institute for Stroke and
+Dementia Research (ISD), Klinikum der Universit&#x000e4;t M&#x000fc;nchen,
+Ludwig-Maximilians-University, Munich, Germany); Sudha Seshadri (Boston
+University, USA); Perminder Sachdev (University of New South Wales, Australia);
+Geert Jan Biessels (UMC Utrecht, Netherlands); Franz Fazekas (Medical University
+of Graz, Austria); Oscar Benavente (University of British Columbia, Canada);
+Leonardo Pantoni (Azienda Ospedaliero Universitaria Careggi, Florence, Italy);
+Frank-Erik De Leeuw (Radboud University Medical Center Nijmegen, Netherlands);
+Bo Norrving (Lund University, Sweden); Paul Matthews (Imperial College, London,
+UK); Christopher Chen (National University of Singapore); Vincent Mok (The
+Chinese University of Hong Kong, China); Marco D&#x000fc;ring (Institute for Stroke and
+Dementia Research (ISD), Klinikum der Universit&#x000e4;t M&#x000fc;nchen,
+Ludwig-Maximilians-University, Munich, Germany); Will Whiteley (University of
+Edinburgh, UK); Kirsten Shuler (University of Edinburgh, Edinburgh,
+UK).</p><p>Participants in working groups, survey, interpretation: Alvaro
+Alonso (University of Minnesota, USA); Sandra E Black (Sunnybrook Health
+Sciences Centre, University of Toronto, Canada); Carol Brayne (University of
+Cambridge, UK); Hugues Chabriat (Univ Paris Diderot, and DHU NeuroVasc, both at
+Sorbonne Paris Cit&#x000e9;, UMR-S 1161 INSERM, F-75205 Paris; Hopital Lariboisiere,
+Dept of Neurology, F-75475 Paris, France); Charlotte Cordonnier (University
+Lille, Inserm, CHU, U1171 Degenerative and Cascular Cognitive Disorders,
+F-59000, Lille, France); Fergus Doubal (University of Edinburgh, Edinburgh, UK);
+Emrah Duzel (DZNE Magdeburg, Germany); Michael Ewers (Institute for Stroke and
+Dementia Research (ISD), Klinikum der Universit&#x000e4;t M&#x000fc;nchen,
+Ludwig-Maximilians-University, Munich, Germany); Richard Frayne (University of
+Calgary, Canada); Vladimir Hachinski (Rush University Medical Center, London,
+Ontario, Canada); Mohammad Arfan Ikram (Erasmus MC, Rotterdam, The Netherlands);
+Frank Jessen (University of Cologne, Germany); Eric Jouvent (Univ Paris Diderot,
+and DHU NeuroVasc, both at Sorbonne Paris Cit&#x000e9;, UMR-S 1161 INSERM, F-75205
+Paris; Hopital Lariboisiere, Dept of Neurology, F-75475 Paris, France); Jennifer
+Linn (University Hospital Dresden, Germany); John O'Brien (University of
+Cambridge, UK); Robert van Oostenbrugge (Maastricht UMC, Netherlands); Rainer
+Malik (Institute for Stroke and Dementia Research (ISD), Klinikum der
+Universit&#x000e4;t M&#x000fc;nchen, Ludwig-Maximilians-University, Munich, Germany); Bernard
+Mazoyer (University of Bordeaux, France); Reinhold Schmidt (Medical University
+Graz, Austria); Luciano A Sposato (Western University, London, Canada); Blossom
+Stephan (Newcastle University, UK); Richard H Swartz (Sunnybrook Health Sciences
+Centre, University of Toronto, Toronto, Canada); Meike Vernooij (Erasmus MC,
+Rotterdam, The Netherlands); Anand Viswanathan (Massachusetts General Hospital,
+Boston, USA); David Werring (UCL Institute of Neurology, London, UK).</p><p>Participants in the survey: Koji Abe (Okayama University
+Graduate School of Medicine, Dentistry and Pharmaceutical Sciences, Japan);
+Louise Allan ((Newcastle University, Newcastle, UK), Francesco Arba (University
+of Florence, Italy) on behalf of the VISTA Collaboration*; Hee-Joon Bae (Seoul
+National University Bundang Hospital, Republic of Korea (South Korea)); Philip
+MW Bath (University of Nottingham, UK); Regis Bordet (University Lille, Inserm,
+CHU, U1171 Degenerative and Vascular Cognitive Disorders, F-59000 Lille,
+France); Monique Breteler (German Center for Neurodegenerative Diseases (DZNE),
+Berlin, Germany); Seong Choi (Inha University Hospital, Incheon, Korea); Ian
+Deary (University of Edinburgh, UK); Charles DeCarli (University of California,
+USA); Klaus Ebmeier (University of Oxford, Warneford Hospital, Oxford, UK); Lei
+Feng (National University of Singapore); Steven M Greenberg (Massachusetts
+General Hospital, Boston, USA); Masafumi Ihara (National Cerebral and
+Cardiovascular Centre, Suita, Osaka, Japan); Rajesh Kalaria (Newcastle
+University, Newcastle, UK); SanYun Kim (Seoul National University Bundang
+Hospital, Republic of Korea (South Korea)); Jae-Sung Lim (Dept of Neurology,
+Hallym University Sacred Heart Hospital, Anyang, Republic of Korea (South
+Korea)); Richard I Lindley (University of Sydney, Australia); Gillian Mead
+(University of Edinburgh, UK); Alison Murray (University of Aberdeen, UK); Terry
+Quinn (University of Glasgow, UK); Craig Ritchie (University of Edinburgh, UK);
+Ralph Sacco (University of Miami, USA); Rustam Al-Shahi Salman (University of
+Edinburgh, UK); Nikola Sprigg (University of Nottingham, UK); Cathie Sudlow
+(University of Edinburgh, UK); Alan Thomas (Institute of Neuroscience and
+Newcastle University Institute for Ageing, Newcastle University, Newcastle, UK);
+Martin van Boxtel (Maastricht University, Netherlands); Jeroen van der Grond
+(Leiden University Medical Center, Netherlands); Aad van der Lugt (Erasmus MC,
+Rotterdam, The Netherlands); Yuan-Han Yang (Kaohsiung Medical University
+Hospital, Taiwan).</p><p>*VISTA Prevention Steering Committee: H-C Diener (Chair), S
+Davis, G Hankey, KR Lees, B Ovbiagele, C Weir.</p></sec><sec id="appsec2" sec-type="supplementary-material"><title>Supplementary data</title><p><supplementary-material content-type="local-data" id="ec1"><caption><title>Supplementary Material</title></caption><media xlink:href="mmc1.docx"/></supplementary-material><supplementary-material content-type="local-data" id="ec2"><caption><title>Appendix</title></caption><media xlink:href="mmc2.pdf"/></supplementary-material></p></sec><ack id="ack0010"><title>Acknowledgments</title><p>The following funders supported the work: <funding-source id="gs1">Joint Programme for Neurodegenerative Disease</funding-source> (JPND)
+Research, specifically the <funding-source id="gs2">UK Medical Research
+Council</funding-source>, the <funding-source id="gs3">Deutsches Zentrum f&#x000fc;r
+Neurodegenerative Erkrankungen</funding-source> (DZNE), and the
+<funding-source id="gs4">Canadian Institutes of Health Research</funding-source> (CIHR). The Scottish
+Imaging Network, A Platform for Scientific Excellence (SINAPSE) through the Pools
+Engagement in Europe (PEER) funding from the <funding-source id="gs5">Scottish Funding
+Council</funding-source>. The Therese Pei Fong Chow Research Centre for
+Prevention of Dementia (in memory of Donald H K Chow). The authors thank the Siemens
+Foundation, Munich, Germany, for providing the workshop venue and catering.
+F.-E.D.L. acknowledges VIDI Innovation Grant from ZonMW ref 016.126.351. P.M.M.
+acknowledges generous support from the Edmond J Safra Foundation and Lily Safra and
+the Imperial College Health Trust BRC. P.M.W.B. is Stroke Association Professor of
+Stroke Medicine. C.de.C. acknowledges support from Centre Grant <funding-source id="gs6">NIH</funding-source>
+P30 AG 010129. MD, JMW, GJB, RVO
+acknowledge EU Horizon 2020 SVDs@Target grant agreement No 666881.</p><p>In the short term, the main source of information about these
+cohorts is <xref rid="appsec2" ref-type="sec">Supplementary
+Table&#x000a0;1</xref>, while work continues to enable a platform to improve
+accessibility and searching for study data.</p><p>Author contributions.</p><p>Obtaining funding: JMW, MD. Project management and administration:
+JMW, MD, ES. Design and testing of survey: MD, ES, JMW, KS. Survey distribution: ES,
+MD, JMW, KS, CC, VM. Data collection: all authors. Data analysis: VZ, KS, JMW.
+Manuscript preparation: JMW, MD, ES, VZ, SS, PS, GJB, FF, LP, FEdeL, BN, PM, MD, WW.
+Preparation of figures: MD, FEdeL, VZ, MD, KS. Critical comment and data checking:
+all authors. Final approval to submit: all authors.</p></ack><fn-group><fn id="d31e776"><p id="ntpara0015">Declaration of interests: A Alonso, R Al-Shahi Salman, F
+Arba, H-J Bae, C Brayne, H Chabriat, C Chen, C Cordonnier, C DeCarli, M Dichgans, M
+Duering, F Fazekas, L Feng, S Greenberg, M Ihara, E Jouvent, R Kalaria, S-Y Kim, J-S
+Lim, RI Lindley, J Linn, R Malik, B Mazoyer, V Mok, B Norrving, L Pantoni, C
+Ritchie, R Sacco, R Schmidt, S Seshadri, L Sposato, N Sprigg, B Stephan, R Swartz, M
+van Boxtel, J Van der Grond, R van Oostenbrugge, M Vernooij, D Werring, W Whiteley,
+and V Zietemann have no disclosures. P Bath reports grants from UK Medical Research
+Council, NIHR Health Technology Assessment, Stroke Association, Alzheimer's Society,
+British Heart Foundation, during the conduct of the study. Outside the submitted
+work, S Black reports institutional grants from Pfizer, GE Healthcare, Eli Lilly,
+Elan/Transition Therapeutics, Roche, Cognoptix, and personal fees from Pfizer, GE
+Healthcare, Eli Lilly, Eisai, Boehringer Ingelheim, Novartis. R Bordet reports
+grants from French Minister of Health, Fondation Coeur et Art&#x000e8;re, during the conduct
+of the study. I Deary reports grants from Age UK, UK Medical Research Council, UK
+Biotechnology and Biological Sciences Research Council, during the conduct of the
+study. F-E de Leeuw reports grants from VIDI innovational grant (ZonMW), during the
+conduct of the study. F Doubal reports grants from JPND (Medical Research Council
+and Canadian Institutes of Health Research), The Stroke Association and Garfield
+Weston Foundation, during the conduct of the study. KP Ebmeier reports grants from
+UK Medical Research Council, The HDH Wills 1965 Charitable Trust, Gordon Edward
+Small's Charitable Trust, National Institute of Health Research, Alzheimer Research
+UK, and personal fees from Eli Lily, GE, and grants from Various Pharmaceutical
+Companies, outside the submitted work. M Ewers received grants from the European
+Commission, Alzheimer Forschung Initiative and LMU. R Frayne reports grants from
+CIHR, during the conduct of the study; grants from CIHR, outside the submitted work.
+J O'Brien reports personal fees from GE Healthcare, TauRx, Cytox, grants and
+personal fees from Avid/Lilly, outside the submitted work. T Quinn is a founding
+member of VISTA cognition, a not for profit resource that collates individual
+patient level data relating to cognition and stroke. P Sachdev reports grants from
+NHMRC Program Grant ID 568969, during the conduct of the study. K Shuler reports
+grants from JPND (Medical Research Council), grants from Scottish Funding Council
+PEER SINAPSE, during the conduct of the study. E Smith reports grants from Canadian
+Institutes of Health Research, during the conduct of the study and from the Heart
+and Stroke Foundation of Canada, outside the submitted work. A Thomas reports grants
+from NIHR BRU in Lewy Body Dementia, during the conduct of the study. A Viswanathan
+reports personal fees from Roche Pharmaceuticals, outside the submitted work. JM
+Wardlaw reports grants from JPND (Medical Research Council and Canadian Institutes
+of Health Research), and Scottish Funding Council PEER SINAPSE, during the conduct
+of the study.</p></fn><fn id="appsec3" fn-type="supplementary-material"><p>Supplementary data related to this article can be found at
+<ext-link ext-link-type="doi" xlink:href="10.1016/j.jalz.2016.06.004" id="intref0020">http://dx.doi.org/10.1016/j.jalz.2016.06.004</ext-link>.</p></fn></fn-group></back><floats-group><fig id="fig1"><label>Fig.&#x000a0;1</label><caption><p>Approaches to tackling vascular factors in
+neurodegenerative disease. The challenge is to integrate the different clinical
+presentations when attempting to recognize more completely the interactions
+between vascular disease and neurodegeneration and thence improve prevention and
+treatment.</p></caption><graphic xlink:href="gr1"/></fig><fig id="fig2"><label>Fig.&#x000a0;2</label><caption><p>Duration of follow-up by study type and available
+information. Note some community-based studies have &#x0003e;5&#x000a0;years of
+follow-up.</p></caption><graphic xlink:href="gr2"/></fig><fig id="fig3"><label>Fig.&#x000a0;3</label><caption><p>Dynamic effects of small vessel disease on the
+brain: (A) Periventricular and deep white matter hyperintensity (WMH; orange)
+can increase in size (red), occasionally shrink, and lead to atrophy of white
+matter. (B) Acute small subcortical infarcts (dashed black line) may cavitate
+and shrink (black area), develop into a WMH (orange) or disappear. Distant
+effects (blue) involve thinning of connected cortex and degeneration of
+projection fibers.</p></caption><graphic xlink:href="gr3"/></fig><table-wrap id="tbl1" position="float"><label>Table&#x000a0;1</label><caption><p>Summary of types and amount of data available in
+cohorts recorded in the survey that were analyzed in detail</p></caption><table frame="hsides" rules="groups"><thead><tr><th/><th>Community-based cohorts</th><th>Hospital-based cohorts from stroke services</th><th>Hospital-based cohorts from memory clinics</th><th>Clinical trials</th><th>All</th></tr></thead><tbody><tr><td colspan="6">Number of studies</td></tr><tr><td>&#x000a0;Total/completed recruitment/completed
+follow-up</td><td>28/22/15</td><td>12/8/5</td><td>16/8/4</td><td>12/7/5</td><td>68/45/29</td></tr><tr><td>Current number of patients</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Total/with imaging<xref rid="tbl1fnlowast" ref-type="table-fn">&#x02217;</xref></td><td>583.851/23.388</td><td>4.134/3.529</td><td>19.144/5.982</td><td>20.035/12.050</td><td>627.164/44.949</td></tr><tr><td>Planned sample size</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Total/with imaging data</td><td>&#x0003e;600.000/&#x0003e;150.000</td><td>4.702/4.289</td><td>21.353/8.153</td><td>22.314/12.439</td><td>&#x0223c;655.000/&#x0223c;172.000</td></tr><tr><td>Mean age (y)</td><td>71</td><td>70</td><td>73</td><td>71.6</td><td>72</td></tr><tr><td>Male sex (%)</td><td>46</td><td>56</td><td>51</td><td>58.5</td><td>46</td></tr><tr><td>Number of studies with</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Clinical diagnosis of stroke supported by
+neuroimaging</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;MRI/CT/MRI or CT</td><td>6/1/4</td><td>5/4/3</td><td>4/0/2</td><td>3/2/6</td><td>18/7/15</td></tr><tr><td>&#x000a0;Baseline information on risk factors</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Hypertension/diabetes
+mellitus/hypercholesterolemia/smoking/medication/education</td><td>26/26/22/26/27/27</td><td>12/12/12/12/12/11</td><td>16/16/16/16/15/16</td><td>10/10/10/9/8/4</td><td>64/64/60/63/62/58</td></tr><tr><td>&#x000a0;Follow-up assessment</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;After months 3/6/12/24/36/48/60</td><td>1/2/6/10/10/5/6</td><td>9/6/9/3/6/3/6</td><td>0/4/14/9/7/1/0</td><td>7/4/5/2/2/0/0</td><td>17/16/34/24/25/9/12</td></tr><tr><td>&#x000a0;Functional outcomes</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;mRS/BI/SIS/EuroQol/SF36/ADL or IADL</td><td>3/2/0/1/2/5</td><td>7/7/1/2/2/2</td><td>4/4/1/3/0/4</td><td>8/3/1/7/1/0</td><td>22/16/3/13/5/11</td></tr><tr><td>&#x000a0;Vascular outcomes</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Stroke/TIA/MI/Vascular death</td><td>17/14/16/15</td><td>10/7/7/8</td><td>14/12/10/9</td><td>9/8/9/7</td><td>50/41/42/39</td></tr><tr><td>&#x000a0;Cognitive outcomes</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;MCI/Dementia/MoCA or
+ACE-R/MMSE/TICS/Memory/Executive/Reaction time/Visuospatial</td><td>7/15/4/17/16/18/15/16</td><td>7/9/7/10/8/7/4/7</td><td>8/11/6/12/14/14/10/14</td><td>1/2/1/8/6/4/4/4/4</td><td>23/37/18/47/44/43/33/41</td></tr><tr><td>&#x000a0;Psychiatric outcomes</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Depression/anxiety</td><td>18/12</td><td>9/7</td><td>14/7</td><td>7/0</td><td>48/26</td></tr><tr><td>&#x000a0;Mobility outcomes</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;Gait/balance/manual dexterity</td><td>1/0/0</td><td>1/0/0</td><td>1/0/0</td><td>0/0/0</td><td>3/0/0</td></tr><tr><td>&#x000a0;Criteria used for a diagnosis of MCI</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;DSM-V/AHA or ASA/Petersen/NIA-AA/other</td><td>1/1/4/3/2</td><td>2/1/3/0/1</td><td>0/2/2/6/3</td><td>0/0/0/0/6</td><td>3/4/9/9/12</td></tr><tr><td>&#x000a0;Criteria used for a diagnosis of dementia</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;DSM-IV/DSM-V/ICD-10/other</td><td>7/3/3/3</td><td>5/1/1/0</td><td>10/0/0/3</td><td>1/0/0/6</td><td>23/4/4/12</td></tr><tr><td>&#x000a0;Criteria used for diagnosis of vascular CI</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;NINDS-AIREN/AHA or ASA/other</td><td>8/4/2</td><td>1/1/1</td><td>7/4/1</td><td>0/0/0</td><td>16/9/4</td></tr><tr><td>&#x000a0;Criteria used for a diagnosis of AD</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;NIA-AA
+clinical/DSM-V/DSM-V/NINCDS-ADRDA/other</td><td>5/5/0/2/6</td><td>1/4/1/0/0</td><td>8/2/1/4/2</td><td>0/0/0/0/0</td><td>14/11/2/6/8</td></tr><tr><td>&#x000a0;Stored sample</td><td/><td/><td/><td/><td/></tr><tr><td>&#x000a0;DNA/blood</td><td>26/20</td><td>7/6</td><td>13/14</td><td>3/3</td><td>49/43</td></tr></tbody></table><table-wrap-foot><fn id="tspara0015"><p>Abbreviations: ACE-R, revised Addenbrooke's
+cognitive examination; AD, Alzheimer's disease; AHA, American Heart Association;
+AIREN, Association Internationale pour la Recherch&#x000e9; et l'Enseignement en
+Neurosciences; ASA, American Stroke Association; CT, computed tomography; DSM,
+Diagnostic and Statistical Manual of Mental Disorders; ICD, International
+Classification of Disease; MoCA, Montreal Cognitive Assessment; MCI, mild
+cognitive impairment; MI, myocardial infarction; MMSE, mini-mental state
+examination; MRI, magnetic resonance imaging; NIA-AA, National Institutes of
+Aging&#x02013;Alzheimer's Association; NINDS, National Institute for Neurological
+Disorders and Stroke; TIA, transient ischaemic attack; TICS, Telephone Interview
+of Cognitive Assessment.</p></fn><fn id="tspara0020"><p>NOTE. For studies not included in detailed analysis
+and full details of all studies, see <xref rid="appsec2" ref-type="sec">Supplementary Table&#x000a0;1</xref>.</p></fn></table-wrap-foot><table-wrap-foot><fn id="tbl1fnlowast"><label>&#x02217;</label><p id="ntpara0010">Number includes UK Biobank of 500,000 recruited,
+100,000 expected to have brain and other imaging. For 11 cross-sectional and 17
+longitudinal studies not listed in <xref rid="tbl1" ref-type="table">Table&#x000a0;1</xref>, see <xref rid="appsec2" ref-type="sec">Supplementary Material</xref>.</p></fn></table-wrap-foot></table-wrap><table-wrap id="tbl2" position="float"><label>Table&#x000a0;2</label><caption><p>Summary of 84 observational cohort studies by study
+setting</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Setting</th><th>n</th></tr></thead><tbody><tr><td>Observational studies</td><td align="char">84</td></tr><tr><td>&#x000a0;Cross sectional</td><td align="char">11</td></tr><tr><td>&#x000a0;Longitudinal</td><td align="char">73</td></tr><tr><td>Community based</td><td align="char">32</td></tr><tr><td>&#x000a0;Via advertising</td><td align="char">9</td></tr><tr><td>&#x000a0;Population based</td><td align="char">23</td></tr><tr><td>Hospital based for some recruits and community based
+for others</td><td align="char">4</td></tr><tr><td>&#x000a0;Stroke or TIA clinic</td><td align="char">1</td></tr><tr><td>&#x000a0;Stroke or TIA clinic and memory clinic</td><td align="char">1</td></tr><tr><td>&#x000a0;Memory clinic and general geriatric clinic</td><td align="char">1</td></tr><tr><td>&#x000a0;Other</td><td align="char">1</td></tr><tr><td>Hospital/clinical based</td><td align="char">37</td></tr><tr><td>&#x000a0;Stroke or TIA clinic</td><td align="char">19</td></tr><tr><td>&#x000a0;Stroke or TIA clinic and memory clinic</td><td align="char">2</td></tr><tr><td>&#x000a0;Stroke or TIA clinic and memory clinic and general
+geriatric clinic</td><td align="char">3</td></tr><tr><td>&#x000a0;Stroke or TIA clinic and memory clinic and general
+geriatric clinic and any healthy volunteers</td><td align="char">1</td></tr><tr><td>&#x000a0;Stroke or TIA clinic and memory clinic and any
+healthy volunteers</td><td align="char">1</td></tr><tr><td>&#x000a0;Memory clinic</td><td align="char">5</td></tr><tr><td>&#x000a0;Memory clinic and general geriatric clinic</td><td align="char">1</td></tr><tr><td>&#x000a0;Other</td><td align="char">5</td></tr></tbody></table><table-wrap-foot><fn id="tspara0050"><p>Abbreviation: TIA, transient ischaemic
+attack</p></fn><fn id="tspara0030"><p>NOTE. Of 84 observational studies, 11 are cross
+sectional, and 73 are longitudinal. Data on 12 clinical trials are not
+included.</p></fn></table-wrap-foot></table-wrap><table-wrap id="tbl3" position="float"><label>Table&#x000a0;3</label><caption><p>Choosing tests to measure cognition in studies and
+trials dealing with vascular diseases: a step-based process</p></caption><table frame="hsides" rules="groups"><tbody><tr><td><list list-type="simple"><list-item id="o0010"><label>1)</label><p>Decide to assess cognition
+(mandatory)</p></list-item><list-item id="o0015"><label>2)</label><p>Decide whether to assess<list list-type="simple"><list-item id="o0020"><label>a)</label><p>diagnostic outcome measure
+(e.g., dementia, cognitive decline, mild cognitive
+impairment) and/or</p></list-item><list-item id="o0025"><label>b)</label><p>cognitive measures (i.e., use
+domain-specific cognitive tests)</p></list-item></list></p></list-item><list-item id="o0030"><label>4)</label><p>If b, decide which domains to assess,
+and</p></list-item><list-item id="o0035"><label>5)</label><p>Which tests to use.</p></list-item></list></td></tr></tbody></table></table-wrap><table-wrap id="tbl4" position="float"><label>Table&#x000a0;4</label><caption><p>Recommendations for research</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Recommendation</th><th>Reason 1</th><th>Reason 2</th><th>Reason 3</th></tr></thead><tbody><tr><td>General</td><td>Vascular and neurodegenerative pathologies are closely related;
+vascular pathology is an integral part of the pathological spectrum of
+AD, and vascular disease can play an important primary or secondary role
+to other pathology in neurodegeneration and dementia.</td><td>Secondary neurodegeneration due to vascular insults is an important
+contributor to accumulating structural brain damage and brain
+dysfunction.</td><td>Vascular damage can manifest as progressive cognitive, behavioral or
+sensorimotor dysfunction, that is, not just stroke.</td></tr><tr><td>Integrated approaches are needed</td><td>Vascular neurodegenerative disorders may present to many different
+clinics but are underpinned by a common vascular disorder.</td><td>These clinics should integrate to avoid overlooking the multifaceted
+effects of vascular disease on cognition, psychiatric symptoms, and
+physical function.</td><td>Clinical practice and research should assess risk factors, clinical,
+cognitive, imaging, and physical function.</td></tr><tr><td>Vascular disease is a dynamic and far-reaching process</td><td>Apparently small lesions that may precipitate clinical presentations
+have remote effects on other parts of the brain, which increase
+neurological and cognitive dysfunction.</td><td>Small lesions are also evidence of a global brain disease and should
+be treated as a progressive, global pathology.</td><td>Vascular lesions are not small, individually trivial lesions, without
+clinical meaningfulness.</td></tr><tr><td>Always assess vascular risk factors, disease burden, and
+outcomes</td><td>Cerebrovascular disease and AD share multiple risk factors, for
+example, smoking, hypertension, hyperglycemia, diabetes, and obesity.
+Vascular risk factors may have a greater impact in midlife than old
+age.</td><td>As an absolute minimum, routinely assess history of cerebrovascular,
+peripheral vascular, cardiovascular disease, blood pressure, smoking,
+exercise, occupation, and diet, blood lipids, blood glucose.</td><td>Pragmatic approaches can be suitable and avoid overburdening
+researchers and participants. Follow-up should continue long
+term.</td></tr><tr><td rowspan="2">Cognitive assessments should be performed in, and
+relevant to, vascular disease</td><td>Need to be applicable to vascular patients and the environment in
+which they typically present.</td><td>Adapted to reflect their specific cognitive deficits and physical
+limitations.</td><td>Assess executive function and processing speed in addition to
+memory.</td></tr><tr><td>To avoid mistaking lifelong stable traits for late life change,
+routinely assess prior cognitive ability (or proxy measures, e.g.,
+educational attainment) in any studies of cognition and vascular disease
+or other dementias.</td><td>Long-term outcome events, rates, and timings of decline in cognitive
+and physical function are needed to power clinical trials and inform
+patients and health services more effectively.</td><td>Socioeconomic factors have major influence on vascular disease beyond
+that attributed to vascular risk factors alone and should be assessed
+routinely.</td></tr><tr><td>Assess physical function across several domains routinely</td><td>Gait, balance, and continence are often affected and should be
+assessed routinely in suspected vascular cognitive impairment.</td><td>Simple tests such as &#x0201c;timed up and go&#x0201d; are valuable to assess
+physical function.</td><td/></tr><tr><td>Use standard, validated data collection that accounts for vascular
+disease</td><td>Agreed core standard data (clinical, cognitive, imaging, biomarkers,
+and so forth) and definitions would facilitate future data sharing and
+meta-analyses.</td><td>Agreed standards are available, for example, NINDS-CSN Vascular
+Cognitive Impairment Harmonization Standards; or STRIVE standards for
+neuroimaging.</td><td>Imaging can identify &#x0201c;silent&#x0201d; and symptomatic vascular disease if the
+right sequences are used.</td></tr><tr><td>Encourage postmortem brain tissue collection</td><td>Brain tissue from subjects well phenotyped in life, including brain
+regions commonly affected by vascular disease, are not widely available;
+storing samples frozen, and in paraffin, would facilitate protein, and
+gene as well as histological assessments.</td><td>More research is needed on the interaction of AD with cerebrovascular
+pathology, the consequences for function of brain networks, and
+ultimately how these pathologies evolve and combine to cause clinical
+consequences.</td><td>Tissue-imaging analysis of individual lesions is needed to understand
+pathological mechanisms.</td></tr><tr><td>Make better use of existing cohort data</td><td>Study registration and public availability of protocols would
+facilitate identification of novel and ongoing studies for
+meta-analyses.</td><td>Cohorts that assess cerebrovascular disease and include molecular
+imaging to assess AD pathology (e.g., by PET amyloid imaging) will help
+understand joint pathologies.</td><td>Open data initiatives and databanks would encourage sharing of
+existing cohort data.</td></tr></tbody></table><table-wrap-foot><fn><p>Abbreviations: AD, Alzheimer's disease; PET,
+positron emission tomography.</p></fn></table-wrap-foot></table-wrap></floats-group></article>

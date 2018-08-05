@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?><OAI-PMH
+	xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2018-08-05T00:53:09Z</responseDate><request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:5110632" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request><GetRecord><record><header><identifier>oai:pubmedcentral.nih.gov:5110632</identifier><datestamp>2016-11-29</datestamp><setSpec>springeropen</setSpec><setSpec>pmc-open</setSpec></header><metadata><article xmlns="https://jats.nlm.nih.gov/ns/archiving/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.0/ https://jats.nlm.nih.gov/archiving/1.0/xsd/JATS-archivearticle1.xsd" article-type="brief-report">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-ta">J Neural Transm (Vienna)</journal-id>
+      <journal-id journal-id-type="iso-abbrev">J Neural Transm (Vienna)</journal-id>
+      <journal-title-group>
+        <journal-title>Journal of Neural Transmission</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0300-9564</issn>
+      <issn pub-type="epub">1435-1463</issn>
+      <publisher>
+        <publisher-name>Springer Vienna</publisher-name>
+        <publisher-loc>Vienna</publisher-loc>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC5110632</article-id>
+      <article-id pub-id-type="pmcid">PMC5110632</article-id>
+      <article-id pub-id-type="pmc-uid">5110632</article-id>
+      <article-id pub-id-type="pmid">27565149</article-id>
+      <article-id pub-id-type="publisher-id">1608</article-id>
+      <article-id pub-id-type="doi">10.1007/s00702-016-1608-4</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Psychiatry and Preclinical Psychiatric Studies - Short communication</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Low digit ratio (2D:4D) in male suicide victims</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" corresp="yes">
+          <name>
+            <surname>Lenz</surname>
+            <given-names>Bernd</given-names>
+          </name>
+          <address>
+            <phone>+49 9131 85-33001</phone>
+            <email>bernd.lenz@uk-erlangen.de</email>
+          </address>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Thiem</surname>
+            <given-names>Daniela</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+          <xref ref-type="aff" rid="Aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Bouna-Pyrrou</surname>
+            <given-names>Polyxeni</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Mühle</surname>
+            <given-names>Christiane</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Stoessel</surname>
+            <given-names>Christina</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Betz</surname>
+            <given-names>Peter</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Kornhuber</surname>
+            <given-names>Johannes</given-names>
+          </name>
+          <xref ref-type="aff" rid="Aff1">1</xref>
+        </contrib>
+        <aff id="Aff1"><label>1</label>Department of Psychiatry and Psychotherapy, Friedrich-Alexander University Erlangen-Nürnberg (FAU), Schwabachanlage 6, 91054 Erlangen, Germany </aff>
+        <aff id="Aff2"><label>2</label>Institute for Legal Medicine, Friedrich-Alexander University Erlangen-Nürnberg (FAU), Erlangen, Germany </aff>
+      </contrib-group>
+      <pub-date pub-type="epub">
+        <day>26</day>
+        <month>8</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="pmc-release">
+        <day>26</day>
+        <month>8</month>
+        <year>2016</year>
+      </pub-date>
+      <pub-date pub-type="ppub">
+        <year>2016</year>
+      </pub-date>
+      <volume>123</volume>
+      <issue>12</issue>
+      <fpage>1499</fpage>
+      <lpage>1503</lpage>
+      <history>
+        <date date-type="received">
+          <day>22</day>
+          <month>4</month>
+          <year>2016</year>
+        </date>
+        <date date-type="accepted">
+          <day>15</day>
+          <month>8</month>
+          <year>2016</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>© The Author(s) 2016</copyright-statement>
+        <license license-type="OpenAccess">
+          <license-p>
+<bold>Open Access</bold>This article is distributed under the terms of the Creative Commons Attribution 4.0 International License (<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>), which permits unrestricted use, distribution, and reproduction in any medium, provided you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made.</license-p>
+        </license>
+      </permissions>
+      <abstract id="Abs1">
+        <p>Although women attempt suicides equally or more often than men do, men are more likely to die of suicide than women (sex paradox of suicidal behavior). Furthermore, the male traits of aggression and impulsivity predict suicide completion. Here, we studied the second-to-fourth-finger length ratio (2D:4D), a proxy for prenatal androgen exposure, in 46 suicide corpses and 25 non-suicide corpses. We report significantly lower 2D:4D in male suicide corpses than non-suicide corpses (<italic>p</italic> = .030, partial <italic>η</italic>
+<sup>2</sup> = .147). There was no significant association between 2D:4D and the suicide method. Our findings indicate increased risk of suicide following higher prenatal androgen exposure in males. The results may improve future efforts to predict and prevent suicides.</p>
+      </abstract>
+      <kwd-group xml:lang="en">
+        <title>Keywords</title>
+        <kwd>Prenatal androgen exposure</kwd>
+        <kwd>Suicide</kwd>
+        <kwd>Second-to-fourth-finger length ratio</kwd>
+        <kwd>2D:4D</kwd>
+      </kwd-group>
+      <custom-meta-group>
+        <custom-meta>
+          <meta-name>issue-copyright-statement</meta-name>
+          <meta-value>© Springer-Verlag Wien 2016</meta-value>
+        </custom-meta>
+      </custom-meta-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="Sec1">
+      <title>Introduction</title>
+      <p>The World Health Organization (WHO) estimates that 804,000 individuals worldwide committed suicide in 2012, which corresponds to an age-standardized suicide rate of approximately 11 per 100,000 per year. Reducing the suicide rate is a global goal (WHO <xref ref-type="bibr" rid="CR28">2014</xref>). Although many demographic and clinical factors, such as psychiatric illness, male sex, age, and prior suicide ideation and attempts, are established identifiers of people at risk for suicide, these factors are insufficient at predicting which individuals will effectively complete suicide (Goldstein et al. <xref ref-type="bibr" rid="CR7">1991</xref>; Nock et al. <xref ref-type="bibr" rid="CR22">2008</xref>). Additional knowledge about the mechanisms underlying the occurrence of suicidal ideation and the transition to a completed suicide is necessary to develop and optimize predictive and preventive strategies.</p>
+      <p>Males are more likely to die of suicide than females. The global age-standardized male-to-female ratio is 1.9 and can be as high as 3.5 for high-income countries (WHO <xref ref-type="bibr" rid="CR28">2014</xref>). By contrast, females attempt suicides equally or more often than males do, and the male-to-female ratio varies between .5 and 1.0 depending on region (WHO <xref ref-type="bibr" rid="CR28">2014</xref>). Different socioeconomic (e.g., family income and family structure), psychological (e.g., gender roles and behavioral traits), and biological [e.g., genetics and epigenetics (Labonte and Turecki <xref ref-type="bibr" rid="CR16">2010</xref>)] factors account for this sex paradox of suicidal behavior. In accordance with the hypothesis that the male traits of aggression and impulsivity facilitate suicidal behavior, these behaviors were reported to predict suicidal attempts and suicide completion (Klonsky and May <xref ref-type="bibr" rid="CR13">2010</xref>; Gvion and Apter <xref ref-type="bibr" rid="CR8">2011</xref>; Wang et al. <xref ref-type="bibr" rid="CR27">2014</xref>; Chachamovich et al. <xref ref-type="bibr" rid="CR4">2015</xref>). Prenatal exposure to androgens is a determinant of aggressive behavior in later life (Bailey and Hurd <xref ref-type="bibr" rid="CR1">2005</xref>; Joyce et al. <xref ref-type="bibr" rid="CR11">2013</xref>; Kilduff et al. <xref ref-type="bibr" rid="CR12">2013</xref>; but also see, for example, Voracek and Stieger <xref ref-type="bibr" rid="CR26">2009</xref> for a contrary viewpoint). We accordingly speculated that higher prenatal androgen loads increase the risk for a completed suicide later in life. To investigate this hypothesis, we used the second-to-fourth-finger length ratio (2D:4D). 2D:4D is determined by the intrauterine sex hormone milieu during digit cartilage development. It is negatively correlated with prenatal exposure to androgens and is, accordingly, a proxy for measuring prenatal androgen load during adulthood (Breedlove <xref ref-type="bibr" rid="CR3">2010</xref>; Zheng and Cohn <xref ref-type="bibr" rid="CR29">2011</xref>; Manning et al. <xref ref-type="bibr" rid="CR18">2014</xref>). In addition, the difference between the right 2D:4D (R2D:4D) and the left 2D:4D (L2D:4D) (=Dr-l) is suggested to correlate negatively with the prenatal androgen load (for review Manning et al. <xref ref-type="bibr" rid="CR18">2014</xref>). Our primary hypothesis was that suicide corpses would exhibit a lower 2D:4D than non-suicide corpses and that the difference would be more pronounced in males than in females. We additionally hypothesized a difference in 2D:4D between suicide corpses of individuals who had died of more-aggressive physical methods and suicide corpses of individuals who had died of less-aggressive chemical methods (poisoning).</p>
+    </sec>
+    <sec id="Sec2">
+      <title>Methods</title>
+      <p>This study was part of the Finger Length in Psychiatry (FLIP) project of the Erlangen Department of Psychiatry and Psychotherapy (Kornhuber et al. <xref ref-type="bibr" rid="CR14">2011</xref>, <xref ref-type="bibr" rid="CR15">2013</xref>). Between January 2012 and September 2014, we enrolled 71 corpses (estimated post-mortem interval until enrollment: 7 h–14 days) that were transferred to the Institute for Legal Medicine at the Friedrich-Alexander University Erlangen-Nürnberg for post-mortem examination. An experienced coroner (DT) scanned (Avision IS1000 flatbed scanner, Hsinchu, Taiwan) or photographed (in-house-constructed apparatus with a fixed geometry between the fingers and the camera) the corpses’ right and left hands. The photography method had an advantage over the scanning method under certain circumstances (e.g., distinct rigor mortis), because it was easier to handle. The total lengths of the second (2D) and fourth (4D) digits were quantified from the middle of the basal crease to the finger tips (in pixels using the GNU Image Manipulation Program; GIMP, version 2.8; <ext-link ext-link-type="uri" xlink:href="http://www.gimp.org">http://www.gimp.org</ext-link>). Each finger was measured six times by three independent raters who were blind to the group allocation. The mean values were calculated for the R2D:4D, the L2D:4D, and the Dr-l. The one-way random intra-class correlation coefficients (ICC) indicated good interrater reliability (&gt;86 % of the variance in the raters’ means was real; R2D:4D: .88, L2D:4D: .87, Dr-l: .87). Moreover, we found high reliabilities between the scanning method and the photography method (two-way random ICC (absolute agreement) in the data of 20 hands measured with the two methods by three independent raters: R2D:4D: .94, L2D:4D: .93, Dr-l: .77).</p>
+      <p>We present the data as means and standard errors of the mean (±SEM) or as medians and interquartile range (IQR) if the data did not follow a normal distribution according to the Kolmogorov–Smirnov one-sample tests for goodness of fit. We calculated repeated-measures analyses of variance (ANOVA) with repeated measurements on the factor “hand” (right, left) and separate ANOVAs with R2D:4D, L2D:4D, and Dr-l as dependent variables. Status of alcohol dependence and weight status were included in the statistical models, because these factors are associated with both 2D:4D (Fink et al. <xref ref-type="bibr" rid="CR5">2006</xref>; Han et al. <xref ref-type="bibr" rid="CR9">2016</xref>; Kornhuber et al. <xref ref-type="bibr" rid="CR14">2011</xref>; Oyeyemi et al. <xref ref-type="bibr" rid="CR23">2014</xref>) and suicide rate (Perera et al. <xref ref-type="bibr" rid="CR24">2016</xref>; WHO <xref ref-type="bibr" rid="CR28">2014</xref>). The variables of interest (“group,” suicide versus non-suicide; “method of suicide,” chemical versus physical) and the potential confounders (“quantification method,” scan versus photograph; “status of alcohol dependence,” alcohol-dependent versus not alcohol-dependent versus unknown; “weight status,” normal weight ≤25 mg/m<sup>2</sup> versus overweight &gt;25 kg/m<sup>2</sup>) were included in the models as fixed factors. Neither age nor the post-mortem interval was significantly correlated with R2D:4D, L2D:4D, or Dr-l (Spearman) in the entire group or in any subgroup (males, females, suicide corpses, non-suicide corpses) and, therefore, were not included into the primary models. The effect size was estimated by partial <italic>η</italic>
+<sup>2</sup> values and is shown for significant associations. <italic>p</italic> values less than .05 for two-sided tests were considered to be statistically significant. We analyzed the data using IBM SPSS statistics Version 21 for Windows (SPSS Inc., Chicago, IL, USA) and Graph Pad Prism 5 (Graph Pad Software Inc., San Diego, CA, USA).</p>
+    </sec>
+    <sec id="Sec3">
+      <title>Results</title>
+      <sec id="Sec4">
+        <title>Sample description</title>
+        <p>We characterized the groups of suicide corpses and non-suicide corpses as follows. Suicide corpses (<italic>n</italic> = 46): 32 males, 14 females; 21 overweight, 25 normal weight; 7 alcohol-dependent, 25 not alcohol-dependent, and 14 unknown status of alcohol dependence; 40 scans and 6 photographs; median age 48 years (IQR:32–61 years); median estimated post-mortem interval 48 h (IQR:24–96 h); methods of suicide: chemical-related suicides: 15 self-poisoning, including carbon monoxide; physical-related suicides: 9 hanging/suffocation, 6 self-inflicted shooting death, 6 self-injury cutting, 5 jumping from height, 2 vehicular impact, 2 electrocution, and 1 hypothermia. Non-suicide corpses (<italic>n</italic> = 25): 15 males and 10 females; 13 overweight and 12 normal weight; 3 alcohol dependent and 14 not alcohol dependent, 8 unknown status of alcohol dependence; 20 scans and 5 photographs; median age: 55 years (IQR:53–73 years); median estimated post-mortem interval 84 h (IQR:47–120 h); causes of death: cardiac failure, cerebral hemorrhage, cerebral tumor, traumatic brain injury, accident, hypothermia, intoxication, pulmonary embolism, pneumonia, sepsis, and others.</p>
+      </sec>
+      <sec id="Sec5">
+        <title>2D:4D and suicide</title>
+        <p>Consistent with our primary hypothesis, we found lower 2D:4D in the suicide corpses than in the non-suicide corpses (repeated-measures ANOVA, <italic>F</italic> = 5.1, <italic>p</italic> = .029, partial <italic>η</italic>
+<sup>2</sup> = .111). This effect remained significant after including age and the estimated post-mortem interval as covariates (repeated-measures analysis of covariance (ANCOVA), suicide versus non-suicide, <italic>F</italic> = 5.0, <italic>p</italic> = .031, and partial <italic>η</italic>
+<sup>2</sup> = .114). The two statistical models were also influenced by the hand × sex (repeated-measures ANOVA, <italic>F</italic> = 8.4, <italic>p</italic> = .006, and partial <italic>η</italic>
+<sup>2</sup> = .171; repeated-measures ANCOVA, <italic>F</italic> = 8.8, <italic>p</italic> = .005, and partial η<sup>2</sup> = .184) and the hand × sex × weight status × status of alcohol dependence interactions (repeated-measures ANOVA, <italic>F</italic> = 5.3, <italic>p</italic> = .027, and partial <italic>η</italic>
+<sup>2</sup> = .114; repeated-measures ANCOVA, <italic>F</italic> = 4.7, <italic>p</italic> = .037, and partial η<sup><italic>2</italic></sup> = .107). There were no additional significant main or interaction effects of 2D:4D with the quantification method (scan versus photograph), the status of alcohol dependence, or weight status. Separate sex-specific repeated-measures ANOVAs revealed that the association between 2D:4D and group (suicide versus non-suicide) was primarily driven by the male subsample (Fig. <xref rid="Fig1" ref-type="fig">1</xref>).<fig id="Fig1"><label>Fig. 1</label><caption><p>Right- and left-hand second-to-fourth-finger length ratios in male and female suicide corpses and non-suicide corpses. Second-to-fourth-finger length ratios (2D:4D) are significantly lower in suicide corpses than in non-suicide corpses for males (repeated-measures ANOVA, <italic>F</italic> = 5.2, <italic>p</italic> = .030, and partial <italic>η</italic>
+<sup>2</sup> = .147) but not for females (repeated-measures ANOVA, <italic>F</italic> = .3, and <italic>p</italic> = .614). The <italic>graph</italic> shows mean ± SEM. *<italic>p</italic> &lt; .05; <italic>ns</italic> not significant</p></caption><graphic xlink:href="702_2016_1608_Fig1_HTML" id="MO1"/></fig>
+</p>
+        <p>Additional exploratory analyses showed that R2D:4D was lower in suicide corpses (.973 ± .005) than in non-suicide corpses (.981 ± .007, ANOVA, <italic>F</italic> = 8.1, <italic>p</italic> = .007, and partial <italic>η</italic>
+<sup>2</sup> = .165) and lower in males (.967 ± .006) than in females (.988 ± .007, <italic>F</italic> = 6.3, <italic>p</italic> = .016, and partial <italic>η</italic>
+<sup>2</sup> = .133). By contrast, L2D:4D did not significantly differ between suicide corpses (.980 ± .006) and non-suicide corpses (.997 ± .008, <italic>F</italic> = 1.6, and <italic>p</italic> = .213). Finally, Dr-l was not significantly different between suicide corpses (−.008 ± .005) and non-suicide corpses (−.017 ± .007, ANOVA, <italic>F</italic> = 2.0, and <italic>p</italic> = .167), but Dr-l was associated with sex (males −.026 ± .006, versus females .006 ± .007, <italic>F</italic> = 8.4, <italic>p</italic> = .006, and partial <italic>η</italic>
+<sup>2</sup> = .171).</p>
+      </sec>
+      <sec id="Sec6">
+        <title>2D:4D and suicide method</title>
+        <p>2D:4D did not significantly differ between corpses of individuals who had died from various physical methods (<italic>n</italic> = 31, .972 ± .007) and corpses of individuals who had died from chemical methods (=poisoning, <italic>n</italic> = 15, .979 ± .009, repeated-measures ANOVA, <italic>F</italic> = .4, and <italic>p</italic> = .509). Furthermore, there was no significant association between Dr-l and suicide method (physical methods, −.016 ± .007, poisoning, .002 ± .008; ANCOVA, <italic>F</italic> = 1.6, and <italic>p</italic> = .218).</p>
+      </sec>
+    </sec>
+    <sec id="Sec7">
+      <title>Discussion</title>
+      <p>To the best of our knowledge, this is the first study to investigate 2D:4D, a proxy for prenatal androgen exposure, in death by suicide. We have reported lower 2D:4D ratios in suicide corpses than in non-suicide corpses with partial η<sup>2</sup> values between .111 and .184. These effect sizes are considered to be medium (&gt;.059) to large (&gt;.138; Richardson <xref ref-type="bibr" rid="CR25">2011</xref>). Because 2D:4D correlates negatively with the extent of prenatal exposure to androgens, our results may indicate that higher prenatal androgen load increases the risk for death by suicide. Our findings agree with the assumption of Manning et al. (<xref ref-type="bibr" rid="CR18">2014</xref>) that prenatal androgen priming exerts its effects in adulthood predominantly in aggressive situations which applies to situations prior to a completed suicide.</p>
+      <p>Our secondary analyses revealed that the 2D:4D difference between suicide corpses and non-suicide corpses was mainly driven by males. This finding is consistent with other studies that demonstrated a 2D:4D effect in males but not in females for attention deficit hyperactivity disorder symptoms (Martel et al. <xref ref-type="bibr" rid="CR19">2008</xref>), fear reactivity (Bergman et al. <xref ref-type="bibr" rid="CR2">2010</xref>), and sex-typical behavior (Mitsui et al. <xref ref-type="bibr" rid="CR21">2016</xref>). In accordance with Martel et al. (<xref ref-type="bibr" rid="CR19">2008</xref>), we speculate that sex differences in intrauterine brain development (e.g., biochemical or anatomical aspects) might render males more vulnerable to the effects of prenatal androgenization than females. In addition, if there is a threshold of prenatal androgen load for increased suicide risk, this threshold should be exceeded more often by males than by females because of the sex-specific higher baseline intrauterine androgen load in males. Our secondary analyses also revealed a stronger association between 2D:4D and suicide on the right hand than on the left hand which is in line with findings suggesting that the R2D:4D is superior to the L2D:4D in indicating prenatal androgenization (Hönekopp and Watson <xref ref-type="bibr" rid="CR10">2010</xref>; Manning et al. <xref ref-type="bibr" rid="CR17">1998</xref>, <xref ref-type="bibr" rid="CR18">2014</xref>). In line with our expectations, we further found sexual dimorphisms in R2D:4D and Dr-l with lower values in males than in females</p>
+      <p>This study has several limitations. It was sufficiently powered to verify the primary hypothesis; however, we were unable to demonstrate an association between 2D:4D and the suicide method, which might be due to us investigating an insufficient number of suicide corpses. Moreover, our study was limited by the fact that the cohort might not be typical of the total cohort of suicides, because we enrolled a random but not necessarily representative subsample of corpses that were transferred to the Institute for Legal Medicine at the Friedrich-Alexander University Erlangen-Nürnberg. Future investigations are needed to test the generalizability of our results. In addition, our results should be interpreted cautiously. Underlying causalities cannot be drawn from the associational study design. Moreover, the accuracy of 2D:4D as a proxy of prenatal androgen exposure may be limited because of known genetic determinants of 2D:4D (Forstmeier <xref ref-type="bibr" rid="CR6">2005</xref>; Medland and Loehlin <xref ref-type="bibr" rid="CR20">2008</xref>) and other possible influencing and mediating factors. A strength of this investigation was that the statistical models were corrected for potential confounding variables, such as sex, body weight (Oyeyemi et al. <xref ref-type="bibr" rid="CR23">2014</xref>), and alcohol dependence (Kornhuber et al. <xref ref-type="bibr" rid="CR14">2011</xref>). However, we acknowledge that the inclusion of these confounders entailed small subgroup sample sizes and that we were unable to classify the alcohol dependence status in nearly one-third of the cases. Finally, we did not investigate a potential bias caused by other mental illnesses.</p>
+      <p>So far, established risk factors cannot reliably determine individuals who will prospectively complete suicide. We expect that our results will improve efforts to both predict and prevent suicides in the future. In combination with other clinical markers and biomarkers, 2D:4D may be useful for effectively predicting suicides and the transition from suicidal ideation to a completed suicide in clinical and non-clinical samples. Because suicide attempts are more often fatal in males than in females and because our study revealed an association between 2D:4D and completed suicide only in males, future studies should examine whether prenatal androgen exposure entails death primarily by facilitating the transition from a suicidal attempt to suicide completion. Moreover, additional studies are necessary to reveal the pathways that link the intrauterine androgen priming and suicide. It might be worthwhile investigating the role of cerebral epigenetic alterations and aggressive and impulsive behavioral phenotypes.</p>
+      <p>In summary, our findings suggest that higher prenatal exposure to androgens may predispose a male individual to commit suicide later on in his life. This knowledge may aid in establishing novel strategies to predict and prevent suicides in the future.</p>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <p>We thank the reviewers for their constructive suggestions.</p>
+    </ack>
+    <notes notes-type="COI-statement">
+      <title>Compliance with ethical standards</title>
+      <sec id="FPar1">
+        <title>Conflict of interest</title>
+        <p>The authors declare that they have no conflict of interest.</p>
+      </sec>
+      <sec id="FPar2">
+        <title>Funding</title>
+        <p>This work was supported by intramural grants from the University Hospital of the Friedrich-Alexander University Erlangen-Nürnberg (FAU). The funders had no role in the study design, data collection, analysis, decision to publish, or preparation of the manuscript.</p>
+      </sec>
+      <sec id="FPar3">
+        <title>Ethical approval</title>
+        <p>This study was approved by the Ethics Committee of the Medical Faculty of the Friedrich-Alexander University Erlangen-Nürnberg (ID 4578).</p>
+      </sec>
+    </notes>
+    <ref-list id="Bib1">
+      <title>References</title>
+      <ref id="CR1">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bailey</surname>
+              <given-names>AA</given-names>
+            </name>
+            <name>
+              <surname>Hurd</surname>
+              <given-names>PL</given-names>
+            </name>
+          </person-group>
+          <article-title>Finger length ratio (2D:4D) correlates with physical aggression in men but not in women</article-title>
+          <source>Biol Psychol</source>
+          <year>2005</year>
+          <volume>68</volume>
+          <issue>3</issue>
+          <fpage>215</fpage>
+          <lpage>222</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.biopsycho.2004.05.001</pub-id>
+          <pub-id pub-id-type="pmid">15620791</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR2">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bergman</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Glover</surname>
+              <given-names>V</given-names>
+            </name>
+            <name>
+              <surname>Sarkar</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Abbott</surname>
+              <given-names>DH</given-names>
+            </name>
+            <name>
+              <surname>O’Connor</surname>
+              <given-names>TG</given-names>
+            </name>
+          </person-group>
+          <article-title>In utero cortisol and testosterone exposure and fear reactivity in infancy</article-title>
+          <source>Horm Behav</source>
+          <year>2010</year>
+          <volume>57</volume>
+          <issue>3</issue>
+          <fpage>306</fpage>
+          <lpage>312</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.yhbeh.2009.12.012</pub-id>
+          <pub-id pub-id-type="pmid">20060000</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR3">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Breedlove</surname>
+              <given-names>SM</given-names>
+            </name>
+          </person-group>
+          <article-title>Minireview: organizational hypothesis: instances of the fingerpost</article-title>
+          <source>Endocrinology</source>
+          <year>2010</year>
+          <volume>151</volume>
+          <issue>9</issue>
+          <fpage>4116</fpage>
+          <lpage>4122</lpage>
+          <pub-id pub-id-type="doi">10.1210/en.2010-0041</pub-id>
+          <pub-id pub-id-type="pmid">20631003</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR4">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Chachamovich</surname>
+              <given-names>E</given-names>
+            </name>
+            <name>
+              <surname>Kirmayer</surname>
+              <given-names>LJ</given-names>
+            </name>
+            <name>
+              <surname>Haggarty</surname>
+              <given-names>JM</given-names>
+            </name>
+            <name>
+              <surname>Cargo</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>McCormick</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Turecki</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>Suicide among inuit: results from a large, epidemiologically representative follow-back study in Nunavut</article-title>
+          <source>Can J Psychiatry</source>
+          <year>2015</year>
+          <volume>60</volume>
+          <issue>6</issue>
+          <fpage>268</fpage>
+          <lpage>275</lpage>
+          <pub-id pub-id-type="pmid">26175324</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR5">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Fink</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Manning</surname>
+              <given-names>JT</given-names>
+            </name>
+            <name>
+              <surname>Neave</surname>
+              <given-names>N</given-names>
+            </name>
+          </person-group>
+          <article-title>The 2nd–4th digit ratio (2D:4D) and neck circumference: implications for risk factors in coronary heart disease</article-title>
+          <source>Int J Obes (Lond)</source>
+          <year>2006</year>
+          <volume>30</volume>
+          <issue>4</issue>
+          <fpage>711</fpage>
+          <lpage>714</lpage>
+          <pub-id pub-id-type="doi">10.1038/sj.ijo.0803154</pub-id>
+          <pub-id pub-id-type="pmid">16261185</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR6">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Forstmeier</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Quantitative genetics and behavioural correlates of digit ratio in the zebra finch</article-title>
+          <source>Proc Biol Sci</source>
+          <year>2005</year>
+          <volume>272</volume>
+          <issue>1581</issue>
+          <fpage>2641</fpage>
+          <lpage>2649</lpage>
+          <pub-id pub-id-type="doi">10.1098/rspb.2005.3264</pub-id>
+          <pub-id pub-id-type="pmid">16321787</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR7">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Goldstein</surname>
+              <given-names>RB</given-names>
+            </name>
+            <name>
+              <surname>Black</surname>
+              <given-names>DW</given-names>
+            </name>
+            <name>
+              <surname>Nasrallah</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Winokur</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>The prediction of suicide. Sensitivity, specificity, and predictive value of a multivariate model applied to suicide among, 1906 patients with affective disorders</article-title>
+          <source>Arch Gen Psychiatry</source>
+          <year>1991</year>
+          <volume>48</volume>
+          <issue>5</issue>
+          <fpage>418</fpage>
+          <lpage>422</lpage>
+          <pub-id pub-id-type="doi">10.1001/archpsyc.1991.01810290030004</pub-id>
+          <pub-id pub-id-type="pmid">2021294</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR8">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Gvion</surname>
+              <given-names>Y</given-names>
+            </name>
+            <name>
+              <surname>Apter</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Aggression, impulsivity, and suicide behavior: a review of the literature</article-title>
+          <source>Arch Suicide Res</source>
+          <year>2011</year>
+          <volume>15</volume>
+          <issue>2</issue>
+          <fpage>93</fpage>
+          <lpage>112</lpage>
+          <pub-id pub-id-type="doi">10.1080/13811118.2011.565265</pub-id>
+          <pub-id pub-id-type="pmid">21541857</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR9">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Han</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Bae</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>Y-S</given-names>
+            </name>
+            <name>
+              <surname>Won</surname>
+              <given-names>S-D</given-names>
+            </name>
+            <name>
+              <surname>Kim</surname>
+              <given-names>DJ</given-names>
+            </name>
+          </person-group>
+          <article-title>The ratio of 2nd to 4th digit length in Korean alcohol-dependent patients</article-title>
+          <source>Clin Psychopharmacol Neurosci</source>
+          <year>2016</year>
+          <volume>14</volume>
+          <issue>2</issue>
+          <fpage>148</fpage>
+          <lpage>152</lpage>
+          <pub-id pub-id-type="doi">10.9758/cpn.2016.14.2.148</pub-id>
+          <pub-id pub-id-type="pmid">27121425</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR10">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Hönekopp</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Watson</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Meta-analysis of digit ratio 2D:4D shows greater sex difference in the right hand</article-title>
+          <source>Am J Hum Biol</source>
+          <year>2010</year>
+          <volume>22</volume>
+          <issue>5</issue>
+          <fpage>619</fpage>
+          <lpage>630</lpage>
+          <pub-id pub-id-type="doi">10.1002/ajhb.21054</pub-id>
+          <pub-id pub-id-type="pmid">20737609</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR11">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Joyce</surname>
+              <given-names>CW</given-names>
+            </name>
+            <name>
+              <surname>Kelly</surname>
+              <given-names>JC</given-names>
+            </name>
+            <name>
+              <surname>Chan</surname>
+              <given-names>JC</given-names>
+            </name>
+            <name>
+              <surname>Colgan</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>O’Briain</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Mc Cabe</surname>
+              <given-names>JP</given-names>
+            </name>
+            <name>
+              <surname>Curtin</surname>
+              <given-names>W</given-names>
+            </name>
+          </person-group>
+          <article-title>Second to fourth digit ratio confirms aggressive tendencies in patients with boxers fractures</article-title>
+          <source>Injury</source>
+          <year>2013</year>
+          <volume>44</volume>
+          <issue>11</issue>
+          <fpage>1636</fpage>
+          <lpage>1639</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.injury.2013.07.018</pub-id>
+          <pub-id pub-id-type="pmid">23972912</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR12">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kilduff</surname>
+              <given-names>LP</given-names>
+            </name>
+            <name>
+              <surname>Hopp</surname>
+              <given-names>RN</given-names>
+            </name>
+            <name>
+              <surname>Cook</surname>
+              <given-names>CJ</given-names>
+            </name>
+            <name>
+              <surname>Crewther</surname>
+              <given-names>BT</given-names>
+            </name>
+            <name>
+              <surname>Manning</surname>
+              <given-names>JT</given-names>
+            </name>
+          </person-group>
+          <article-title>Digit ratio (2D:4D), aggression, and testosterone in men exposed to an aggressive video stimulus</article-title>
+          <source>Evol Psychol</source>
+          <year>2013</year>
+          <volume>11</volume>
+          <issue>5</issue>
+          <fpage>953</fpage>
+          <lpage>964</lpage>
+          <pub-id pub-id-type="doi">10.1177/147470491301100502</pub-id>
+          <pub-id pub-id-type="pmid">24113579</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR13">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Klonsky</surname>
+              <given-names>ED</given-names>
+            </name>
+            <name>
+              <surname>May</surname>
+              <given-names>A</given-names>
+            </name>
+          </person-group>
+          <article-title>Rethinking impulsivity in suicide</article-title>
+          <source>Suicide Life Threat Behav</source>
+          <year>2010</year>
+          <volume>40</volume>
+          <issue>6</issue>
+          <fpage>612</fpage>
+          <lpage>619</lpage>
+          <pub-id pub-id-type="doi">10.1521/suli.2010.40.6.612</pub-id>
+          <pub-id pub-id-type="pmid">21198330</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR14">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kornhuber</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Erhard</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Lenz</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Kraus</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Sperling</surname>
+              <given-names>W</given-names>
+            </name>
+            <name>
+              <surname>Bayerlein</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Biermann</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Stoessel</surname>
+              <given-names>C</given-names>
+            </name>
+          </person-group>
+          <article-title>Low digit ratio 2D:4D in alcohol dependent patients</article-title>
+          <source>PLoS One</source>
+          <year>2011</year>
+          <volume>6</volume>
+          <issue>4</issue>
+          <fpage>e19332</fpage>
+          <pub-id pub-id-type="doi">10.1371/journal.pone.0019332</pub-id>
+          <pub-id pub-id-type="pmid">21547078</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR15">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kornhuber</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Zenses</surname>
+              <given-names>EM</given-names>
+            </name>
+            <name>
+              <surname>Lenz</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Stoessel</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Bouna-Pyrrou</surname>
+              <given-names>P</given-names>
+            </name>
+            <name>
+              <surname>Rehbein</surname>
+              <given-names>F</given-names>
+            </name>
+            <name>
+              <surname>Kliem</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Mößle</surname>
+              <given-names>T</given-names>
+            </name>
+          </person-group>
+          <article-title>Low 2D:4D values are associated with video game addiction</article-title>
+          <source>PLoS One</source>
+          <year>2013</year>
+          <volume>8</volume>
+          <issue>11</issue>
+          <fpage>e79539</fpage>
+          <pub-id pub-id-type="doi">10.1371/journal.pone.0079539</pub-id>
+          <pub-id pub-id-type="pmid">24236143</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR16">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Labonte</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Turecki</surname>
+              <given-names>G</given-names>
+            </name>
+          </person-group>
+          <article-title>The epigenetics of suicide: explaining the biological effects of early life environmental adversity</article-title>
+          <source>Arch Suicide Res</source>
+          <year>2010</year>
+          <volume>14</volume>
+          <issue>4</issue>
+          <fpage>291</fpage>
+          <lpage>310</lpage>
+          <pub-id pub-id-type="doi">10.1080/13811118.2010.524025</pub-id>
+          <pub-id pub-id-type="pmid">21082447</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR17">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Manning</surname>
+              <given-names>JT</given-names>
+            </name>
+            <name>
+              <surname>Scutt</surname>
+              <given-names>D</given-names>
+            </name>
+            <name>
+              <surname>Wilson</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Lewis-Jones</surname>
+              <given-names>DI</given-names>
+            </name>
+          </person-group>
+          <article-title>The ratio of 2nd to 4th digit length: a predictor of sperm numbers and concentrations of testosterone, luteinizing hormone and oestrogen</article-title>
+          <source>Hum Reprod</source>
+          <year>1998</year>
+          <volume>13</volume>
+          <issue>11</issue>
+          <fpage>3000</fpage>
+          <lpage>3004</lpage>
+          <pub-id pub-id-type="doi">10.1093/humrep/13.11.3000</pub-id>
+          <pub-id pub-id-type="pmid">9853845</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR18">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Manning</surname>
+              <given-names>J</given-names>
+            </name>
+            <name>
+              <surname>Kilduff</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>Cook</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Crewther</surname>
+              <given-names>B</given-names>
+            </name>
+            <name>
+              <surname>Fink</surname>
+              <given-names>B</given-names>
+            </name>
+          </person-group>
+          <article-title>Digit ratio (2D:4D): a biomarker for prenatal sex steroids and adult sex steroids in challenge situations</article-title>
+          <source>Front Endocrinol (Lausanne)</source>
+          <year>2014</year>
+          <volume>5</volume>
+          <fpage>9</fpage>
+          <pub-id pub-id-type="pmid">24523714</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR19">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Martel</surname>
+              <given-names>MM</given-names>
+            </name>
+            <name>
+              <surname>Gobrogge</surname>
+              <given-names>KL</given-names>
+            </name>
+            <name>
+              <surname>Breedlove</surname>
+              <given-names>SM</given-names>
+            </name>
+            <name>
+              <surname>Nigg</surname>
+              <given-names>JT</given-names>
+            </name>
+          </person-group>
+          <article-title>Masculinized finger-length ratios of boys, but not girls, are associated with attention-deficit/hyperactivity disorder</article-title>
+          <source>Behav Neurosci</source>
+          <year>2008</year>
+          <volume>122</volume>
+          <issue>2</issue>
+          <fpage>273</fpage>
+          <lpage>281</lpage>
+          <pub-id pub-id-type="doi">10.1037/0735-7044.122.2.273</pub-id>
+          <pub-id pub-id-type="pmid">18410167</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR20">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Medland</surname>
+              <given-names>SE</given-names>
+            </name>
+            <name>
+              <surname>Loehlin</surname>
+              <given-names>JC</given-names>
+            </name>
+          </person-group>
+          <article-title>Multivariate genetic analyses of the 2D:4D ratio: examining the effects of hand and measurement technique in data from 757 twin families</article-title>
+          <source>Twin Res Hum Genet</source>
+          <year>2008</year>
+          <volume>11</volume>
+          <issue>3</issue>
+          <fpage>335</fpage>
+          <lpage>341</lpage>
+          <pub-id pub-id-type="doi">10.1375/twin.11.3.335</pub-id>
+          <pub-id pub-id-type="pmid">18498211</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR21">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mitsui</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Araki</surname>
+              <given-names>A</given-names>
+            </name>
+            <name>
+              <surname>Miyashita</surname>
+              <given-names>C</given-names>
+            </name>
+            <name>
+              <surname>Ito</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Ikeno</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Sasaki</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Kitta</surname>
+              <given-names>T</given-names>
+            </name>
+            <name>
+              <surname>Moriya</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Cho</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Morioka</surname>
+              <given-names>K</given-names>
+            </name>
+            <name>
+              <surname>Kishi</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Shinohara</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Takeda</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Nonomura</surname>
+              <given-names>K</given-names>
+            </name>
+          </person-group>
+          <article-title>The relationship between the second-to-fourth digit ratio and behavioral sexual dimorphism in school-aged children</article-title>
+          <source>PLoS One</source>
+          <year>2016</year>
+          <volume>11</volume>
+          <issue>1</issue>
+          <fpage>e0146849</fpage>
+          <pub-id pub-id-type="doi">10.1371/journal.pone.0146849</pub-id>
+          <pub-id pub-id-type="pmid">26756472</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR22">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Nock</surname>
+              <given-names>MK</given-names>
+            </name>
+            <name>
+              <surname>Borges</surname>
+              <given-names>G</given-names>
+            </name>
+            <name>
+              <surname>Bromet</surname>
+              <given-names>EJ</given-names>
+            </name>
+            <name>
+              <surname>Cha</surname>
+              <given-names>CB</given-names>
+            </name>
+            <name>
+              <surname>Kessler</surname>
+              <given-names>RC</given-names>
+            </name>
+            <name>
+              <surname>Lee</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Suicide and suicidal behavior</article-title>
+          <source>Epidemiol Rev</source>
+          <year>2008</year>
+          <volume>30</volume>
+          <fpage>133</fpage>
+          <lpage>154</lpage>
+          <pub-id pub-id-type="doi">10.1093/epirev/mxn002</pub-id>
+          <pub-id pub-id-type="pmid">18653727</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR23">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Oyeyemi</surname>
+              <given-names>BF</given-names>
+            </name>
+            <name>
+              <surname>Iyiola</surname>
+              <given-names>OA</given-names>
+            </name>
+            <name>
+              <surname>Oyeyemi</surname>
+              <given-names>AW</given-names>
+            </name>
+            <name>
+              <surname>Oricha</surname>
+              <given-names>KA</given-names>
+            </name>
+            <name>
+              <surname>Anifowoshe</surname>
+              <given-names>AT</given-names>
+            </name>
+            <name>
+              <surname>Alamukii</surname>
+              <given-names>NA</given-names>
+            </name>
+          </person-group>
+          <article-title>Sexual dimorphism in ratio of second and fourth digits and its relationship with metabolic syndrome indices and cardiovascular risk factors</article-title>
+          <source>J Res Med Sci</source>
+          <year>2014</year>
+          <volume>19</volume>
+          <issue>3</issue>
+          <fpage>234</fpage>
+          <lpage>239</lpage>
+          <pub-id pub-id-type="pmid">24949031</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR24">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Perera</surname>
+              <given-names>S</given-names>
+            </name>
+            <name>
+              <surname>Eisen</surname>
+              <given-names>RB</given-names>
+            </name>
+            <name>
+              <surname>Dennis</surname>
+              <given-names>BB</given-names>
+            </name>
+            <name>
+              <surname>Bawor</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Bhatt</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Bhatnagar</surname>
+              <given-names>N</given-names>
+            </name>
+            <name>
+              <surname>Thabane</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>de Souza</surname>
+              <given-names>R</given-names>
+            </name>
+            <name>
+              <surname>Samaan</surname>
+              <given-names>Z</given-names>
+            </name>
+          </person-group>
+          <article-title>Body mass index is an important predictor for suicide: results from a systematic review and meta-analysis</article-title>
+          <source>Suicide Life Threat Behav</source>
+          <year>2016</year>
+        </element-citation>
+      </ref>
+      <ref id="CR25">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Richardson</surname>
+              <given-names>JTE</given-names>
+            </name>
+          </person-group>
+          <article-title>Eta squared and partial eta squared as measures of effect size in educational research</article-title>
+          <source>Educ Res Rev</source>
+          <year>2011</year>
+          <volume>6</volume>
+          <issue>2</issue>
+          <fpage>135</fpage>
+          <lpage>147</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.edurev.2010.12.001</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR26">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Voracek</surname>
+              <given-names>M</given-names>
+            </name>
+            <name>
+              <surname>Stieger</surname>
+              <given-names>S</given-names>
+            </name>
+          </person-group>
+          <article-title>Replicated nil associations of digit ratio (2D:4D) and absolute finger lengths with implicit and explicit measures of aggression</article-title>
+          <source>Psicothema</source>
+          <year>2009</year>
+          <volume>21</volume>
+          <issue>3</issue>
+          <fpage>382</fpage>
+          <lpage>389</lpage>
+          <pub-id pub-id-type="pmid">19622317</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR27">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Wang</surname>
+              <given-names>L</given-names>
+            </name>
+            <name>
+              <surname>He</surname>
+              <given-names>CZ</given-names>
+            </name>
+            <name>
+              <surname>Yu</surname>
+              <given-names>YM</given-names>
+            </name>
+            <name>
+              <surname>Qiu</surname>
+              <given-names>XH</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>XX</given-names>
+            </name>
+            <name>
+              <surname>Qiao</surname>
+              <given-names>ZX</given-names>
+            </name>
+            <name>
+              <surname>Sui</surname>
+              <given-names>H</given-names>
+            </name>
+            <name>
+              <surname>Zhu</surname>
+              <given-names>XZ</given-names>
+            </name>
+            <name>
+              <surname>Yang</surname>
+              <given-names>YJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Associations between impulsivity, aggression, and suicide in Chinese college students</article-title>
+          <source>BMC Public Health</source>
+          <year>2014</year>
+          <volume>14</volume>
+          <fpage>551</fpage>
+          <pub-id pub-id-type="doi">10.1186/1471-2458-14-551</pub-id>
+          <pub-id pub-id-type="pmid">24894449</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="CR28">
+        <mixed-citation publication-type="other">WHO (2014) Preventing suicide: a global imperative. <ext-link ext-link-type="uri" xlink:href="http://www.who.int/mental_health/suicideprevention/world_report_2014/en/">http://www.who.int/mental_health/suicideprevention/world_report_2014/en/</ext-link>. Accessed 18 Sept 2015</mixed-citation>
+      </ref>
+      <ref id="CR29">
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Zheng</surname>
+              <given-names>Z</given-names>
+            </name>
+            <name>
+              <surname>Cohn</surname>
+              <given-names>MJ</given-names>
+            </name>
+          </person-group>
+          <article-title>Developmental basis of sexually dimorphic digit ratios</article-title>
+          <source>Proc Natl Acad Sci USA</source>
+          <year>2011</year>
+          <volume>108</volume>
+          <issue>39</issue>
+          <fpage>16289</fpage>
+          <lpage>16294</lpage>
+          <pub-id pub-id-type="doi">10.1073/pnas.1108312108</pub-id>
+          <pub-id pub-id-type="pmid">21896736</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
+
+</metadata></record></GetRecord></OAI-PMH>
