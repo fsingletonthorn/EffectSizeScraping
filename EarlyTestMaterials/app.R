@@ -2,13 +2,14 @@ library(shiny)
 library(randomNames)
 library(tidyverse)
 library('DT')
+library(ggExtra)
 
 # note that this is a mock up, data is not real, and names, years etc. are made up on the fly
 
 
 # unlist(lapply(data[[4]][filter], length))
 
-jList <- c("Nature", "Science", "PLOSOne", "Ruminant Science")
+jList <- c("Frontiers", "Royal Society Open Science", "PLOSOne", "Ruminant Science")
 effectSizes <- list()
 Journal <- sample(jList, 1200, replace =T)
 Year <- sample(1950:2018, 1200, replace = T)
@@ -35,6 +36,10 @@ ui <- fluidPage(
                    choices = c(unique(Journal), "All"),
                    selected = "All journals"),
       br(),
+      selectInput("WhichES", label = "Display effect size reported in",
+                  choices = c("All reported", "Abstract", "Introduction", "Methods", "Results", "Discussion", "At least two", "Results and Abstract", "Abstract and (Results or Discussion)"),
+                  selected = "All reported"),
+      br(),
       sliderInput("YearInput", "Year range",value = c(1950, 2018), min = 1950, max = 2018),
       br(), br(),
       textAreaInput("KeywordFilter", label = "Keyword Filter *"),
@@ -43,8 +48,9 @@ ui <- fluidPage(
       ),
           mainPanel(
         plotOutput("coolplot"),
+        verbatimTextOutput("summaryText"),
         br(), br(),
-        dataTableOutput("results") 
+        dataTableOutput("results")
         )
   )
 )
@@ -52,16 +58,16 @@ ui <- fluidPage(
 
 
 server <- function(input, output) {
- 
   output$coolplot <- renderPlot({
     filter <- which(data[[5]] == input$ESTypeInput & 
                       data[[1]] == input$JournalInput &
                       data[[2]] >= input$YearInput[1] &  data[[2]] <= input$YearInput[2])
     filtered <- data.frame(unlist(data[[4]][filter]))
     names(filtered) <- "ES"
-    ggplot(filtered, aes(ES)) +
+    coolplot<-ggplot(filtered, aes(ES)) +
       geom_histogram(bins = 30) + xlab(input$ESTypeInput) +
       theme_bw()
+    coolplot
   })
   output$results <- renderDataTable({
     filter <- which(data[[5]] == input$ESTypeInput & 
@@ -69,12 +75,24 @@ server <- function(input, output) {
                       data[[2]] >= input$YearInput[1] &  data[[2]] <= input$YearInput[2])
   
     filtered <- data.frame(unlist(data[[4]][filter]))
+    if(input$ESTypeInput == "r") filtered <- filtered/max(filtered)
+    filtered <- round(filtered, 2)
     ns<-unlist(lapply(data[[4]][filter], length))
     names(filtered) <- "ES"
     filtered$Authors <- randomNames(nrow(filtered))
     filtered$Journal <- input$JournalInput
     filtered$year <- round(runif(nrow(filtered), input$YearInput[1], input$YearInput[2]))
     filtered
+    })
+  output$summaryText <- renderText({
+    filter <- which(data[[5]] == input$ESTypeInput & 
+                      data[[1]] == input$JournalInput &
+                      data[[2]] >= input$YearInput[1] &  data[[2]] <= input$YearInput[2])
+    filtered <- unlist(data[[4]][filter])
+    sums <- round(c(summary(as.numeric(filtered)),'sd' = sd(filtered)), 2)
+    paste("Min =", sums[1], "1st quartile =", sums[2],
+          "Median =", sums[3], "3rd quartile =", sums[5], "max =", sums[6],
+          "Mean =", sums[4], "sd =", sums[7])
     })
 }
 

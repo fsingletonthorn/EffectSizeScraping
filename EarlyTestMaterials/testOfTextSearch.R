@@ -9,6 +9,7 @@ library(tidyverse)
 library(stringr) 
 library(xml2)
 
+
 # remeber for rolling assignment of names: 
 for(i in 1:2) {
 assign(paste0("abc",i,"xyz"), i)
@@ -17,6 +18,10 @@ abc1xyz
 abc2xyz
 
 # bulk download avaliable at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/ 
+
+
+# "... So if you're not sure in advance how many elements you need to store, use a list, and then collect the results at the end with sapply or similar ..."
+
 
 ### ADD OPTION TO INCLUDE OR DISCARD EFFECT SIZES IN ABSTRACT / each section
 # - AND TO REMOVE THEM IF THEY ARE REPEATED, or just to report if the values show up in both
@@ -187,12 +192,26 @@ discussionText <-  paste(unlist(discussionSection), collapse=' ')
 
 # specifying patterns to match - includes either "-" or "\u2212" which are alternative minus signs, captures whitespace which is removed later
 #         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(\d\d)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
+
+## at this point partial eta squared and eta are collected together, may as well seperate those. 
+# Same with d and g. 
+# Worth collecting R^2 ?? 
+# Collect others ~ e.g., Epsilon squared and Omega squared ( which are ~ equivilent to eta), maybe with partial version of each in there. 
+
+
 patternD <- "(?<=((\\s|\\()[dg]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
 patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\s?eta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
 patternP <- "(?<=(p\\s{0,4}))([=\\<\\>]\\s?\\s?\\-?\u2212?\\s?\\d*\\.?\\d{1,})" 
 patternHR <- "((?<=((\\s|\\()((HR)|(hazzard.ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
 patternOR <- "((?<=((\\s|\\()((OR)|(odd..ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
+patternF <- ## Maybe vectorise to produce 3 cols 
+
+
+# extract F statistics too. Convert using df1 <- df1; df2 <- df2; FS <- FS; estimatedEtaP <- (df1 * FS)/ (df1 * FS + df2); eta_sq(fir, partial = T)); 
+# when extracting F statistics, retain all of the dfs too. Probably do this in two sections, i.e., extract F/(df1,df2) = x.xxx or whatever, and the process it further
+
+
 
 # it may be possible to add in other text versions of this (e.g., "correlation coefficient of")
 
