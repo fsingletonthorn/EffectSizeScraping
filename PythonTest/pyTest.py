@@ -10,30 +10,22 @@ import string
 example_papers = 'C:/Users/fsingletonthorn/Documents/PhD/Effect size scraping paper/EarlyTestMaterials/ExamplePapers/'
 
 # saving tree 
-tree =   ET.parse(Path(example_papers + '4547492.xml'))
-
+tree = ET.parse(Path(example_papers + '4547492.xml'))
 # saving root
 root = tree.getroot()
 
 # to print all children of root
 for child in root:
-    print(child.tag, child.attrib)
+    print(child.tag)
 
 # to print full text:
 print(ET.tostring(root, encoding='utf8').decode('utf8'))
 
 
-for neighbor in root.findall('p'):
-    print(neighbor.attrib)
+for country in root.findall("{http://www.openarchives.org/OAI/2.0/}request")
 
-
-
-rank = neighbor.find('rank').text
-    name = neighbor.get('name')
-    print(name, rank)
-
+root.find("{http://www.openarchives.org/OAI/2.0/}request")
 
 # to save without tags 
 notags = ET.tostring(tree.getroot(), encoding='utf-8',method='text')
-
 
