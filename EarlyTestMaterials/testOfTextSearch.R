@@ -38,7 +38,7 @@ system.time(JID <- xml_contents(xml_find_all(xmlDoc, '//journal-title')))
 # functioning with 
 xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547492.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547424.xml")
-xmlList <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]]
+
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/3929047.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4879183.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/5341264.xml")
@@ -46,6 +46,9 @@ xmlList <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]]
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547424.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/3659440.xml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/5110632.xml")
+# striping any of the excess material if the xml file was directly called from pubmed (not bulk downloaded)
+xmlList <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]]
+
 
 # xmlListA <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC3778923.nxml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC3898277.nxml")
@@ -59,7 +62,7 @@ xmlList <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]]
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC5963118.nxml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC5963119.nxml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC5963120.nxml")
-# xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC5794850.nxml") 
+xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC5794850.nxml") 
 
 
 
