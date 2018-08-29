@@ -49,7 +49,7 @@ xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/4547492.xml")
 # striping any of the excess material if the xml file was directly called from pubmed (not bulk downloaded)
 xmlList <- xmlList[["GetRecord"]][["record"]][["metadata"]][["article"]]
 
-
+start<- Sys.time()
 # xmlListA <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC3778923.nxml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC3898277.nxml")
 # xmlList <- xmlToList("EarlyTestMaterials/ExamplePapers/PMC4359276.nxml")
@@ -106,7 +106,7 @@ if(sum(names(keywords) == "title")>0) keywords <- keywords[-which(names(keywords
 # extracting author information 
 # counting number of authors 
 # nAuthors<-length(xmlList[["front"]][["article-meta"]][["contrib-group"]])
-start<- Sys.time()
+
 
 # extracting author names
 # first extracting the entier
@@ -116,6 +116,10 @@ lastNames <- contribGroup[names(contribGroup) == "contrib.name.surname"]
 contribGroup <- NULL
 
 authors <- data.frame(firstNames, lastNames)
+
+end<- Sys.time()
+start-end
+
 
 # Extracting text 
 # probably don't need head ~ head <- xmlList[["front"]]

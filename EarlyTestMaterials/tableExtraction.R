@@ -15,24 +15,41 @@ if(length(table_node)>0) {
   } else {
     tableCaption_node <- xml_find_all(paper, '//body//sec//table-wrap//caption/title')
   }
+  
   # extracting table content
   tableContent_node <- xml_find_all(paper, '//body//sec//table-wrap//table')
-  
+  # Extracting number of tables
   nTables <- length(tableContent_node)
   # initialising a list to store data 
   tables <- vector("list", nTables) 
   
-  for(i in length(table_node)) {
+  
+  ### NEEDS TO BUILD IN ERROR DETECTION - exclude any where the n rows and n cols dont match the amount of data?
+  
+  
+  
+  ## There may be a better way of extracting the column headers 
+  # - it seems like there is an "extra" row in the double headed columns, perhaps exploit
+  
+  
+  for(i in 1:length(table_node)) {
+    # saving location of each tab;e  
   tableLocation <- xml_path(xml_find_all(paper, '//body//sec//table-wrap//table')[i])
-  tableHeaders <- xml_text(xml_find_all(paper, paste0(tableLocation, "//th")))
+  # extracting table headers (currently pulls false positives)
+  tableHeaders <- xml_text(xml_find_all(paper, paste0(tableLocation, "//th[not(@colspan)]")))
+  # Removing blank cells
+  tableHeaders <- tableHeaders[tableHeaders != ""] 
+  # n columns and n rows 
   nRows <- length(xml_find_all(paper, paste0(tableLocation, "//tr")))
   nCols <- length(tableHeaders)
+  # Initilising table
   table <- matrix(NA, nCols, nrow = nRows)
+  # for each table row, fill ing 
   for(j in 1:nRows-1) {
      table[j+1,]<- xml_text(xml_find_all(paper, paste0(tableLocation, "//tr", "[",j,"]/","td")))[1:nCols]
   }
   table[1,] <- tableHeaders
-  tables[i] <- table
+  tables[[i]] <- table
   }
   
   # counting number of tables
@@ -43,16 +60,16 @@ if(length(table_node)>0) {
   # extracting table content
   tableContent <- xml_text(xml_find_all(paper, '//body//sec//table-wrap//table//tr/td'))
 
-  
-  
-  
   # constructing each table
-  
-  
 xml_structure(tableContent_node[2])
-
 }
   
+
+
+
+
+
+
   if table_tree is not None:
     table_xml = etree.tostring(table_tree)
   columns, row_values = table_to_df(table_xml)

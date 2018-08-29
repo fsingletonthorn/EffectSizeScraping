@@ -23,107 +23,65 @@ library(stringr)
 
 # xmlDoc<- as_list(read_xml("EarlyTestMaterials/ExamplePapers/PMC5399602.nxml"))
 # xml_find_all(xmlDoc, '//journal-id')
-
+start<- Sys.time()
 # starting again: 
 # extracting full files
 paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC5794850.nxml")
 #paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC4867786.nxml")
 
 ## Metadata extraction 
-article_meta <- xml_find_first(paper, '//article-meta')
-pmid_node <- xml_find_first(article_meta, 'article-id[@pub-id-type="pmid"]/text()')
-pmc_node <- xml_find_first(article_meta, 'article-id[@pub-id-type="pmc"]')
-pub_id_node <- xml_find_first(article_meta, 'article-id[@pub-id-type="publisher-id"]')
-doi_node <- xml_find_first(article_meta, 'article-id[@pub-id-type="doi"]')=
-journalFullID_node <- 
-
-  # Abbreviated journal ID 
-  # e.g., "J Behav Ther Exp Psychiatry"
-  journalId <- xmlList[["front"]][["journal-meta"]][["journal-id"]][["text"]]
-
-## Extracting full journal title
-journal <- xmlList[["front"]][["journal-meta"]][["journal-title-group"]][["journal-title"]]
-
-# issue volume
-issue <- xmlList[["front"]][["article-meta"]][["issue"]]
-volume <- xmlList[["front"]][["article-meta"]][["volume"]]
-
-# pub date ---- FIGURE OUT HOW TO EXTRACT THE FIRST OF THESE THAT IS PROVIDED ! ! !
-pubDate <- xmlList[["front"]][["article-meta"]][["pub-date"]]
-
+# PMID
+pmID_node <- xml_find_first(paper, '//article-id[@pub-id-type="pmid"]')
+# PMC ID 
+pmcID_node <- xml_find_first(paper, '//article-id[@pub-id-type="pmc"]')
+# Publisher 
+publisher_node <- xml_find_first(paper, '//article-id[@pub-id-type="publisher-id"]')
+# DOI 
+doi_node <- xml_find_first(paper, '//article-id[@pub-id-type="doi"]')
+# Journal name
+journalID_node <- xml_find_first(paper, '//front/journal-meta/journal-title-group/journal-title')
+# Jounral name abbreviation 
+journalIDAbrev_node <- xml_find_first(paper, '//front/journal-meta/journal-id')
+# Article issue 
+issue_node <- xml_find_first(paper, '//front/article-meta/issue/text()')
+# Article volume 
+volume <- xml_find_first(paper, "//front/article-meta/volume")
+# date print pub
+pPub_node <- xml_find_first(paper, '//pub-date[@pub-type="ppub"]')
+# date epub
+ePub_node <- xml_find_first(paper, '//pub-date[@pub-type="epub"]')
+# date release on pmc
+pmcPub_node <- xml_find_first(paper, '//pub-date[@pub-type="pmc-release"]')
 # Article title
-title<- xmlList[["front"]][["article-meta"]][["title-group"]][["article-title"]]
-
+title_node<- xml_find_first(paper, '//front/article-meta/title-group/article-title')
 # Article key words
-keywords <- xmlList[["front"]][["article-meta"]][["kwd-group"]]
-# removing keywords which are "keywords"
-if(sum(names(keywords) == "title")>0) keywords <- keywords[-which(names(keywords) == "title")]
+keywords_node <- xml_find_all(paper, '//front/article-meta/kwd-group/kwd')
 
-# extracting author information 
-# counting number of authors 
-# nAuthors<-length(xmlList[["front"]][["article-meta"]][["contrib-group"]])
-start<- Sys.time()
+### Authors and Author Affiliation
+# Author afffiliations
+# Author institution ID number (links to author list)
+affil_ID_node <- xml_find_all(paper, '//aff[@id]/@id')
+# Author institution name
+affil_Names_node <- xml_find_all(paper, '//aff[@id]')
 
-
-  
-  
-    
-  
-  # Authors and Author Affiliation
-# Afffiliations
-affil_ID_node <- xml_find_all(article_meta, '//aff[@id]/@id')
-affil_Names_node <- xml_find_all(article_meta, '//aff[@id]')
-xml_structure(contribs)
 # author names:
-contribs <- xml_find_all(article_meta, '//contrib[@contrib-type="author"]/name/')
-AuthorSurnmes_node <- xml_find_all(article_meta, '//contrib[@contrib-type="author"]/name/surname/text()')
-AuthorFirstNames_node <- xml_find_all(article_meta, '//contrib[@contrib-type="author"]/name/given-names/text()')
-AuthorAfil_node <- xml_find_all(article_meta, '//contrib-group/contrib[@contrib-type="author"]/xref[@ref-type="aff"]')
+AuthorSurnmes_node <- xml_find_all(paper, '//contrib[@contrib-type="author"]/name/surname/text()')
+AuthorFirstNames_node <- xml_find_all(paper, '//contrib[@contrib-type="author"]/name/given-names/text()')
+AuthorAfil_node <- xml_find_all(paper, '//contrib-group/contrib[@contrib-type="author"]/xref[@ref-type="aff"]')
+
+# Abstract 
+abstract_node <- xml_find_all(paper, "//abstract")
+# unlablled paragraphs 
+unlabPs_nodes <- xml_find_all(paper, "//body/p")
+# article sections
+section_node <-  xml_find_all(paper, "//body/sec")
+# article section titles
+sectionTitle_node <- xml_find_all(section_nodes, "title")
 
 
 
 
 
-# xml_structure(paper)
-paragrahps <- xml_find_all(paper, "//p")
-titles <- xml_find_all(paragrahps, '../title/text()') # This does not work very well ~ ~ Need to assign
-
-
-
-
-
-
-
-
-
-View(xml_structure(paper))
-
-# it may end up being faster to unlist and run each of the text recognition bits initially before collecting this inforamtion? Although it might be better to have blank
-
-
-
-# extracting author names
-# first extracting the entier
-contribGroup <-  unlist(xmlList[["front"]][["article-meta"]][["contrib-group"]], use.names = T)
-firstNames <- contribGroup[names(contribGroup) == "contrib.name.given-names"]
-lastNames <- contribGroup[names(contribGroup) == "contrib.name.surname"]
-contribGroup <- NULL
-
-authors <- data.frame(firstNames, lastNames)
-
-# Extracting text 
-# probably don't need head ~ head <- xmlList[["front"]]
-body <- xmlList[["body"]]
-
-# gathering locations of sections 
-lCs<-which(names(body)=="sec")
-
-# finding the title of each section
-sections <- body[lCs]
-titles <- rep(0, length(sections))
-for(j in 1:length(sections)){
-  titles[j]<-sections[[j]][['title']]
-}
 
 # search strings for each of the sections of the paper 
 introNames <- ("Introduction|Background")
@@ -131,12 +89,6 @@ methodsNames <- ("method|aims|measur")
 resultsNames<-("result")
 discussionNames<-("discussion|conclusion|conclud|summary")
 
-
-# gathering locations of 'ps' i.e., paragraphs 
-lPs<-which(names(body)=="p")
-
-# anything that is not under a section will be put in unlab (i.e., unlabled) 
-unlabSection <- body[lPs]
 
 ##### The unlab section HAS NOT BEEN TESTED - no articles have had additional sections that should not be includd in the other bits
 if(sum(!str_detect(titles, regex(paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"), ignore_case = T)))>0) {
@@ -275,7 +227,8 @@ extractedEtasDiscussion  <- extractEffects(discussionText, patternEta)
 extractedHRsDiscussion <-  extractEffects(discussionText, patternHR)
 extractedORsDiscussion <-  extractEffects(discussionText, patternOR)
 
-end <- Sys.time()
+end<- Sys.time()
+start-end
 # later to update it will be possible to just compare the master list with those 
 
 # record<-get_records(ids = "oai:pubmedcentral.nih.gov:4547492", prefix = "pmc", url =  'https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi')
