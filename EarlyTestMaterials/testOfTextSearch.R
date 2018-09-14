@@ -17,6 +17,10 @@ assign(paste0("abc",i,"xyz"), i)
 abc1xyz
 abc2xyz
 
+
+### ADD example, scientific notation e.g.; 10-4, 10(-4), E-4, (-4), or e-4).
+# extract CIs too 
+
 # bulk download avaliable at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/ 
 
 
