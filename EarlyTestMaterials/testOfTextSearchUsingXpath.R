@@ -8,9 +8,7 @@ library(magrittr)
 library(tidyverse) 
 library(stringr) 
 
-
 ## This is based on https://github.com/titipata/pubmed_parser
-
 # bulk download avaliable at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/ 
 
 # "... So if you're not sure in advance how many elements you need to store, use a list, and then collect the results at the end with sapply or similar ..."
@@ -18,18 +16,18 @@ library(stringr)
 ################### Ideas for app 
 # Discard effect sizes that are repeated in different sections of the paper - i.e., only include them once
 #
-#
 ############## Extraction program
 
 # xmlDoc<- as_list(read_xml("EarlyTestMaterials/ExamplePapers/PMC5399602.nxml"))
 # xml_find_all(xmlDoc, '//journal-id')
 start<- Sys.time()
+
 # starting again: 
 # extracting full files
 paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC5794850.nxml")
 #paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC4867786.nxml")
 
-## Metadata extraction 
+## Metadata extraction # probably 
 # PMID
 pmID_node <- xml_find_first(paper, '//article-id[@pub-id-type="pmid"]')
 # PMC ID 
@@ -74,13 +72,9 @@ abstract_node <- xml_find_all(paper, "//abstract")
 # unlablled paragraphs 
 unlabPs_nodes <- xml_find_all(paper, "//body/p")
 # article sections
-section_node <-  xml_find_all(paper, "//body/sec")
+sections <-  xml_find_all(paper, "//body/sec")
 # article section titles
-sectionTitle_node <- xml_find_all(section_nodes, "title")
-
-
-
-
+titles <- xml_find_all(sections, "title")
 
 
 # search strings for each of the sections of the paper 
@@ -89,42 +83,46 @@ methodsNames <- ("method|aims|measur")
 resultsNames<-("result")
 discussionNames<-("discussion|conclusion|conclud|summary")
 
+# add abstract 
+abstractText <- xml_text(abstract_node)
 
-##### The unlab section HAS NOT BEEN TESTED - no articles have had additional sections that should not be includd in the other bits
+##### The unlab section HAS NOT BEEN TESTED !!! - no articles have had additional sections that should not be includd in the other bits
 if(sum(!str_detect(titles, regex(paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"), ignore_case = T)))>0) {
-  for(j in which(str_detect(titles, regex(introNames, ignore_case = T)))) {
-    unlabSection[[length(introSection)+1]] <- list(sections[[j]])
-  }
+  index <- which(!str_detect(titles, regex(paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"), ignore_case = T)))
+  unlabSection <- xml_text(sections[index])
+}
+
+# Adding in any untitled paragraphs here, not tested !!! 
+if(length(unlabPs_nodes)>0) {
+  unlabText[[length(introSection)+1]] <- xml_text(unlabPs_nodes)
+  unlabText <- paste(unlist(unlabSection), collapse =' ')
 }
 
 # seperating the sections by, if there are any sections titled matching the section heads
 # looping through each of the sections that match the names and putting them in a list -
 introSection <- list()
 if(sum(str_detect(titles,(regex(introNames, ignore_case = T))))>0) {
-  for(j in which(str_detect(titles, regex(introNames, ignore_case = T)))) {
-    introSection[[length(introSection)+1]] <- list(sections[[j]])
-  }
+  index <- which(str_detect(titles, regex(introNames, ignore_case = T)))
+    introText <- xml_text(sections[index])
 }
 
 methodsSection <- list()
 if(sum(str_detect(titles,(regex(methodsNames, ignore_case = T))))>0) {
-  for(j in which(str_detect(titles, regex(methodsNames, ignore_case = T)))) {
-    methodsSection[[length(methodsSection)+1]] <- list(sections[[j]])
-  }
+  index <- which(str_detect(titles, regex(methodsNames, ignore_case = T)))
+  methodsText <- xml_text(sections[index])
 }
+
 
 resultsSection <- list()
 if(sum(str_detect(titles,(regex(resultsNames, ignore_case = T))))>0) {
-  for(j in which(str_detect(titles, regex(resultsNames, ignore_case = T)))) {
-    resultsSection[[length(resultsSection)+1]] <- list(sections[[j]])
-  }
+  index <- which(str_detect(titles, regex(resultsNames, ignore_case = T))) 
+  resultsText <- xml_text(sections[index])
 }
 
 discussionSection <- list()
 if(sum(str_detect(titles,(regex(discussionNames, ignore_case = T))))>0) {
-  for(j in which(str_detect(titles, regex(discussionNames, ignore_case = T)))) {
-    discussionSection[[length(discussionSection)+1]] <- list(sections[[j]])
-  }
+  index <- which(str_detect(titles, regex(discussionNames, ignore_case = T))) 
+  discussionText <- xml_text(sections[index])
 }
 
 # clearing from memory ## uncomment this later
@@ -132,12 +130,8 @@ if(sum(str_detect(titles,(regex(discussionNames, ignore_case = T))))>0) {
 
 # saving the text of each section
 
-abstractText <- paste(unlist(xmlList[["front"]][["article-meta"]][["abstract"]]), collapse=' ')
-unlabText <- paste(unlist(unlabSection), collapse =' ')
-introText <- paste(unlist(introSection), collapse=' ')
-methodsText <-paste(unlist(methodsSection), collapse=' ')
-resultsText <- paste(unlist(resultsSection), collapse=' ')
-discussionText <-  paste(unlist(discussionSection), collapse=' ')
+
+
 
 # specifying patterns to match - includes either "-" or "\u2212" which are alternative minus signs, captures whitespace which is removed later
 #         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(\d\d)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
@@ -147,20 +141,17 @@ discussionText <-  paste(unlist(discussionSection), collapse=' ')
 # Worth collecting R^2 ?? 
 # Collect others ~ e.g., Epsilon squared and Omega squared ( which are ~ equivilent to eta), maybe with partial version of each in there. 
 
-
 patternD <- "(?<=((\\s|\\()[dg]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
 patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\s?eta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
 patternP <- "(?<=(p\\s{0,4}))([=\\<\\>]\\s?\\s?\\-?\u2212?\\s?\\d*\\.?\\d{1,})" 
 patternHR <- "((?<=((\\s|\\()((HR)|(hazzard.ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
-patternOR <- "((?<=((\\s|\\()((OR)|(odd..ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
-patternF <- ## Maybe vectorise to produce 3 cols 
-  
+patternOR <- "((?<=((\\s|\\()((OR)|(odd.{1,3}?ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
+patternF <- "writeOrUseStatCheck" ## Maybe vectorise to produce 3 cols 
+patternT  <- "writeOrUseStatcheck"
   
   # extract F statistics too. Convert using df1 <- df1; df2 <- df2; FS <- FS; estimatedEtaP <- (df1 * FS)/ (df1 * FS + df2); eta_sq(fir, partial = T)); 
   # when extracting F statistics, retain all of the dfs too. Probably do this in two sections, i.e., extract F/(df1,df2) = x.xxx or whatever, and the process it further
-  
-  
   
   # it may be possible to add in other text versions of this (e.g., "correlation coefficient of")
   
@@ -176,8 +167,7 @@ patternF <- ## Maybe vectorise to produce 3 cols
     # replacing unicode minus sign with R recognised hyphen/minus sign
     extracted <- str_replace_all(extracted, "\u2212", "-")
     return(as.numeric(extracted))
-  }
-
+}
 
 # Extracting from sections which were not covered above (later just lapply this across all of the sections, 
 # probably also possible to change the above function to test for multiple effects, best to pilot it with the manual V first)
