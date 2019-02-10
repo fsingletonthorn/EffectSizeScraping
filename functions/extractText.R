@@ -14,9 +14,6 @@ concat <- function(text) {
 }
 
 
-
-
-
 # search strings for each of the sections of the paper - add here for more
 introNames <- ("Introduction|Background")
 methodsNames <- ("method|aims|measur")
@@ -26,14 +23,14 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 
 # example with coheon's d's: "oai:pubmedcentral.nih.gov:4879183", correlations: oai:pubmedcentral.nih.gov:5588100, F statistics: oai:pubmedcentral.nih.gov:3659440
 
-call = articles$oaiCall[7000]
+call = articles$oaiCall[10000]
 
 paper <- read_html(call)
 
 ## Metadata extraction
 PMCID  <-
   paste0("PMC",
-         str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]{7}"))
+         str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]{0,10}"))
 pmcIDCheck <-
   xml_text(xml_find_first(paper, '//article-id[@pub-id-type="pmcid"]'))
 
@@ -61,14 +58,14 @@ pPub <-
     parse_date_time(str_remove_all(paste(
       xml_text(
         xml_find_first(paper, '//pub-date[@pub-type="ppub"]/year')
-      ),
+      ), " ",
       xml_text(
         xml_find_first(paper, '//pub-date[@pub-type="ppub"]/month')
-      ),
+      ), " ",
       xml_text(xml_find_first(
         paper, '//pub-date[@pub-type="ppub"]/day'
       ))
-    ), "NA| "), orders = c("ymd", "y"), exact = )
+    ), "NA"), orders = c("ymd", "y"), exact = )
   } else {
     NA
   }
@@ -79,14 +76,14 @@ ePub <-
     parse_date_time(str_remove_all(paste(
       xml_text(
         xml_find_first(paper, '//pub-date[@pub-type="epub"]/year')
-      ),
+      ), " ",
       xml_text(
         xml_find_first(paper, '//pub-date[@pub-type="epub"]/month')
-      ),
+      ), " ",
       xml_text(xml_find_first(
         paper, '//pub-date[@pub-type="epub"]/day'
       ))
-    ), "NA| "), orders = c("ymd", "y"), exact = )
+    ), "NA"), orders = c("ymd", "y"))
   } else {
     NA
   }
@@ -195,7 +192,7 @@ list(AuthorSurnames,
 
 
 #
-list(
+ output <- list(
   paperInfo = data_frame(
     PMCID,
     doi,
@@ -222,3 +219,5 @@ list(
     unlabelled= concat(unlabText)
   )
 )
+output
+extractTestStats(concat(output$text))
