@@ -3,10 +3,15 @@
 # install.packages("xml2")
 #library(XML)
 library(xml2)
-library(oai) # for downloading things later
+library(oai) # for downloading things later maybe, possibly unness
 library(magrittr)
 library(tidyverse) 
-library(stringr) 
+# library(stringr) 
+
+# Getting the list of documents ready 
+source("functions/reading_oa_file_list.R")
+
+# tests are at ("functions/tests.R")
 
 ## This is based on https://github.com/titipata/pubmed_parser
 # bulk download avaliable at ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/ 
@@ -15,31 +20,35 @@ library(stringr)
 
 ################### Ideas for app 
 # Discard effect sizes that are repeated in different sections of the paper - i.e., only include them once
-#
+
+
 ############## Extraction program
 
-# xmlDoc<- as_list(read_xml("EarlyTestMaterials/ExamplePapers/PMC5399602.nxml"))
-# xml_find_all(xmlDoc, '//journal-id')
-start<- Sys.time()
+# Function to read PMC open file as identified by the PM ID 
+#download.pmc <- function(id = "oai:pubmedcentral.nih.gov:5588100") {
+#  read_html(paste0("https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=", id, "&metadataPrefix=pmc"))
+#}
 
-# starting again: 
-# extracting full files
-paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC5794850.nxml")
-#paper <- read_xml("EarlyTestMaterials/ExamplePapers/PMC4867786.nxml")
+# example with coheon's d's: "oai:pubmedcentral.nih.gov:4879183", correlations: oai:pubmedcentral.nih.gov:5588100, F statistics: oai:pubmedcentral.nih.gov:3659440
 
-## Metadata extraction # probably 
+paper<- read_html(articles$oaiCall[1])
+
+memory.size(paper)
+
+end <- Sys.time()
+## Metadata extraction
 # PMID
 pmID_node <- xml_find_first(paper, '//article-id[@pub-id-type="pmid"]')
 # PMC ID 
 pmcID_node <- xml_find_first(paper, '//article-id[@pub-id-type="pmc"]')
-# Publisher 
-publisher_node <- xml_find_first(paper, '//article-id[@pub-id-type="publisher-id"]')
 # DOI 
 doi_node <- xml_find_first(paper, '//article-id[@pub-id-type="doi"]')
+# Publisher 
+publisher_node <- xml_find_first(paper, '//article-id[@pub-id-type="publisher-id"]')
 # Journal name
-journalID_node <- xml_find_first(paper, '//front/journal-meta/journal-title-group/journal-title')
+journalID_node <- xml_find_first(paper, '//journal-title')
 # Jounral name abbreviation 
-journalIDAbrev_node <- xml_find_first(paper, '//front/journal-meta/journal-id')
+journalIDAbrev_node <- xml_find_first(paper, '//journal-id')
 # Article issue 
 issue_node <- xml_find_first(paper, '//front/article-meta/issue/text()')
 # Article volume 
@@ -49,10 +58,10 @@ pPub_node <- xml_find_first(paper, '//pub-date[@pub-type="ppub"]')
 # date epub
 ePub_node <- xml_find_first(paper, '//pub-date[@pub-type="epub"]')
 # date release on pmc
-pmcPub_node <- xml_find_first(paper, '//pub-date[@pub-type="pmc-release"]')
+# pmcPub_node <- xml_find_first(paper, '//pub-date[@pub-type="pmc-release"]')
 # Article title
-title_node<- xml_find_first(paper, '//front/article-meta/title-group/article-title')
-# Article key words
+title_node <- xml_find_first(paper, '//front/article-meta/title-group/article-title')
+# Article key words # possibly trim
 keywords_node <- xml_find_all(paper, '//front/article-meta/kwd-group/kwd')
 
 ### Authors and Author Affiliation
@@ -72,10 +81,9 @@ abstract_node <- xml_find_all(paper, "//abstract")
 # unlablled paragraphs 
 unlabPs_nodes <- xml_find_all(paper, "//body/p")
 # article sections
-sections <-  xml_find_all(paper, "//body/sec")
+sections <-  xml_find_all(paper, "//article/sec")
 # article section titles
-titles <- xml_find_all(sections, "title")
-
+titles <-  xml_text( xml_find_all(sections, "title") )
 
 # search strings for each of the sections of the paper 
 introNames <- ("Introduction|Background")
@@ -94,44 +102,35 @@ if(sum(!str_detect(titles, regex(paste(introNames, methodsNames, resultsNames, d
 
 # Adding in any untitled paragraphs here, not tested !!! 
 if(length(unlabPs_nodes)>0) {
-  unlabText[[length(introSection)+1]] <- xml_text(unlabPs_nodes)
+  unlabText[[length(unlabSection)+1]] <- xml_text(unlabPs_nodes)
   unlabText <- paste(unlist(unlabSection), collapse =' ')
 }
 
 # seperating the sections by, if there are any sections titled matching the section heads
 # looping through each of the sections that match the names and putting them in a list -
-introSection <- list()
+introText <- NA
 if(sum(str_detect(titles,(regex(introNames, ignore_case = T))))>0) {
   index <- which(str_detect(titles, regex(introNames, ignore_case = T)))
-    introText <- xml_text(sections[index])
+  introText <- xml_text(sections[index])
 }
 
-methodsSection <- list()
+methodsText <- NA
 if(sum(str_detect(titles,(regex(methodsNames, ignore_case = T))))>0) {
   index <- which(str_detect(titles, regex(methodsNames, ignore_case = T)))
   methodsText <- xml_text(sections[index])
 }
 
-
-resultsSection <- list()
+resultsText <- NA
 if(sum(str_detect(titles,(regex(resultsNames, ignore_case = T))))>0) {
-  index <- which(str_detect(titles, regex(resultsNames, ignore_case = T))) 
+  index <- which(str_detect(titles, regex(resultsNames, ignore_case = T)))
   resultsText <- xml_text(sections[index])
 }
 
-discussionSection <- list()
+discussionText <- NA
 if(sum(str_detect(titles,(regex(discussionNames, ignore_case = T))))>0) {
   index <- which(str_detect(titles, regex(discussionNames, ignore_case = T))) 
   discussionText <- xml_text(sections[index])
 }
-
-# clearing from memory ## uncomment this later
-# body <- NULL
-
-# saving the text of each section
-
-
-
 
 # specifying patterns to match - includes either "-" or "\u2212" which are alternative minus signs, captures whitespace which is removed later
 #         begins with((white space or '('))(effect size letter [and possible 'p' and or '2' for eta, possible '(\d\d)' for r, all aspects optional)(whitespace? '=' whitespace? ) before ('-' or 'Minus sign unicode') whitespace? digit(indeterminate length or 0 length) optional decimal, digit(s) indeterminate length required)
@@ -141,34 +140,97 @@ if(sum(str_detect(titles,(regex(discussionNames, ignore_case = T))))>0) {
 # Worth collecting R^2 ?? 
 # Collect others ~ e.g., Epsilon squared and Omega squared ( which are ~ equivilent to eta), maybe with partial version of each in there. 
 
+
+## Patterns extracted - strip commas and whitespace? too
+
+# F and T tests - 
+# Need to add a negative look behind for both to ensure that there are no letters beforehand
+
+patternT <- "t\\s{0,}\\(\\s{0,}\\d{1,}\\.?\\d{0,}\\s{0,}\\)\\s{0,}=\\s{0,}-?\\s{0,}\\d{0,}\\.?\\d{0,}"
+patternF <-  "F\\s{0,}\\(\\s{0,}\\d{1,},\\s{0,}\\d{1,}\\s{0,}\\)\\s{0,}=\\s{0,}\\d{0,}\\.?\\d{0,}"
+patternR <-  "((([r]\\s{0,}\\(?\\s{0,}(df|n)?\\s{0,}[=]?\\s{0,}\\d{0,10}\\s{0,}\\)?\\s{0,}[=]\\s{0,})|((correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
+
 patternD <- "(?<=((\\s|\\()[dg]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
 patternEta <- "(((?<=((\\s|\\())([\u03B7]\\s?p?\\s?2?\\s?\\s?([=]|(of))\\s?\\s?))|((?<=((partial)?\\s?eta\\ssquared\\s?\\=?(of)?\\s?))))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))" 
 patternP <- "(?<=(p\\s{0,4}))([=\\<\\>]\\s?\\s?\\-?\u2212?\\s?\\d*\\.?\\d{1,})" 
 patternHR <- "((?<=((\\s|\\()((HR)|(hazzard.ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
 patternOR <- "((?<=((\\s|\\()((OR)|(odd.{1,3}?ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
-patternF <- "writeOrUseStatCheck" ## Maybe vectorise to produce 3 cols 
-patternT  <- "writeOrUseStatcheck"
+
+patterns <- c(patternT, patternF, patternR)
+
+
+# For this to work it needs to be fed a single string 
+# function to extract text, remove whitespaces and unicode encodings of the minus sign and return test statistic original data plus df
+extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
+  # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
+  inputTextCleaned <- str_remove_all(inputText, "\\n")
+  inputTextCleaned <- str_remove_all(inputTextCleaned, "[Ââˆ\\’Ï„œ€$!\\“\u009d]")
   
-  # extract F statistics too. Convert using df1 <- df1; df2 <- df2; FS <- FS; estimatedEtaP <- (df1 * FS)/ (df1 * FS + df2); eta_sq(fir, partial = T)); 
-  # when extracting F statistics, retain all of the dfs too. Probably do this in two sections, i.e., extract F/(df1,df2) = x.xxx or whatever, and the process it further
+  # replacing unicode minus sign with R recognised hyphen/minus sign
+  inputTextCleaned <- str_replace_all(inputTextCleaned, "\u2212", "-")
+
+    # extracting all text which matches patterns
+  extracted <- str_extract_all(inputTextCleaned,  regex(patterns, ignore_case = TRUE))
   
-  # it may be possible to add in other text versions of this (e.g., "correlation coefficient of")
+  # removing whitespace that can be captured in the regular expressions above
+  extractedClean <- lapply(extracted,  str_remove_all, pattern = "\\s")
+# Returing the right thing based on whether context was gathered 
   
-  # function to extract text, remove whitespaces and unicode encodings of the minus sign and return numeric vector of extracted effect sizes
-  extractEffects <- function(inputText, pattern, ...) {
-    # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
-    inputText <- str_remove_all(inputText, "\\n")
-    inputText <- str_remove_all(inputText, "[Ââˆ\\’Ï„œ€$!\\“\u009d]")
-    # extracting all text which matches pattern
-    extracted <- str_extract_all(inputText,  regex(pattern, ignore_case = TRUE), simplify = T)
-    # removing whitespace that can be captured in the regular expressions above
-    extracted <- str_remove_all(extracted, "\\s") 
-    # replacing unicode minus sign with R recognised hyphen/minus sign
-    extracted <- str_replace_all(extracted, "\u2212", "-")
-    return(as.numeric(extracted))
+  # The following extracts the context around each extracted part:
+    # WILL ALSO HAVE TO REMOVE NEGATIVE LOOK AROUNDS IF THEY ARE ADDED !!! 
+if(context == T) { 
+  if(length(extracted[[1]]) > 0){
+  newSearchT  <- extracted[[1]] %>%
+    str_replace_all("\\.", "\\\\.") %>%
+    str_replace_all("\\(", "\\\\(") %>%
+    str_replace_all("\\)", "\\\\)") %>% 
+    paste0(".{0,", contextSize,"}",  . ,".{0,", contextSize,"}")
+  
+  extractedContextT <- as.character(str_extract(inputTextCleaned,  regex(newSearchT, ignore_case = TRUE)))
+  } else {extractedContextT <- list()}
+  
+  if(length(extracted[[2]]) > 0){
+  newSearchF  <- extracted[[2]] %>%
+    str_replace_all("\\.", "\\\\.") %>%
+    str_replace_all("\\(", "\\\\(") %>%
+    str_replace_all("\\)", "\\\\)") %>% 
+    paste0(".{0,", contextSize,"}",  . ,".{0,", contextSize,"}")
+  
+  extractedContextF <- as.character(str_extract(inputTextCleaned,  regex(newSearchF, ignore_case = TRUE)))
+  } else {extractedContextF <- list()}
+  
+  if(length(extracted[[3]]) > 0){
+  newSearchR  <- extracted[[3]] %>%
+    str_replace_all("\\.", "\\\\.") %>%
+    str_replace_all("\\(", "\\\\(") %>%
+    str_replace_all("\\)", "\\\\)") %>% 
+    paste0(".{0,", contextSize,"}",  . ,".{0,", contextSize,"}")
+  
+extractedContextR <- as.character(str_extract(inputTextCleaned,  regex(newSearchR, ignore_case = TRUE)))
+  }  else {extractedContextR <- list()}
+  
+  extractedContextR <- as.character(str_extract(inputTextCleaned,  regex(newSearchR, ignore_case = TRUE)))
+ 
+  return(rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContextT),
+               data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContextF),
+               data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContextR)))
+} else {
+    return(rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
+                 data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
+                 data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]])))  
+  }
 }
 
+# Now just need to extract the effect sizes from each
+
+
+
+extractTestStats(unlabText)
+extractTestStats(introText)
+extractTestStats(methodsText)
+extractTestStats(resultsText)
+extractTestStats(discussionText, context = T)
 # Extracting from sections which were not covered above (later just lapply this across all of the sections, 
 # probably also possible to change the above function to test for multiple effects, best to pilot it with the manual V first)
 # LATER JUST DO THIS FOR EACH OF THE EFFECT SIZES: 
@@ -176,11 +238,13 @@ patternT  <- "writeOrUseStatcheck"
 # lapply(texts, extractEffects, patternD) # .. etc. (again, probably better to build extraction for multiple effects into the one function, 
 # otherwise we're repeating opperations a lot for no reason)
 
-extractedDsUnlab <- extractEffects(unlabText, patternD)
-extractedRsUnlab <- extractEffects(unlabText, patternR)
-extractedEtasUnlab <- extractEffects(unlabText, patternEta)
-extractedHRsUnlab <-  extractEffects(unlabText, patternHR)
-extractedORsUnlab <-  extractEffects(unlabText, patternOR)
+if(exists(unlabText)) {
+  extractedDsUnlab <- extractEffects(unlabText, patternD)
+  extractedRsUnlab <- extractEffects(unlabText, patternR)
+  extractedEtasUnlab <- extractEffects(unlabText, patternEta)
+  extractedHRsUnlab <-  extractEffects(unlabText, patternHR)
+  extractedORsUnlab <-  extractEffects(unlabText, patternOR)
+}
 
 # Extracting from abstract which were not covered above 
 extractedDsAbstract <- extractEffects(abstractText, patternD)
@@ -220,8 +284,3 @@ extractedORsDiscussion <-  extractEffects(discussionText, patternOR)
 end<- Sys.time()
 start-end
 # later to update it will be possible to just compare the master list with those 
-
-# record<-get_records(ids = "oai:pubmedcentral.nih.gov:4547492", prefix = "pmc", url =  'https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi')
-
-# record <- xmlToList(record[[1]])
-
