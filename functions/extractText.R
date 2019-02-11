@@ -3,6 +3,7 @@ library(xml2)
 library(magrittr)
 library(tidyverse)
 library(lubridate)
+library(statcheck)
 
 # Concatinate function that is just a better paste
 concat <- function(text) {
@@ -13,6 +14,33 @@ concat <- function(text) {
   }
 }
 
+# This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R
+processHTML <- function(x){
+  strings <- x
+  
+  # Remove subscripts (except for p_rep)
+  strings <- lapply(strings, gsub, pattern = "<sub>(?!rep).*?</sub>", replacement = "", perl = TRUE)
+  
+  # Remove HTML tags:
+  strings <- lapply(strings, gsub, pattern = "<(.|\n)*?>", replacement = "")
+  
+  # Replace html codes:
+  strings <- lapply(strings, gsub, pattern = "&#60;", replacement = "<", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&lt;", replacement = "<", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&#61;", replacement = "=", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&#62;", replacement = ">", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&gt;", replacement = ">", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&#40;", replacement = "(", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&#41;", replacement = ")", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&thinsp;", replacement = " ", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "&nbsp;", replacement = " ", fixed = TRUE)
+  strings <- lapply(strings, gsub, pattern = "\n", replacement = "")
+  strings <- lapply(strings, gsub, pattern = "\r", replacement = "")
+  strings <- lapply(strings, gsub, pattern = "\\s+", replacement = " ")
+  strings <- lapply(strings, gsub, pattern = "&minus;", replacement = "-", fixed = TRUE)
+  
+  return(strings)
+}
 
 # search strings for each of the sections of the paper - add here for more
 introNames <- ("Introduction|Background")
@@ -21,16 +49,19 @@ resultsNames <- ("result")
 discussionNames <- ("discussion|conclusion|conclud|summary")
 
 
-# example with coheon's d's: "oai:pubmedcentral.nih.gov:4879183", correlations: oai:pubmedcentral.nih.gov:5588100, F statistics: oai:pubmedcentral.nih.gov:3659440
+# example with coheon's d's: "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4879183&metadataPrefix=pmc", 
+# correlations: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5588100&metadataPrefix=pmc, 
+# F statistics: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc
+# https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
+"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call = articles$oaiCall[10000]
-
+call = articles$oaiCall[10700]
 paper <- read_html(call)
 
 ## Metadata extraction
 PMCID  <-
   paste0("PMC",
-         str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]{0,10}"))
+         str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]*"))
 pmcIDCheck <-
   xml_text(xml_find_first(paper, '//article-id[@pub-id-type="pmcid"]'))
 
@@ -209,15 +240,20 @@ list(AuthorSurnames,
   authors = data_frame(PMCID,
                        AuthorSurnames,
                        AuthorFirstNames),
-  text = data_frame(
+  text = processHTML( data_frame(
     PMCID,
     abstract = concat(abstractText),
     intro = concat(introText),
     methods = concat(methodsText),
     discussion = concat(discussionText),
     results = concat(resultsText),
-    unlabelled= concat(unlabText)
+    unlabelled= concat(unlabText) 
+    )
   )
 )
+ 
 output
-extractTestStats(concat(output$text))
+
+lapply(output$text,extractTestStats)
+
+lapply(output$text, statcheck)
