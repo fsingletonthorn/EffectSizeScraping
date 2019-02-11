@@ -3,9 +3,10 @@
 # F and T tests - 
 # Need to add a negative look behind for both to ensure that there are no letters beforehand
 
-patternT <- "t\\s{0,}\\(\\s{0,}\\d{1,}\\.?\\d{0,}\\s{0,}\\)\\s{0,}=\\s{0,}-?\\s{0,}\\d{0,}\\.?\\d{0,}"
-patternF <-  "F\\s{0,}\\(\\s{0,}\\d{1,},\\s{0,}\\d{1,}\\s{0,}\\)\\s{0,}=\\s{0,}\\d{0,}\\.?\\d{0,}"
-patternR <-  "((([r]\\s{0,}\\(?\\s{0,}(df|n)?\\s{0,}[=]?\\s{0,}\\d{0,10}\\s{0,}\\)?\\s{0,}[=]\\s{0,})|((correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
+patternT <- "t\\s{0,}\\(\\s{0,}\\d{1,}\\.?\\d{0,}\\s{0,}\\)\\s{0,}=\\s{0,}-?\\s{0,}\\d{0,}\\.?\\d{0,}(\\s{0,},?\\s{0,}p\\s{0,}[<>=]\\s{0,}\\d?\\.\\d+e?-?\\d*)?"
+patternF <-  "F\\s{0,}\\(\\s{0,}\\d{1,},\\s{0,}\\d{1,}\\s{0,}\\)\\s{0,}=\\s{0,}\\d{0,}\\.?\\d{0,}(\\s{0,},?\\s{0,}p\\s{0,}[<>=]\\s{0,}\\d?\\.\\d+e?-?\\d*)?"
+patternR <-  "((([r]\\s{0,}\\(?\\s{0,}(df|n)?\\s{0,}[=]?\\s{0,}\\d{0,10}\\s{0,}\\)?\\s{0,}[=]\\s{0,})|((correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))(\\s{0,},?\\s{0,}p\\s{0,}[<>=]\\s{0,}\\d?\\.\\d+e?-?\\d*)?"
+patterns <- c(patternT, patternF, patternR)
 
 patternD <- "(?<=((\\s|\\()[dg]\\s?\\s?(//(95% confidence interval//))?(//(95% CI//))?)\\s?\\s?[\\.\\,\\:\\;]?\\s?\\s?([=]|(of))\\s?\\s?)(\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternR <-  "(((?<=((\\s|\\(|\\[)([r]s?\\(?\\d{0,10}\\)?\\s?\\s?[=]\\s?\\s?)))|((?<=(correlation)\\s?\\s?(coefficient)?\\s?\\s?([=]|(of))\\s?\\s?)))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))"
@@ -14,7 +15,7 @@ patternP <- "(?<=(p\\s{0,4}))([=\\<\\>]\\s?\\s?\\-?\u2212?\\s?\\d*\\.?\\d{1,})"
 patternHR <- "((?<=((\\s|\\()((HR)|(hazzard.ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
 patternOR <- "((?<=((\\s|\\()((OR)|(odd.{1,3}?ratio))\\s{0,4}((of)|(=))\\s{0,4}))(\\-?\u2212?\\s?\\d*\\.?\\d{1,}))"
 
-patterns <- c(patternT, patternF, patternR)
+
 
 # For this to work it needs to be fed a single string 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return test statistic original data plus df
