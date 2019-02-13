@@ -14,9 +14,9 @@ concat <- function(text) {
   }
 }
 
-# This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R
-processHTML <- function(x){
-  strings <- x
+# This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R, 
+#does some final extra cleaning if any tags / weird characters remain 
+processHTML <- function(strings){
   
   # Remove subscripts (except for p_rep)
   strings <- lapply(strings, gsub, pattern = "<sub>(?!rep).*?</sub>", replacement = "", perl = TRUE)
