@@ -1,11 +1,27 @@
-## Patterns extracted - strip commas and whitespace? too
 
-# F and T tests - 
-# Need to add a negative look behind for both to ensure that there are no letters beforehand
-
+# F and T test patterns -  
 patternT <- "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*=\\s*-?\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?"
 patternF <-  "\\bF\\s*\\(\\s*\\d{1,},\\s*\\d{1,}\\s*\\)\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?"
 patternR <-  "\\b(((r(?!2)\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d{0,10}\\s*\\)?\\s*[=]\\s*)|((correlation)\\s*(coefficient)?\\s*([=]|(of))\\s*))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?"
+
+patternD <- "\\b[dg]\\s*[\\.\\,\\:\\;]?\\s*([=]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+patternEta <- "\\b([\u03B7]\\s*p?\\s*2?\\s*)|((partial)?\\s*eta\\s*squared)\\s*([=]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})" 
+patternHR <- "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+patternOR <- "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+
+  ORStrings <- c(
+    "odds ratio = 1.3", 
+    "odds ratio of 1000.1",
+    "OR = 1.2",
+    "hazzard ratio of - .1",
+    "d = 1.3",
+    "a cohen's d of 1.324", 
+    "eta squared of 1021.123",
+    "partial eta squared of 12.23")
+str_extract_all(ORStrings, regex(patternEta, ignore_case = T))
+
+  
+
 patterns <- c(patternT, patternF, patternR)
 
 # For this to work it needs to be fed a single string 
