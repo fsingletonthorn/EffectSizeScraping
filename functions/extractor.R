@@ -9,7 +9,10 @@ patternEta <- "\\b([\u03B7]\\s*p?\\s*2?\\s*)|((partial)?\\s*eta\\s*squared)\\s*(
 patternHR <- "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
 patternOR <- "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
 
-  ORStrings <- c(
+# Do not change order of patterns, that will break everything 
+patterns <- c(patternT, patternF, patternR, patternD, patternEta, patternHR , patternOR)
+ 
+ ORStrings <- c(
     "odds ratio = 1.3", 
     "odds ratio of 1000.1",
     "OR = 1.2",
@@ -35,8 +38,6 @@ addContext <- function(extracted, contextSize) {
   }
 }
 
-# Do not change order of patterns, that will break everything 
-patterns <- c(patternT, patternF, patternR, patternD, patternEta, patternHR , patternOR)
 
 # For this to work it needs to be fed a single string 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return test statistic original data plus df
@@ -63,12 +64,21 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
     extractedContext <- lapply(patternsContext, function(patternsContext)  
       unlist(str_extract_all(inputTextCleaned, regex(as.character(patternsContext), ignore_case = T))))
     # returning all of this 
-    return(rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
-                 data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
-                 data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContext[[3]])))
+    return(rbind(data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
+                 data_frame(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
+                 data_frame(statistic = "r",   cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContext[[3]]),
+                 data_frame(statistic = "d",   cleaned = extractedClean[[4]], reported = extracted[[4]],  context = extractedContext[[4]]),
+                 data_frame(statistic = "eta", cleaned = extractedClean[[5]], reported = extracted[[5]],  context = extractedContext[[5]]),
+                 data_frame(statistic = "HR",  cleaned = extractedClean[[6]], reported = extracted[[6]],  context = extractedContext[[6]]),
+                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]])))
     } else {
     return(rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
                  data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
-                 data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]])))  
+                 data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]]),
+                 data_frame(statistic = "d",   cleaned = extractedClean[[4]], reported = extracted[[4]]),
+                 data_frame(statistic = "eta", cleaned = extractedClean[[5]], reported = extracted[[5]]),
+                 data_frame(statistic = "HR",  cleaned = extractedClean[[6]], reported = extracted[[6]]),
+                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]])))  
   }
 }
+ 
