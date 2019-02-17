@@ -35,5 +35,7 @@ table(articles$Journal)
 
 articles$oaiCall <- paste0("https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:", articles$PMCID,  "&metadataPrefix=pmc")
           
+articles$year <- str_extract(articles$`Article Citation`, pattern = "((19)|(20))\\d{2}")
+
 # Cleaning things up because this file is sourced in the main script
 rm("oaFileList", "oaJList")
