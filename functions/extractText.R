@@ -4,6 +4,7 @@ library(magrittr)
 library(tidyverse)
 library(lubridate)
 library(statcheck)
+library(foreach)
 
 # Concatinate function that is just a better paste
 concat <- function(text) {
@@ -55,7 +56,7 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call = articles$oaiCall[10700]
+call = articles$oaiCall[7023]
 paper <- read_html(call)
 
 ## Metadata extraction
@@ -221,7 +222,6 @@ if (sum(str_detect(titles, (regex(
 list(AuthorSurnames,
      AuthorFirstNames)
 
-
 #
  output <- list(
   paperInfo = data_frame(
@@ -254,6 +254,40 @@ list(AuthorSurnames,
  
 output
 
-lapply(output$text,extractTestStats)
+savedOutput <- lapply(output$text,extractTestStats, context = T)
+savedOutput
+
+
+splitTestStatToDF(statistic = savedOutput$results$statistic, cleanedTestStat =savedOutput$results$cleaned)
+
+
+splitTestStatToDF <- function(statistic, cleanedTestStat) {
+  testStatistic <- str_extract(str_split(cleanedTestStat, "=", simplify = T)[,2], "-?\\d*\\.?\\d*")
+  df1 <- case_when(statistic == "F" ~ c(str_extract(cleanedTestStat, "\\d{1,}(?=,)")),
+                   TRUE ~ NA_character_)
+  # Add other statistics here below in addition to F 
+  df2 <- case_when(statistic == "F" ~ str_extract(cleanedTestStat, "(?<=,)\\d{1,}"),
+                   # If people have reported r(n=x) return as n df2 = n - 2
+                   str_detect(statistic, "r") & str_detect(cleanedTestStat, "n=") ~ as.character(as.numeric(str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(n\\=)?)\\d{1,}")) - 2),
+                   str_detect(statistic, "T|t|r|R") ~ str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(df\\=)?)\\d{1,}"),
+                   TRUE ~ NA_character_
+                   )
+  p <- str_extract(cleanedTestStat, "(?<=(p=?))[<>]?\\d?\\.\\d+e?-?\\d*")
+  data_frame(value = testStatistic, df1 = df1, df2 = df2, p = p)
+}
+  
 
 lapply(output$text, statcheck)
+
+bind_rows(savedOutput, .id = "source")
+
+
+# extracting test statistic
+
+
+
+
+str_split("F(1, 12345) = 12.42345", pattern = ",", simplify = T) %>%
+  str_split("\\)", simplify = T) %>%
+  str_s
+
