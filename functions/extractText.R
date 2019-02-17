@@ -39,6 +39,15 @@ processHTML <- function(strings){
   strings <- lapply(strings, gsub, pattern = "\r", replacement = "")
   strings <- lapply(strings, gsub, pattern = "\\s+", replacement = " ")
   strings <- lapply(strings, gsub, pattern = "&minus;", replacement = "-", fixed = TRUE)
+ 
+  # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
+  strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = "")
+  
+  # replacing unicode minus sign with R recognised hyphen/minus sign
+  strings <- lapply(strings, str_replace_all, pattern = "\\u2212", replacement = "-")
+  # replcaing unicode short spaces that are not always picked up above
+  strings <- lapply(strings, str_replace_all, pattern = "\\u2009", replacement = " ")
+  
   
   return(strings)
 }
@@ -254,38 +263,24 @@ list(AuthorSurnames,
  
 output
 
+
 savedOutput <- lapply(output$text,extractTestStats, context = T)
-savedOutput
+savedOutput$abstract$cleaned
 
 
-splitTestStatToDF(statistic = savedOutput$results$statistic, cleanedTestStat =savedOutput$results$cleaned)
-
-
-splitTestStatToDF <- function(statistic, cleanedTestStat) {
-  testStatistic <- str_extract(str_split(cleanedTestStat, "=", simplify = T)[,2], "-?\\d*\\.?\\d*")
-  df1 <- case_when(statistic == "F" ~ c(str_extract(cleanedTestStat, "\\d{1,}(?=,)")),
-                   TRUE ~ NA_character_)
-  # Add other statistics here below in addition to F 
-  df2 <- case_when(statistic == "F" ~ str_extract(cleanedTestStat, "(?<=,)\\d{1,}"),
-                   # If people have reported r(n=x) return as n df2 = n - 2
-                   str_detect(statistic, "r") & str_detect(cleanedTestStat, "n=") ~ as.character(as.numeric(str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(n\\=)?)\\d{1,}")) - 2),
-                   str_detect(statistic, "T|t|r|R") ~ str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(df\\=)?)\\d{1,}"),
-                   TRUE ~ NA_character_
-                   )
-  p <- str_extract(cleanedTestStat, "(?<=(p=?))[<>]?\\d?\\.\\d+e?-?\\d*")
-  data_frame(value = testStatistic, df1 = df1, df2 = df2, p = p)
-}
+extractTestStats(output$text$PMCID, context = T)
   
+lapply(savedOutput, function(input)
+  splitTestStatToDF(input$statistic, input$cleaned))
+
+
+View(savedOutput$results)
 
 lapply(output$text, statcheck)
 
 bind_rows(savedOutput, .id = "source")
 
-
 # extracting test statistic
-
-
-
 
 str_split("F(1, 12345) = 12.42345", pattern = ",", simplify = T) %>%
   str_split("\\)", simplify = T) %>%

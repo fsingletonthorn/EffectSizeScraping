@@ -12,17 +12,25 @@ patternOR <- "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{
 # Do not change order of patterns, that will break everything 
 patterns <- c(patternT, patternF, patternR, patternD, patternEta, patternHR , patternOR)
  
- ORStrings <- c(
-    "odds ratio = 1.3", 
-    "odds ratio of 1000.1",
-    "OR = 1.2",
-    "hazzard ratio of - .1",
-    "d = 1.3",
-    "a cohen's d of 1.324", 
-    "eta squared of 1021.123",
-    "partial eta squared of 12.23")
-str_extract_all(ORStrings, regex(patternEta, ignore_case = T))
 
+
+# helper function to split the output into constituate parts 
+splitTestStatToDF <- function(statistic, cleanedTestStat) {
+  if(length(cleanedTestStat > 0)) {
+    testStatistic <- str_extract(str_split(cleanedTestStat, "=", simplify = T)[,2], "-?\\d*\\.?\\d*")
+    df1 <- case_when(statistic == "F" ~ c(str_extract(cleanedTestStat, "\\d{1,}(?=,)")),
+                     TRUE ~ NA_character_)
+    # Add other statistics here below in addition to F 
+    df2 <- case_when(statistic == "F" ~ str_extract(cleanedTestStat, "(?<=,)\\d{1,}"),
+                     # If people have reported r(n=x) return as n df2 = n - 2
+                     str_detect(statistic, "r") & str_detect(cleanedTestStat, "n=") ~ as.character(as.numeric(str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(n\\=)?)\\d{1,}")) - 2),
+                     str_detect(statistic, "T|t|r|R") ~ str_extract(cleanedTestStat, "(?<=([a-zA-Z])\\(?(df\\=)?)\\d{1,}"),
+                     TRUE ~ NA_character_
+    )
+    p <- str_extract(cleanedTestStat, "(?<=(p=?))[<>]?\\d?\\.\\d+e?-?\\d*")
+    data_frame(value = testStatistic, df1 = df1, df2 = df2, p = p)
+  } else NA
+}
 
 # Function to add + and minus "contextSize" characters for a regex pattern
 addContext <- function(extracted, contextSize) {
@@ -42,16 +50,10 @@ addContext <- function(extracted, contextSize) {
 # For this to work it needs to be fed a single string 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return test statistic original data plus df
 extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
-  # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
-  inputTextCleaned <- str_remove_all(inputText, "\\n")
-  inputTextCleaned <- str_remove_all(inputTextCleaned, "[Ââˆ\\’Ï„œ€$!\\“\u009d]")
-  
-  # replacing unicode minus sign with R recognised hyphen/minus sign
-  inputTextCleaned <- str_replace_all(inputTextCleaned, "\u2212", "-")
-  
+  # Input should already be cleaned, this is important as it will break this function -  processHTML() on input
   # extracting all text which matches patterns
-  extracted <- str_extract_all(inputTextCleaned , pattern = regex(patterns, ignore_case = TRUE))
- 
+  extracted <- str_extract_all(inputText , pattern = regex(patterns, ignore_case = TRUE))
+  
   # removing whitespace that can be captured in the regular expressions above
   extractedClean <- lapply(extracted,  str_remove_all, pattern = "\\s")
   
@@ -64,21 +66,28 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
     extractedContext <- lapply(patternsContext, function(patternsContext)  
       unlist(str_extract_all(inputTextCleaned, regex(as.character(patternsContext), ignore_case = T))))
     # returning all of this 
-    return(rbind(data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
+    statisticalOutput <- rbind(data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
                  data_frame(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
                  data_frame(statistic = "r",   cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContext[[3]]),
                  data_frame(statistic = "d",   cleaned = extractedClean[[4]], reported = extracted[[4]],  context = extractedContext[[4]]),
                  data_frame(statistic = "eta", cleaned = extractedClean[[5]], reported = extracted[[5]],  context = extractedContext[[5]]),
                  data_frame(statistic = "HR",  cleaned = extractedClean[[6]], reported = extracted[[6]],  context = extractedContext[[6]]),
-                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]])))
+                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]]))
+           
     } else {
-    return(rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
+    statisticalOutput <- rbind(data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
                  data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
                  data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]]),
                  data_frame(statistic = "d",   cleaned = extractedClean[[4]], reported = extracted[[4]]),
                  data_frame(statistic = "eta", cleaned = extractedClean[[5]], reported = extracted[[5]]),
                  data_frame(statistic = "HR",  cleaned = extractedClean[[6]], reported = extracted[[6]]),
-                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]])))  
+                 data_frame(statistic = "OR",  cleaned = extractedClean[[7]], reported = extracted[[7]]))
+    }
+ if(is_empty(statisticalOutput[[1]])) { 
+   return(NA)
+   } else {
+   cbind(statisticalOutput, splitTestStatToDF(statistic = statisticalOutput$statistic, statisticalOutput$cleaned))
   }
 }
+
  
