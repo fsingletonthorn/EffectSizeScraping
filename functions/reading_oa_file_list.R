@@ -22,11 +22,11 @@ BSJs <- c(oaJList$`NLM TA`[as.logical(oaJList$Eligible)],
           "J Can Acad Child Adolesc Psychiatr", "Funct Neurol", "Behav Anal Pract",
           "Behav Anal", "Adv Physiol Educ")
 
-# Remove articles which are unlikely to be APA formated - the multidisiplinary Journals, which are large but which -
+# Optionally, can remove articles which are unlikely to be APA formated - the multidisiplinary Journals, which are large but which -
 # Identifying artilces which are of interest here - Includes ~300000 articles with PLOS articles, 
-# 84800 without. For the moment we've removed the PLOS articles, could also remove the 
+# 84800 without. For the moment we've included these articles, but could completely reasonably remove them 
 # Royal soc open science and PeerJ which are multidis
-BSJs <- BSJs[!str_detect(BSJs, "PLoS One|PeerJ|(R Soc Open Sci)")]
+BSJs <- # BSJs[!str_detect(BSJs, "PLoS One|PeerJ|(R Soc Open Sci)")]
 oaFileList$applicable <- oaFileList$Journal %in% BSJs
 
 oaFileList$PMCID <- str_remove(oaFileList$`Accession ID`, "PMC")
