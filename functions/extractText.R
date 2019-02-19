@@ -4,7 +4,6 @@ library(magrittr)
 library(tidyverse)
 library(lubridate)
 library(statcheck)
-library(foreach)
 
 # Concatinate function that is just a better paste
 concat <- function(text) {
@@ -48,7 +47,6 @@ processHTML <- function(strings){
   # replcaing unicode short spaces that are not always picked up above
   strings <- lapply(strings, str_replace_all, pattern = "\\u2009", replacement = " ")
   
-  
   return(strings)
 }
 
@@ -66,6 +64,8 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
 call = articles$oaiCall[7023]
+
+pullAndProcess <- function(call) {
 paper <- read_html(call)
 
 ## Metadata extraction
@@ -77,7 +77,7 @@ pmcIDCheck <-
 
 # Checking that these match, otherwise we've a problem
 if (PMCID != pmcIDCheck) {
-  return(NA)
+  stop("PMCID of database does not match that extracted from call")
 }
 
 # DOI
@@ -166,8 +166,7 @@ abstractText <- xml_text(abstract_node)
 ##### The unlab section HAS NOT BEEN TESTED !!! - no articles have had additional sections that should not be includd in the other bits
 if (sum(!str_detect(titles, regex(
   paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"),
-  ignore_case = T
-))) > 0) {
+  ignore_case = T ))) > 0) {
   index <-
     which(!str_detect(titles, regex(
       paste(
@@ -193,8 +192,7 @@ if (length(unlabPs_nodes) > 0) {
 # looping through each of the sections that match the names and putting them in a list -
 introText <- NA
 if (sum(str_detect(titles, (regex(
-  introNames, ignore_case = T
-)))) > 0) {
+  introNames, ignore_case = T )))) > 0) {
   index <-
     which(str_detect(titles, regex(introNames, ignore_case = T)))
   introText <- xml_text(sections[index])
@@ -202,8 +200,7 @@ if (sum(str_detect(titles, (regex(
 
 methodsText <- NA
 if (sum(str_detect(titles, (regex(
-  methodsNames, ignore_case = T
-)))) > 0) {
+  methodsNames, ignore_case = T )))) > 0) {
   index <-
     which(str_detect(titles, regex(methodsNames, ignore_case = T)))
   methodsText <- xml_text(sections[index])
@@ -211,8 +208,7 @@ if (sum(str_detect(titles, (regex(
 
 resultsText <- NA
 if (sum(str_detect(titles, (regex(
-  resultsNames, ignore_case = T
-)))) > 0) {
+  resultsNames, ignore_case = T )))) > 0) {
   index <-
     which(str_detect(titles, regex(resultsNames, ignore_case = T)))
   resultsText <- xml_text(sections[index])
@@ -220,20 +216,15 @@ if (sum(str_detect(titles, (regex(
 
 discussionText <- NA
 if (sum(str_detect(titles, (regex(
-  discussionNames, ignore_case = T
-)))) > 0) {
+  discussionNames, ignore_case = T )))) > 0) {
   index <-
     which(str_detect(titles, regex(discussionNames, ignore_case = T)))
   discussionText <- xml_text(sections[index])
 }
 
 # Figure out authors information better here
-list(AuthorSurnames,
-     AuthorFirstNames)
-
-#
  output <- list(
-  paperInfo = data_frame(
+  metadata = data_frame(
     PMCID,
     doi,
     journalID,
@@ -243,46 +234,47 @@ list(AuthorSurnames,
     volume,
     pPub,
     ePub,
+    abstract, 
     call
   ),
-  keywords = data_frame(PMCID, keywords),
-  authors = data_frame(PMCID,
-                       AuthorSurnames,
-                       AuthorFirstNames),
-  text = processHTML( data_frame(
+  keywords = data_frame(
+    PMCID, 
+    keywords),
+  
+  authors = data_frame(
     PMCID,
-    abstract = concat(abstractText),
-    intro = concat(introText),
-    methods = concat(methodsText),
-    discussion = concat(discussionText),
-    results = concat(resultsText),
-    unlabelled= concat(unlabText) 
+    surname = AuthorSurnames,
+    firstname = AuthorFirstNames),
+  
+  text = processHTML( 
+    data_frame(
+      PMCID,
+      abstract = concat(abstractText),
+      intro = concat(introText),
+      methods = concat(methodsText),
+      discussion = concat(discussionText),
+      results = concat(resultsText),
+      unlabelled= concat(unlabText) 
+      )
     )
   )
-)
  
-output
+# processing all but the PMID with extract test stats
+statisticalOutput <- lapply(output$text[-1],extractTestStats, context = T)
+  # NA rows removed here using a filter:  
+ notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x,1)[1] })))
+  if(any(notNAs)) {
+output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[removeNAs], .id = "section"))
+} else {
+  output$statisticalOutput <- NA
+}
 
-
-savedOutput <- lapply(output$text,extractTestStats, context = T)
-savedOutput$abstract$cleaned
-
-
-extractTestStats(output$text$PMCID, context = T)
-  
-lapply(savedOutput, function(input)
-  splitTestStatToDF(input$statistic, input$cleaned))
-
-
-View(savedOutput$results)
-
-lapply(output$text, statcheck)
-
-bind_rows(savedOutput, .id = "source")
-
-# extracting test statistic
-
-str_split("F(1, 12345) = 12.42345", pattern = ",", simplify = T) %>%
-  str_split("\\)", simplify = T) %>%
-  str_s
-
+statCheckOutput <- lapply(output$text[-1], statcheck)
+# NA rows removed here using a filter: 
+notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  function(x) { !is.null(x[[1]]) }))
+if(any(notNAs)) {
+  output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[removeNAs], .id = "section"))
+} else {
+  output$statCheckOutput <- NA
+}
+}
