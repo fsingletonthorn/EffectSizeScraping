@@ -63,7 +63,10 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call = articles$oaiCall[7023]
+call <- articles$oaiCall[ trainingSet ][1]
+
+
+# example with F and t stats : [7023]
 
 pullAndProcess <- function(call) {
 paper <- read_html(call)
@@ -106,7 +109,7 @@ pPub <-
       xml_text(xml_find_first(
         paper, '//pub-date[@pub-type="ppub"]/day'
       ))
-    ), "NA"), orders = c("ymd", "y"), exact = )
+    ), "NA"), orders = c("ymd", "ym", "y"), exact = )
   } else {
     NA
   }
@@ -124,7 +127,7 @@ ePub <-
       xml_text(xml_find_first(
         paper, '//pub-date[@pub-type="epub"]/day'
       ))
-    ), "NA"), orders = c("ymd", "y"))
+    ), "NA"), orders = c("ymd", "ym", "y"))
   } else {
     NA
   }
@@ -163,7 +166,7 @@ titles <-  xml_text(xml_find_all(sections, "title"))
 # add abstract
 abstractText <- xml_text(abstract_node)
 
-##### The unlab section HAS NOT BEEN TESTED !!! - no articles have had additional sections that should not be includd in the other bits
+##### Unlabbled here
 if (sum(!str_detect(titles, regex(
   paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"),
   ignore_case = T ))) > 0) {
@@ -234,7 +237,7 @@ if (sum(str_detect(titles, (regex(
     volume,
     pPub,
     ePub,
-    abstract, 
+    abstract = abstractText, 
     call
   ),
   keywords = data_frame(
@@ -278,3 +281,4 @@ if(any(notNAs)) {
   output$statCheckOutput <- NA
 }
 }
+
