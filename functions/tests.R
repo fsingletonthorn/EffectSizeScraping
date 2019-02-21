@@ -1,6 +1,5 @@
 # tests of function 
 # library(tidyverse)
-
 tests <- function() { 
 testF <- c("F(1, 12345) = 12.42345",
            "F(1,12345)=12.42345",
@@ -59,7 +58,8 @@ testChi <- c("chi square = 12.32",
              "chi2 = 123.32",
              "χ2(123) = 1232.23, p < .05",
              "χ2 = 122.23,p = .13",
-             "chi2(123) = 123.2, p < .001")
+             "chi2(123) = 123.2, p < .001",
+             "χ2(1, N = 320) = 22.31, p < 0.001")
 
 testTString  <- str_flatten(testT, collapse = " ")
 testFString  <- str_flatten(testF, collapse = " ")
@@ -74,6 +74,14 @@ paste("chi",identical(extractTestStats(testChiString)[[3]], testChi)),
 paste("T raw",identical(extractTestStats(testTString)[[2]], str_remove_all(testT, "\\s"))),
 paste("F raw",identical(extractTestStats(testFString)[[2]], str_remove_all(testF, "\\s"))),
 paste("R raw",identical(extractTestStats(testRString)[[2]], str_remove_all(testR[-9], "\\s"))),
-paste("Chi raw",identical(extractTestStats(testChiString)[[2]], str_remove_all(testChi, "\\s")))
+paste("Chi raw",identical(extractTestStats(testChiString)[[2]], str_remove_all(testChi, "\\s"))),
+
+paste("training1", identical(pullAndProcess( articles$oaiCall[ trainingSet ][1] ), read_rds("data/trainingSet/validatedOutput/test1.RDS"))),
+paste("training2", identical(pullAndProcess( articles$oaiCall[ trainingSet ][2] ), read_rds("data/trainingSet/validatedOutput/test2.RDS"))),
+paste("training3", identical(pullAndProcess( articles$oaiCall[ trainingSet ][3] ), read_rds("data/trainingSet/validatedOutput/test3.RDS")))
+
 ))
 }
+
+# write_rds( pullAndProcess( articles$oaiCall[ trainingSet ][1] ) , path = "data/trainingSet/validatedOutput/test1.RDS")
+# write_rds( pullAndProcess( articles$oaiCall[ trainingSet ][2] ) , path = "data/trainingSet/validatedOutput/test2.RDS")
