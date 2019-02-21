@@ -14,8 +14,20 @@ concat <- function(text) {
   }
 }
 
+# Check whether element exists and is not NA (or at least that th first element of an object is not NA)
+elementExists <- function( full_index_path ){
+  tryCatch({
+    len_element = length(full_index_path)
+    if(is.na(full_index_path)[[1]]) {return(F)}
+    exists_indicator = ifelse(len_element > 0, T, F)
+    return(exists_indicator)
+  }, error = function(e) {
+    return(F)
+  })
+}
+
 # This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R, 
-#does some final extra cleaning if any tags / weird characters remain 
+# does some final extra cleaning if any tags / weird characters remain 
 processHTML <- function(strings){
   
   # Remove subscripts (except for p_rep)
@@ -63,10 +75,10 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call <- articles$oaiCall[ trainingSet ][1]
+call <- articles$oaiCall[ trainingSet ][5]
 
-
-# example with F and t stats : [7023]
+ # pullAndProcess(call)
+# example with F and t stats : articles$oaiCall[7023]
 
 pullAndProcess <- function(call) {
 paper <- read_html(call)
@@ -164,7 +176,7 @@ sections <-  xml_find_all(paper, "//article/sec")
 titles <-  xml_text(xml_find_all(sections, "title"))
 
 # add abstract
-abstractText <- xml_text(abstract_node)
+abstract <- concat(xml_text(abstract_node))
 
 ##### Unlabbled here
 if (sum(!str_detect(titles, regex(
@@ -236,8 +248,8 @@ if (sum(str_detect(titles, (regex(
     issue,
     volume,
     pPub,
-    ePub,
-    abstract = abstractText, 
+    ePub, 
+    abstract = ifelse(is_empty(abstract), NA, abstract),
     call
   ),
   keywords = data_frame(
@@ -252,7 +264,7 @@ if (sum(str_detect(titles, (regex(
   text = processHTML( 
     data_frame(
       PMCID,
-      abstract = concat(abstractText),
+      abstract = abstract,
       intro = concat(introText),
       methods = concat(methodsText),
       discussion = concat(discussionText),
@@ -263,22 +275,27 @@ if (sum(str_detect(titles, (regex(
   )
  
 # processing all but the PMID with extract test stats
-statisticalOutput <- lapply(output$text[-1],extractTestStats, context = T)
+statisticalOutput <- lapply(output$text[-1], extractTestStats, context = T)
   # NA rows removed here using a filter:  
- notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x,1)[1] })))
+ notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x, 1)[1] })))
   if(any(notNAs)) {
-output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[removeNAs], .id = "section"))
+output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[notNAs], .id = "section"))
 } else {
   output$statisticalOutput <- NA
 }
 
-statCheckOutput <- lapply(output$text[-1], statcheck)
+statCheckOutput <- lapply(output$text[-1], function(x) {
+  if(length(x) > 0){ if(is.na(x)) { return(NA)} else{statcheck(x)}} else NA
+}
+  )
 # NA rows removed here using a filter: 
-notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  function(x) { !is.null(x[[1]]) }))
+notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  elementExists))
 if(any(notNAs)) {
-  output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[removeNAs], .id = "section"))
+  output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
 } else {
   output$statCheckOutput <- NA
 }
+return(output)
 }
+
 
