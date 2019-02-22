@@ -4,12 +4,15 @@ patternF <-  "\\bF\\s*\\(?\\s*\\d{1,},\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d*(\
 patternR <-  "\\b(((r(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d{0,10}\\s*\\)?\\s*[=]\\s*)|((correlation)\\s*(coefficient)?\\s*([=]|(of))\\s*))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?"
 patternChiSq <- "\\b(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s*(2|square|squared)?\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d*\\s*\\,?\\s*(df|n)?\\s*\\=?\\s*\\d*\\s*\\)?\\s*([=]|(of))\\s*-?\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?"
 patternD <- "\\b[dg]\\s*[\\.\\,\\:\\;]?\\s*([=]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
-patternEta <- "\\b([(partial\\s*)?\u03B7|(eta)]\\s*p?\\s*2?(squared)?\\s*)\\s*([=]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})" 
+patternEta <- "\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?\\s*([=]|(of))\\s*-?\\s*\\d*\\.?\\d{1,}" 
 patternHR <- "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
 patternOR <- "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
 
 # Do not change order of patterns, that will break everything 
 patterns <- c(patternT, patternF, patternR, patternChiSq, patternD, patternEta, patternHR , patternOR)
+
+
+
 
 str_extract_all( resultsText, patterns)
 # helper function to split the output into constituate parts 
@@ -59,7 +62,6 @@ addContext <- function(extracted, contextSize) {
     NA
   }
 }
-
 
 # For this to work it needs to be fed a single string 
 # function to extract text, remove whitespaces and unicode encodings of the minus sign and return test statistic original data plus df
