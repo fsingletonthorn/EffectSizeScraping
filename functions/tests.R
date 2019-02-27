@@ -10,7 +10,8 @@ testF <- c("F(1, 12345) = 12.42345",
            "F ( 1, 12345 ) = 12.",
            "F ( 1, 12345 ) = 12.,  p = .01",
            "F ( 1, 12345 ) = 12 p = 1.01",
-           "F(1, 12345) = 12.42345, p < .01")
+           "F(1, 12345) = 12.42345, p < .01",
+           "F1, 12345 = 12.42345, p < .01")
 
 
 testT <- c("t(15) = 12.42345",
@@ -78,10 +79,15 @@ paste("Chi raw",identical(extractTestStats(testChiString)[[2]], str_remove_all(t
 
 paste("training1", identical(pullAndProcess( articles$oaiCall[ trainingSet ][1] ), read_rds("data/trainingSet/validatedOutput/test1.RDS"))),
 paste("training2", identical(pullAndProcess( articles$oaiCall[ trainingSet ][2] ), read_rds("data/trainingSet/validatedOutput/test2.RDS"))),
-paste("training3", identical(pullAndProcess( articles$oaiCall[ trainingSet ][3] ), read_rds("data/trainingSet/validatedOutput/test3.RDS")))
+paste("training3", identical(pullAndProcess( articles$oaiCall[ trainingSet ][3] ), read_rds("data/trainingSet/validatedOutput/test3.RDS"))),
+paste("training4", identical(pullAndProcess( articles$oaiCall[ trainingSet ][4] ), read_rds("data/trainingSet/validatedOutput/test4.RDS"))),
+paste("training5", identical(pullAndProcess( articles$oaiCall[ trainingSet ][5] ), read_rds("data/trainingSet/validatedOutput/test5.RDS")))
 
 ))
 }
 
 # write_rds( pullAndProcess( articles$oaiCall[ trainingSet ][1] ) , path = "data/trainingSet/validatedOutput/test1.RDS")
 # write_rds( pullAndProcess( articles$oaiCall[ trainingSet ][2] ) , path = "data/trainingSet/validatedOutput/test2.RDS")
+# write_rds( output4  , path = "data/trainingSet/validatedOutput/test4.RDS")
+# write_rds( output5  , path = "data/trainingSet/validatedOutput/test5.RDS")
+
