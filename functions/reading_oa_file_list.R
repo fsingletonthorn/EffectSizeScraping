@@ -26,7 +26,7 @@ BSJs <- c(oaJList$`NLM TA`[as.logical(oaJList$Eligible)],
 # Identifying artilces which are of interest here - Includes ~300000 articles with PLOS articles, 
 # 84800 without. For the moment we've included these articles, but could completely reasonably remove them 
 # Royal soc open science and PeerJ which are multidis
-BSJs <- # BSJs[!str_detect(BSJs, "PLoS One|PeerJ|(R Soc Open Sci)")]
+BSJs <- BSJs[!str_detect(BSJs, "PLoS One")] # |PeerJ|(R Soc Open Sci)")]
 oaFileList$applicable <- oaFileList$Journal %in% BSJs
 
 oaFileList$PMCID <- str_remove(oaFileList$`Accession ID`, "PMC")
