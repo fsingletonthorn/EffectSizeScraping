@@ -8,3 +8,83 @@ functions (do not use)/
 /EarlyTestMaterials/ExamplePapers/comm_use.A-B/
 ~WRL0971.tmp
 ~$fect Size Scraping Paper.docx
+packrat/packrat.lock
+packrat/init.R
+old/testOfTextSearchUsingXpath.R
+old/testOfTextSearch.R
+old/tableExtraction.R
+old/app.R
+old/PythonTest/scrape_pmc.py
+old/PythonTest/pyTest.py
+old/PythonTest/markdownExtractionPy.Rmd
+old/PythonTest/extractionPy/extractionPy2.py
+old/PubmedParser/pubmed_parser-0.1/requirements.txt
+old/PubmedParser/pubmed_parser-0.1/pubmed_parser/utils.py
+old/ExamplePapers/TEST.nxml
+old/ExamplePapers/PMC5963120.nxml
+old/ExamplePapers/PMC5963119.nxml
+old/ExamplePapers/PMC5963118.nxml
+old/ExamplePapers/PMC5893659.nxml
+old/ExamplePapers/PMC5805839.nxml
+old/ExamplePapers/PMC5794850.nxml
+old/ExamplePapers/Not checked example papers/PMC5869054.nxml
+old/ExamplePapers/Not checked example papers/PMC5869051.nxml
+old/ExamplePapers/5588100.xml
+old/ExamplePapers/5341264.xml
+old/ExamplePapers/5110632.xml
+old/ExamplePapers/4879183.xml
+old/ExamplePapers/4547492.xml
+old/ExamplePapers/4547492.txt
+old/ExamplePapers/4547424_edit.xml
+old/ExamplePapers/4547424.xml
+old/PythonTest/extractionPy/extractionPy/extractionPy.pyproj
+old/PythonTest/extractionPy/extractionPy/extractionPy.py
+old/PythonTest/extractionPy/extractionPy.sln
+old/PythonTest/.vscode/settings.json
+old/PythonTest/.vscode/launch.json
+old/PubmedParser/pubmed_parser-0.1/setup.py
+old/PubmedParser/pubmed_parser-0.1/scripts/utils.py
+old/PubmedParser/pubmed_parser-0.1/scripts/pubmed_oa_spark.py
+old/PubmedParser/pubmed_parser-0.1/scripts/medline_spark.py
+old/PubmedParser/pubmed_parser-0.1/scripts/README.md
+old/PubmedParser/pubmed_parser-0.1/data/medline16n0902.xml.gz
+old/PubmedParser/pubmed_parser-0.1/data/mds526.nxml
+old/PubmedParser/pubmed_parser-0.1/data/ehp-116-1694.nxml
+old/PubmedParser/pubmed_parser-0.1/data/cc11003.nxml
+old/PubmedParser/pubmed_parser-0.1/data/6605965a.nxml
+old/PubmedParser/pubmed_parser-0.1/data/1472-6831-8-11.nxml
+old/ExamplePapers/PMC5399602.nxml
+old/ExamplePapers/PMC5232417.nxml
+old/ExamplePapers/PMC4982482.nxml
+old/ExamplePapers/PMC4867786.nxml
+old/ExamplePapers/PMC4359276.nxml
+old/ExamplePapers/PMC3898277.nxml
+old/ExamplePapers/PMC3778923.nxml
+old/ExamplePapers/Not checked example papers/PMC6057268.nxml
+old/ExamplePapers/Not checked example papers/PMC5948100.nxml
+old/ExamplePapers/Not checked example papers/PMC5948099.nxml
+old/ExamplePapers/4265178.xml
+old/ExamplePapers/3929047.xml
+old/ExamplePapers/3659440.xml
+old/Calculate Partial Eta Omega Epsilon Squared Albers Lakens 2018.xlsx
+database/database.sqlite
+data/oa_file_list.csv
+OmegaSquaredCalculations.txt
+old/PubmedParser/pubmed_parser-0.1/pubmed_parser/pubmed_web_parser.py
+old/PubmedParser/pubmed_parser-0.1/pubmed_parser/pubmed_oa_parser.py
+old/PubmedParser/pubmed_parser-0.1/pubmed_parser/medline_parser.py
+old/PubmedParser/pubmed_parser-0.1/pubmed_parser/__init__.py
+old/PubmedParser/pubmed_parser-0.1/data/pone.0046493.nxml
+old/PubmedParser/pubmed_parser-0.1/data/pone.0000217.nxml
+old/PubmedParser/pubmed_parser-0.1/data/pntd.0002065.nxml
+old/PubmedParser/pubmed_parser-0.1/data/pmids.txt
+old/PubmedParser/pubmed_parser-0.1/data/1471-2180-11-174.nxml
+old/PubmedParser/pubmed_parser-0.1/README.md
+old/PubmedParser/pubmed_parser-0.1/LICENSE
+old/LabelingData/presentingInfoForPresentation.R
+old/ExamplePapers/PMC5794850 - Copy.html
+old/ExamplePapers/PMC5788455.nxml
+old/ExamplePapers/PMC5472180.nxml
+~WRL3798.tmp
+packrat/src/packrat/packrat_0.5.0.tar.gz
+packrat/packrat.opts
