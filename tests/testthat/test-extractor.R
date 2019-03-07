@@ -15,7 +15,8 @@ testF <- c("F(1, 12345) = 12.42345",
            "F ( 1, 12345 ) = 12.,  p = .01",
            "F ( 1, 12345 ) = 12 p = 1.01",
            "F(1, 12345) = 12.42345, p < .01",
-           "F1, 12345 = 12.42345, p < .01")
+           "F1, 12345 = 12.42345, p < .01",
+           "F1, 12345 = 12.42345, P < .01")
 
 testT <- c("t(15) = 12.42345",
            "t(1)=12.42345",
@@ -45,7 +46,8 @@ testT <- c("t(15) = 12.42345",
            "t (1345 ) = 1",
            "t (1345 ) = .42345",
            "t (1345 ) = 12.",
-           "t (1345 ) = 12.0, p = .99")
+           "t (1345 ) = 12.0, p = .99",
+           "t (1345 ) = 12.0, P = .99")
 
 testR <- c("r(1) = .42345",
            "r(2)= .1345",
@@ -84,37 +86,53 @@ testEtaString <- str_flatten(testEta, collapse = " ")
 
 
 test_that("t test extractor works", {
-  expect_identical(extractTestStats(testTString)[[3]], testT)
-  expect_identical(extractTestStats(testTString)[[2]],
+  extracted <- extractTestStats(testTString)
+  expect_identical(extracted[[3]], testT)
+  expect_identical(extracted[[2]],
                      str_remove_all(testT, "\\s"))
+  expect_identical(extracted[[4]],
+                   str_remove_all(testT, "t\\s*\\(?\\s*\\d*\\s*\\)?\\s*\\=\\s*"))
+  expect_identical(extracted[[5]],
+                   str_extract(testT, "(?<=((p|P)\\s[0,5]\\=\\s[0,5]))\\d"))
+  
 })
 test_that("F test extractor works", {
-  expect_identical(extractTestStats(testFString)[[3]], testF)
-  testthat::expect_identical(extractTestStats(testFString)[[2]],
+  extracted <- extractTestStats(testFString)
+  expect_identical(extracted[[3]], testF)
+  testthat::expect_identical(extracted[[2]],
                      stringr::str_remove_all(testF, "\\s"))
 })
 test_that("correlational test extractor works", {
-  expect_identical(extractTestStats(testRString)[[3]], testR[-9])
-  expect_identical(extractTestStats(testRString)[[2]],
+  extracted <- extractTestStats(testRString)
+  expect_identical(extracted[[3]], testR[-9])
+  expect_identical(extracted[[2]],
                      str_remove_all(testR, "\\s")[-9])
 })
 
 test_that("chi test extractor works", {
-  expect_identical(extractTestStats(testChiString)[[3]], testChi)
-  expect_identical(extractTestStats(testChiString)[[2]],
+  extracted <- extractTestStats(testChiString)
+  expect_identical(extracted[[3]], testChi)
+  expect_identical(extracted[[2]],
                      str_remove_all(testChi, "\\s"))
 })
 
 
 test_that("eta squared extractor works", {
-  expect_identical(extractTestStats(testEtaString)[[3]], testEta)
-  expect_identical(extractTestStats(testEtaString)[[2]],
+  extracted <- extractTestStats(testEtaString)
+  expect_identical(extracted[[3]], testEta)
+  expect_identical(extracted[[2]],
                    str_remove_all(testEta, "\\s"))
+  expect_identical(extracted[[4]], 
+                   str_remove_all(testEta, "(η2)?(η)?[a-zA-Z]*\\s*\\=*\\s*")) 
+  expect_true(all(is.na(extracted[[5]])))
 })
 
 test_that("cohen's d extractor works", {
-  expect_identical(extractTestStats(testDString)[[3]], testD)
-  expect_identical(extractTestStats(testDString)[[2]],
+  extracted <- extractTestStats(testDString)
+  expect_identical(extracted[[3]], testD)
+  expect_identical(extracted[[2]],
                    str_remove_all(testD, "\\s"))
+  expect_identical(extracted[[4]], str_remove_all(testD, "[a-zA-Z]*\\s*\\=*\\s*")) 
+  expect_true(all(is.na(extracted[[5]])))
 }
 )

@@ -34,8 +34,11 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
         TRUE ~ NA_character_
       )
     p <-
-      stringr::str_extract(cleanedTestStat,
-                           "(?<=(p=?))[<>]?\\d?\\.\\d+e?-?\\d*")
+      stringr::str_extract(
+        cleanedTestStat,
+        "(?<=(p\\s{0,3}=?\\s{0,3}))(<\\s{0,3})?(>\\s{0,3})?\\d?\\.\\d+e?-?\\d*")
+    
+    +         "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))[(<\\s{0,5})(>\\s{0,5})]?\\d?\\.\\d+e?-?\\d*"))
     tibble::data_frame(
       value = testStatistic,
       df1 = df1,
