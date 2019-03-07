@@ -14,11 +14,9 @@ concat <- function(text) {
   }
 }
 
-
 # This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R,
 # does some final extra cleaning if any tags / weird characters remain
 processHTML <- function(strings){
-
   # Remove subscripts (except for p_rep)
   strings <- lapply(strings, gsub, pattern = "<sub>(?!rep).*?</sub>", replacement = "", perl = TRUE)
 
@@ -42,12 +40,10 @@ processHTML <- function(strings){
 
   # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
   strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = "")
-
-  # replacing unicode minus sign with R recognised hyphen/minus sign
+  # replacing unicode minus sign with R recognised minus sign
   strings <- lapply(strings, str_replace_all, pattern = "\\u2212", replacement = "-")
   # replcaing unicode short spaces that are not always picked up above
   strings <- lapply(strings, str_replace_all, pattern = "\\u2009", replacement = " ")
-
   return(strings)
 }
 
@@ -61,15 +57,15 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # correlations: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5588100&metadataPrefix=pmc,
 # F statistics: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
+# "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-# call <- articles$oaiCall[ trainingSet ][3]
+# call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc" articles$oaiCall[ trainingSet ][11]
 
  # pullAndProcess(call)
 # example with F and t stats : articles$oaiCall[7023]
 
-pullAndProcess <- function(call) {
-paper <- read_html(call)
+pullPMC <- function(call) {
+paper <- read_html(call) #"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
 
 ## Metadata extraction
 PMCID  <-
@@ -166,65 +162,36 @@ sections <-  xml_find_all(paper, "//article/sec")
 titles <-  xml_text(xml_find_all(sections, "title"))
 
 
+# These sections are not necessary now - unless the above bit does not work
+# unlabPs_nodes <- xml_find_all(paper, "//p")
 
-##### Unlabbled here
-if (sum(!str_detect(titles, regex(
-  paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"),
-  ignore_case = T ))) > 0) {
-  index <-
-    which(!str_detect(titles, regex(
-      paste(
-        introNames,
-        methodsNames,
-        resultsNames,
-        discussionNames,
-        sep = "|"
-      ),
-      ignore_case = T
-    )))
-  unlabSection <- xml_text(sections[index])
-}
+# #### Unlabbled here
+# if (sum(!str_detect(titles, regex(
+#   paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"),
+#   ignore_case = T ))) > 0) {
+#   index <-
+#     which(!str_detect(titles, regex(
+#       paste(
+#         introNames,
+#         methodsNames,
+#         resultsNames,
+#         discussionNames,
+#         sep = "|"
+#       ),
+#       ignore_case = T
+#     )))
+#   unlabSection <- xml_text(sections[index])
+# }
 
-# Adding in any untitled paragraphs here, only slightly testsed
-unlabText <- NA
-if (length(unlabPs_nodes) > 0) {
-  unlabText[[length(unlabSection) + 1]] <- xml_text(unlabPs_nodes)
-  unlabText <- paste(unlist(unlabSection), collapse = ' ')
-} else {unlabText <- unlabSection}
+# # Adding in any untitled paragraphs here, only slightly testsed
+# unlabText <- NA
+# if (length(unlabPs_nodes) > 0) {
+#   unlabText[[length(unlabSection) + 1]] <- xml_text(unlabPs_nodes)
+#   unlabText <- paste(unlist(unlabSection), collapse = ' ')
+# } else {unlabText <- unlabSection}
 
 # seperating the sections by, if there are any sections titled matching the section heads
-# looping through each of the sections that match the names and putting them in a list -
-introText <- NA
-if (sum(str_detect(titles, (regex(
-  introNames, ignore_case = T )))) > 0) {
-  index <-
-    which(str_detect(titles, regex(introNames, ignore_case = T)))
-  introText <- xml_text(sections[index])
-}
-
-methodsText <- NA
-if (sum(str_detect(titles, (regex(
-  methodsNames, ignore_case = T )))) > 0) {
-  index <-
-    which(str_detect(titles, regex(methodsNames, ignore_case = T)))
-  methodsText <- xml_text(sections[index])
-}
-
-resultsText <- NA
-if (sum(str_detect(titles, (regex(
-  resultsNames, ignore_case = T )))) > 0) {
-  index <-
-    which(str_detect(titles, regex(resultsNames, ignore_case = T)))
-  resultsText <- xml_text(sections[index])
-}
-
-discussionText <- NA
-if (sum(str_detect(titles, (regex(
-  discussionNames, ignore_case = T )))) > 0) {
-  index <-
-    which(str_detect(titles, regex(discussionNames, ignore_case = T)))
-  discussionText <- xml_text(sections[index])
-}
+textOutput <- data.frame(titles, xml_text(sections), stringsAsFactors = F)
 
 # Figure out authors information better here
  output <- list(
@@ -249,42 +216,41 @@ if (sum(str_detect(titles, (regex(
     PMCID,
     surname = AuthorSurnames,
     firstname = AuthorFirstNames),
-
-  text = processHTML(
-    data_frame(
-      PMCID,
-      abstract = abstract,
-      intro = concat(introText),
-      methods = concat(methodsText),
-      discussion = concat(discussionText),
-      results = concat(resultsText),
-      unlabelled= concat(unlabText)
-      )
-    )
-  )
-
-# processing all but the PMID with extract test stats
-statisticalOutput <- lapply(output$text[-1], extractTestStats, context = T)
-  # NA rows removed here using a filter:
- notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x, 1)[1] })))
-  if(any(notNAs)) {
-output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[notNAs], .id = "section"))
-} else {
-  output$statisticalOutput <- NA
+  
+  
+  text =
+    data_frame(names = processHTML(c("PMCID", "abstract", textOutput[, 1])),
+               text = processHTML(c(PMCID, abstract, textOutput[, 2])))
+ )
+ return(output)
 }
 
-statCheckOutput <- lapply(output$text[-1], function(x) {
-  if(length(x) > 0){ if(is.na(x)) { return(NA)} else{statcheck(x)}} else NA
-}
-  )
-# NA rows removed here using a filter:
-notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  elementExists))
-if(any(notNAs)) {
-  output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
-} else {
-  output$statCheckOutput <- NA
-}
-return(output)
-}
 
+# extractTestStats(store$text)
+
+
+
+#   # processing all but the PMID with extract test stats
+#   statisticalOutput <- lapply(output$text[-1], extractTestStats, context = T)
+#     # NA rows removed here using a filter:
+#    notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x, 1)[1] })))
+#     if(any(notNAs)) {
+#   output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[notNAs], .id = "section"))
+#   } else {
+#     output$statisticalOutput <- NA
+#   }
+#   
+#   statCheckOutput <- lapply(output$text[-1], function(x) {
+#     if(length(x) > 0){ if(is.na(x)) { return(NA)} else{statcheck(x)}} else NA
+#   }
+#     )
+#   # NA rows removed here using a filter:
+#   notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  elementExists))
+#   if(any(notNAs)) {
+#     output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
+#   } else {
+#     output$statCheckOutput <- NA
+#   }
+#   return(output)
+#   # }
 
