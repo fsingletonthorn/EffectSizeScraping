@@ -228,8 +228,6 @@ textOutput <- data.frame(titles, xml_text(sections), stringsAsFactors = F)
 
 # extractTestStats(store$text)
 
-
-
 #   # processing all but the PMID with extract test stats
 #   statisticalOutput <- lapply(output$text[-1], extractTestStats, context = T)
 #     # NA rows removed here using a filter:
