@@ -1,4 +1,5 @@
-context("test-extractor")
+context("Esffect size / test statistic extraction")
+
 suppressWarnings( library(stringr))
 suppressWarnings( library(base))
 suppressWarnings( library(dplyr))
@@ -223,3 +224,5 @@ test_that("cohen's d extractor works", {
   expect_true(all(is.na(extracted[[5]])))
 }
 )
+
+
