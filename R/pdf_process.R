@@ -3,6 +3,10 @@
 # library(stringr)
 # library(stringi)
 
+true_false <- function(x, chars) {
+  x > chars
+}
+
 
 splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}") {
   # This function is slightly adapted from pdfsearch! https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
@@ -38,9 +42,11 @@ splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}") {
 
 extractPdf <- function(path) {
 
-extractedText <- pdftools::pdf_text("data_/examplePaper.pdf")
+extractedText <- pdftools::pdf_text(path)
 
 splitPdf(extractedText)
 
 }
+
+
 
