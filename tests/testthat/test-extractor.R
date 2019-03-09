@@ -1,8 +1,8 @@
 context("test-extractor")
-library(stringr)
-library(base)
-library(dplyr)
-library(tibble)
+suppressWarnings( library(stringr))
+suppressWarnings( library(base))
+suppressWarnings( library(dplyr))
+suppressWarnings( library(tibble))
 
 # test sets
 testF <- c("F(1, 12345) = 12.42345",
