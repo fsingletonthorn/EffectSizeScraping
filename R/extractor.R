@@ -11,7 +11,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
                 TRUE ~ NA_character_)
     # Add other statistics here below in addition to F
     df2 <-
-      case_when(
+      dplyr::case_when(
         statistic == "F" ~ stringr::str_extract(cleanedTestStat,
                                                 "(?<=,)\\d{1,}"),
         # If people have reported r(n=x) return as n df2 = n - 2
