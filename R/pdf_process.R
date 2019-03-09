@@ -1,36 +1,46 @@
-# pdf extract
-library(pdftools)
-library(stringr)
-# Split pdf by column 
+# # pdf extract
+# library(pdftools)
+# library(stringr)
+# library(stringi)
 
-test <- pdftools::pdf_data("data_/examplePaper.pdf")
-# test <- pdftools::pdf_text("data_/examplePaper.pdf")
 
-# "C:\Program Files (x86)\xpdf-tools-win-4.00\xpdf-tools-win-4.00\bin64\pdftotext.exe" C:\Users\fsingletonthorn\Documents\PhD\EffectSizeScrapingPaper\data_\examplePaper.pdf -layout  C:\Users\fsingletonthorn\Documents\PhD\EffectSizeScrapingPaper\data_\examplePaper.txt
+splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}") {
+  # This function is slightly adapted from pdfsearch! https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
+  x_lines <- stringi::stri_split_lines(x)
+  x_lines <- lapply(x_lines, gsub,
+                    pattern = "^\\s{1,20}",
+                    replacement = "")
+  
+  x_page <- lapply(
+    x_lines,
+    stringi::stri_split_regex,
+    pattern = pattern,
+    omit_empty = NA,
+    simplify = TRUE
+  )
+  
+  page_lines <- unlist(lapply(x_page, nrow))
+  columns <- unlist(lapply(x_page, ncol))
+  
+  num_chars <- lapply(x_page, nchar)
+  num_chars_tf <- lapply(num_chars, true_false, chars = 3)
+  
+  for (xx in seq_along(num_chars_tf)) {
+    num_chars_tf[[xx]][is.na(num_chars_tf[[xx]])] <- FALSE
+  }
+  
+  output <- lapply(seq_along(x_page), function(xx)
+    x_page[[xx]][num_chars_tf[[xx]]])
+  
+  output <- lapply(output, concatPlus)
+  return(output)
+}
 
-page <- 1
-locations <- data.frame(test[[page]]$x, test[[page]]$y)
-columnTotals <- data.frame(table(test[[page]]$x), stringsAsFactors = F)
-orderedCol <- columnTotals[order(columnTotals$Freq,  decreasing = T),]
-hclust_avg <- hclust(distances)
-plot(hclust_avg)
-cut_avg <- cutree(hclust_avg, k = 3)
+extractPdf <- function(path) {
 
-distances <- dist(locations, method = "maximum")
-columnXs <- as.numeric(as.character(orderedCol[1:5, 1]))
-rect.hclust(hclust_avg , k = 3, border = 2:6)
+extractedText <- pdftools::pdf_text("data_/examplePaper.pdf")
 
-# Selecting the line closest to the middle of the page -- Later build in that if it is more than 25% we will not use 
-splitVal <- columnXs[which.min(abs(columnXs - (max(test[[page]]$x) + min(test[[page]]$x)  )/2))]
+splitPdf(extractedText)
 
-# plot
-plot(test[[page]]$x, test[[page]]$y, col = cut_avg)
-abline(v = splitVal - 1)
-abline(v = (max(test[[page]]$x) + min(test[[page]]$x)  )/2, col = "blue")
-
-# Check that the break is near the middle 
-
-# Check that the break goes near the top to near the bottom
-
-# remove duplicates 
+}
 
