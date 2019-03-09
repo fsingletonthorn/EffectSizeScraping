@@ -5,10 +5,19 @@
 # library(lubridate)
 # library(statcheck)
 
-# Concatinate function that is just a better paste
+# Concatinate function that is just a better paste0
 concat <- function(text) {
   if (length(text) > 1) {
     return(str_flatten(text))
+  } else {
+    return(text)
+  }
+}
+
+# concatinate plus function that is just a better paste
+concatPlus <- function(text) {
+  if (length(text) > 1) {
+    return(str_flatten(text, collapse = " "))
   } else {
     return(text)
   }
