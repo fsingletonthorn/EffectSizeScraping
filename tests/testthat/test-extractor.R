@@ -1,4 +1,4 @@
-context("Esffect size / test statistic extraction")
+context("Effect size / test statistic extraction")
 
 suppressWarnings( library(stringr))
 suppressWarnings( library(base))
@@ -57,8 +57,9 @@ testR <- c("r(1) = .42345",
            "r(df = 5) = 1",
            "r (n=6) = .45",
            "r = .7",
-           "correlation of 8",
-           "R2 = .12", # note this should not be included
+           "correlation of 8", 
+           # note the following should not be included in tests (it is removed)
+           "R2 = .12",
            "correlation of 8, p = .009")
 
 testChi <- c("chi square = 12.32",

@@ -3,8 +3,6 @@ suppressWarnings( library(stringr))
 suppressWarnings(library(stringi))
 suppressWarnings(library(pdftools))
 
-
-
 test_that("extractPdf extracts correctly", {
 pdf <- extractPdf("https://osf.io/nztsx/download")
 pdf2 <- extractPdf("https://osf.io/nztsx/download")

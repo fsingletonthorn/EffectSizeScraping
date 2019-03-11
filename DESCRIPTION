@@ -13,9 +13,9 @@ RoxygenNote: 6.1.1
 Suggests: 
     testthat
 Requires: 
-    purrr >= 0.2.5
-    stringr >= 1.3.1
-    tibble >= 1.4.2
+    purrr
+    stringr
+    tibble
     lubridate
     xml2
     statcheck
