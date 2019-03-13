@@ -68,7 +68,7 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-# call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc" articles$oaiCall[ trainingSet ][11]
+# call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"  # articles$oaiCall[ trainingSet ][11]
 
  # pullAndProcess(call)
 # example with F and t stats : articles$oaiCall[7023]
@@ -235,29 +235,45 @@ textOutput <- data.frame(titles, xml_text(sections), stringsAsFactors = F)
 }
 
 
-# extractTestStats(store$text)
-
-#   # processing all but the PMID with extract test stats
-#   statisticalOutput <- lapply(output$text[-1], extractTestStats, context = T)
-#     # NA rows removed here using a filter:
-#    notNAs <- !is.na( unlist(  lapply(X = statisticalOutput, FUN =  function(x) { slice(x, 1)[1] })))
-#     if(any(notNAs)) {
-#   output$statisticalOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statisticalOutput[notNAs], .id = "section"))
-#   } else {
-#     output$statisticalOutput <- NA
-#   }
-#   
-#   statCheckOutput <- lapply(output$text[-1], function(x) {
-#     if(length(x) > 0){ if(is.na(x)) { return(NA)} else{statcheck(x)}} else NA
-#   }
-#     )
-#   # NA rows removed here using a filter:
-#   notNAs <- unlist(  lapply(X = statCheckOutput, FUN =  elementExists))
-#   if(any(notNAs)) {
-#     output$statCheckOutput <- data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
-#   } else {
-#     output$statCheckOutput <- NA
-#   }
-#   return(output)
-#   # }
+processPMC <- function(pulled_pmc_paper) {
+  # processing all but the PMID with extract test stats
+  statisticalOutput <-
+    lapply(output$text[-1], extractTestStats, context = T)
+  # NA rows removed here using a filter:
+  notNAs <-
+    !is.na(unlist(lapply(
+      X = statisticalOutput,
+      FUN =  function(x) {
+        slice(x, 1)[1]
+      }
+    )))
+  if (any(notNAs)) {
+    output$statisticalOutput <-
+      data.frame(PMCID = output$text[[1]],
+                 bind_rows(statisticalOutput[notNAs], .id = "section"))
+  } else {
+    output$statisticalOutput <- NA
+  }
+  
+  statCheckOutput <- lapply(output$text[-1], function(x) {
+    if (length(x) > 0) {
+      if (is.na(x)) {
+        return(NA)
+      } else{
+        statcheck(x)
+      }
+    } else
+      NA
+  })
+  # NA rows removed here using a filter:
+  notNAs <-
+    unlist(lapply(X = statCheckOutput, FUN =  elementExists))
+  if (any(notNAs)) {
+    output$statCheckOutput <-
+      data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
+  } else {
+    output$statCheckOutput <- NA
+  }
+  return(output)
+}
 
