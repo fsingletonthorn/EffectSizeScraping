@@ -7,9 +7,8 @@ true_false <- function(x, chars) {
   x > chars
 }
 
-
 splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}") {
-  # This function is slightly adapted from pdfsearch! https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
+  # This function is slightly adapted from pdfsearch - https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
   x_lines <- stringi::stri_split_lines(x)
   x_lines <- lapply(x_lines, gsub,
                     pattern = "^\\s{1,20}",
@@ -47,6 +46,3 @@ extractedText <- pdftools::pdf_text(path)
 splitPdf(extractedText)
 
 }
-
-
-

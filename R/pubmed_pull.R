@@ -5,7 +5,7 @@
 # library(lubridate)
 # library(statcheck)
 
-# Concatinate function that is just a better paste0
+# Concatinate function that is just a "better" paste0
 concat <- function(text) {
   if (length(text) > 1) {
     return(str_flatten(text))
@@ -14,7 +14,7 @@ concat <- function(text) {
   }
 }
 
-# concatinate plus function that is just a better paste
+# concatinate plus function that is just a "better" paste
 concatPlus <- function(text) {
   if (length(text) > 1) {
     return(str_flatten(text, collapse = " "))
@@ -50,9 +50,9 @@ processHTML <- function(strings){
   # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
   strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = "")
   # replacing unicode minus sign with R recognised minus sign
-  strings <- lapply(strings, str_replace_all, pattern = "\\u2212", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2212", replacement = "-")
   # replcaing unicode short spaces that are not always picked up above
-  strings <- lapply(strings, str_replace_all, pattern = "\\u2009", replacement = " ")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2009", replacement = " ")
   return(strings)
 }
 
@@ -68,20 +68,22 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
+call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5588100&metadataPrefix=pmc"
+
 # call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"  # articles$oaiCall[ trainingSet ][11]
 
- # pullAndProcess(call)
+# pullAndProcess(call)
 # example with F and t stats : articles$oaiCall[7023]
 
 pullPMC <- function(call) {
-paper <- read_html(call) #"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
+paper <- xml2::read_html(call) #"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
 
 ## Metadata extraction
 PMCID  <-
   paste0("PMC",
-         str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]*"))
+         stringr::str_extract(call, "(?<=oai:pubmedcentral.nih.gov:)[0-9]*"))
 pmcIDCheck <-
-  xml_text(xml_find_first(paper, '//article-id[@pub-id-type="pmcid"]'))
+  xml2::xml_text(xml2::xml_find_first(paper, '//article-id[@pub-id-type="pmcid"]'))
 
 # Checking that these match, otherwise we've a problem
 if (PMCID != pmcIDCheck) {
@@ -90,28 +92,28 @@ if (PMCID != pmcIDCheck) {
 
 # DOI
 doi <-
-  xml_text(xml_find_first(paper, '//article-id[@pub-id-type="doi"]'))
+  xml2::xml_text(xml2::xml_find_first(paper, '//article-id[@pub-id-type="doi"]'))
 # Journal name
-journalID <- xml_text(xml_find_first(paper, '//journal-title'))
+journalID <- xml2::xml_text(xml2::xml_find_first(paper, '//journal-title'))
 # Jounral name abbreviation
-journalIDAbrev <- xml_text(xml_find_first(paper, '//journal-id'))
+journalIDAbrev <- xml2::xml_text(xml2::xml_find_first(paper, '//journal-id'))
 # Article issue  # Check
 issue <-
-  xml_text(xml_find_first(paper, '//front/article-meta/issue'))
+  xml2::xml_text(xml2::xml_find_first(paper, '//front/article-meta/issue'))
 # Article volume
 volume <-
-  xml_text(xml_find_first(paper, "//front/article-meta/volume"))
+  xml2::xml_text(xml2::xml_find_first(paper, "//front/article-meta/volume"))
 # date print pub
 pPub <-
-  if (!is.na(xml_find_first(paper, '//pub-date[@pub-type="ppub"]'))) {
-    parse_date_time(str_remove_all(paste(
-      xml_text(
-        xml_find_first(paper, '//pub-date[@pub-type="ppub"]/year')
+  if (!is.na(xml2::xml_find_first(paper, '//pub-date[@pub-type="ppub"]'))) {
+    lubridate::parse_date_time(stringr::str_remove_all(paste(
+      xml2::xml_text(
+        xml2::xml_find_first(paper, '//pub-date[@pub-type="ppub"]/year')
       ), " ",
-      xml_text(
-        xml_find_first(paper, '//pub-date[@pub-type="ppub"]/month')
+      xml2::xml_text(
+        xml2::xml_find_first(paper, '//pub-date[@pub-type="ppub"]/month')
       ), " ",
-      xml_text(xml_find_first(
+      xml2::xml_text(xml2::xml_find_first(
         paper, '//pub-date[@pub-type="ppub"]/day'
       ))
     ), "NA"), orders = c("ymd", "ym", "y"), exact = )
@@ -121,15 +123,15 @@ pPub <-
 
 # date epub
 ePub <-
-  if (!is.na(xml_find_first(paper, '//pub-date[@pub-type="epub"]'))) {
-    parse_date_time(str_remove_all(paste(
-      xml_text(
-        xml_find_first(paper, '//pub-date[@pub-type="epub"]/year')
+  if (!is.na(xml2::xml_find_first(paper, '//pub-date[@pub-type="epub"]'))) {
+    lubridate::parse_date_time(stringr::str_remove_all(paste(
+      xml2::xml_text(
+        xml2::xml_find_first(paper, '//pub-date[@pub-type="epub"]/year')
       ), " ",
-      xml_text(
-        xml_find_first(paper, '//pub-date[@pub-type="epub"]/month')
+      xml2::xml_text(
+        xml2::xml_find_first(paper, '//pub-date[@pub-type="epub"]/month')
       ), " ",
-      xml_text(xml_find_first(
+      xml2::xml_text(xml2::xml_find_first(
         paper, '//pub-date[@pub-type="epub"]/day'
       ))
     ), "NA"), orders = c("ymd", "ym", "y"))
@@ -138,41 +140,41 @@ ePub <-
   }
 
 title <-
-  xml_text(xml_find_first(paper, '//front/article-meta/title-group/article-title'))
+  xml2::xml_text(xml2::xml_find_first(paper, '//front/article-meta/title-group/article-title'))
 
 # Article key words # possibly trim
 keywords <-
-  xml_text(xml_find_all(paper, '//front/article-meta/kwd-group/kwd'))
+  xml2::xml_text(xml2::xml_find_all(paper, '//front/article-meta/kwd-group/kwd'))
 
 ### Authors
 # author names:
 AuthorSurnames <-
-  xml_text(xml_find_all(
+  xml2::xml_text(xml2::xml_find_all(
     paper,
     '//contrib[@contrib-type="author"]/name/surname/text()'
   ))
 AuthorFirstNames <-
-  xml_text(
-    xml_find_all(
+  xml2::xml_text(
+    xml2::xml_find_all(
       paper,
       '//contrib[@contrib-type="author"]/name/given-names/text()'
     )
   )
 
 # Abstract
-abstract_node <- xml_find_all(paper, "//abstract")
+abstract_node <- xml2::xml_find_all(paper, "//abstract")
 # add abstract text 
-abstract <- concat(xml_text(abstract_node))# unlablled paragraphs
+abstract <- concatPlus(xml2::xml_text(abstract_node))
 # unlablled sections 
-unlabPs_nodes <- xml_find_all(paper, "//body/p")
+unlabPs_nodes <- xml2::xml_find_all(paper, "//body/p")
 # article sections
-sections <-  xml_find_all(paper, "//article/sec")
+sections <-  xml2::xml_find_all(paper, "//article/sec")
 # article section titles
-titles <-  xml_text(xml_find_all(sections, "title"))
+titles <-  xml2::xml_text(xml2::xml_find_all(sections, "title"))
 
 
 # These sections are not necessary now - unless the above bit does not work
-# unlabPs_nodes <- xml_find_all(paper, "//p")
+# unlabPs_nodes <- xml2::xml_find_all(paper, "//p")
 
 # #### Unlabbled here
 # if (sum(!str_detect(titles, regex(
@@ -189,22 +191,22 @@ titles <-  xml_text(xml_find_all(sections, "title"))
 #       ),
 #       ignore_case = T
 #     )))
-#   unlabSection <- xml_text(sections[index])
+#   unlabSection <- xml2::xml_text(sections[index])
 # }
 
 # # Adding in any untitled paragraphs here, only slightly testsed
 # unlabText <- NA
 # if (length(unlabPs_nodes) > 0) {
-#   unlabText[[length(unlabSection) + 1]] <- xml_text(unlabPs_nodes)
+#   unlabText[[length(unlabSection) + 1]] <- xml2::xml_text(unlabPs_nodes)
 #   unlabText <- paste(unlist(unlabSection), collapse = ' ')
 # } else {unlabText <- unlabSection}
 
 # seperating the sections by, if there are any sections titled matching the section heads
-textOutput <- data.frame(titles, xml_text(sections), stringsAsFactors = F)
+textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
 
 # Figure out authors information better here
  output <- list(
-  metadata = data_frame(
+  metadata = tibble::tibble(
     PMCID,
     doi,
     journalID,
@@ -214,29 +216,30 @@ textOutput <- data.frame(titles, xml_text(sections), stringsAsFactors = F)
     volume,
     pPub,
     ePub,
-    abstract = ifelse(is_empty(abstract), NA, abstract),
+    abstract = ifelse(purrr::is_empty(abstract), NA, abstract),
     call
   ),
-  keywords = data_frame(
+  keywords = tibble::tibble(
     PMCID,
     keywords),
 
-  authors = data_frame(
+  authors = tibble::tibble(
     PMCID,
     surname = AuthorSurnames,
     firstname = AuthorFirstNames),
   
   
   text =
-    data_frame(names = processHTML(c("PMCID", "abstract", textOutput[, 1])),
-               text = processHTML(c(PMCID, abstract, textOutput[, 2])))
+    tibble::tibble(names = processHTML(c("PMCID", "abstract", textOutput[, 1])),
+               text = processHTML(c(PMCID, ifelse(purrr::is_empty(abstract), NA, abstract), textOutput[, 2])))
  )
  return(output)
 }
 
 
-processPMC <- function(pulled_pmc_paper) {
+processPMC <- function(pulled_pmc_paper_text_list) {
   # processing all but the PMID with extract test stats
+  output <- as.list(pulled_pmc_paper_text_list)
   statisticalOutput <-
     lapply(output$text[-1], extractTestStats, context = T)
   # NA rows removed here using a filter:
@@ -265,6 +268,7 @@ processPMC <- function(pulled_pmc_paper) {
     } else
       NA
   })
+  
   # NA rows removed here using a filter:
   notNAs <-
     unlist(lapply(X = statCheckOutput, FUN =  elementExists))
@@ -276,4 +280,3 @@ processPMC <- function(pulled_pmc_paper) {
   }
   return(output)
 }
-
