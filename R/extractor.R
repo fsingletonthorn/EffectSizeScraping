@@ -1,3 +1,4 @@
+
 # helper function to split the output into constituate parts
 splitTestStatToDF <- function(statistic, cleanedTestStat) {
   if ((length(cleanedTestStat) > 0) & (length(statistic) > 0)) {
@@ -6,7 +7,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
                                               "=", simplify = T)[, 2],
                            "-?\\d*\\.?\\d*")
     df1 <-
-      case_when(statistic == "F" ~ c(stringr::str_extract(cleanedTestStat,
+      dplyr::case_when(statistic == "F" ~ c(stringr::str_extract(cleanedTestStat,
                                                           "\\d{1,}(?=,)")),
                 TRUE ~ NA_character_)
     # Add other statistics here below in addition to F
@@ -148,7 +149,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
   # extracting all text which matches patterns
 
   extracted <-
-    stringr::str_extract_all(inputText , pattern = regex(patterns, ignore_case = TRUE))
+    stringr::str_extract_all(inputText , pattern = stringr::regex(patterns, ignore_case = TRUE))
 
   # removing whitespace that can be captured in the regular expressions above
   extractedClean <-
