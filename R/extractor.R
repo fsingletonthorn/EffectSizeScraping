@@ -78,7 +78,7 @@ addContext <- function(extracted, contextSize) {
 # For this to work it needs to be fed a single string
 # function to extract text, remove whitespaces and unicode encodings of the
 # minus sign and return test statistic original data plus df
-extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
+extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA) {
 
   # patterns -
   patternT <-
@@ -161,8 +161,12 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
   if(context == T) {
     patternsContext <- lapply(extracted, addContext, contextSize = contextSize)
     # extracting discovered hits + context
-    extractedContext <- lapply(patternsContext, function(patternsContext)
-      unlist(stringr::str_extract(inputText, stringr::regex(as.character(patternsContext), ignore_case = T))))
+    
+    extractedContext <-
+      lapply(patternsContext, function(patternsContext)
+        unlist(stringr::str_extract(
+          inputText, stringr::regex(as.character(patternsContext), ignore_case = T)
+        )))
     # returning all of this
     statisticalOutput <- rbind(tibble::data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
                  tibble::data_frame(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
@@ -171,8 +175,8 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
                  tibble::data_frame(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]],  context = extractedContext[[5]]),
                  tibble::data_frame(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]],  context = extractedContext[[6]]),
                  tibble::data_frame(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]]),
-                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]],  context = extractedContext[[8]]))
-
+                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]],  context = extractedContext[[8]]),
+                 stringsAsFactors = F, row.names = NULL)
     } else {
     statisticalOutput <- rbind(tibble::data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
                  tibble::data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
@@ -181,22 +185,24 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
                  tibble::data_frame(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]]),
                  tibble::data_frame(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]]),
                  tibble::data_frame(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]]),
-                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]]))
+                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]]),
+                 stringsAsFactors = F, row.names = NULL)
     }
  if(purrr::is_empty(statisticalOutput[[1]]) |  (nrow(statisticalOutput) < 1)) {
    if(context == F) {
-     tibble::data_frame(
+     output <- tibble::data_frame(
        statistic = NA, cleaned = NA, reported = NA, value = NA,
        df1 = NA, df2  = NA, p = NA)
      } else {
-     tibble::data_frame(
+       output <- tibble::data_frame(
        statistic = NA, cleaned = NA, reported = NA, context = NA,
        value = NA,  df1 = NA, df2  = NA, p = NA)
      }
    } else {
-   cbind(statisticalOutput,
+   output <- cbind(statisticalOutput,
          splitTestStatToDF(statistic = statisticalOutput$statistic,
                            cleanedTestStat = statisticalOutput$cleaned),
          stringsAsFactors = F)
-  }
+   }
+  if(is.na(sectionName)) {output} else {data.frame(names = as.character(sectionName), output, stringsAsFactors = F, row.names = NULL)}
 }
