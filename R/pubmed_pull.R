@@ -68,7 +68,7 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5588100&metadataPrefix=pmc"
+call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
 # call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"  # articles$oaiCall[ trainingSet ][11]
 
@@ -172,35 +172,6 @@ sections <-  xml2::xml_find_all(paper, "//article/sec")
 # article section titles
 titles <-  xml2::xml_text(xml2::xml_find_all(sections, "title"))
 
-
-# These sections are not necessary now - unless the above bit does not work
-# unlabPs_nodes <- xml2::xml_find_all(paper, "//p")
-
-# #### Unlabbled here
-# if (sum(!str_detect(titles, regex(
-#   paste(introNames, methodsNames, resultsNames, discussionNames, sep = "|"),
-#   ignore_case = T ))) > 0) {
-#   index <-
-#     which(!str_detect(titles, regex(
-#       paste(
-#         introNames,
-#         methodsNames,
-#         resultsNames,
-#         discussionNames,
-#         sep = "|"
-#       ),
-#       ignore_case = T
-#     )))
-#   unlabSection <- xml2::xml_text(sections[index])
-# }
-
-# # Adding in any untitled paragraphs here, only slightly testsed
-# unlabText <- NA
-# if (length(unlabPs_nodes) > 0) {
-#   unlabText[[length(unlabSection) + 1]] <- xml2::xml_text(unlabPs_nodes)
-#   unlabText <- paste(unlist(unlabSection), collapse = ' ')
-# } else {unlabText <- unlabSection}
-
 # seperating the sections by, if there are any sections titled matching the section heads
 textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
 
@@ -236,24 +207,24 @@ textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
  return(output)
 }
 
-
 processPMC <- function(pulled_pmc_paper_text_list) {
   # processing all but the PMID with extract test stats
   output <- as.list(pulled_pmc_paper_text_list)
+  
   statisticalOutput <-
-    lapply(output$text[-1], extractTestStats, context = T)
+    apply(data.frame(unlist(output[1]), unlist(output[2]), stringsAsFactors = F), 1,
+          function(x) {
+            extractTestStats(x[2], sectionName = x[1], context = T)
+          })
+  
   # NA rows removed here using a filter:
-  notNAs <-
-    !is.na(unlist(lapply(
-      X = statisticalOutput,
-      FUN =  function(x) {
-        dplyr::slice(x, 1)[1]
-      }
-    )))
-  if (any(notNAs)) {
+  notNAs <- unlist(lapply(statisticalOutput, function(x) !is.na(x[[2]][1])))
+
+    if (any(notNAs)) {
     output$statisticalOutput <-
       data.frame(PMCID = output$text[[1]],
-                 dplyr::bind_rows(statisticalOutput[notNAs], .id = "section"))
+                 dplyr::bind_rows(statisticalOutput[notNAs]), 
+                 stringsAsFactors = F)
   } else {
     output$statisticalOutput <- NA
   }
@@ -270,13 +241,14 @@ processPMC <- function(pulled_pmc_paper_text_list) {
   })
   
   # NA rows removed here using a filter:
-  notNAs <-
-    unlist(lapply(X = statCheckOutput, FUN =  elementExists))
-  if (any(notNAs)) {
-    output$statCheckOutput <-
-      data.frame(PMCID = output$text[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
-  } else {
-    output$statCheckOutput <- NA
-  }
+   notNAs <-
+     unlist(lapply(X = statCheckOutput, FUN =  elementExists))
+   if (any(notNAs)) {
+     output$statCheckOutput <-
+       data.frame(PMCID = output$text[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
+   } else {
+     output$statCheckOutput <- NA
+   }
   return(output)
 }
+
