@@ -225,4 +225,11 @@ test_that("cohen's d extractor works", {
 }
 )
 
+test_that("basic labelling works", {
+  extracted <- extractTestStats(testDString, sectionName =  "as")
+  expect_identical(extracted[[1]][1], "as")
+}
+)
+
+
 
