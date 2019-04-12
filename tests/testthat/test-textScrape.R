@@ -1,7 +1,4 @@
 context("Scraping functions")
-suppressWarnings( library(stringr))
-suppressWarnings(library(stringi))
-suppressWarnings(library(pdftools))
 
 test_that("extractPdf extracts all pages", {
 pdf <- extractPdf("https://osf.io/nztsx/download")

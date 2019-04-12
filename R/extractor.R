@@ -61,7 +61,7 @@ elementExists <- function( full_index_path ){
   })
 }
 
-# Function to add + and minus "contextSize" characters for a regex pattern
+# Function to add plus and minus "contextSize" characters for a regex pattern
 addContext <- function(extracted, contextSize) {
   if (length(extracted) > 0) {
     newSearchR  <- extracted %>%
@@ -162,7 +162,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100) {
     patternsContext <- lapply(extracted, addContext, contextSize = contextSize)
     # extracting discovered hits + context
     extractedContext <- lapply(patternsContext, function(patternsContext)
-      unlist(stringr::str_extract(inputText, regex(as.character(patternsContext), ignore_case = T))))
+      unlist(stringr::str_extract(inputText, stringr::regex(as.character(patternsContext), ignore_case = T))))
     # returning all of this
     statisticalOutput <- rbind(tibble::data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
                  tibble::data_frame(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),

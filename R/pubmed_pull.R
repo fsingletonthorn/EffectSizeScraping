@@ -247,13 +247,13 @@ processPMC <- function(pulled_pmc_paper_text_list) {
     !is.na(unlist(lapply(
       X = statisticalOutput,
       FUN =  function(x) {
-        slice(x, 1)[1]
+        dplyr::slice(x, 1)[1]
       }
     )))
   if (any(notNAs)) {
     output$statisticalOutput <-
       data.frame(PMCID = output$text[[1]],
-                 bind_rows(statisticalOutput[notNAs], .id = "section"))
+                 dplyr::bind_rows(statisticalOutput[notNAs], .id = "section"))
   } else {
     output$statisticalOutput <- NA
   }
@@ -263,7 +263,7 @@ processPMC <- function(pulled_pmc_paper_text_list) {
       if (is.na(x)) {
         return(NA)
       } else{
-        statcheck(x)
+        statcheck::statcheck(x)
       }
     } else
       NA
@@ -274,7 +274,7 @@ processPMC <- function(pulled_pmc_paper_text_list) {
     unlist(lapply(X = statCheckOutput, FUN =  elementExists))
   if (any(notNAs)) {
     output$statCheckOutput <-
-      data.frame(PMCID = output$text[[1]], bind_rows(statCheckOutput[notNAs], .id = "section"))
+      data.frame(PMCID = output$text[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
   } else {
     output$statCheckOutput <- NA
   }
