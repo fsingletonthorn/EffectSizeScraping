@@ -18,7 +18,7 @@ concatPlus <- function(text) {
   }
 }
 
-splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}", labelSections = F) {
+splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
   # This function is slightly adapted from pdfsearch - 
   # https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
   x_lines <- stringi::stri_split_lines(x)
@@ -51,17 +51,18 @@ splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}", labelSections = F) {
   output <- lapply(seq_along(x_page), function(xx)
     x_page[[xx]][num_chars_tf[[xx]]])
   
-
-  #   # Label sections by titles in list 
+  
+  # Label sections by their title, if the title is a single word in the 
+  # following list. 
   if (labelSections == T) {
     patterns <-
       paste(
+        "method",
         "methods",
         "results",
         "discussion",
         "conclusion",
         "summary",
-        "conclusion",
         "aims" ,
         "measure",
         "measures",
@@ -76,8 +77,7 @@ splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}", labelSections = F) {
       str_remove_all(vectorOfText, pattern = "[:punct:]|\\d"),
       pattern = regex(paste0("^\\s*(", patterns, ")\\s*$"), ignore_case = T)
     )
-    
-    if(sum(titleLocations > 2)) {
+
     
     dataFrameText <- data.frame(text = vectorOfText, titles = 
                           ifelse(titleLocations, vectorOfText, NA),
@@ -87,31 +87,27 @@ splitPdf <- function(x, pattern = "\\p{WHITE_SPACE}{3,}", labelSections = F) {
     dataFrameText$titles <- zoo::na.locf(dataFrameText$titles,na.rm = FALSE)
     # 
     dataFrameText$titles[is.na(dataFrameText$titles)] <- "unlabelled"
-    }
-    outputLabled <- tapply(dataFrameText$text, concatPlus, INDEX = dataFrameText$titles)
+
+    
+    outputLabeled <- tapply(dataFrameText$text, 
+                           FUN = concatPlus, 
+                           INDEX = dataFrameText$titles, 
+                           simplify = T)
+    
+    return(tibble::tibble(names = row.names(outputLabeled), text = outputLabeled))
   }
   
-            # ["^(\\w*\\W*)?\\s*[abstract|introduction|Background|conclusion]\\s*(\\w*\\W*)?$"] )    stringr::regex(paste0("^\\s?\\w?\\s?", patterns, "\\s\\w?\\s?"),
- #  ignore_case = T)
-  # 
-  # 
-  #   methodsNames <- "method|aims|measur"
-  #   resultsNames <- "result"
-  #   discussionNames <- "discussion|conclusion|conclud|summary"
-  #   
-  #     
-  # }
   # Removing line break hyphons (words will still be separated by a space)
   # output <- lapply(x_page, stringr::str_remove, pattern =  "\\-\\Z")
   
   
   # Concatinating columns
   
-
   output <- lapply(output, concatPlus)
   
   return(output)
 }
+
 
 extractPdf <- function(path) {
 
@@ -123,7 +119,7 @@ splitPdf(extractedText)
 
 # Figuring out how to extract headings from the file 
 # temp <- pdftools::pdf_text("https://osf.io/nztsx/download")
-# tempSplit <- splitPdf(temp)
+# tempSplit <- splitPdf(temp, labelSections = T)
 
 
 
