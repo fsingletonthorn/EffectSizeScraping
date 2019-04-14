@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Felix Singleton Thorn
 Maintainer: Felix Singleton Thorn  <fsingletonthorn@gmail.com>
 Description: Downloads, reads, and extracts test statistics and effect sizes 
-    from papers. 
+    from papers.
 License: MIT
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +20,4 @@ Requires:
     lubridate
     xml2
     statcheck
+    zoo
