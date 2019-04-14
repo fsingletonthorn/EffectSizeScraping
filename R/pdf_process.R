@@ -52,33 +52,53 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
     x_page[[xx]][num_chars_tf[[xx]]])
   
   
-  # Label sections by their title, if the title is a single word in the 
-  # following list. 
-  if (labelSections == T) {
+  # Label sections by their title, if the title is a single word on a line on 
+  # its own  in the following list. 
+  if(labelSections == T) {
     patterns <-
       paste(
+        "abstract",
+        # Introduction / aims
+        "aims",
+        "introduction",
+        # Method
+        "Material and methods",
         "method",
         "methods",
+        "measure",
+        "measures",
+        "analysis",
+        # Results / discussion / conclusion
         "results",
         "discussion",
         "conclusion",
+        "Conclusions",
         "summary",
-        "aims" ,
-        "measure",
-        "measures",
-        "introduction",
-        "abstract",
+        "Results and Discussion",
+        "discussion and results",
+        # "study" is not a section, but does indicate new study is being introed
+        "Study",
+        "experiment", 
+        # references
+        "references",
+        "bibliography",
+        # "Acknowledgments" author statement etc. Will also be discarded 
+        "Acknowledgments",
+        "Conflict of Interests",
+        "Conflict of Interest",
+        "Conflict of Interest statement",
         sep = "|"
       )
     
+# NOTE THIS CURRENTLY READS THE TEXT IN THE WRONG ORDER - NEED TO FIX !!! e.g., call on: https://osf.io/nztsx/, abstract is read as part of introduction
+    
     vectorOfText <-  do.call(c, output)
     
-    titleLocations <- str_detect(
-      str_remove_all(vectorOfText, pattern = "[:punct:]|\\d"),
-      pattern = regex(paste0("^\\s*(", patterns, ")\\s*$"), ignore_case = T)
+    titleLocations <- stringr::str_detect(
+      stringr::str_remove_all(vectorOfText, pattern = "[:punct:]|\\d"),
+      pattern = stringr::regex(paste0("^\\s*(", patterns, ")\\s*$"), ignore_case = T)
     )
 
-    
     dataFrameText <- data.frame(text = vectorOfText, titles = 
                           ifelse(titleLocations, vectorOfText, NA),
                           stringsAsFactors = F)
@@ -87,40 +107,31 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
     dataFrameText$titles <- zoo::na.locf(dataFrameText$titles,na.rm = FALSE)
     # 
     dataFrameText$titles[is.na(dataFrameText$titles)] <- "unlabelled"
-
     
     outputLabeled <- tapply(dataFrameText$text, 
                            FUN = concatPlus, 
                            INDEX = dataFrameText$titles, 
                            simplify = T)
     
-    return(tibble::tibble(names = row.names(outputLabeled), text = outputLabeled))
+    return(tibble::tibble(names = row.names(outputLabeled), 
+                      text = outputLabeled))
   }
-  
-  # Removing line break hyphons (words will still be separated by a space)
-  # output <- lapply(x_page, stringr::str_remove, pattern =  "\\-\\Z")
-  
-  
+
   # Concatinating columns
   
   output <- lapply(output, concatPlus)
   
-  return(output)
+  return(tibble::tibble(names = 1:length(output), text = output))
 }
-
 
 extractPdf <- function(path) {
 
 extractedText <- pdftools::pdf_text(path)
 
-splitPdf(extractedText)
+extractedText <- splitPdf(extractedText, labelSections = T)
+
+extractedText$text <- unlist(processText(extractedText$text))
+
+return(extractedText)
 
 }
-
-# Figuring out how to extract headings from the file 
-# temp <- pdftools::pdf_text("https://osf.io/nztsx/download")
-# tempSplit <- splitPdf(temp, labelSections = T)
-
-
-
-
