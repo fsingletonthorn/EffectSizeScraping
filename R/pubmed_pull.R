@@ -25,7 +25,7 @@ concatPlus <- function(text) {
 
 # This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R,
 # does some final extra cleaning if any tags / weird characters remain
-processHTML <- function(strings){
+processText <- function(strings){
   # Remove subscripts (except for p_rep)
   strings <- lapply(strings, gsub, pattern = "<sub>(?!rep).*?</sub>", replacement = "", perl = TRUE)
 
@@ -53,6 +53,13 @@ processHTML <- function(strings){
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2212", replacement = "-")
   # replcaing unicode short spaces that are not always picked up above
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2009", replacement = " ")
+  # replcaing mathematical symbols with interpretable ones 
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d443", replacement = "p")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d45b", replacement = "n")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d6fd", replacement = "beta")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d6fc", replacement = "alpha")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d712", replacement = "chi")
+  
   return(strings)
 }
 
@@ -68,11 +75,10 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
+call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc"
 
 # call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"  # articles$oaiCall[ trainingSet ][11]
 
-# pullAndProcess(call)
 # example with F and t stats : articles$oaiCall[7023]
 
 pullPMC <- function(call) {
@@ -201,8 +207,8 @@ textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
   
   
   text =
-    tibble::tibble(names = processHTML(c("PMCID", "abstract", textOutput[, 1])),
-               text = processHTML(c(PMCID, ifelse(purrr::is_empty(abstract), NA, abstract), textOutput[, 2])))
+    tibble::tibble(names = processText(c("PMCID", "abstract", textOutput[, 1])),
+               text = processText(c(PMCID, ifelse(purrr::is_empty(abstract), NA, abstract), textOutput[, 2])))
  )
  return(output)
 }
