@@ -3,6 +3,7 @@
 # library(stringr)
 # library(stringi)
 
+
 # Function to ID whether a cell is > chars, if empty  gives FALSE
 true_false <- function(x, chars) {
   output <- x > chars
@@ -19,7 +20,7 @@ concatPlus <- function(text) {
 }
 
 splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
-  # This function is slightly adapted from pdfsearch - 
+  # This function is adapted from the pdfsearch package - 
   # https://github.com/lebebr01/pdfsearch/blob/master/R/split_pdf.r
   x_lines <- stringi::stri_split_lines(x)
   # Removes white space at the begining of lines
@@ -42,15 +43,15 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
   
   # Figuring out whether the number of characters per cell > 0,
   # setting chars = 3 would get rid of most page numbers, but also could remove 
-  # words, currently = 0.
+  # words that are alone on a line, currently = 0.
   num_chars <- lapply(x_page, nchar)
   num_chars_tf <- lapply(num_chars, true_false, chars = 0)
   
   
+  # This misorders things
   #  Removing empty cells and ordering the output
   output <- lapply(seq_along(x_page), function(xx)
     x_page[[xx]][num_chars_tf[[xx]]])
-  
   
   # Label sections by their title, if the title is a single word on a line on 
   # its own  in the following list. 
@@ -67,30 +68,39 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "methods",
         "measure",
         "measures",
+        "methods and measures",
+        "method and measures",
+        "measures and method",
+        "measures and methods",
+        "design",
+        "design and manipulations",
+        "manipulations",
         "analysis",
         # Results / discussion / conclusion
         "results",
         "discussion",
+        "general discussion",
         "conclusion",
+        "experiment",
         "Conclusions",
         "summary",
-        "Results and Discussion",
+        "results and discussion",
         "discussion and results",
-        # "study" is not a section, but does indicate new study is being introed
-        "Study",
+        # "study" is not a section, but may suggest a new study is being introed
+        "study",
+        paste(paste("study", base::letters), collapse = "|"),
         "experiment", 
+        paste(paste("experiment", base::letters), collapse = "|"),
         # references
         "references",
         "bibliography",
-        # "Acknowledgments" author statement etc. Will also be discarded 
+        # "Acknowledgments" author statement etc.  
         "Acknowledgments",
         "Conflict of Interests",
         "Conflict of Interest",
         "Conflict of Interest statement",
         sep = "|"
       )
-    
-# NOTE THIS CURRENTLY READS THE TEXT IN THE WRONG ORDER - NEED TO FIX !!! e.g., call on: https://osf.io/nztsx/, abstract is read as part of introduction
     
     vectorOfText <-  do.call(c, output)
     
