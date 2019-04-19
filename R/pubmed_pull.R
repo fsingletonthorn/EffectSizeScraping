@@ -48,7 +48,7 @@ processText <- function(strings){
   strings <- lapply(strings, gsub, pattern = "&minus;", replacement = "-", fixed = TRUE)
 
   # removing newline breaks, non-breaking spaces, '&#x000a0;', &#x00026;
-  strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = "")
+  strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = " ")
   # replacing unicode minus sign with R recognised minus sign
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2212", replacement = "-")
   # replcaing unicode short spaces that are not always picked up above
@@ -213,9 +213,9 @@ textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
  return(output)
 }
 
-processPMC <- function(pulled_pmc_paper_text_list) {
+processPMC <- function(paper_text_list) {
   # processing all but the PMID with extract test stats
-  output <- as.list(pulled_pmc_paper_text_list)
+  output <- as.list(paper_text_list)
   
   statisticalOutput <-
     apply(data.frame(unlist(output[1]), unlist(output[2]), stringsAsFactors = F), 1,
