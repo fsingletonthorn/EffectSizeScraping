@@ -68,7 +68,7 @@ test_that("extractPdf extracts files with correctly labeled sections", {
 })
 
 # Also at: "data_/trainingSet/PMC5420575.pdf"
-test_that("extractPdf extracts files with correctly labeled sections", {
+test_that("extractPdf extracts files with correctly labeled sections (PMC5420575)", {
   pdf <- extractPdf("https://osf.io/dzm7v/download")
   # expect_true(any(pdf[1]=="Abstract"))
   expect_true(
@@ -97,12 +97,53 @@ test_that("extractPdf extracts files with correctly labeled sections", {
   expect_true(
     stringr::str_detect(
       pdf[[which(pdf[1] == "MATERIALS AND METHODS"), 2]],
-      "Analysis was conducted using the statistical package for the social sciences \\(SPSS\\) \\[version 22.0\\]\\.$"
+      "The participants were 107 students of Environmental Sciences Degrees from the University"
     ) & stringr::str_detect(
       pdf[[which(pdf[1] == "MATERIALS AND METHODS"), 2]],
-      "BEI-PSY is a cross-sectional survey that targeted Arabic speaking adolescents"
+      "by Seibert and Vis \\(2012\\) and Ewen and Seibert \\(2016\\)\\.$"
     )
   )
+  
+  expect_true(
+    stringr::str_detect(
+      pdf[[which(pdf[1] == "Procedure"), 2]],
+      "Participation in the study contributed toward participants"
+    ) & stringr::str_detect(
+      pdf[[which(pdf[1] == "Procedure"), 2]],
+      "scarcity of natural resources\\.$"
+    )
+  )
+  
+  expect_true(
+    stringr::str_detect(
+      pdf[[which(pdf[1] == "Measures"), 2]],
+      "was measured using a short version of the Prosocialness Scale"
+    ) & stringr::str_detect(
+      pdf[[which(pdf[1] == "Measures"), 2]],
+      "through the 10 years\\.$"
+    )
+  )
+  
+  expect_true(
+    stringr::str_detect(
+      pdf[[which(pdf[1] == "RESULTS"), 2]],
+      "The repeated measure analyses \\(by including the 10 years"
+    ) & stringr::str_detect(
+      pdf[[which(pdf[1] == "RESULTS"), 2]],
+      "H5 was confirmed\\.$"
+    )
+  )
+  
+  expect_true(
+    stringr::str_detect(
+      pdf[[which(pdf[1] == "DISCUSSION"), 2]],
+      "In our modern and occidental societies competition"
+    ) & stringr::str_detect(
+      pdf[[which(pdf[1] == "DISCUSSION"), 2]],
+      "prosocial disposition would also be useful\\.$"
+    )
+  )
+  
 })
 
 

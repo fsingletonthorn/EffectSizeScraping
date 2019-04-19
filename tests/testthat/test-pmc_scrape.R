@@ -14,5 +14,8 @@ test_that("extraction works from pdf", {
 
 test_that("extractPdf extracts files with correctly labeled sections", {
   pdf <- extractPdf("https://osf.io/dzm7v/download")
-  
-})
+  extracted <- processPMC( pdf)
+  extracted$statisticalOutput
+  })
+
+
