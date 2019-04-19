@@ -64,6 +64,7 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "background",
         # Method
         "Material and methods",
+        "Materials and methods",
         "method",
         "methods",
         "measure",
@@ -99,6 +100,15 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "Conflict of Interests",
         "Conflict of Interest",
         "Conflict of Interest statement",
+        "Abbreviations",
+        "Authors’ contributions",
+        "Author contributions",
+        "Author details",
+        "Competing interests",
+        "Availability of data and materials",
+        "Ethics approval and consent to participate",
+        "Consent for publication",
+        "Publisher’s Note",
         sep = "|"
       )
     
