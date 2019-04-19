@@ -66,7 +66,7 @@ testChi <- c("chi square = 12.32",
              "χ2(123) = 1232.23, p < .05",
              "χ2 = 122.23,p = .13",
              "chi2(123) = 123.2, p < .001",
-             "χ2(1, N = 320) = 22.31, p < 0.001")
+             "χ2(1, N = 320) = 22.31, p < 0.001") 
 
 
 testD <- c("g = 12.32",
@@ -173,22 +173,24 @@ test_that("correlation extractor works", {
                      stringr::str_remove_all(testR, "\\s")[-9])
 })
 
+# Setting up chi square values
+chis <- c(stringr::str_remove_all(
+  stringr::str_extract(
+    testChi,
+    "(?<=((chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?))\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3},?\\s{0,3}N?\\s{0,3}\\=?\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
+  ),
+  "\\s"
+))
+chis[6] <- 22.31
+
 test_that("chi squared test extractor works", {
   extracted <- extractTestStats(testChiString)
   expect_identical(extracted[[3]], testChi)
   expect_identical(extracted[[2]],
                      stringr::str_remove_all(testChi, "\\s"))
   expect_identical(extracted[[4]],
-                   stringr::str_remove_all(
-                     stringr::str_extract(
-                       testChi,
-                       "(?<=((chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?))\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3},?\\s{0,3}N?\\s{0,3}\\=?\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
-                     ),
-                     "\\s"
-                   ))
-  
+                    chis)
   expect_true(all(is.na(extracted[[5]])))
-  
   expect_identical(extracted[[6]],
                    stringr::str_remove_all(stringr::str_extract(testChi,
                                               "((chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?))\\s{0,3}\\(\\d*"),
@@ -230,6 +232,26 @@ test_that("basic labelling works", {
   expect_identical(extracted[[1]][1], "as")
 }
 )
+
+# from DOI: 10.1186/s13034-017-0156-5
+# This gets dead strangely
+testTextChi <- paste(c("χdf2 =4 = 4.541", 
+              "χdf2 =2 = 3.421",  
+              "χdf2 =2 = 2.202",  
+              "χdf2 =2 = 11.566", 
+              "χdf2 =2 = 19.236"), sep = " ", collapse = " ")
+
+test_that("chi square extraction works w / weird formatting", {
+  extracted <- extractTestStats(testTextChi)
+  expect_identical(extracted[[4]], c("4.541",
+                                        "3.421",
+                                        "2.202",
+                                        "11.566",
+                                        "19.236") ) 
+}
+)
+
+
 
 
 

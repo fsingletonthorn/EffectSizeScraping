@@ -5,7 +5,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
     testStatistic <-
       stringr::str_extract(
         stringr::str_split(cleanedTestStat,
-                           "(?<!n|N|df|DF)=", simplify = T)[, 2],
+                           "(?<!n|N|df|DF|df2)=", simplify = T)[, 2],
         "-?\\d*\\.?\\d*"
       )
     
