@@ -3,7 +3,6 @@
 # library(stringr)
 # library(stringi)
 
-
 # Function to ID whether a cell is > chars, if empty  gives FALSE
 true_false <- function(x, chars) {
   output <- x > chars
@@ -62,6 +61,7 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         # Introduction / aims
         "aims",
         "introduction",
+        "background",
         # Method
         "Material and methods",
         "method",
