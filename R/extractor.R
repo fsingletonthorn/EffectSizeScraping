@@ -3,9 +3,12 @@
 splitTestStatToDF <- function(statistic, cleanedTestStat) {
   if ((length(cleanedTestStat) > 0) & (length(statistic) > 0)) {
     testStatistic <-
-      stringr::str_extract(stringr::str_split(cleanedTestStat,
-                                              "=", simplify = T)[, 2],
-                           "-?\\d*\\.?\\d*")
+      stringr::str_extract(
+        stringr::str_split(cleanedTestStat,
+                           "(?<!n|N|df|DF)=", simplify = T)[, 2],
+        "-?\\d*\\.?\\d*"
+      )
+    
     df1 <-
       dplyr::case_when(statistic == "F" ~ c(stringr::str_extract(cleanedTestStat,
                                                           "\\d{1,}(?=,)")),
@@ -145,7 +148,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
     }
   }
 
-  # Input should already be cleaned, this is important as it will break this function -  processHTML() on input
+  # Input should already be cleaned, this is important as it will break this function -  processText() on input
   # extracting all text which matches patterns
 
   extracted <-
