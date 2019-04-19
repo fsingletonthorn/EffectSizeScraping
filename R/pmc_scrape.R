@@ -15,7 +15,7 @@ if(T) {
   
   # Read PDF 
   
-  
+  # Add PMC id to file here
 }
 
 # Process text file
