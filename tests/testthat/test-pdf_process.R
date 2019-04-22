@@ -8,7 +8,7 @@ test_that("extractPdf extracts all pages", {
     stringr::str_detect(
       pdf[[6, 2]],
       stringr::fixed(
-        "participants may have given inaccurate or exaggerated responses due to poor awareness and/or social desirability bias"
+        "Cell-based meat , for example, might evoke many of"
       )
     ) & stringr::str_detect(
         pdf[[6, 2]],
@@ -80,7 +80,7 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5420575
     ) & 
       stringr::str_detect(
         pdf[[which(pdf[1]=="DISCUSSION"), 2]],
-          "environmental issues and prosocial disposition would also be useful\\.$"
+          "considering practical ways of promoting pro-environmental behavior\\.$"
       )
   )
   expect_true(
@@ -133,17 +133,6 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5420575
       "H5 was confirmed\\.$"
     )
   )
-  
-  expect_true(
-    stringr::str_detect(
-      pdf[[which(pdf[1] == "DISCUSSION"), 2]],
-      "In our modern and occidental societies competition"
-    ) & stringr::str_detect(
-      pdf[[which(pdf[1] == "DISCUSSION"), 2]],
-      "prosocial disposition would also be useful\\.$"
-    )
-  )
-  
 })
 
 
