@@ -254,4 +254,13 @@ test_that("chi square extraction works w / weird formatting", {
 
 
 
-
+test_that("CI extractor works", {
+   ciTexts <- list("Confidence interval", 
+        "as fsad f 95% CI fasd", 
+        "95% CI around the latest [1,10]", 
+        "95$ confidence range", 
+        "not very good at confidence ratings")
+  
+  testthat::expect_equivalent(checkCIs(ciTexts)[[1]][c(1,2)], ciTexts[1:2])
+  testthat::expect_equivalent(checkCIs(ciTexts, context = F), c(T,T,T,F,F))
+})
