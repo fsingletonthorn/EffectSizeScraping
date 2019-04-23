@@ -144,13 +144,13 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5504157
     stringr::str_detect(
       pdf[[which(pdf[1]=="INTRODUCTION"), 2]],
       stringr::fixed(
-        "Virtues, character strengths and their"
+        "Research results show, that medical students"
       )
-    ) # & 
-      # stringr::str_detect(
-      #   pdf[[which(pdf[1]=="DISCUSSION"), 2]],
-      #   "considering practical ways of promoting pro-environmental behavior\\.$"
-      # )
+    ) & 
+      stringr::str_detect(
+        pdf[[which(pdf[1]=="INTRODUCTION"), 2]],
+        "in time\\.$"
+      )
   )
 
   # 
