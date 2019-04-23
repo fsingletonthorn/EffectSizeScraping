@@ -10,12 +10,17 @@
 # call <- articles$oaiCall[articles$PMCID == pmcID]
 # ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
 
+## Example with text
+# pmcID <- 5393010
+# call <- articles$oaiCall[articles$PMCID == pmcID]
+# ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
+
 scrapePMC <- function(call, ftpCall, statcheck = F) {
   pulledPMC <-
-    pullPMC(call = articles$oaiCall[articles$PMCID == pmcID])
+    pullPMC(call = call)
   
-  #
-  if ((length(pulledPMC$text) == 2)) {
+  # Checking if we've got more than just the abstract
+  if ((length(unlist(pulledPMC$text)) == 4)) {
     # To check if abstract is NA  add "& is.na(textTemp$text[2,2][[1]])"
     # articles$tpfCall[articles$PMCID == pmcID]
     
@@ -42,7 +47,8 @@ scrapePMC <- function(call, ftpCall, statcheck = F) {
       # Always only work on the first PDF, just in case there is more than 1
       # This also binds in the PMC number, although it excludes
       pulledPMC$text <-
-        rbind(pulledPMC$text,  extractPdf(pdfLoc[[1]]))
+      
+      rbind(pulledPMC$text,  extractPdf(pdfLoc[[1]]))
       
       pulledPMC$text <-  processPMC(pulledPMC$text)
       
@@ -51,19 +57,15 @@ scrapePMC <- function(call, ftpCall, statcheck = F) {
       
       return(pulledPMC)
       
-    } else {
+    }
+  }
       pulledPMC$text <- processPMC(pulledPMC$text)
       return(pulledPMC)
-    }
-    
-  }
 }
-
-
 
 # Process text file
 # processPMC()
 
-# Check for 95% CIs
+
 # Check for PA 
 # Check for . . .
