@@ -11,11 +11,17 @@ test_that("extraction works from pdf", {
                      "19.236"))
 })
 
-
-test_that("extractPdf extracts files with correctly labeled sections", {
-  pdf <- extractPdf("https://osf.io/dzm7v/download")
-  extracted <- processPMC( pdf)
-  extracted$statisticalOutput
-  })
+test_that("scrapePMC extracts files with correctly labeled sections", {
+  pmcID <- 4710337
+  call <- articles$oaiCall[articles$PMCID == pmcID]
+  ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
+  output <- scrapePMC(call, ftpCall, statcheck = F)
+  
+  expect_true(
+  str_detect(output$text$text[output$text$names == "unlabelled"],
+             "Prompt diagnosis is important as urgent")
+  )
+  expect_true( is.na(output$text$statisticalOutput) )
+})
 
 
