@@ -213,7 +213,7 @@ textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
  return(output)
 }
 
-processPMC <- function(paper_text_list) {
+processPMC <- function(paper_text_list, statcheck = F) {
   # processing all but the PMID with extract test stats
   output <- as.list(paper_text_list)
   
@@ -235,6 +235,7 @@ processPMC <- function(paper_text_list) {
     output$statisticalOutput <- NA
   }
   
+  if(statcheck == TRUE) {
   statCheckOutput <- lapply(output$text[-1], function(x) {
     if (length(x) > 0) {
       if (is.na(x)) {
@@ -255,6 +256,7 @@ processPMC <- function(paper_text_list) {
    } else {
      output$statCheckOutput <- NA
    }
+  }
   return(output)
 }
 
