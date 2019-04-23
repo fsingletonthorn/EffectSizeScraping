@@ -245,7 +245,7 @@ processPMC <- function(paper_text_list, statcheck = F) {
       }
     } else
       NA
-  })
+})
   
   # NA rows removed here using a filter:
    notNAs <-
