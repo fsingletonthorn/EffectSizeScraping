@@ -58,7 +58,7 @@ test_that("extractPdf extracts files with correctly labeled sections", {
   
   expect_true(
     stringr::str_detect(
-      pdf[[which(pdf[1] == "Methods"), 2]],
+      pdf[[which(pdf[1] == "Data analysis"), 2]],
       "Analysis was conducted using the statistical package for the social sciences \\(SPSS\\) \\[version 22.0\\]\\.$"
     ) & stringr::str_detect(
       pdf[[which(pdf[1] == "Methods"), 2]],
@@ -136,6 +136,33 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5420575
 })
 
 
+# Also at: "data_/trainingSet/PMC5504157.pdf"
+test_that("extractPdf extracts files with correctly labeled sections (PMC5504157)", {
+  pdf <- extractPdf("https://osf.io/5nxjw/download")
+  # expect_true(any(pdf[1]=="Abstract"))
+  expect_true(
+    stringr::str_detect(
+      pdf[[which(pdf[1]=="INTRODUCTION"), 2]],
+      stringr::fixed(
+        "Virtues, character strengths and their"
+      )
+    ) # & 
+      # stringr::str_detect(
+      #   pdf[[which(pdf[1]=="DISCUSSION"), 2]],
+      #   "considering practical ways of promoting pro-environmental behavior\\.$"
+      # )
+  )
+
+  # 
+  expect_true(
+    stringr::str_detect(
+      pdf$text[[which(pdf$names=="RESULTS")]],
+      "CIT scores and the VIA-120 total score were") &
+    stringr::str_detect(
+      pdf$text[[which(pdf$names=="RESULTS")]],
+  "but not in the cross-sectional design\\.$")
+  )
+})
 
 
 
