@@ -26,17 +26,20 @@ test_that("scrapePMC extracts files with correctly labeled sections", {
 
 
 
-test_that("scrapePMC extracts files with correctly labeled sections", {
+test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
   pmcID <- 5393010
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
   ftpCall  <-"ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
   output <- scrapePMC(call, ftpCall, statcheck = F)
   
   expect_true(
-    stringr::str_detect(output$text$text[output$text$names == "unlabelled"],
-                        "Prompt diagnosis is important as urgent")
+    stringr::str_detect(output$text$text[output$text$names == "Discussion"],
+                        "BEI-PSY is the first study to investigate the prevalence")
   )
-  expect_true( is.na(output$text$statisticalOutput) )
+  
+  expect_true(all(
+    output$text$statisticalOutput$statistic == c("chi", "chi", "chi")
+  )) 
 })
 
 
