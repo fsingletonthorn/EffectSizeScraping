@@ -46,8 +46,6 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
   num_chars <- lapply(x_page, nchar)
   num_chars_tf <- lapply(num_chars, true_false, chars = 0)
   
-  
-  # This misorders things
   #  Removing empty cells and ordering the output
   output <- lapply(seq_along(x_page), function(xx)
     x_page[[xx]][num_chars_tf[[xx]]])
@@ -79,10 +77,13 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "manipulations",
         "analysis",
         "statistical analyses",
+        "Data Analysis",
         # Results / discussion / conclusion
         "results",
         "discussion",
         "general discussion",
+        "implications",
+        "theoretical implications",
         "conclusion",
         "experiment",
         "Conclusions",
@@ -100,6 +101,7 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "bibliography",
         # "Acknowledgments" author statement etc.  
         "Acknowledgments",
+        "ethics statement",
         "Conflict of Interests",
         "Conflict of Interest",
         "Conflict of Interest statement",
