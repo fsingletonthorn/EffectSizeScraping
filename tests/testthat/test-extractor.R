@@ -252,8 +252,6 @@ test_that("chi square extraction works w / weird formatting", {
 )
 
 
-
-
 test_that("CI extractor works", {
    ciTexts <- list("Confidence interval", 
         "as fsad f 95% CI fasd", 
