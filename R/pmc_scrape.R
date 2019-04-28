@@ -15,9 +15,14 @@
 # call <- articles$oaiCall[articles$PMCID == pmcID]
 # ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
 
+## Example with correlation coefficients etc. 
+pmcID <- 5504157
+# call <- articles$oaiCall[articles$PMCID == pmcID]
+# ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
+
+
 scrapePMC <- function(call, ftpCall, statcheck = F) {
-  pulledPMC <-
-    pullPMC(call = call)
+  pulledPMC <-  pullPMC(call = call)
   
   # Checking if we've got more than just the abstract
   if ((length(unlist(pulledPMC$text)) == 4)) {
