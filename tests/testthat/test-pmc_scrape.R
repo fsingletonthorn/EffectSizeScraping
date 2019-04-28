@@ -43,7 +43,36 @@ test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
 })
 
 
+test_that("scrapePMC process excracts stats correctly from pmc5504157", {
+  pmcID <- 5504157
+  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5504157&metadataPrefix=pmc"
+  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/4a/be/PMC5504157.tar.gz"
 
-
-
+ output <- scrapePMC(call, ftpCall, statcheck = F)
+ 
+ 
+ expect_true(all(as.numeric(output$text$statisticalOutput$value[
+   output$text$statisticalOutput$statistic == "r"
+   ]) %in%
+ c(0.10,0.30,0.71,0.69,0.63,0.61,0.59,0.56,0.86,0.32,0.75,0.67,0.51,
+ 0.45,0.39,0.41,0.30,0.31,0.31,0.59,0.56,0.48,0.52,0.38,0.63,0.41)))
+ 
+ expect_true(all(as.numeric(output$text$statisticalOutput$value[
+   output$text$statisticalOutput$statistic == "d"
+   ]) %in%
+     c(0.07,
+       0.44,
+       0.20
+     )))
+ 
+ # concatinatedText <- concatPlus(output$text$text)
+ expect_true(
+ stringr::str_detect(output$text$text[output$text$names == "Results"],
+                     "ranged from")
+)
+ expect_true(
+   stringr::str_detect(output$text$text[output$text$names == "Results"],
+                       "in the cross-sectional design\\.\\s?$")
+ )
+})
 
