@@ -77,6 +77,7 @@ testEta <- c("η2 = .3213",
              "eta squared = 1.232",
              "η2 = .3213")
 
+
 testTString  <- stringr::str_flatten(testT, collapse = " ")
 testFString  <- stringr::str_flatten(testF, collapse = " ")
 testRString  <- stringr::str_flatten(testR, collapse = " ")
