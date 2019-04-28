@@ -26,11 +26,6 @@ concatPlus <- function(text) {
 # This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R,
 # does some final extra cleaning if any tags / weird characters remain
 processText <- function(strings){
-  # Remove subscripts (except for p_rep)
-  strings <- lapply(strings, gsub, pattern = "<sub>(?!rep).*?</sub>", replacement = "", perl = TRUE)
-
-  # Remove HTML tags:
-  strings <- lapply(strings, gsub, pattern = "<(.|\n)*?>", replacement = "")
 
   # Replace html codes:
   strings <- lapply(strings, gsub, pattern = "&#60;", replacement = "<", fixed = TRUE)
@@ -177,6 +172,7 @@ unlabPs_nodes <- xml2::xml_find_all(paper, "//body/p")
 sections <-  xml2::xml_find_all(paper, "//article/sec")
 # article section titles
 titles <-  xml2::xml_text(xml2::xml_find_all(sections, "title"))
+# 
 
 # seperating the sections by, if there are any sections titled matching the section heads
 textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
@@ -259,4 +255,4 @@ processPMC <- function(paper_text_list, statcheck = F) {
   }
   return(output)
 }
-
+  
