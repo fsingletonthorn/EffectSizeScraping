@@ -47,25 +47,11 @@ scrapePMC <- function(call, ftpCall, statcheck = F) {
       # Always only work on the first PDF, just in case there is more than 1
       # This also binds in the PMC number, although it excludes
       pulledPMC$text <-
-      
-      rbind(pulledPMC$text,  extractPdf(pdfLoc[[1]]))
-      
-      pulledPMC$text <-  processPMC(pulledPMC$text)
-      
+        rbind(pulledPMC$text,  extractPdf(pdfLoc[[1]]))
+    }      
       # Cleanup
       unlink( c( exdir, tempLoc ), recursive = T)
-      
-      return(pulledPMC)
-      
-    }
   }
-      pulledPMC$text <- processPMC(pulledPMC$text)
-      return(pulledPMC)
+     pulledPMC$text <- processPMC(pulledPMC$text)
+     return(pulledPMC)
 }
-
-# Process text file
-# processPMC()
-
-
-# Check for PA 
-# Check for . . .
