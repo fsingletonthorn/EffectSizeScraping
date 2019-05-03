@@ -151,6 +151,9 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   # Input should already be cleaned, this is important as it will break this function -  processText() on input
   # extracting all text which matches patterns
 
+  # This replaces any "L"s which follow a number or an opening bracket with ones
+  inputText <- stringr::str_replace_all(inputText, pattern = "(?<=(\\(|\\d))l", "1")
+  
   extracted <-
     stringr::str_extract_all(inputText , pattern = stringr::regex(patterns, ignore_case = TRUE))
 
@@ -158,6 +161,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   extractedClean <-
     lapply(extracted,  stringr::str_remove_all, pattern = "\\s")
 
+  
   # The following extracts the context around each extracted part:
   # Putting the following into a single string that will expand to the number of patterns
 
