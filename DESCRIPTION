@@ -21,3 +21,4 @@ Requires:
     xml2
     statcheck
     zoo
+    magrittr
