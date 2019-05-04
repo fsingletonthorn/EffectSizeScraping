@@ -263,3 +263,23 @@ test_that("CI extractor works", {
   testthat::expect_equivalent(checkCIs(ciTexts)[[1]][c(1,2)], ciTexts[1:2])
   testthat::expect_equivalent(checkCIs(ciTexts, context = F), c(T,T,T,F,F))
 })
+
+
+
+test_that("extractor can deal with real world examples", { 
+  
+  
+  testString <- "Results. Our most fundamental prediction was th of causation and blame would be based more on whet behavior was good or bad than whether it was normat normative. The results confirmed this prediction. Gra as less causal when his behavior was good (M = 3.37) t was bad (M = 5.20), F(l, 178) = 17.12, p < .0001, an blamed less when his behavior was good (M = 2.92) tha bad (M = 5.19), F(l, 178) = 27.98, p < .0001. Overall, main effect of whether his behavior was normative or counternormative on causal ratings, F(l, 178) = 2.10, p< .15, or on blame, /\"(l, 178) = 1.59, p < .21."
+  extractTestStats(testString)
+  
+  expect_equal(extractTestStats(  "F(l, 178) = 17.12, p < .0001" )[[1]], "F")
+  expect_equal(extractTestStats(  "F(l, 17l) = 17.12, p < .0001" )[[1]], "F")
+  expect_equal(extractTestStats(  "F(1, l78) = 17.12, p < .0001" )[[1]], "F")
+  
+  expect_equal(extractTestStats(  "F(  l, 178  ) = 17.12, p < .0001" )[[1]], "F")
+  expect_equal(extractTestStats("F( l , 17l ) = 17.12, p < .0001" , context = T)[[1]], "F")
+  expect_equal(extractTestStats(  "F( 1, l78 ) = 17.12, p < .0001" )[[1]], "F")
+  
+  }) 
+
+
