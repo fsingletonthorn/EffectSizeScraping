@@ -152,7 +152,9 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   # extracting all text which matches patterns
 
   # This replaces any "L"s which follow a number or an opening bracket with ones
-  inputText <- stringr::str_replace_all(inputText, pattern = "(?<=(\\(|\\d))l", "1")
+  inputText <- stringr::str_replace_all(inputText, pattern = "(?<=(\\(|\\d|\\.))l", "1")
+  # Also replacing if an l it is followed by a )
+  inputText <- stringr::str_replace_all(inputText, pattern = "l(?=(\\)|\\d|\\.))", "1")
   
   extracted <-
     stringr::str_extract_all(inputText , pattern = stringr::regex(patterns, ignore_case = TRUE))
