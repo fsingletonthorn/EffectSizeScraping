@@ -87,7 +87,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   patternT <-
     "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*=\\s*-?\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternF <-
-    "\\bF\\s*\\(?\\s*\\d{1,},\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bF\\s*\\(?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternR <-
     "\\b(((r(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d{0,10}\\s*\\)?\\s*[=]\\s*)|((correlation)\\s*(coefficient)?\\s*([=]|(of))\\s*))(\u2212?\\-?\\s?\\d*\\.?\\d{1,}))(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternChiSq <-
@@ -152,9 +152,9 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   # extracting all text which matches patterns
 
   # This replaces any "L"s which follow a number or an opening bracket with ones
-  inputText <- stringr::str_replace_all(inputText, pattern = "(?<=(\\(|\\d|\\.))l", "1")
+  inputText <- stringr::str_replace_all(inputText, pattern = "(?<=(\\(\\s{0,2}|\\d\\s{0,2}|\\.\\s{0,2}))l", "1")
   # Also replacing if an l it is followed by a )
-  inputText <- stringr::str_replace_all(inputText, pattern = "l(?=(\\)|\\d|\\.))", "1")
+  inputText <- stringr::str_replace_all(inputText, pattern = "l(?=(\\s{0,2}\\)|\\d\\s{0,2}|\\.\\s{0,2}))", "1")
   
   extracted <-
     stringr::str_extract_all(inputText , pattern = stringr::regex(patterns, ignore_case = TRUE))
@@ -245,5 +245,3 @@ checkCIs <- function(input,
     return(CIsBinary)
   }
 }
-
-
