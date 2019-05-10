@@ -22,3 +22,4 @@ Requires:
     statcheck
     zoo
     magrittr
+    tesseract

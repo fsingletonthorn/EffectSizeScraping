@@ -56,10 +56,10 @@ testR <- c("r(1) = .42345",
            "r(df = 5) = 1",
            "r (n=6) = .45",
            "r = .7",
-           "correlation of 8", 
+           "correlation of .8", 
            # note the following should not be included in tests (it is removed)
            "R2 = .12",
-           "correlation of 8, p = .009")
+           "correlation of .8, p = .009")
 
 testChi <- c("chi square = 12.32",
              "chi2 = 123.32",
@@ -283,7 +283,13 @@ test_that("extractor can deal with real world examples", {
   }) 
 
 
-test_that("t test extractor doesn't extract t values without test statistic values",{
+test_that("t test extractor doesn't extract values without test statistic values",{
   expect_equal(extractTestStats("t(1) = 1, p = .8, and t(12) = .12")[,4], c('1','.12')) 
+})
+
+
+
+test_that("chi square can deal with annoying characters", {
+expect_equal(extractTestStats("c2 = 1.232, and x2(12) = .12")[,4], c('1.232','.12')) 
 })
 
