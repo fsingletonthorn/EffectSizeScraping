@@ -24,3 +24,11 @@ test_that("processPMC extracts correct values", {
   expect_equal(processedText$statisticalOutput$cleaned[1], "r=0.676,p<0.05")
   }
 )
+
+
+test_that("processPMC extracts and includes unlabelled text", {
+  processedText <- pullPMC(call =  "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:2964795&metadataPrefix=pmc")
+  expect_true(stringr::str_detect(processedText$text[[2]][processedText$text[[1]]== "unlabelled"], stringr::fixed("Sir,")))
+  expect_true(stringr::str_detect(processedText$text[[2]][processedText$text[[1]]== "unlabelled"], stringr::fixed("cutaneous features")))
+})
+

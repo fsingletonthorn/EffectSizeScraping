@@ -52,7 +52,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
 }
 
 # Check whether element exists and is not NA
-# (or at least that th first element of an object is not NA)
+# (or at least that the first element of an object is not NA)
 elementExists <- function( full_index_path ){
   tryCatch({
     len_element = length(full_index_path)

@@ -74,7 +74,7 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
 
-call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc"
+# call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc"
 
 # call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"  # articles$oaiCall[ trainingSet ][11]
 
@@ -171,15 +171,23 @@ abstract_node <- xml2::xml_find_all(paper, "//abstract")
 # add abstract text 
 abstract <- concatPlus(xml2::xml_text(abstract_node))
 # unlablled sections 
-unlabPs_nodes <- xml2::xml_find_all(paper, "//body/p")
+unlabPs <-  concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//body/p")))
 # article sections
 sections <-  xml2::xml_find_all(paper, "//article/sec")
 # article section titles
 titles <-  xml2::xml_text(xml2::xml_find_all(sections, "title"))
-# 
+# Getting all paragraphs just in case the rest of this has failed
+if (!elementExists(concatPlus(c(
+  xml2::xml_text(sections),  unlabPs
+)))
+) {unlabPs <- concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//p") ) ) }
 
 # seperating the sections by, if there are any sections titled matching the section heads
-textOutput <- data.frame(titles, xml2::xml_text(sections), stringsAsFactors = F)
+textOutput <- data.frame(titles = titles, text = xml2::xml_text(sections), stringsAsFactors = F)
+if( elementExists(unlabPs) ) {
+  textOutput <- dplyr::bind_rows(textOutput, text = tibble::tibble(titles = "unlabelled", text = unlabPs ))
+}
+
 
 # Figure out authors information better here
  output <- list(
