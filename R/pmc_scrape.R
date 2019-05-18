@@ -16,16 +16,17 @@
 # ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
 
 ## Example with correlation coefficients etc. 
-pmcID <- 5504157
+# pmcID <- 5504157
 # call <- articles$oaiCall[articles$PMCID == pmcID]
 # ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
 
 
-scrapePMC <- function(call, ftpCall, statcheck = F) {
+scrapePMC <- function(call, ftpCall, statcheck = T) {
   pulledPMC <-  pullPMC(call = call)
   
   # Checking if we've got more than just the abstract
-  if ((length(unlist(pulledPMC$text)) == 4)) {
+  if ((length(unlist(pulledPMC$text)) == 4) |
+      sum(stringr::str_count(as.character( pulledPMC$text ), " ")) < 500) {
     # To check if abstract is NA  add "& is.na(textTemp$text[2,2][[1]])"
     # articles$tpfCall[articles$PMCID == pmcID]
     
