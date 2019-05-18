@@ -41,7 +41,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
       stringr::str_extract(
         cleanedTestStat,
         "(?<=((p|P)\\=?))[<>]?\\d?\\.?\\d+e?-?\\d*")
-    tibble::data_frame(
+    tibble::tibble(
       value = testStatistic,
       df1 = df1,
       df2 = df2,
@@ -122,7 +122,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   if (purrr::is_empty(inputText) | !elementExists(inputText)) {
     if (context == F) {
       return(
-        tibble::data_frame(
+        tibble::tibble(
           statistic = NA,
           cleaned = NA,
           reported = NA,
@@ -134,7 +134,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
       )
     } else {
       return(
-        tibble::data_frame(
+        tibble::tibble(
           statistic = NA,
           cleaned = NA,
           reported = NA,
@@ -177,33 +177,33 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
           inputText, stringr::regex(as.character(patternsContext), ignore_case = T)
         )))
     # returning all of this
-    statisticalOutput <- rbind(tibble::data_frame(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
-                 tibble::data_frame(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
-                 tibble::data_frame(statistic = "r",   cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContext[[3]]),
-                 tibble::data_frame(statistic = "chi", cleaned = extractedClean[[4]], reported = extracted[[4]],  context = extractedContext[[4]]),
-                 tibble::data_frame(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]],  context = extractedContext[[5]]),
-                 tibble::data_frame(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]],  context = extractedContext[[6]]),
-                 tibble::data_frame(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]]),
-                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]],  context = extractedContext[[8]]),
+    statisticalOutput <- rbind(tibble::tibble(statistic = "t",   cleaned = extractedClean[[1]], reported = extracted[[1]], context = extractedContext[[1]]),
+                 tibble::tibble(statistic = "F",   cleaned = extractedClean[[2]], reported = extracted[[2]],  context = extractedContext[[2]]),
+                 tibble::tibble(statistic = "r",   cleaned = extractedClean[[3]], reported = extracted[[3]],  context = extractedContext[[3]]),
+                 tibble::tibble(statistic = "chi", cleaned = extractedClean[[4]], reported = extracted[[4]],  context = extractedContext[[4]]),
+                 tibble::tibble(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]],  context = extractedContext[[5]]),
+                 tibble::tibble(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]],  context = extractedContext[[6]]),
+                 tibble::tibble(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]],  context = extractedContext[[7]]),
+                 tibble::tibble(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]],  context = extractedContext[[8]]),
                  stringsAsFactors = F, row.names = NULL)
     } else {
-    statisticalOutput <- rbind(tibble::data_frame(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
-                 tibble::data_frame(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
-                 tibble::data_frame(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]]),
-                 tibble::data_frame(statistic = "chi", cleaned = extractedClean[[4]], reported = extracted[[4]]),
-                 tibble::data_frame(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]]),
-                 tibble::data_frame(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]]),
-                 tibble::data_frame(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]]),
-                 tibble::data_frame(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]]),
+    statisticalOutput <- rbind(tibble::tibble(statistic = "t", cleaned = extractedClean[[1]], reported = extracted[[1]]),
+                 tibble::tibble(statistic = "F", cleaned = extractedClean[[2]], reported = extracted[[2]]),
+                 tibble::tibble(statistic = "r", cleaned = extractedClean[[3]], reported = extracted[[3]]),
+                 tibble::tibble(statistic = "chi", cleaned = extractedClean[[4]], reported = extracted[[4]]),
+                 tibble::tibble(statistic = "d",   cleaned = extractedClean[[5]], reported = extracted[[5]]),
+                 tibble::tibble(statistic = "eta", cleaned = extractedClean[[6]], reported = extracted[[6]]),
+                 tibble::tibble(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]]),
+                 tibble::tibble(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]]),
                  stringsAsFactors = F, row.names = NULL)
     }
  if(purrr::is_empty(statisticalOutput[[1]]) |  (nrow(statisticalOutput) < 1)) {
    if(context == F) {
-     output <- tibble::data_frame(
+     output <- tibble::tibble(
        statistic = NA, cleaned = NA, reported = NA, value = NA,
        df1 = NA, df2  = NA, p = NA)
      } else {
-       output <- tibble::data_frame(
+       output <- tibble::tibble(
        statistic = NA, cleaned = NA, reported = NA, context = NA,
        value = NA,  df1 = NA, df2  = NA, p = NA)
      }
