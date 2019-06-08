@@ -64,3 +64,4 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
      pulledPMC$text <- processPMC(pulledPMC$text)
      return(pulledPMC)
 }
+

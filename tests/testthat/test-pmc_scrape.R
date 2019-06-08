@@ -76,3 +76,18 @@ test_that("scrapePMC process excracts stats correctly from pmc5504157", {
  )
 })
 
+
+test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
+  # pmcID <- 4710337
+  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
+  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
+  output <- scrapePMC(call, ftpCall, statcheck = F)
+  
+  expect_true(
+    stringr::str_detect(output$text$text[output$text$names == "unlabelled"],
+                        "Prompt diagnosis is important as urgent")
+  )
+  expect_true( is.na(output$text$statisticalOutput) )
+})
+
+
