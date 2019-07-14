@@ -6,9 +6,9 @@ test_that("extractPdf extracts all pages", {
   # expect_true(sum(lapply(pdf$text , stringr::str_count, pattern = "or")))
   expect_true(
     stringr::str_detect(
-      pdf[[6, 2]],
+      pdf[stringr::str_detect(pdf$names, "Discussion"),2],
       stringr::fixed(
-        "Cell-based meat , for example, might evoke many of"
+        "‘Cell-based meat’, for example, might evoke many of the same"
       )
     ) & stringr::str_detect(
         pdf[[6, 2]],

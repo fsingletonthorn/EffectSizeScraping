@@ -84,10 +84,9 @@ test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
   output <- scrapePMC(call, ftpCall, statcheck = F)
   
   expect_true(
-    stringr::str_detect(output$text$text[output$text$names == "unlabelled"],
-                        "Prompt diagnosis is important as urgent")
+    stringr::str_detect(output$text$text[output$text$names == "Discussion"],
+                        "The findings of this study must be")
   )
-  expect_true( is.na(output$text$statisticalOutput) )
 })
 
 
