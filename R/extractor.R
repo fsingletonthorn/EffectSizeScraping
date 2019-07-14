@@ -218,30 +218,3 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
 
 
 
-checkCIs <- function(input,
-                     context = T,
-                     contextSize = 10) {
-  # Check for 95% CIs
-  
-  CIreg <-
-    paste(
-      paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
-      "((CI|Confidence Interval)\\s\\[\\d*,\\s*\\d*\\])",
-      paste0("(confidence\\s*interval)).{0,", contextSize, "}"),
-      sep = "|",
-      collapse = "|"
-    )
-  
-  CIs <- stringr::str_extract_all(input,
-                                  stringr::regex(CIreg,
-                                                 ignore_case = T))
-  
-  CIsBinary <- stringr::str_detect(input,
-                                   stringr::regex(CIreg,
-                                                  ignore_case = T))
-  if (context == T) {
-    return(list(CIs, CIsBinary))
-  } else {
-    return(CIsBinary)
-  }
-}
