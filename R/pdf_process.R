@@ -9,7 +9,8 @@ true_false <- function(x, chars) {
   output <- ifelse( !is.na(output), output, FALSE ) 
 }
 
-# concatinate plus function that is just a "better" paste
+# concatinate plus function that is just a "better" paste 
+# concatplus adds a space and doesn't error w/ only 1 element is passed to it
 concatPlus <- function(text) {
   if (length(text) > 1) {
     return(stringr::str_flatten(text, collapse = " "))
@@ -128,7 +129,7 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
                           ifelse(titleLocations, vectorOfText, NA),
                           stringsAsFactors = F)
     
-    # Labeling with the last identified lable
+    # Labelling with the last identified label
     dataFrameText$titles <- zoo::na.locf(dataFrameText$titles,na.rm = FALSE)
     # 
     dataFrameText$titles[is.na(dataFrameText$titles)] <- "unlabelled"
@@ -142,7 +143,7 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
                       text = outputLabeled))
   }
 
-  # Concatinating columns
+  # Concatinating columns together
   
   output <- lapply(output, concatPlus)
   
