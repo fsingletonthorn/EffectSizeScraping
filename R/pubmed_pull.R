@@ -154,10 +154,13 @@ keywords <-
 ### Authors
 # author names:
 AuthorSurnames <-
-  xml2::xml_text(xml2::xml_find_all(
-    paper,
-    '//contrib[@contrib-type="author"]/name/surname/text()'
-  ))
+  xml2::xml_text(
+    xml2::xml_find_all(
+      paper,
+      '//contrib[@contrib-type="author"]/name/surname/text()'
+    )
+  )
+
 AuthorFirstNames <-
   xml2::xml_text(
     xml2::xml_find_all(
@@ -188,8 +191,7 @@ if( elementExists(unlabPs) ) {
   textOutput <- dplyr::bind_rows(textOutput, text = tibble::tibble(titles = "unlabelled", text = unlabPs ))
 }
 
-
-# Figure out authors information better here
+# structuring author / article data here 
  output <- list(
   metadata = tibble::tibble(
     PMCID,
@@ -221,7 +223,12 @@ if( elementExists(unlabPs) ) {
  return(output)
 }
 
+
 processPMC <- function(paper_text_list, statcheck = F) {
+  # This function takes a list of the paper's paragraphs, and runs the extraction function on each
+  # Note that it expects the list to take a specific form - that produced by either the 
+  # If statcheck = T, it also runs statcheck on the file
+
   # processing all but the PMID with extract test stats
   output <- as.list(paper_text_list)
   
@@ -234,7 +241,7 @@ processPMC <- function(paper_text_list, statcheck = F) {
   # NA rows removed here using a filter:
   notNAs <- unlist(lapply(statisticalOutput, function(x) !is.na(x[[2]][1])))
 
-    if (any(notNAs)) {
+  if (any(notNAs)) {
     output$statisticalOutput <-
       data.frame(PMCID = output$text[[1]],
                  dplyr::bind_rows(statisticalOutput[notNAs]), 
