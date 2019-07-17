@@ -1,72 +1,75 @@
 # words2Nums
 ### Setting up constants
 ##  This is inspired by https://github.com/finnfiddle/words-to-numbers
+
+# NEED TO PUT IN CHECK TO MAKE SURE THAT NUMBERS LISTED NEXT TO EACH OTHER ARE NOT CAPTURED IN THE SAME GROUP !!!
+
 words_to_numbers <- function(string) { 
 
 UNIT <- list(
   zero = 0,
-  first = 1,
+#  first = 1,
   one = 1,
-  second = 2,
+#  second = 2,
   two = 2,
-  third = 3,
-  thirteenth = 13,
+#  third = 3,
+#  thirteenth = 13,
   thirteen = 13,
   three = 3,
-  fourth = 4,
-  fourteenth = 14,
+#  fourth = 4,
+#  fourteenth = 14,
   fourteen = 14,
   four = 4,
-  fifteenth = 15,
+#  fifteenth = 15,
   fifteen = 15,
-  fifth = 5,
+#  fifth = 5,
   five = 5,
-  sixth = 6,
-  sixteenth = 16,
+#  sixth = 6,
+#  sixteenth = 16,
   sixteen = 16,
   six = 6,
-  seventeenth = 17,
+#  seventeenth = 17,
   seventeen = 17,
-  seventh = 7,
+#  seventh = 7,
   seven = 7,
-  eighteenth = 18,
+#  eighteenth = 18,
   eighteen = 18,
-  eighth = 8,
+#  eighth = 8,
   eight = 8,
-  nineteenth = 19,
+#  nineteenth = 19,
   nineteen = 19,
-  ninth = 9,
+#  ninth = 9,
   nine = 9,
-  tenth = 10,
+#  tenth = 10,
   ten = 10,
-  eleventh = 11,
+#  eleventh = 11,
   eleven = 11,
-  twelfth = 12,
+#  twelfth = 12,
   twelve = 12
 )
 
 TEN <- list(
   twenty = 20,
-  twentieth = 20,
+#  twentieth = 20,
   thirty = 30,
-  thirtieth = 30,
+#  thirtieth = 30,
   forty = 40,
-  fortieth = 40,
+#  fortieth = 40,
   fifty = 50,
-  fiftieth = 50,
+#  fiftieth = 50,
   sixty = 60,
-  sixtieth = 60,
+#  sixtieth = 60,
   seventy = 70,
-  seventieth = 70,
+#  seventieth = 70,
   eighty = 80,
-  eightieth = 80,
-  ninety = 90,
-  ninetieth = 90
+#  eightieth = 80,
+  ninety = 90 #,
+#  ninetieth = 90
 )
 
 MAGNITUDE = list(
   hundred = 100,
-  hundredth = 100,
+#  hundredth = 100,
   thousand = 1000,
   million = 1000000,
   billion = 1000000000,
@@ -87,76 +90,6 @@ TEN_KEYS <- names(TEN)
 MAGNITUDE_KEYS <- names(MAGNITUDE)
 
 NUMBER_WORDS <- c(UNIT_KEYS, TEN_KEYS, MAGNITUDE_KEYS)
-
-JOINERS <- 'and'
-DECIMALS <- c('point', 'dot')
-
-PUNCTUATION <- c(
-  ' ',
-  ',',
-# Comment out the below later because we actually don't want to capture units 
-# across any of these punctuation markers, they have been left 
-# 
- '.',
- '\\',
- '#',
- '!',
- '$',
- '%',
- '^',
- '&',
- '/',
- '*',
-';',
- ':',
- '{',
- '}',
- '=',
- '-',
- '_',
- '`',
- '~',
- '(',
- ')'
-)
-
-TOKEN_TYPE <- list(
-  UNIT = 0,
-  TEN = 1,
-  MAGNITUDE = 2,
-  DECIMAL =  3,
-  HUNDRED = 4
-)
-
-ALL_WORDS <- c(NUMBER_WORDS, JOINERS, DECIMALS)
-
-BLACKLIST_SINGULAR_WORDS <- 'a'
-
-###
-# Identify all strings of the above with one or more numbers words, but accepting 
-# joiners and punctuation w/out breaking strings
-
-# # MOVE THIS TO TESTS AFTERWARDS
-# example_numerics <- "1213. 133. The PRQ is a 12-item, 4-point Likert scale
-# (from 1 = Never to 4 = Very Often) with 3 sub-scores: 
-# bullying (PRQ-Bully), being victimized (PRQ-Victim), 
-# and pro-social behavior (PRQ-Prosocial). A translated, 
-# backtranslated final Arabic version of the scale was found 
-# to be accurate showing good internal consistency in this 
-# sample [“PRQ-Victim” (alpha = .74)
-# and “PRQ-Bullies” (alpha = 74)]. 1200. And 12"
-# 
-# example <- "One-thousand, two hundred and thirteen. One-hundred and thirty three. The PRQ is a twelve-item, four-point Likert scale
-# (from one = Never to four = Very Often) with three sub-scores: 
-# bullying (PRQ-Bully), being victimized (PRQ-Victim), 
-# and pro-social behavior (PRQ-Prosocial). A translated, 
-# backtranslated final Arabic version of the scale was found 
-# to be accurate showing good internal consistency in this 
-# sample [“PRQ-Victim” (alpha = .seventy four)
-# and “PRQ-Bullies” (alpha = seventy-four)]. One thousand two hundred. And twelve"
-# 
-# ### Parse the numbers
-# # string <- example
 
 # canAddTokenToEndOfSubRegion <- function(tokens, subRegion, currentToken, impliedHundreds){
 # split at whitespace
@@ -204,6 +137,8 @@ numberBinary <-
         )
     }
   }
+  
+  # NEED TO PUT IN CHECK TO MAKE SURE THAT NUMBERS LISTED NEXT TO EACH OTHER ARE NOT CAPTURED IN THE SAME GROUP !!!
   
   #creating groupin variable
   stringSplit$group <- NA
@@ -275,7 +210,7 @@ numberBinary <-
       }
     }
     return(sum(numericsOnly$number))
-  }
+}
   
   numericedOutput <- stringSplit
     
@@ -290,7 +225,7 @@ numberBinary <-
   }
   
   stringSplit$numer <- numericedOutput$number
-
 return(paste0(numericedOutput$stringSplit, collapse = ""))
 }
+
   
