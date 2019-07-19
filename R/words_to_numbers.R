@@ -49,6 +49,7 @@ UNIT <- list(
 )
 
 TEN <- list(
+  ten = 10,
   twenty = 20,
 #  twentieth = 20,
   thirty = 30,
