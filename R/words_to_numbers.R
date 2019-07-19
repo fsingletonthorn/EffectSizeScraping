@@ -3,7 +3,7 @@
 ##  This is inspired by https://github.com/finnfiddle/words-to-numbers
 
 # NEED TO PUT IN CHECK TO MAKE SURE THAT NUMBERS LISTED NEXT TO EACH OTHER ARE NOT CAPTURED IN THE SAME GROUP !!!
-
+# Note that numbers are output in scientific notation if they are high enough
 words_to_numbers <- function(string) { 
 
 UNIT <- list(
@@ -121,27 +121,7 @@ numberBinary <-
       numberBinary
     )
   
-  # Creating a grouping variable
-# punctuationOrNumberNotFirstOrLast <- stringSplit$punctuationBinary | stringSplit$numberBinary
-  stringSplit$group <- NA
-  stringSplit$group[1] <- ifelse(stringSplit$numberBinary[1], 1, 0) # Rewrtie to figure out if it is a numberic 
-  
-  # Creating groups of the numbered and unnumbered sections
-  if (nrow(stringSplit) > 1) {
-    for (i in 2:nrow(stringSplit)) {
-      stringSplit$group[i] <-
-        ifelse(
-          punctuationBinary[i - 1] == punctuationBinary[i],
-          stringSplit$group[i - 1],
-          stringSplit$group[i - 1] + 1
-        )
-    }
-  }
-  
-  # NEED TO PUT IN CHECK TO MAKE SURE THAT NUMBERS LISTED NEXT TO EACH OTHER ARE NOT CAPTURED IN THE SAME GROUP !!!
-  
-  #creating groupin variable
-  stringSplit$group <- NA
+stringSplit$group <- NA
   
   # Using cumulative sum to count the number of non-number items, not counting punctuation 
   stringSplit$group[!stringSplit$punctuationBinary] <- cumsum(!stringSplit$numberBinary[!stringSplit$punctuationBinary])
@@ -202,14 +182,17 @@ numberBinary <-
                    numericsOnly$number[1:(position - 1)] > numericsOnly$number[position]
                  ) + 1),
                  1)
+        if(position > 1) {
         previousSum <-
           sum(numericsOnly$number[startCountingFrom:(position - 1)]) # begining or previous highest magnitude
         value <- previousSum * numericsOnly$number[position]
-        numericsOnly$number[startCountingFrom:(position - 1)] <- 0
         numericsOnly$number[position] <- value
+        numericsOnly$number[startCountingFrom:(position - 1)] <- 0
+        }
+        #  numericsOnly$number[position] <- numericsOnly$number[position]
       }
     }
-    return(sum(numericsOnly$number))
+    return(format(sum(numericsOnly$number), scientific = F))
 }
   
   numericedOutput <- stringSplit
@@ -224,8 +207,6 @@ numberBinary <-
       numericedOutput$number[which(numericedOutput$group== groups)[1]]
   }
   
-  stringSplit$numer <- numericedOutput$number
+#  stringSplit$number <- numericedOutput$number
 return(paste0(numericedOutput$stringSplit, collapse = ""))
 }
-
-  
