@@ -22,7 +22,6 @@ and “PRQ-Bullies” (alpha = seventy-four)]. One thousand two hundred. And twe
 expect_true(words_to_numbers(example) == example_numerics)
 })
 
-
 test_that("words to numbers works", {
   expect_identical(words_to_numbers("one hundred"),
                    "100")
@@ -65,8 +64,8 @@ test_that("words to numbers works", {
 })
 
 test_that("words to numbers works", {
-  expect_identical(words_to_numbers("sixty nine"),
-                   "69")
+  expect_identical(words_to_numbers("sixty Seven"),
+                   "67")
 })
 
 test_that("words to numbers works", {
@@ -80,10 +79,72 @@ test_that("words to numbers works", {
 })
 
 
-########## !! 
 test_that("words to numbers works", {
-  expect_identical(words_to_numbers("one hundred"),
-                   "100")
+  expect_identical(words_to_numbers("twenty thousand five hundred and sixty nine"),
+                   "20569")
+})
+
+
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one-hundred and five"),
+                   "105")
+})
+
+
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("five quintillion"),
+                   "5e+18")
+})
+
+
+
+test_that("four-thousand and thirty", {
+  expect_identical(words_to_numbers("four-thousand and thirty"),
+                   "4030")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one-hundred and twenty-Five"),
+                   "125")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("four-thousand and thirty"),
+                   "4030")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("six-million five-thousand and two"),
+                   "6005002")
+})
+
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("thousand, one-hundred and eleven"),
+                   "1111")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("twenty-thousand, five-hundred and sixty-nine"),
+                   "20569")
+})
+
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("there were twenty-thousand, five-hundred and sixty-nine X in the five quintillion Y"),
+                   "there were 20569 X in the 5000000000000000000 Y")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one two three four sixteen hundred twelve thousand and twelve one thousand"),
+                   "1 2 3 4 1600 12012 1000")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one two three four sixteen hundred twelve thousand and twelve one thousand, also we have sixty-four dogs"),
+                   "1 2 3 4 1600 12012 1000, also we have 64 dogs")
 })
 
 test_that("words to numbers works", {
@@ -92,58 +153,8 @@ test_that("words to numbers works", {
 })
 
 
-# it('a thousand one hundred and eleven', () => {
-#   expect(wtn('')).to.equal(1111);
-# });
-# 
-# it('sixty nine', () => {
-#   expect(wtn('sixty nine')).to.equal(69);
-# });
-# 
-# it('twenty thousand five hundred and sixty nine', () => {
-#   expect(wtn('twenty thousand five hundred and sixty nine')).to.equal(20569);
-# });
-# 
-# it('five quintillion', () => {
-#   expect(wtn('five quintillion')).to.equal(5000000000000000000);
-# });
-# 
-# it('one-hundred', () => {
-#   expect(wtn('one-hundred')).to.equal(100);
-# });
-# 
-# it('one-hundred and five', () => {
-#   expect(wtn('one-hundred and five')).to.equal(105);
-# });
-# 
-# it('one-hundred and twenty-five', () => {
-#   expect(wtn('one-hundred and twenty-five')).to.equal(125);
-# });
-# 
-# it('four-thousand and thirty', () => {
-#   expect(wtn('four-thousand and thirty')).to.equal(4030);
-# });
-# 
-# it('six-million five-thousand and two', () => {
-#   expect(wtn('six-million five-thousand and two')).to.equal(6005002);
-# });
-# 
-# it('a thousand, one-hundred and eleven', () => {
-#   expect(wtn('a thousand, one-hundred and eleven')).to.equal(1111);
-# });
-# 
-# it('twenty-thousand, five-hundred and sixty-nine', () => {
-#   expect(wtn('twenty-thousand, five-hundred and sixty-nine')).to.equal(20569);
-# });
-# 
-# it('there were twenty-thousand, five-hundred and sixty-nine X in the five quintillion Y', () => {
-#   expect(wtn('there were twenty-thousand, five-hundred and sixty-nine X in the five quintillion Y'))
-#   .to
-#   .equal('there were 20569 X in the 5000000000000000000 Y');
-# });
-# 
 # it('one two three', () => {
-#   expect(wtn('one two three')).to.equal('1 2 3');
+#   expect(wtn()).to.equal('1 2 3');
 # });
 # 
 # it('test one two three test', () => {

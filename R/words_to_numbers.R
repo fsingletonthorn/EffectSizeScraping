@@ -163,6 +163,35 @@ stringSplit$group <- NA
                         stringr::regex(paste(UNIT_KEYS, collapse = "|"),
                                        ignore_case = T))
   
+    
+  # Instegating words breaking rules 
+  # Two units or unit - tens next to each other should be broken apart 
+  for(groups in unique(numericsOnly$group)) {
+  ## REMOVE afterwards
+  processedStrings <- numericStrings[numericStrings$group==groups,]
+    # Extracting numbers only
+    numericsOnly <-
+      dplyr::filter(processedStrings, processedStrings$numberBinary)
+    #L <- 1:nrow(numericsOnly)
+    pairs_to_test <-
+      tibble::tibble(e1 = 1:(nrow(numericsOnly) - 1), e2 = 2:nrow(numericsOnly))
+    # Figuring out break points
+    numericsOnly$tochange  <- c(FALSE,
+    (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$unitType[pairs_to_test$e2]) |
+    (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
+    (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]))
+    
+    numericsOnly$group <- stringr::str_c(numericsOnly$group, cumsum(numericsOnly$tochange))
+
+  numericStrings[match(numericsOnly$id, numericStrings$id), ] <- dplyr::select(numericsOnly, -tochange)
+  
+  ## NEED TO ALSO add in same level magnitude check - i.e., one thousand one thousand should be 1000 1000
+  }
+  # 
+  
+
+  
+  
   # Helper function for assessing each group of numbers 
   # processedNumerics <- dplyr::filter(numericStrings, group == 1)
   
