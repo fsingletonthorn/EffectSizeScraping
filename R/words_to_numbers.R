@@ -112,6 +112,9 @@ numberBinary <-
     ignore_case = T
   ))
 
+# Quick exit if there are no numbers
+if(sum(numberBinary)<1) {return(string)}
+
   # Making tibble
   stringSplit <-
     tibble::tibble(
@@ -150,28 +153,26 @@ stringSplit$group <- NA
   # Identifying the types of each numberic
   numericStrings$magnitudeType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste(MAGNITUDE_KEYS, collapse = "|"),
+                        stringr::regex(paste0("^", MAGNITUDE_KEYS, "$", collapse = "|"),
                                        ignore_case = T))
   
   numericStrings$tenType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste(TEN_KEYS, collapse = "|"),
+                        stringr::regex(paste0("^", TEN_KEYS, "$", collapse = "|"),
                                        ignore_case = T))
   
   numericStrings$unitType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste(UNIT_KEYS, collapse = "|"),
+                        stringr::regex(paste0("^", UNIT_KEYS, "$", collapse = "|"),
                                        ignore_case = T))
   
     
   # Instegating words breaking rules 
   # Two units or unit - tens next to each other should be broken apart 
-  for(groups in unique(numericsOnly$group)) {
-  ## REMOVE afterwards
-  processedStrings <- numericStrings[numericStrings$group==groups,]
+  for(groups in unique(numericStrings$group)) {
     # Extracting numbers only
     numericsOnly <-
-      dplyr::filter(processedStrings, processedStrings$numberBinary)
+      dplyr::filter(numericStrings, numericStrings$numberBinary, group==groups)
     #L <- 1:nrow(numericsOnly)
     pairs_to_test <-
       tibble::tibble(e1 = 1:(nrow(numericsOnly) - 1), e2 = 2:nrow(numericsOnly))
@@ -181,17 +182,24 @@ stringSplit$group <- NA
     (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
     (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]))
     
-    numericsOnly$group <- stringr::str_c(numericsOnly$group, cumsum(numericsOnly$tochange))
+    numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
 
-  numericStrings[match(numericsOnly$id, numericStrings$id), ] <- dplyr::select(numericsOnly, -tochange)
+  # Updating numeric strings withupdated groups
+    numericStrings[match(numericsOnly$id, numericStrings$id),] <- dplyr::select(numericsOnly, -tochange)
   
   ## NEED TO ALSO add in same level magnitude check - i.e., one thousand one thousand should be 1000 1000
   }
-  # 
+  # Dropping unchanging tokens (i.e., those that are not required, like punctuation that should not be altered)
+  numericStrings <- dplyr::filter(numericStrings, !is.na(groups))
   
-
-  
-  
+    # Reassigning the now ungrouped non-numerics 
+  numericStrings$group[!stringr::str_detect(numericStrings$group, "^a\\d")] <- NA
+  numericStrings$group <-
+    ifelse(
+      tidyr::fill(numericStrings, group,  .direction = "down")$group == tidyr::fill(numericStrings, group,  .direction =  "up")$group,
+      tidyr::fill(numericStrings, group,  .direction = "down")$group,
+      NA
+    )
   # Helper function for assessing each group of numbers 
   # processedNumerics <- dplyr::filter(numericStrings, group == 1)
   
@@ -225,15 +233,15 @@ stringSplit$group <- NA
 }
   
   numericedOutput <- stringSplit
-    
-  for(groups in unique(numericStrings$group)) {
-    groupFilter <- which(numericStrings$group == groups)
+  
+  for(groups in unique(na.omit(numericStrings$group))) {
+    ids <- dplyr::filter(numericStrings, group == groups)$id
 
-    numericedOutput$number[which(numericedOutput$group== groups)[1]] <- 
-      identifyNumbers(numericStrings[groupFilter,])
-    numericedOutput$stringSplit[which(numericedOutput$group== groups)] <- ""
-    numericedOutput$stringSplit[which(numericedOutput$group== groups)[1]] <-
-      numericedOutput$number[which(numericedOutput$group== groups)[1]]
+  numericedOutput$number[numericedOutput$id %in% ids][1] <- 
+      identifyNumbers(numericStrings[numericStrings$group == groups,])
+    numericedOutput$stringSplit[numericedOutput$id %in% ids] <- ""
+    numericedOutput$stringSplit[numericedOutput$id %in% ids][1] <-
+      numericedOutput$number[numericedOutput$id %in% ids][1]
   }
   
 #  stringSplit$number <- numericedOutput$number
