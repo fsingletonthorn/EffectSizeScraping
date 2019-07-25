@@ -106,11 +106,15 @@ punctuationBinary <-
 punctuationBinary[stringr::str_detect(stringSplitVec, "\\.")] <- FALSE
 
 # Detecting numbers 
+# Detecting numerics
+numericBinary <-  !is.na(suppressWarnings( as.numeric(stringSplitVec)) )
+# Detecting numbers 
 numberBinary <-
   stringr::str_detect(stringSplitVec, stringr::regex(
     paste("^", NUMBER_WORDS, "$", collapse = "|", sep = ""),
     ignore_case = T
-  ))
+  )) | numericBinary
+
 
 # Quick exit if there are no numbers
 if (sum(numberBinary) < 1) {
@@ -126,7 +130,8 @@ if (length(stringSplitVec) == 1) {
       id = 1:length(numberBinary),
       stringSplit = as.character(stringSplitVec),
       punctuationBinary,
-      numberBinary
+      numberBinary,
+      numericBinary
     )
   
 stringSplit$group <- NA
@@ -149,57 +154,48 @@ stringSplit$group <- NA
   
   # Checking for number point number and converting it into "number.number"
   ## NEED TO FIX IT SO "ten point five" != "10 .5" but rather "10.5"
-  # stringSplit$stringSplit <-
-  #   ifelse(c(
-  #     # If the number following is a number 
-  #     c(T, stringSplit$numberBinary) &
-  #       # And the string is whitespace
-  #       c(stringSplit$stringSplit == " ", F) &
-  #       # And the word following is 
-  #       c(
-  #         stringr::str_detect(
-  #           stringSplit$stringSplit[-1],
-  #           stringr::regex("point|dot", ignore_case =
-  #                            T)
-  #         ),
-  #         F,
-  #         F
-  #       ) &
-  #       c(stringSplit$numberBinary[-c(1)], F, F)
-  #   )[-(nrow(stringSplit) + 1)],
-  #   "", stringSplit$stringSplit)
-  # 
-  # stringSplit$stringSplit <-
-  #   ifelse(
-  #     c(stringSplit$numberBinary[-1], F) &
-  #       c(stringSplit$stringSplit == " ") &
-  #       c(F, stringSplit$numberBinary[-c(1, 2)], F) &
-  #       c(F,
-  #         stringr::str_detect(
-  #           stringSplit$stringSplit[-nrow(stringSplit)],
-  #           stringr::regex("point|dot", ignore_case =
-  #                            T)
-  #         )
-  #       )[1:nrow(stringSplit)],
-  #     "",
-  #     stringSplit$stringSplit
-  #   )
-  # 
-  # stringSplit$stringSplit <-
-  #   ifelse((
-  #     c(T, T, stringSplit$numberBinary) &
-  #       c(stringSplit$numberBinary[-c(1, 2)], F, F, F, F) &
-  #       c(
-  #         stringr::str_detect(
-  #           stringSplit$stringSplit,
-  #           stringr::regex("point|dot", ignore_case =
-  #                            T)
-  #         ),
-  #         F,
-  #         F
-  # #       )
-  #   )[1:nrow(stringSplit)],
-  #   ".", stringSplit$stringSplit)
+  last_position <- nrow(stringSplit)
+  
+  stringSplit$point <- stringr::str_detect(
+    stringSplit$stringSplit,
+    stringr::regex("point|dot", 
+                   ignore_case = T)
+    )
+  stringSplit$tokenAheadPoint <- c(stringSplit$point[-1], F)
+  stringSplit$tokenBehindPoint <-c(F, stringSplit$point[-last_position])
+  
+  stringSplit$space <- stringSplit$stringSplit == " "
+  stringSplit$tokenAheadSpace <- c(stringSplit$space[-1], F)
+  stringSplit$tokenBehindSpace <-c(F, stringSplit$space[-last_position])
+
+  stringSplit$tokenAheadNumber <- c(stringSplit$numberBinary[-1], F)
+  stringSplit$tokenBehindNumber <-c(F, stringSplit$numberBinary[-last_position])
+  
+  
+  stringSplit$stringSplit <-
+    ifelse(c(
+      # If the token is a space AND
+      stringSplit$space &
+      # ... the token following the space is a point and before is a number, and the point is followed by anything, and then a number
+      (stringSplit$tokenAheadPoint & stringSplit$tokenBehindNumber  & c(stringSplit$tokenAheadNumber[-(1:2)], F, F)) |
+      # ... the token before the value is a space AND the token ahead is a point, which is in turn followed by a number (three ahead))))
+      (stringSplit$tokenAheadNumber & stringSplit$tokenBehindPoint)
+       # (c(stringSplit$numberBinary[-c(1:3)], F, F, F) | c(F,F,F,stringSplit$numberBinary[-c((nrow(stringSplit)-2):nrow(stringSplit))]))
+        ) 
+      ,
+    "", stringSplit$stringSplit)
+
+
+  stringSplit$stringSplit <-
+    ifelse((
+      c(T, T, stringSplit$numberBinary) &
+        c(stringSplit$numberBinary[-c(1, 2)], F, F, F, F) &
+        c(stringSplit$point,
+          F,
+          F
+         )
+    )[1:nrow(stringSplit)],
+    ".", stringSplit$stringSplit)
   # 
   
   # initiallising number vec
@@ -216,7 +212,7 @@ stringSplit$group <- NA
   numericStrings$magnitudeType <-
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", MAGNITUDE_KEYS, "$", collapse = "|"),
-                                       ignore_case = T))
+                                       ignore_case = T)) # | (numericStrings$)
   
   numericStrings$tenType <-
     stringr::str_detect(numericStrings$stringSplit,
@@ -279,18 +275,8 @@ stringSplit$group <- NA
           numericsOnly$magnitudeType[triplets_to_test$e3],
         numericsOnly$tochange[nrow(numericsOnly)]
     )
-      
-      
-      # breaking if a non-magnitude (not 100, 1000, 10000 or etc. is preceeded by two non-magnidues) ?
-    
     }
-    #   numericsOnly$tochange  <- c(FALSE,
-    #                               (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$unitType[pairs_to_test$e2]) |
-    #                               (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
-    #                               (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
-    #   )
-    #   
-    #  }
+
     numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
     
     
