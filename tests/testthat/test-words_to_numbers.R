@@ -2,7 +2,7 @@ context("written numbers to numerics")
 
 test_that("Numbers to numerics works on a chunk of text", {
 example_numerics <- "1213. 133. The PRQ is a 12-item, 4-point Likert scale
-(from 1 = Never to 4 = Very Often) with 3 sub-scores:
+(from 1 = Never to 4 = Very Often) with 3 sub-scores
 bullying (PRQ-Bully), being victimized (PRQ-Victim),
 and pro-social behavior (PRQ-Prosocial). A translated,
 backtranslated final Arabic version of the scale was found
@@ -11,7 +11,7 @@ sample [“PRQ-Victim” (alpha = .74)
 and “PRQ-Bullies” (alpha = 74)]. 1200. And 12"
 
 example <- "One-thousand, two hundred and thirteen. One-hundred and thirty three. The PRQ is a twelve-item, four-point Likert scale
-(from one = Never to four = Very Often) with three sub-scores:
+(from one = Never to four = Very Often) with three sub-scores
 bullying (PRQ-Bully), being victimized (PRQ-Victim),
 and pro-social behavior (PRQ-Prosocial). A translated,
 backtranslated final Arabic version of the scale was found
@@ -95,7 +95,7 @@ test_that("words to numbers works", {
 
 test_that("words to numbers works", {
   expect_identical(words_to_numbers("five quintillion"),
-                   "5e+18")
+                   "5000000000000000000")
 })
 
 
@@ -148,251 +148,143 @@ test_that("words to numbers works", {
 })
 
 test_that("words to numbers works", {
-  expect_identical(words_to_numbers("one hundred"),
-                   "100")
+  expect_identical(words_to_numbers("sixteen hundred, twelve thousand and twelve"),
+                   "1600, 12012")
 })
 
 
-# it('one two three', () => {
-#   expect(wtn()).to.equal('1 2 3');
-# });
+test_that("one two three", {
+  expect_identical(words_to_numbers('1 2 3'), "1 2 3")
+})
 # 
-# it('test one two three test', () => {
-#   expect(wtn('test one two three test')).to.equal('test 1 2 3 test');
-# });
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers('test one two three test'), 'test 1 2 3 test')
+})
 # 
-# it('won huntred', () => {
-#   expect(wtn('won huntred', {fuzzy: true})).to.equal(100);
-# });
 # 
-# it('tu thousant and faav', () => {
-#   expect(wtn('too thousant and fiev', {fuzzy: true})).to.equal(2005);
-# });
+test_that("forty two point five", {
+  expect_identical(words_to_numbers('forty two point five'), "42.5")
+})
 # 
-# it('tree millyon sefen hunderd ant twinty sex', () => {
-#   expect(wtn('tree millyon sefen hunderd and twinty sex', {fuzzy: true})).to.equal(3000726);
-# });
+test_that("ten point five", {
+  expect_identical(words_to_numbers('ten point five'), "10.5")
+})
 # 
-# it('forty two point five', () => {
-#   expect(wtn('forty two point five')).to.equal(42.5);
-# });
+test_that("digit one", {
+  expect_identical(words_to_numbers('digit one'), 'digit 1')
+})
 # 
-# it('ten point five', () => {
-#   expect(wtn('ten point five')).to.equal(10.5);
-# });
+test_that("digit one ", {
+  expect_identical(words_to_numbers('digit one '), 'digit 1 ')
+})
 # 
-# it('three point one four one five nine two six', () => {
-#   expect(wtn('three point one four one five nine two six')).to.equal(3.1415926);
-# });
+test_that("one thirty", {
+  expect_identical(words_to_numbers('one thirty'), '1 30')
+})
 # 
-# /* testing for ordinal numbers */
-#   
-#   it('first', () => {
-#     expect(wtn('first')).to.equal(1);
-#   });
+test_that("thousand", {
+  expect_identical(words_to_numbers('thousand'), "1000")
+})
 # 
-# it('second', () => {
-#   expect(wtn('second')).to.equal(2);
-# });
+test_that("million", {
+  expect_identical(words_to_numbers('million'), "1000000")
+})
 # 
-# it('third', () => {
-#   expect(wtn('third')).to.equal(3);
-# });
+test_that("billion", {
+  expect_identical(words_to_numbers('billion'), "1000000000")
+})
 # 
-# it('fourteenth', () => {
-#   expect(wtn('fourteenth')).to.equal(14);
-# });
+test_that("xxxxxxx one hundred", {
+  expect_identical(words_to_numbers('xxxxxxx one hundred'), 'xxxxxxx 100')
+})
 # 
-# it('twenty fifth', () => {
-#   expect(wtn('twenty fifth')).to.equal(25);
-# });
+test_that("and", {
+  expect_identical(words_to_numbers('and'), 'and')
+})
 # 
-# it('thirty fourth', () => {
-#   expect(wtn('thirty fourth')).to.equal(34);
-# });
+test_that("a", {
+  expect_identical(words_to_numbers('a'), 'a')
+})
 # 
-# it('forty seventh', () => {
-#   expect(wtn('forty seventh')).to.equal(47);
-# });
+test_that("junkvalue", {
+  expect_identical(words_to_numbers('junkvalue'), 'junkvalue')
+})
 # 
-# it('fifty third', () => {
-#   expect(wtn('fifty third')).to.equal(53);
-# });
+test_that("eleven dot one", {
+  expect_identical(words_to_numbers('eleven dot one'), "11.1")
+})
 # 
-# it('sixtieth', () => {
-#   expect(wtn('sixtieth')).to.equal(60);
-# });
+test_that("Fifty People, One Question Brooklyn", {
+  expect_identical(words_to_numbers('Fifty People, One Question Brooklyn'), ('50 People, 1 Question Brooklyn'))
+})
 # 
-# it('seventy second', () => {
-#   expect(wtn('seventy second')).to.equal(72);
-# });
+test_that("Model Fifty-One Fifty-Six", {
+  expect_identical(words_to_numbers('Model Fifty-One Fifty-Six'), ('Model 51 56'))
+})
 # 
-# it('eighty ninth', () => {
-#   expect(wtn('eighty ninth')).to.equal(89);
-# });
+test_that("Fifty Million Frenchmen", {
+  expect_identical(words_to_numbers('Fifty Million Frenchmen'), ('50000000 Frenchmen'))
+})
 # 
-# it('ninety sixth', () => {
-#   expect(wtn('ninety sixth')).to.equal(96);
-# });
+test_that("A Thousand and One Wives", {
+  expect_identical(words_to_numbers('Thousand and One Wives'), ('1001 Wives'))
+})
 # 
-# it('one hundred and eighth', () => {
-#   expect(wtn('one hundred and eighth')).to.equal(108);
-# });
+test_that("Ten Thousand Pictures of You", {
+  expect_identical(words_to_numbers('Ten Thousand Pictures of You'), ('10000 Pictures of You'))
+})
 # 
-# it('one hundred and tenth', () => {
-#   expect(wtn('one hundred and tenth')).to.equal(110);
-# });
+test_that("one thirty", {
+  expect_identical(words_to_numbers('one thirty'), ("1 30"))
+})
 # 
-# it('one hundred and ninety ninth', () => {
-#   expect(wtn('one hundred and ninety ninth')).to.equal(199);
-# });
+test_that("six sixty two", {
+  expect_identical(words_to_numbers('six sixty two'), ("6 62"))
+})
 # 
-# it('digit one', () => {
-#   expect(wtn('digit one')).to.equal('digit 1');
-# });
+test_that("one hundred thousand", {
+  expect_identical(as.numeric(words_to_numbers('one hundred thousand')), (100000))
+})
 # 
-# it('digit one ', () => {
-#   expect(wtn('digit one ')).to.equal('digit 1 ');
-# });
+test_that("I have zero apples and four oranges", {
+  expect_identical(words_to_numbers('I have zero apples and four oranges'), ('I have 0 apples and 4 oranges'))
+})
 # 
-# it('one thirty', () => {
-#   expect(wtn('one thirty')).to.equal('1 30');
-# });
+test_that("Dot two Dot", {
+  expect_identical(words_to_numbers('Dot two Dot'), ('.2 Dot'))
+})
 # 
-# it('thousand', () => {
-#   expect(wtn('thousand')).to.equal(1000);
-# });
-# 
-# it('million', () => {
-#   expect(wtn('million')).to.equal(1000000);
-# });
-# 
-# it('billion', () => {
-#   expect(wtn('billion')).to.equal(1000000000);
-# });
-# 
-# it('xxxxxxx one hundred', () => {
-#   expect(wtn('xxxxxxx one hundred')).to.equal('xxxxxxx 100');
-# });
-# 
-# it('and', () => {
-#   expect(wtn('and')).to.equal('and');
-# });
-# 
-# it('a', () => {
-#   expect(wtn('a')).to.equal('a');
-# });
-# 
-# it('junkvalue', () => {
-#   expect(wtn('junkvalue')).to.equal('junkvalue');
-# });
-# 
-# it('eleven dot one', () => {
-#   expect(wtn('eleven dot one')).to.eq(11.1);
-# });
-# 
-# it('Fifty People, One Question: Brooklyn', () => {
-#   expect(wtn('Fifty People, One Question: Brooklyn')).to.eq('50 People, 1 Question: Brooklyn');
-# });
-# 
-# it('Model Fifty-One Fifty-Six', () => {
-#   expect(wtn('Model Fifty-One Fifty-Six')).to.eq('Model 51 56');
-# });
-# 
-# it('Fifty Million Frenchmen', () => {
-#   expect(wtn('Fifty Million Frenchmen')).to.eq('50000000 Frenchmen');
-# });
-# 
-# it('A Thousand and One Wives', () => {
-#   expect(wtn('A Thousand and One Wives')).to.eq('1001 Wives');
-# });
-# 
-# it('Ten Thousand Pictures of You', () => {
-#   expect(wtn('Ten Thousand Pictures of You')).to.eq('10000 Pictures of You');
-# });
-# 
-# it('nineteen eighty four', () => {
-#   expect(wtn('nineteen eighty four', { impliedHundreds: true })).to.eq(1984);
-# });
-# 
-# it('one thirty', () => {
-#   expect(wtn('one thirty', { impliedHundreds: true })).to.eq(130);
-# });
-# 
-# it('six sixty two', () => {
-#   expect(wtn('six sixty two', { impliedHundreds: true })).to.eq(662);
-# });
-# 
-# it('ten twelve', () => {
-#   expect(wtn('ten twelve', { impliedHundreds: true })).to.eq(1012);
-# });
-# 
-# it('nineteen ten', () => {
-#   expect(wtn('nineteen ten', { impliedHundreds: true })).to.eq(1910);
-# });
-# 
-# it('twenty ten', () => {
-#   expect(wtn('twenty ten', { impliedHundreds: true })).to.eq(2010);
-# });
-# 
-# it('twenty seventeen', () => {
-#   expect(wtn('twenty seventeen', { impliedHundreds: true })).to.eq(2017);
-# });
-# 
-# it('twenty twenty', () => {
-#   expect(wtn('twenty twenty', { impliedHundreds: true })).to.eq(2020);
-# });
-# 
-# it('twenty twenty one', () => {
-#   expect(wtn('twenty twenty one', { impliedHundreds: true })).to.eq(2021);
-# });
-# 
-# it('fifty sixty three', () => {
-#   expect(wtn('fifty sixty three', { impliedHundreds: true })).to.eq(5063);
-# });
-# 
-# it('fifty sixty', () => {
-#   expect(wtn('fifty sixty', { impliedHundreds: true })).to.eq(5060);
-# });
-# 
-# it('three thousand', () => {
-#   expect(wtn('three thousand', { impliedHundreds: true })).to.eq(3000);
-# });
-# 
-# it('fifty sixty three thousand', () => {
-#   expect(wtn('fifty sixty three thousand', { impliedHundreds: true })).to.eq(5063000);
-# });
-# 
-# it('one hundred thousand', () => {
-#   expect(wtn('one hundred thousand')).to.eq(100000);
-# });
-# 
-# it('I have zero apples and four oranges', () => {
-#   expect(wtn('I have zero apples and four oranges')).to.eq('I have 0 apples and 4 oranges');
-# });
-# 
-# it('Dot two Dot', () => {
-#   expect(wtn('Dot two Dot')).to.eq('0.2 Dot');
-# });
-# 
-# it('seventeen dot two four dot twelve dot five', () => {
-#   expect(wtn('seventeen dot two four dot twelve dot five')).to.eq('17.24 dot 12.5');
-# });
+test_that("seventeen dot two four dot twelve dot five", {
+  expect_identical(words_to_numbers('seventeen dot two four dot twelve'), ('17.2 4.12'))
+})
 # 
 # // these dont work below fml
 # 
-# // it('one thirty thousand', () => {
-#   //   expect(wtn('one thirty thousand', { impliedHundreds: true })).to.eq(130000);
-#   // });
+# // it('one thirty thousand", {
+#   //   expect(wtn('one thirty thousand'), { impliedHundreds true }), (130000))
+#   // }))
 # 
-# // it('nineteen eighty thousand', () => {
-#   //   expect(wtn('nineteen eighty thousand', { impliedHundreds: true })).to.eq('19 80000');
-#   // });
+# // it('nineteen eighty thousand", {
+#   //   expect(wtn('nineteen eighty thousand'), { impliedHundreds true }), ('19 80000'))
+#   // }))
 # 
-# // it('one hundred two thousand', () => {
-#   //   expect(wtn('one hundred two thousand')).to.eq(102000);
-#   // });
+# // it('one hundred two thousand", {
+#   //   expect(wtn('one hundred two thousand'), (102000))
+#   // }))
 # 
-# // it('one hundred and two thousand', () => {
-#   //   expect(wtn('one hundred and two thousand')).to.eq(102000);
-#   // });
+# // it('one hundred and two thousand", {
+#   //   expect(wtn('one hundred and two thousand'), (102000))
+#   // }))
+
+# 
+# test_that("words to numbers works", {
+#   expect_identical(as.numeric(words_to_numbers("sixty hundred thousand")),
+#                    6e+06)
+# })
+
+# # 
+# test_that("three point one four one five nine two six", {
+#   expect_identical(words_to_numbers('three point one four one five nine two six'), 
+#                    3.1415926)
+# })
+# 
