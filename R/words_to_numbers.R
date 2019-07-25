@@ -117,9 +117,10 @@ numberBinary <-
 
 
 # Quick exit if there are no numbers
-if (sum(numberBinary) < 1) {
+if (sum(numberBinary[!numericBinary]) < 1) {
   return(string)
 }
+# And quick exit if there is only one number element
 if (length(stringSplitVec) == 1) {
   return(as.character(format(NUMBER[[tolower(string)]], scientific = F)))
 }
