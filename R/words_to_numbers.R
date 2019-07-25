@@ -2,7 +2,6 @@
 ### Setting up constants
 ##  This is inspired by https://github.com/finnfiddle/words-to-numbers
 
-# NEED TO PUT IN CHECK TO MAKE SURE THAT NUMBERS LISTED NEXT TO EACH OTHER ARE NOT CAPTURED IN THE SAME GROUP !!!
 # Note that numbers are output in scientific notation if they are high enough
 words_to_numbers <- function(string) { 
 
@@ -114,7 +113,12 @@ numberBinary <-
   ))
 
 # Quick exit if there are no numbers
-if(sum(numberBinary)<1) {return(string)}
+if (sum(numberBinary) < 1) {
+  return(string)
+}
+if (length(stringSplitVec) == 1) {
+  return(as.character(format(NUMBER[[tolower(string)]], scientific = F)))
+}
 
   # Making tibble
   stringSplit <-
@@ -127,6 +131,7 @@ if(sum(numberBinary)<1) {return(string)}
   
 stringSplit$group <- NA
   
+
   # Using cumulative sum to count the number of non-number items, not counting punctuation 
   stringSplit$group[!stringSplit$punctuationBinary] <- cumsum(!stringSplit$numberBinary[!stringSplit$punctuationBinary])
   
@@ -142,6 +147,62 @@ stringSplit$group <- NA
       NA
     )
   
+  # Checking for number point number and converting it into "number.number"
+  ## NEED TO FIX IT SO "ten point five" != "10 .5" but rather "10.5"
+  # stringSplit$stringSplit <-
+  #   ifelse(c(
+  #     # If the number following is a number 
+  #     c(T, stringSplit$numberBinary) &
+  #       # And the string is whitespace
+  #       c(stringSplit$stringSplit == " ", F) &
+  #       # And the word following is 
+  #       c(
+  #         stringr::str_detect(
+  #           stringSplit$stringSplit[-1],
+  #           stringr::regex("point|dot", ignore_case =
+  #                            T)
+  #         ),
+  #         F,
+  #         F
+  #       ) &
+  #       c(stringSplit$numberBinary[-c(1)], F, F)
+  #   )[-(nrow(stringSplit) + 1)],
+  #   "", stringSplit$stringSplit)
+  # 
+  # stringSplit$stringSplit <-
+  #   ifelse(
+  #     c(stringSplit$numberBinary[-1], F) &
+  #       c(stringSplit$stringSplit == " ") &
+  #       c(F, stringSplit$numberBinary[-c(1, 2)], F) &
+  #       c(F,
+  #         stringr::str_detect(
+  #           stringSplit$stringSplit[-nrow(stringSplit)],
+  #           stringr::regex("point|dot", ignore_case =
+  #                            T)
+  #         )
+  #       )[1:nrow(stringSplit)],
+  #     "",
+  #     stringSplit$stringSplit
+  #   )
+  # 
+  # stringSplit$stringSplit <-
+  #   ifelse((
+  #     c(T, T, stringSplit$numberBinary) &
+  #       c(stringSplit$numberBinary[-c(1, 2)], F, F, F, F) &
+  #       c(
+  #         stringr::str_detect(
+  #           stringSplit$stringSplit,
+  #           stringr::regex("point|dot", ignore_case =
+  #                            T)
+  #         ),
+  #         F,
+  #         F
+  # #       )
+  #   )[1:nrow(stringSplit)],
+  #   ".", stringSplit$stringSplit)
+  # 
+  
+  # initiallising number vec
   stringSplit$number <- NA
   
   #### Extracting all of the numbers - we may as well 
@@ -173,18 +234,66 @@ stringSplit$group <- NA
   for(groups in unique(numericStrings$group)) {
     # Extracting numbers only
     numericsOnly <-
-      dplyr::filter(numericStrings, numericStrings$numberBinary, group==groups)
-    #L <- 1:nrow(numericsOnly)
-    pairs_to_test <-
-      tibble::tibble(e1 = 1:(nrow(numericsOnly) - 1), e2 = 2:nrow(numericsOnly))
-    # Figuring out break points
+      dplyr::filter(numericStrings, numericStrings$numberBinary, group ==
+                      groups)
+    if (nrow(numericsOnly) < 2) {
+      # If there is only one element it doesn't need to change
+      numericsOnly$tochange <- FALSE
+      # Else if there are multiple, we need to check that there are not any illegal characters
+    } else if (nrow(numericsOnly) > 1) {
+      #L <- 1:nrow(numericsOnly)
+      pairs_to_test <-
+        tibble::tibble(e1 = 1:(nrow(numericsOnly) - 1),
+                       e2 = 2:nrow(numericsOnly))
+      # Figuring out break points, i.e., splitting where there are (note that 
+      # this takes e2 as the position to split at, i.e., e1 is the preceeding
+      # value and e2 is the one which is broken at)
     numericsOnly$tochange  <- c(FALSE,
-    (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$unitType[pairs_to_test$e2]) |
-    (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
-    (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]))
+      # Breaking to new number if  a unit type (1-19) was preceeded by a unit type (1-19)
+      (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$unitType[pairs_to_test$e2]) |
+      # Also breaking if a ten type (10,20,30, ..., 90) of was preceeded by a unit type
+      (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
+        # And breatking if a a ten type is preceeded by a ten type 
+    (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) | 
+     # And breaking if a number is preceeded by itself
+    (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
+      )
+    }
     
+    if(nrow(numericsOnly) > 3) {
+      triplets_to_test <- 
+        tibble::tibble(e1 = 1:(nrow(numericsOnly) - 2),
+                       e2 = 2:(nrow(numericsOnly) - 1), 
+                       e3 = 3:nrow(numericsOnly))
+      numericsOnly$tochange <- c( 
+        # Note that unlike the doubles, this "centers" on the middle value 
+        # (i.e., e2 is still the value at which the break happens, not the last value)
+        # This means that we cannot change the first or the last value's break 
+        numericsOnly$tochange[c(1)],
+        numericsOnly$tochange[-c(1, nrow(numericsOnly))] | 
+        #  If a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
+        # (e.g., "twenty thousand, one million" as compared to "one million, twenty thousand")
+          as.numeric(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e1])]) <= 
+          as.numeric(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e3])]) &
+          numericsOnly$magnitudeType[triplets_to_test$e1] & 
+          numericsOnly$magnitudeType[triplets_to_test$e3],
+        numericsOnly$tochange[nrow(numericsOnly)]
+    )
+      
+      
+      # breaking if a non-magnitude (not 100, 1000, 10000 or etc. is preceeded by two non-magnidues) ?
+    
+    }
+    #   numericsOnly$tochange  <- c(FALSE,
+    #                               (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$unitType[pairs_to_test$e2]) |
+    #                               (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
+    #                               (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
+    #   )
+    #   
+    #  }
     numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
-
+    
+    
   # Updating numeric strings withupdated groups
     numericStrings[match(numericsOnly$id, numericStrings$id),] <- dplyr::select(numericsOnly, -tochange)
   
@@ -237,7 +346,7 @@ stringSplit$group <- NA
   
   for(groups in unique(na.omit(numericStrings$group))) {
     ids <- dplyr::filter(numericStrings, group == groups)$id
-
+    # Blanking out the non-used numbers and repacing strings with numbers
   numericedOutput$number[numericedOutput$id %in% ids][1] <- 
       identifyNumbers(numericStrings[numericStrings$group == groups,])
     numericedOutput$stringSplit[numericedOutput$id %in% ids] <- ""
@@ -245,6 +354,6 @@ stringSplit$group <- NA
       numericedOutput$number[numericedOutput$id %in% ids][1]
   }
   
-#  stringSplit$number <- numericedOutput$number
 return(paste0(numericedOutput$stringSplit, collapse = ""))
 }
+
