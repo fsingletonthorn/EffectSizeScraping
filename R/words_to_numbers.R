@@ -49,6 +49,7 @@ UNIT <- list(
 
 TEN <- list(
   ten = 10,
+# tenth = 10,  
   twenty = 20,
 #  twentieth = 20,
   thirty = 30,
@@ -181,30 +182,20 @@ stringSplit$group <- NA
       (stringSplit$tokenAheadPoint & stringSplit$tokenBehindNumber  & c(stringSplit$tokenAheadNumber[-(1:2)], F, F)) |
       # ... the token before the value is a space AND the token ahead is a point, which is in turn followed by a number (three ahead))))
       (stringSplit$tokenAheadNumber & stringSplit$tokenBehindPoint)
-       # (c(stringSplit$numberBinary[-c(1:3)], F, F, F) | c(F,F,F,stringSplit$numberBinary[-c((nrow(stringSplit)-2):nrow(stringSplit))]))
-        ) 
+    ) 
       ,
     "", stringSplit$stringSplit)
 
 
+  # Replace  "dot" or "point" with points 
   stringSplit$stringSplit <-
-    ifelse((
-      c(T, T, stringSplit$numberBinary) &
-        c(stringSplit$numberBinary[-c(1, 2)], F, F, F, F) &
-        c(stringSplit$point,
-          F,
-          F
-         )
-    )[1:nrow(stringSplit)],
+    ifelse(c(T, T, stringSplit$numberBinary[-((last_position-1):last_position)]) &
+        c(stringSplit$numberBinary[-c(1, 2)], F, F) &
+        stringSplit$point,
     ".", stringSplit$stringSplit)
-  # 
   
-  # initiallising number vec
-  stringSplit$number <- NA
-  
-  #### Extracting all of the numbers - we may as well 
-  # tokensArray <- tapply(stringSplit$stringSplit, INDEX = stringSplit$group, FUN = paste0, simplify = T, collapse = " ")[-1]
-  # tokens <- tibble::tibble(tokens = tokensArray, region = names(tokensArray), numericToken = NA)
+  # initiallising number vector
+  stringSplit$number <- ifelse(stringSplit$numericBinary, stringSplit$stringSplit, NA)
   
   # Pairing down to just those effects that have numerics
   numericStrings <- dplyr::filter(stringSplit, group > -1)
@@ -224,10 +215,9 @@ stringSplit$group <- NA
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", UNIT_KEYS, "$", collapse = "|"),
                                        ignore_case = T))
-  
     
-  # Instegating words breaking rules 
-  # Two units or unit - tens next to each other should be broken apart 
+  # Instegating number breaking - apart rules rules 
+  # Two UNITs or UNIT - TEN next to each other should be broken apart 
   for(groups in unique(numericStrings$group)) {
     # Extracting numbers only
     numericsOnly <-
