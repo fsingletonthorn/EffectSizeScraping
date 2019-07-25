@@ -209,6 +209,10 @@ test_that("a", {
 test_that("junkvalue", {
   expect_identical(words_to_numbers('junkvalue'), 'junkvalue')
 })
+
+test_that("ten point five, seven point eight", {
+  expect_identical(words_to_numbers("ten point five, seven point eight"), "10.5, 7.8")
+})
 # 
 test_that("eleven dot one", {
   expect_identical(words_to_numbers('eleven dot one'), "11.1")
@@ -257,6 +261,20 @@ test_that("Dot two Dot", {
 test_that("seventeen dot two four dot twelve dot five", {
   expect_identical(words_to_numbers('seventeen dot two four dot twelve'), ('17.2 4.12'))
 })
+
+test_that("16 million", {
+  expect_identical(words_to_numbers("16 million"), ("16000000"))
+})
+
+test_that("10 thousand", {
+  expect_identical(words_to_numbers('10 thousand'), ("10000"))
+})
+
+
+test_that("10 thousand and 12", {
+  expect_identical(words_to_numbers('10 thousand and 12'), ("10012"))
+})
+
 # 
 # // these dont work below fml
 # 
