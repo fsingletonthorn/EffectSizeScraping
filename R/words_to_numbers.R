@@ -208,7 +208,7 @@ stringSplit$group <- NA
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", MAGNITUDE_KEYS, "$", collapse = "|"),
                                        ignore_case = T)) | ifelse(!is.na(numericStrings$number), 
-                                                                  as.numeric(numericStrings$number) > 99, F)
+                                                                  as.numeric(numericStrings$number) %in% MAGNITUDE, F)
   
   numericStrings$tenType <-
     stringr::str_detect(numericStrings$stringSplit,
@@ -218,8 +218,7 @@ stringSplit$group <- NA
            (
              as.numeric(numericStrings$number) == 10 |
                (
-                 as.numeric(numericStrings$number) > 19 &
-                   as.numeric(numericStrings$number) < 99
+                 as.numeric(numericStrings$number) %in% TEN
                )
            )
            , F)
@@ -228,7 +227,9 @@ stringSplit$group <- NA
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", UNIT_KEYS, "$", collapse = "|"),
                                        ignore_case = T)) |
-    ifelse(!is.na(numericStrings$number), as.numeric(numericStrings$number) < 20, F)
+    ifelse(!is.na(numericStrings$number), 
+           # Counting as a unit if the token is a digit between 0 - 99 but not a 10 
+           as.numeric(numericStrings$number) %in% seq(0, 99)[-c(seq(11,91, by = 10))], F)
     
   # Helper function to check whether the item is a number or matches a number and returns either the numeric or the string
   token_to_number <- function(tokens) {
@@ -268,7 +269,12 @@ stringSplit$group <- NA
       # Also breaking if a ten type (10,20,30, ..., 90) of was preceeded by a unit type
       (numericsOnly$unitType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
         # And breatking if a a ten type is preceeded by a ten type 
-    (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) | 
+    (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
+      # Adding break if a larger number in digits is followed by a word in 
+      # numbers of a smaller magnitude (e.g., "1000 hundred" or "100" ten)
+        (numericsOnly$numericBinary[pairs_to_test$e1] & 
+      token_to_number(numericsOnly$stringSplit[pairs_to_test$e2]) <=
+      token_to_number(numericsOnly$stringSplit[pairs_to_test$e1]) ) |
      # And breaking if a number is preceeded by itself
     (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
       )
