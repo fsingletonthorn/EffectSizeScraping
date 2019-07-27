@@ -120,6 +120,15 @@ test_that("words to numbers works", {
                    "6005002")
 })
 
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("99, 15 thousand"),
+                   "99, 15000")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one thousand, one-hundred and eleven"),
+                   "1111")
+})
 
 test_that("words to numbers works", {
   expect_identical(words_to_numbers("thousand, one-hundred and eleven"),
@@ -155,6 +164,10 @@ test_that("words to numbers works", {
 
 test_that("one two three", {
   expect_identical(words_to_numbers('1 2 3'), "1 2 3")
+})
+# 
+test_that("one two three 1", {
+  expect_identical(words_to_numbers('1 2 3 one'), "1 2 3 1")
 })
 # 
 test_that("words to numbers works", {
@@ -231,7 +244,7 @@ test_that("Fifty Million Frenchmen", {
 })
 # 
 test_that("A Thousand and One Wives", {
-  expect_identical(words_to_numbers('Thousand and One Wives'), ('1001 Wives'))
+  expect_identical(words_to_numbers('Thousand and One people'), ('1001 people'))
 })
 # 
 test_that("Ten Thousand Pictures of You", {
@@ -270,9 +283,41 @@ test_that("10 thousand", {
   expect_identical(words_to_numbers('10 thousand'), ("10000"))
 })
 
-
 test_that("10 thousand and 12", {
   expect_identical(words_to_numbers('10 thousand and 12'), ("10012"))
+})
+
+
+test_that("one hundred and two thousand", {
+  expect_identical(words_to_numbers('one hundred and two thousand'), "102000")
+})
+
+test_that("10 thousand and 12", {
+  expect_identical(words_to_numbers('one hundred and two thousand'), "102000")
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa 10 adfs'), "sevadfa 10 adfs")
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa 10 adfs plus ten'), "sevadfa 10 adfs plus 10")
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa 999,999,999 adfs'), "sevadfa 999,999,999 adfs")
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa 999 to 999 -999 adfs'), 'sevadfa 999 to 999 -999 adfs')
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa -10 adfs'), "sevadfa -10 adfs")
+})
+
+test_that("numbers are not changed", {
+  expect_identical(words_to_numbers('sevadfa .30 adfs'), "sevadfa .30 adfs")
 })
 
 # 
