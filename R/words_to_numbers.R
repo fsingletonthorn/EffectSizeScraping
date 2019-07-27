@@ -109,15 +109,15 @@ punctuationBinary[stringr::str_detect(stringSplitVec, "\\.")] <- FALSE
 # Detecting numbers 
 # Detecting numerics
 numericBinary <-  !is.na(suppressWarnings( as.numeric(stringSplitVec)) )
+
 # Detecting numbers 
 numberBinary <-
   stringr::str_detect(stringSplitVec, stringr::regex(
     paste("^", NUMBER_WORDS, "$", collapse = "|", sep = ""),
     ignore_case = T
-  )) | numericBinary
+  ))
 
-
-# Quick exit if there are no numbers
+# Quick exit if there are no numbers in words
 if (sum(numberBinary[!numericBinary]) < 1) {
   return(string)
 }
@@ -132,7 +132,8 @@ if (length(stringSplitVec) == 1) {
       id = 1:length(numberBinary),
       stringSplit = as.character(stringSplitVec),
       punctuationBinary,
-      numberBinary,
+      # Note that this counts numbers as words or numbers as digits as numbers
+      numberBinary = numericBinary | numberBinary,
       numericBinary
     )
   
@@ -173,7 +174,6 @@ stringSplit$group <- NA
   stringSplit$tokenAheadNumber <- c(stringSplit$numberBinary[-1], F)
   stringSplit$tokenBehindNumber <-c(F, stringSplit$numberBinary[-last_position])
   
-  
   stringSplit$stringSplit <-
     ifelse(c(
       # If the token is a space AND
@@ -195,7 +195,10 @@ stringSplit$group <- NA
     ".", stringSplit$stringSplit)
   
   # initiallising number vector
-  stringSplit$number <- ifelse(stringSplit$numericBinary, stringSplit$stringSplit, NA)
+  stringSplit$number <-
+    ifelse(stringSplit$numericBinary, 
+           yes = suppressWarnings(as.numeric(stringSplit$stringSplit)), 
+           no = NA)
   
   # Pairing down to just those effects that have numerics
   numericStrings <- dplyr::filter(stringSplit, group > -1)
@@ -204,19 +207,43 @@ stringSplit$group <- NA
   numericStrings$magnitudeType <-
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", MAGNITUDE_KEYS, "$", collapse = "|"),
-                                       ignore_case = T)) # | (numericStrings$)
+                                       ignore_case = T)) | ifelse(!is.na(numericStrings$number), 
+                                                                  as.numeric(numericStrings$number) > 99, F)
   
   numericStrings$tenType <-
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", TEN_KEYS, "$", collapse = "|"),
-                                       ignore_case = T))
+                                       ignore_case = T)) |
+    ifelse(!is.na(numericStrings$number),
+           (
+             as.numeric(numericStrings$number) == 10 |
+               (
+                 as.numeric(numericStrings$number) > 19 &
+                   as.numeric(numericStrings$number) < 99
+               )
+           )
+           , F)
   
   numericStrings$unitType <-
     stringr::str_detect(numericStrings$stringSplit,
                         stringr::regex(paste0("^", UNIT_KEYS, "$", collapse = "|"),
-                                       ignore_case = T))
+                                       ignore_case = T)) |
+    ifelse(!is.na(numericStrings$number), as.numeric(numericStrings$number) < 20, F)
     
-  # Instegating number breaking - apart rules rules 
+  # Helper function to check whether the item is a number or matches a number and returns either the numeric or the string
+  token_to_number <- function(tokens) {
+    tokens <- tolower(tokens)
+    unlist(purrr::map(tokens,
+                      function(token) {
+                        if (is.null(NUMBER[token][[1]])) {
+                          return(as.numeric(token))
+                        } else {
+                          NUMBER[token]
+                        }
+                      }))
+  }
+  
+  # Instegating number breaking - apart rules  
   # Two UNITs or UNIT - TEN next to each other should be broken apart 
   for(groups in unique(numericStrings$group)) {
     # Extracting numbers only
@@ -246,7 +273,8 @@ stringSplit$group <- NA
     (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
       )
     }
-    
+  
+
     if(nrow(numericsOnly) > 3) {
       triplets_to_test <- 
         tibble::tibble(e1 = 1:(nrow(numericsOnly) - 2),
@@ -260,22 +288,25 @@ stringSplit$group <- NA
         numericsOnly$tochange[-c(1, nrow(numericsOnly))] | 
         #  If a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
         # (e.g., "twenty thousand, one million" as compared to "one million, twenty thousand")
-          as.numeric(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e1])]) <= 
-          as.numeric(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e3])]) &
+        # unless the lower number is a hundred in which case we let it slide (one hundred twenty thousand makes sense)
+          token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) <= 
+          token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
           numericsOnly$magnitudeType[triplets_to_test$e1] & 
-          numericsOnly$magnitudeType[triplets_to_test$e3],
+          numericsOnly$magnitudeType[triplets_to_test$e3], # &
+          #(tolower(numericsOnly$stringSplit[triplets_to_test$e1]) != "hundred" &
+         #    prod(unlist(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e1])])) < 100),
         numericsOnly$tochange[nrow(numericsOnly)]
     )
+      
+      
     }
-
-    numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
-    
-    
   # Updating numeric strings withupdated groups
+    numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
     numericStrings[match(numericsOnly$id, numericStrings$id),] <- dplyr::select(numericsOnly, -tochange)
+  }  
   
   ## NEED TO ALSO add in same level magnitude check - i.e., one thousand one thousand should be 1000 1000
-  }
+
   # Dropping unchanging tokens (i.e., those that are not required, like punctuation that should not be altered)
   numericStrings <- dplyr::filter(numericStrings, !is.na(groups))
   
@@ -294,8 +325,8 @@ stringSplit$group <- NA
     # Extracting numbers only
     numericsOnly <- dplyr::filter(processedNumerics, numberBinary)
     # Creating numbers columns
-    numericsOnly$number <-
-      as.numeric(NUMBER[match(tolower(numericsOnly$stringSplit), NUMBER_WORDS)])
+    numericsOnly$number[is.na(numericsOnly$number)] <- 
+      as.numeric(NUMBER[match(tolower(numericsOnly$stringSplit[is.na(numericsOnly$number)]), NUMBER_WORDS)])
     # For all magnitiude types, count all smaller magnitude types as multipliers of the magnitude value
     if (sum(numericsOnly$magnitudeType) > 0) {
       for (position in which(numericsOnly$magnitudeType)) {
