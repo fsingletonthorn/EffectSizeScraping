@@ -342,33 +342,37 @@ stringSplit$group <- NA
                    numericsOnly$oldNumber[1:(position - 1)] > numericsOnly$oldNumber[position]
                  ) + 1),
                  1)
-        # Sum up the target number with the sum of the previous numbers
+
         if(position > 1) {
+          # if the position is not the first value, then take the sum of all previous values
         previousSum <-
           sum(numericsOnly$number[startCountingFrom:(position - 1)]) # begining or previous highest magnitude
+        # And then take the product of the previous values and the current value
         value <- previousSum * numericsOnly$number[position]
+        # Setting the current value equal to that
         numericsOnly$number[position] <- value
+        # And setting the now summed up values to be equal to 0
         numericsOnly$number[startCountingFrom:(position - 1)] <- 0
         }
-        
       }
-      
     }
+    # Finally, the number is equal to the sum of all of the constitute numbers
     return(format(sum(numericsOnly$number), scientific = F))
 }
     
   numericedOutput <- stringSplit
   
+  # for each group of numbers
   for(groups in unique(na.omit(numericStrings$group))) {
     ids <- dplyr::filter(numericStrings, group == groups)$id
     # Blanking out the non-used numbers and repacing strings with numbers
   numericedOutput$number[numericedOutput$id %in% ids][1] <- 
       identifyNumbers(numericStrings[numericStrings$group == groups,])
+  # Replacing strings with the appropraite values, after removing all old text
     numericedOutput$stringSplit[numericedOutput$id %in% ids] <- ""
     numericedOutput$stringSplit[numericedOutput$id %in% ids][1] <-
       numericedOutput$number[numericedOutput$id %in% ids][1]
   }
-  
 return(paste0(numericedOutput$stringSplit, collapse = ""))
 }
 
