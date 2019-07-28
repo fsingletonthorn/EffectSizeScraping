@@ -243,7 +243,7 @@ test_that("Fifty Million Frenchmen", {
   expect_identical(words_to_numbers('Fifty Million Frenchmen'), ('50000000 Frenchmen'))
 })
 # 
-test_that("A Thousand and One Wives", {
+test_that("A Thousand and One people", {
   expect_identical(words_to_numbers('Thousand and One people'), ('1001 people'))
 })
 # 
@@ -270,6 +270,11 @@ test_that("I have zero apples and four oranges", {
 test_that("Dot two Dot", {
   expect_identical(words_to_numbers('Dot two Dot'), ('.2 Dot'))
 })
+
+test_that("1000 hundred", {
+  expect_identical(words_to_numbers("1000 hundred"), ('1000 100'))
+})
+
 # 
 test_that("seventeen dot two four dot twelve dot five", {
   expect_identical(words_to_numbers('seventeen dot two four dot twelve'), ('17.2 4.12'))
@@ -288,11 +293,11 @@ test_that("10 thousand and 12", {
 })
 
 
-test_that("one hundred and two thousand", {
-  expect_identical(words_to_numbers('one hundred and two thousand'), "102000")
+test_that('nineteen eighty thousand', {
+  expect_identical(words_to_numbers('nineteen eighty thousand'), "19 80000")
 })
 
-test_that("10 thousand and 12", {
+test_that('one hundred and two thousand', {
   expect_identical(words_to_numbers('one hundred and two thousand'), "102000")
 })
 
@@ -320,32 +325,24 @@ test_that("numbers are not changed", {
   expect_identical(words_to_numbers('sevadfa .30 adfs'), "sevadfa .30 adfs")
 })
 
-# 
-# // these dont work below fml
-# 
-# // it('one thirty thousand", {
-#   //   expect(wtn('one thirty thousand'), { impliedHundreds true }), (130000))
-#   // }))
-# 
-# // it('nineteen eighty thousand", {
-#   //   expect(wtn('nineteen eighty thousand'), { impliedHundreds true }), ('19 80000'))
-#   // }))
-# 
-# // it('one hundred two thousand", {
-#   //   expect(wtn('one hundred two thousand'), (102000))
-#   // }))
-# 
-# // it('one hundred and two thousand", {
-#   //   expect(wtn('one hundred and two thousand'), (102000))
-#   // }))
+test_that("We do not error out to 0s", {
+  expect_identical(as.numeric(words_to_numbers("sixty hundred thousand")),
+                   6e+06)
+})
+
+ test_that("nineteen eighty thousand", {
+     expect_identical(words_to_numbers('nineteen eighty thousand'), ('19 80000'))
+   })
 
 # 
-# test_that("words to numbers works", {
-#   expect_identical(as.numeric(words_to_numbers("sixty hundred thousand")),
-#                    6e+06)
-# })
-
-# # 
+#  these below do not work
+# 
+#  test_that("one thirty thousand", {
+#      expect_identical(words_to_numbers('one thirty thousand'), { impliedHundreds true }), (130000))
+#    })
+# 
+# 
+#  Notably we only capture one number after the decimal
 # test_that("three point one four one five nine two six", {
 #   expect_identical(words_to_numbers('three point one four one five nine two six'), 
 #                    3.1415926)

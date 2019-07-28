@@ -311,7 +311,6 @@ stringSplit$group <- NA
     numericStrings[match(numericsOnly$id, numericStrings$id),] <- dplyr::select(numericsOnly, -tochange)
   }  
   
-  ## NEED TO ALSO add in same level magnitude check - i.e., one thousand one thousand should be 1000 1000
 
   # Dropping unchanging tokens (i.e., those that are not required, like punctuation that should not be altered)
   numericStrings <- dplyr::filter(numericStrings, !is.na(groups))
@@ -325,24 +324,25 @@ stringSplit$group <- NA
       NA
     )
   # Helper function for assessing each group of numbers 
-  # processedNumerics <- dplyr::filter(numericStrings, group == 1)
-  
     identifyNumbers <- function(processedNumerics) {
     # Extracting numbers only
     numericsOnly <- dplyr::filter(processedNumerics, numberBinary)
     # Creating numbers columns
     numericsOnly$number[is.na(numericsOnly$number)] <- 
       as.numeric(NUMBER[match(tolower(numericsOnly$stringSplit[is.na(numericsOnly$number)]), NUMBER_WORDS)])
+    # Copying for tracking of original numbers, which impact the way that things are summed up
+    numericsOnly$oldNumber <- numericsOnly$number
     # For all magnitiude types, count all smaller magnitude types as multipliers of the magnitude value
     if (sum(numericsOnly$magnitudeType) > 0) {
       for (position in which(numericsOnly$magnitudeType)) {
         startCountingFrom <-
-          ifelse(any(numericsOnly$number[1:(position - 1)][numericsOnly$magnitudeType[1:(position -
-                                                                                           1)]] > numericsOnly$number[position]),
+          ifelse(any(numericsOnly$oldNumber[1:(position - 1)][numericsOnly$magnitudeType[1:(position -
+                                                                                           1)]] > numericsOnly$oldNumber[position]),
                  max(which(
-                   numericsOnly$number[1:(position - 1)] > numericsOnly$number[position]
+                   numericsOnly$oldNumber[1:(position - 1)] > numericsOnly$oldNumber[position]
                  ) + 1),
                  1)
+        # Sum up the target number with the sum of the previous numbers
         if(position > 1) {
         previousSum <-
           sum(numericsOnly$number[startCountingFrom:(position - 1)]) # begining or previous highest magnitude
@@ -350,12 +350,13 @@ stringSplit$group <- NA
         numericsOnly$number[position] <- value
         numericsOnly$number[startCountingFrom:(position - 1)] <- 0
         }
-        #  numericsOnly$number[position] <- numericsOnly$number[position]
+        
       }
+      
     }
     return(format(sum(numericsOnly$number), scientific = F))
 }
-  
+    
   numericedOutput <- stringSplit
   
   for(groups in unique(na.omit(numericStrings$group))) {
