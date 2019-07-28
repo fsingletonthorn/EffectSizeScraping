@@ -271,12 +271,15 @@ stringSplit$group <- NA
         # And breatking if a a ten type is preceeded by a ten type 
     (numericsOnly$tenType[pairs_to_test$e1] & numericsOnly$tenType[pairs_to_test$e2]) |
       # Adding break if a larger number in digits is followed by a word in 
-      # numbers of a smaller magnitude (e.g., "1000 hundred" or "100" ten)
+      # numbers of a smaller magnitude (e.g., "1000 hundred" or "100 ten")
         (numericsOnly$numericBinary[pairs_to_test$e1] & 
       token_to_number(numericsOnly$stringSplit[pairs_to_test$e2]) <=
       token_to_number(numericsOnly$stringSplit[pairs_to_test$e1]) ) |
+      # Breaking if two digits are consequtive (e.g., "20, 1" vs "21")
+      (numericsOnly$numericBinary[pairs_to_test$e1] & numericsOnly$numericBinary[pairs_to_test$e2]) |
      # And breaking if a number is preceeded by itself
-    (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
+    (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == 
+       (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
       )
     }
   
