@@ -236,6 +236,7 @@ stringSplit$group <- NA
     tokens <- tolower(tokens)
     unlist(purrr::map(tokens,
                       function(token) {
+                        if (is.na(token)) {return("error")}
                         if (is.null(NUMBER[token][[1]])) {
                           return(as.numeric(token))
                         } else {
@@ -244,8 +245,7 @@ stringSplit$group <- NA
                       }))
   }
   
-  # Instegating number breaking - apart rules  
-  # Two UNITs or UNIT - TEN next to each other should be broken apart 
+  # Breaking apart groups according to the following rules 
   for(groups in unique(numericStrings$group)) {
     # Extracting numbers only
     numericsOnly <-
@@ -293,21 +293,21 @@ stringSplit$group <- NA
         # Note that unlike the doubles, this "centers" on the middle value 
         # (i.e., e2 is still the value at which the break happens, not the last value)
         # This means that we cannot change the first or the last value's break 
-        numericsOnly$tochange[c(1)],
-        numericsOnly$tochange[-c(1, nrow(numericsOnly))] | 
+        numericsOnly$tochange[1], 
         #  If a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
         # (e.g., "twenty thousand, one million" as compared to "one million, twenty thousand")
         # unless the lower number is a hundred in which case we let it slide (one hundred twenty thousand makes sense)
           token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) <= 
           token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
           numericsOnly$magnitudeType[triplets_to_test$e1] & 
-          numericsOnly$magnitudeType[triplets_to_test$e3], # &
+          numericsOnly$magnitudeType[triplets_to_test$e3],
+        #  It is possible to decide to not split and hundeds too - this cases other issues, 
+        # Use the following code 
+        # &
           #(tolower(numericsOnly$stringSplit[triplets_to_test$e1]) != "hundred" &
          #    prod(unlist(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e1])])) < 100),
         numericsOnly$tochange[nrow(numericsOnly)]
-    )
-      
-      
+    ) | numericsOnly$tochange
     }
   # Updating numeric strings withupdated groups
     numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
