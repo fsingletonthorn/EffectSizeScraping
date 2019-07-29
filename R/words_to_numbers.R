@@ -92,8 +92,7 @@ MAGNITUDE_KEYS <- names(MAGNITUDE)
 
 NUMBER_WORDS <- c(UNIT_KEYS, TEN_KEYS, MAGNITUDE_KEYS)
 
-# canAddTokenToEndOfSubRegion <- function(tokens, subRegion, currentToken, impliedHundreds){
-# split at whitespace
+# Splitting vector at punctuation
 stringSplitVec <-
   stringr::str_split(string,
                      "(?<=[[[:punct:]]|\\s])|(?=[[[:punct:]]|\\s])",
