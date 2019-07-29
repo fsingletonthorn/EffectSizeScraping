@@ -38,16 +38,20 @@ findN <- function(input,
                   context = T,
                   contextSize = 100) {
   
-  input <- textclean::num
-  findNReg <-  ""
-
-  paste(
-    paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
-    
-    paste0("(confidence\\s*interval)).{0,", contextSize, "}"),
-    sep = "|",
-    collapse = "|"
-  )
+  inputProcessed <-  words_to_numbers( input )
+  # (\\s*sample\\s*size\\s*of\\s*\\d*)|(N\\s*(\\=|(of))\\s*)\\d*|(\\d*\\s*participants)|
+  N_REGEX <-  "(\\d((?!\\.).)*participants)"
+  
+  stringr::str_extract_all(input, N_REGEX)
+  
+  
+  # paste(
+  #   paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
+  #   
+  #   paste0("(confidence\\s*interval)).{0,", contextSize, "}"),
+  #   sep = "|",
+  #   collapse = "|"
+  # )
 }
 
 
