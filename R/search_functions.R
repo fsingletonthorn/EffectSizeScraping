@@ -1,31 +1,33 @@
 # Functions that search text for CIs, Power analysis, that attempt to extract sample sizes
 
-
-
 # Check for 95% CIs
 checkCIs <- function(input,
                      context = T,
-                     contextSize = 100) {
-  ciRegex  <- "((CI|Confidence Interval)\\s\\[\\d*,\\s*\\d*\\])"
+                     contextSize = 0) {
+  CI_REGEX  <- "((\\d{1,2}%?)?\\s*(\\bCIs?|\\bconfidence\\s*intervals?))\\s*(of)?=?\\s*\\[?\\d*,?\\s*\\d*\\]?"
   
-  CIreg <-
-    paste(
-      paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
-      ciRegex,
-      paste0("(confidence\\s*interval)).{0,", contextSize, "}"),
-      sep = "|",
-      collapse = "|"
-    )
+  CIregContext <-
+      paste0(".{0,", contextSize, "}",
+      CI_REGEX, ".{0,", contextSize, "}")
   
-  CIs <- stringr::str_extract_all(input,
-                                  stringr::regex(CIreg,
+  # Extract CIs with context
+  CIs_context <- stringr::str_extract_all(input,
+                                  stringr::regex(CIregContext,
+                                                 ignore_case = T), 
+                                  simplify = T)
+  
+  # If CIs is empty, CIs are not captured
+  CIsBinary <- elementExists(CIs_context)
+  
+  if(CIsBinary) {
+  # Extract just CIs
+  CIs <- stringr::str_extract_all(CIs_context,
+                                  stringr::regex(CI_REGEX,
                                                  ignore_case = T))
+  } else {CIs <- character(0)}
   
-  CIsBinary <- stringr::str_detect(input,
-                                   stringr::regex(CIreg,
-                                                  ignore_case = T))
   if (context == T) {
-    return(list(CIs, CIsBinary))
+    return(list(CIs, CIs_context, CIsBinary))
   } else {
     return(CIsBinary)
   }
