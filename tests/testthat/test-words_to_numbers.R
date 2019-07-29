@@ -32,6 +32,7 @@ test_that("words to numbers works", {
                    "102")
 })
 
+
 test_that("words to numbers works", {
   expect_identical(words_to_numbers("one hundred and two"),
                    "102")
@@ -46,6 +47,11 @@ test_that("words to numbers works", {
 test_that("words to numbers works", {
   expect_identical(words_to_numbers("one hundred and twenty five"),
                    "125")
+})
+
+test_that("words to numbers works", {
+  expect_identical(words_to_numbers("one hundred thousand, hundred"),
+                   "100000, 100")
 })
 
 test_that("words to numbers works", {
@@ -260,7 +266,8 @@ test_that("six sixty two", {
 })
 # 
 test_that("one hundred thousand", {
-  expect_identical(as.numeric(words_to_numbers('one hundred thousand')), (100000))
+  expect_identical(as.numeric(words_to_numbers('one hundred thousand')), 
+                   (100000))
 })
 # 
 test_that("I have zero apples and four oranges", {
@@ -280,6 +287,14 @@ test_that("seventeen dot two four dot twelve dot five", {
   expect_identical(words_to_numbers('seventeen dot two four dot twelve'), ('17.2 4.12'))
 })
 
+test_that("'twenty one' == '21'", {
+  expect_identical(words_to_numbers('twenty one'), ('21'))
+})
+
+test_that("'20, 1' == '20, 1'", {
+  expect_identical(words_to_numbers('20, 1'), ('20, 1'))
+})
+
 test_that("16 million", {
   expect_identical(words_to_numbers("16 million"), ("16000000"))
 })
@@ -291,7 +306,6 @@ test_that("10 thousand", {
 test_that("10 thousand and 12", {
   expect_identical(words_to_numbers('10 thousand and 12'), ("10012"))
 })
-
 
 test_that('nineteen eighty thousand', {
   expect_identical(words_to_numbers('nineteen eighty thousand'), "19 80000")
@@ -337,9 +351,10 @@ test_that("We do not error out to 0s", {
 # 
 #  these below do not work
 # 
-#  test_that("one thirty thousand", {
-#      expect_identical(words_to_numbers('one thirty thousand'), { impliedHundreds true }), (130000))
-#    })
+ # test_that("one thirty thousand", {
+ #     expect_identical(words_to_numbers('one thirty thousand'),
+ #                      ("130000"))
+ #   })
 # 
 # 
 #  Notably we only capture one number after the decimal
@@ -348,3 +363,12 @@ test_that("We do not error out to 0s", {
 #                    3.1415926)
 # })
 # 
+#
+#  And word splitting breaks if the reason for the split is more than 3 units apart
+# test_that("three point one four one five nine two six", {
+#   expect_identical(words_to_numbers("two thousand and twenty-five million"), 
+#                    "2000, 25000000")
+# })
+# 
+#
+
