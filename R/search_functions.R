@@ -38,13 +38,29 @@ findN <- function(input,
                   context = T,
                   contextSize = 100) {
   
+  # Converting words to numbers for sample size extraction
   inputProcessed <-  words_to_numbers( input )
-  # (\\s*sample\\s*size\\s*of\\s*\\d*)|(N\\s*(\\=|(of))\\s*)\\d*|(\\d*\\s*participants)|
-  N_REGEX <-  "(\\d((?!\\.).)*participants)"
   
-  stringr::str_extract_all(input, N_REGEX)
+  # Setting up regexs
+  SSOf <- "(a?\\s*sample\\s*size\\s*of\\s*\\d+)"
+  nOf <- "((N\\s*(\\=|(of))\\s*)\\d+)"
+  nPar <- "(\\d+((?!\\.).)*(participants|participated|volunteer(s|ed)))|observations"
+  parWere <- "((subjects|participants)((?!\\.).)*\\s*were((?!\\.).)*\\d+)"
   
+  # pullting together regex 
+  N_REGEX <-  paste(SSOf, nOf, nPar, parWere , sep = "|")
   
+  # Sample size strings
+  sampleSizeStrings <- stringr::str_extract_all(inputProcessed,
+                                                stringr::regex(N_REGEX, ignore_case = T), 
+                                                simplify = T)
+  
+  if(elementExists(sampleSizeStrings)) {
+  sampleSizes <- stringr::str_extract_all(sampleSizeStrings, "\\d+", 
+                                          simplify = T)
+  } else {sampleSizes <- character(0)}
+  
+  return(list(string = sampleSizeStrings, N = sampleSizes))
   # paste(
   #   paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
   #   
