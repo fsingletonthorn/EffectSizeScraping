@@ -278,7 +278,13 @@ stringSplit$group <- NA
       (numericsOnly$numericBinary[pairs_to_test$e1] & numericsOnly$numericBinary[pairs_to_test$e2]) |
      # And breaking if a number is preceeded by itself
     (tolower(numericsOnly$stringSplit[pairs_to_test$e1]) == 
-       (tolower(numericsOnly$stringSplit[pairs_to_test$e2])))
+       (tolower(numericsOnly$stringSplit[pairs_to_test$e2]))) |
+    # Breaking if a magnitude is preceeded by a magnitude of a larger magnitude
+    token_to_number(numericsOnly$stringSplit[pairs_to_test$e1]) > 100 & 
+      token_to_number(numericsOnly$stringSplit[pairs_to_test$e1]) > 
+    token_to_number(numericsOnly$stringSplit[pairs_to_test$e2]) &
+    numericsOnly$magnitudeType[pairs_to_test$e1] &
+    numericsOnly$magnitudeType[pairs_to_test$e2]
       )
     }
   
@@ -292,26 +298,49 @@ stringSplit$group <- NA
         # Note that unlike the doubles, this "centers" on the middle value 
         # (i.e., e2 is still the value at which the break happens, not the last value)
         # This means that we cannot change the first or the last value's break 
-        numericsOnly$tochange[1], 
+        F, 
         #  If a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
         # (e.g., "twenty thousand, one million" as compared to "one million, twenty thousand")
         # unless the lower number is a hundred in which case we let it slide (one hundred twenty thousand makes sense)
-          token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) <= 
+        
+        # This carves out some exceptions for when we have e.g., Hundreds of thousands
+        # When the number before the hundred is below ten
+        c(T, !(numericsOnly$unitType[triplets_to_test$e1-1] &
+                 token_to_number(numericsOnly$stringSplit[triplets_to_test$e1-1]) <10 &
+                 token_to_number(numericsOnly$stringSplit[triplets_to_test$e1[-1]]) == 100 &
+                 token_to_number(numericsOnly$stringSplit[triplets_to_test$e3[-1]]) > 100)) &
+        ( token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) < 
           token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
           numericsOnly$magnitudeType[triplets_to_test$e1] & 
-          numericsOnly$magnitudeType[triplets_to_test$e3],
-        #  It is possible to decide to not split and hundeds too - this cases other issues, 
+          numericsOnly$magnitudeType[triplets_to_test$e3]) # |
+          # Or if we have a higher magnitude followed by a hundred with nothing
+          #  in between split
+          # token_to_number(numericsOnly$stringSplit[triplets_to_test$e2]) <=
+          # token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
+          # numericsOnly$magnitudeType[triplets_to_test$e2] &
+          # numericsOnly$magnitudeType[triplets_to_test$e3]
+        ,
+           #  It is possible to decide to not split and hundeds too - this cases other issues, 
+           
+           
+        #   ifelse(is.na(numericsOnly$stringSplit[triplets_to_test$e1-1]), 
+        #           !(numericsOnly$unitType[triplets_to_test$e1-1] &
+        #             token_to_number(numericsOnly$stringSplit[triplets_to_test$e1-1]) <10 &
+        #             token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) == 100 &
+        #             token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) > 100),
+        #           T),
+        # #  It is possible to decide to not split and hundeds too - this cases other issues, 
         # Use the following code 
         # &
           #(tolower(numericsOnly$stringSplit[triplets_to_test$e1]) != "hundred" &
          #    prod(unlist(NUMBER[tolower(numericsOnly$stringSplit[triplets_to_test$e1])])) < 100),
-        numericsOnly$tochange[nrow(numericsOnly)]
+        F
     ) | numericsOnly$tochange
     }
   # Updating numeric strings withupdated groups
     numericsOnly$group <- stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
     numericStrings[match(numericsOnly$id, numericStrings$id),] <- dplyr::select(numericsOnly, -tochange)
-  }  
+  }
   
 
   # Dropping unchanging tokens (i.e., those that are not required, like punctuation that should not be altered)
