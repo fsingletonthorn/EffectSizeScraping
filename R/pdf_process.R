@@ -1,7 +1,4 @@
 # # pdf extract
-# library(pdftools)
-# library(stringr)
-# library(stringi)
 
 # Function to ID whether a cell is > chars, if empty  gives FALSE
 true_false <- function(x, chars) {

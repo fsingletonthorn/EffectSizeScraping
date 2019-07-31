@@ -89,4 +89,3 @@ test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
   )
 })
 
-

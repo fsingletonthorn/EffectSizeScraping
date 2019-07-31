@@ -1,6 +1,5 @@
 context("Test search_functions")
 
-
 expect_true(
   checkCIs("95% CI [1,2]")[[3]] &
   checkCIs("95% CI 1.43–7.89")[[3]] &
@@ -16,17 +15,6 @@ expect_false(
 )
 
 ### Test CI detector on real papers
-
-
-### Test of sample size detector
-# testSet <- readxl::read_excel("data_/sampleSizeDescriptions.xlsx")
-# testSet$sample_size_text
-# 
-# 
-# checkN()
-# checkN()
-# checkN()
-
 
 test_that("sample size extraction works", {
 expect_identical(findN("N=185")[[2]][[1]], "185")
