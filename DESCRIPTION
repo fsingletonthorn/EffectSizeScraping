@@ -23,4 +23,3 @@ Requires:
     statcheck
     zoo
     magrittr
-    textclean
