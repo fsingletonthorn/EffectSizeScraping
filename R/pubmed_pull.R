@@ -57,7 +57,10 @@ processText <- function(strings){
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U0001d712", replacement = "chi")
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2439", replacement = "chi")
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\U00002AFD", replacement = "=")
-  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2b0d", replacement = "<")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2b0d", replacement = "<")  
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb01", replacement = "fi")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb00", replacement = "ff")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb02", replacement = "fl")
   
   return(strings)
 }
