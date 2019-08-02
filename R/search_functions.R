@@ -33,41 +33,35 @@ checkCIs <- function(input,
   }
 }
 
-### This does not work yet be careful
-findN <- function(input,
-                  context = T,
-                  contextSize = 100) {
+findN <- function(input) {
   
   # Converting words to numbers for sample size extraction
   inputProcessed <-  words_to_numbers( input )
   
+  # At the moment this does not pull out context 
+  
   # Setting up regexs
-  SSOf <- "(a?\\s*sample\\s*size\\s*of\\s*\\d+)"
-  nOf <- "((N\\s*(\\=|(of))\\s*)\\d+)"
-  nPar <- "(\\d+((?!\\.).)*(participants|participated|volunteer(s|ed)))|observations"
-  parWere <- "((subjects|participants)((?!\\.).)*\\s*were((?!\\.).)*\\d+)"
+  SSOf <- "(\\ba?\\s*sample\\s*size\\s*of\\s*\\d+)"
+  nOf <- "((\\bN\\s*(\\=|(of))\\s*)\\d+)"
+  nPar <- "(\\b\\d+((?!\\.|\\d).)*(participants|participated|volunteer(s|ed)|observations))"
+  parWere <- "(\\b(subjects|participants)((?!\\.|\\d).)*\\s*were((?!\\.|\\d).)*\\d+)"
   
   # pullting together regex 
-  N_REGEX <-  paste(SSOf, nOf, nPar, parWere , sep = "|")
-  
+  NRegex <-  paste(SSOf, nOf, nPar, parWere , sep = "|")
+
   # Sample size strings
   sampleSizeStrings <- stringr::str_extract_all(inputProcessed,
-                                                stringr::regex(N_REGEX, ignore_case = T), 
+                                                stringr::regex(NRegex, ignore_case = T), 
                                                 simplify = T)
   
   if(elementExists(sampleSizeStrings)) {
-  sampleSizes <- stringr::str_extract_all(sampleSizeStrings, "\\d+", 
+  sampleSizes <- stringr::str_extract_all(sampleSizeStrings, "\\d{1,}", 
                                           simplify = T)
   } else {sampleSizes <- character(0)}
   
   return(list(string = sampleSizeStrings, N = sampleSizes))
-  # paste(
-  #   paste0(".{0,", contextSize, "}((\\b\\d{1,2}%\\s*CI\\b)"),
-  #   
-  #   paste0("(confidence\\s*interval)).{0,", contextSize, "}"),
-  #   sep = "|",
-  #   collapse = "|"
-  # )
 }
-
-
+# 
+# findPowerAnalysis <- {
+#   stringr::str_extract_all()
+#   }
