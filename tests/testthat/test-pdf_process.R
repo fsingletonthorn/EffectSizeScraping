@@ -8,7 +8,7 @@ test_that("extractPdf extracts all pages", {
     stringr::str_detect(
       pdf[stringr::str_detect(pdf$names, "Discussion"),2],
       stringr::fixed(
-        "‘Cell-based meat’, for example, might evoke many of the same"
+        "for example, might evoke many of the same"
       )
     ) & stringr::str_detect(
         pdf[[6, 2]],
@@ -66,6 +66,7 @@ test_that("extractPdf extracts files with correctly labeled sections", {
     )
   )
 })
+
 
 # Also at: "data_/trainingSet/PMC5420575.pdf"
 test_that("extractPdf extracts files with correctly labeled sections (PMC5420575)", {
@@ -153,7 +154,6 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5504157
       )
   )
 
-  # 
   expect_true(
     stringr::str_detect(
       pdf$text[[which(pdf$names=="RESULTS")]],
@@ -163,6 +163,3 @@ test_that("extractPdf extracts files with correctly labeled sections (PMC5504157
   "but not in the cross-sectional design\\.$")
   )
 })
-
-
-
