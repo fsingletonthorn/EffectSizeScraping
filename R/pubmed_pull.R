@@ -221,7 +221,7 @@ if( elementExists(unlabPs) ) {
   
   text =
     tibble::tibble(names = processText(c("PMCID", "abstract", textOutput[, 1])),
-               text = processText(c(PMCID, ifelse(purrr::is_empty(abstract), NA, abstract), textOutput[, 2])))
+               text = c(PMCID, ifelse(purrr::is_empty(abstract), NA, processText(abstract)), processText(textOutput[, 2])))
  )
  return(output)
 }
@@ -229,7 +229,7 @@ if( elementExists(unlabPs) ) {
 
 processPMC <- function(paper_text_list, statcheck = F) {
   # This function takes a list of the paper's paragraphs, and runs the extraction function on each
-  # Note that it expects the list to take a specific form - that produced by either the 
+  # Note that it expects the list to take a specific form - as produced 
   # If statcheck = T, it also runs statcheck on the file
 
   # processing all but the PMID with extract test stats
