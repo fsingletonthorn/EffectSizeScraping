@@ -53,10 +53,12 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
       # Always only work on the first PDF, just in case there is more than 1
       # This also binds in the PMC number, although it excludes
       extractedText <- extractPdf(pdfLoc[[1]])
+      extractedText$PMCID <- pulledPMC$metadata$PMCID
       # test if the extracted text is longer than that already stored
       if( sum(stringr::str_count(as.character(extractedText), " ")) >  sum(stringr::str_count(as.character( pulledPMC$text ), " "))) {
       pulledPMC$text <-
-        rbind(pulledPMC$text,  extractedText) }
+        rbind(pulledPMC$text,  extractedText)
+      }
     }  
       # Cleanup
       unlink( c( exdir, tempLoc ), recursive = T)

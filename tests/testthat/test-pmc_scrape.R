@@ -2,6 +2,7 @@ context("test pubmed pull and process")
 
 test_that("extraction works from pdf", {
   pdf <- extractPdf("https://osf.io/v7n6j/download")
+  pdf$PMCID <- "test"
   extracted <- processPMC(pdf)
   expect_identical(extracted$statisticalOutput[[7]][extracted$statisticalOutput$statistic == "chi"],
                    c("4.541",
@@ -81,10 +82,33 @@ test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
   ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
   output <- scrapePMC(call, ftpCall, statcheck = F)
-  
+
   expect_true(
     stringr::str_detect(output$text$text[output$text$names == "Discussion"],
                         "The findings of this study must be")
+  )
+})
+
+test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
+  # pmcID <- 4710337
+  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
+  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
+  output <- scrapePMC(call, ftpCall, statcheck = F)
+
+  expect_true(
+    stringr::str_detect(output$text$text[output$text$names == "Discussion"],
+                        "The findings of this study must be")
+  )
+})
+
+test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
+  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4311551&metadataPrefix=pmc"
+  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz"
+  output <- scrapePMC(call, ftpCall, statcheck = F)
+
+  expect_true(
+    stringr::str_detect(output$text$text[output$text$names == "unlabelled"],
+                        "The increased interest in the sense of touch over the last decades will hopefully continue as much still remains to be explored\\.$")
   )
 })
 

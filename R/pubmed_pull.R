@@ -155,8 +155,9 @@ if( elementExists(unlabPs) ) {
   
   
   text =
-    tibble::tibble(names = processText(c("PMCID", "abstract", textOutput[, 1])),
-               text = c(PMCID, ifelse(purrr::is_empty(abstract), NA, processText(abstract)), processText(textOutput[, 2])))
+    tibble::tibble(PMCID = PMCID, 
+      names = unlist(processText(c("abstract", textOutput[, 1]))),
+               text = c(ifelse(purrr::is_empty(abstract), NA, unlist(processText(abstract))), unlist(processText(textOutput[, 2]))))
  )
  return(output)
 }
@@ -168,7 +169,7 @@ processPMC <- function(paper_text_list, statcheck = F) {
   # If statcheck = T, it also runs statcheck on the file
 
   # processing all but the PMID with extract test stats
-  output <- as.list(paper_text_list)
+  output <- as.list(paper_text_list[c("names", "text")])
   
   statisticalOutput <-
     apply(data.frame(unlist(output[1]), unlist(output[2]), stringsAsFactors = F), 1,
@@ -181,7 +182,7 @@ processPMC <- function(paper_text_list, statcheck = F) {
 
   if (any(notNAs)) {
     output$statisticalOutput <-
-      data.frame(PMCID = output$text[[1]],
+      data.frame(PMCID = paper_text_list$PMCID[[1]],
                  dplyr::bind_rows(statisticalOutput[notNAs]), 
                  stringsAsFactors = F)
   } else {
@@ -205,7 +206,7 @@ processPMC <- function(paper_text_list, statcheck = F) {
      unlist(lapply(X = statCheckOutput, FUN =  elementExists))
    if (any(notNAs)) {
      output$statCheckOutput <-
-       data.frame(PMCID = output$text[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
+       data.frame(PMCID = paper_text_list$PMCID[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
    } else {
      output$statCheckOutput <- NA
    }
