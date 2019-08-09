@@ -57,13 +57,12 @@ test_that("scrapePMC process excracts stats correctly from pmc5504157", {
  c(0.10,0.30,0.71,0.69,0.63,0.61,0.59,0.56,0.86,0.32,0.75,0.67,0.51,
  0.45,0.39,0.41,0.30,0.31,0.31,0.59,0.56,0.48,0.52,0.38,0.63,0.41)))
  
- expect_true(all(as.numeric(output$text$statisticalOutput$value[
-   output$text$statisticalOutput$statistic == "d"
-   ]) %in%
+ expect_true(all(
+   as.numeric(output$text$statisticalOutput$value[output$text$statisticalOutput$statistic == "d"]) %in%
      c(0.07,
        0.44,
-       0.20
-     )))
+       0.20)
+ ))
  
  # concatinatedText <- concatPlus(output$text$text)
  expect_true(
