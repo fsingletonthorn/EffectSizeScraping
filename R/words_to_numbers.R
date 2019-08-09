@@ -1,8 +1,8 @@
 # words2Nums
 ##  This is inspired by https://github.com/finnfiddle/words-to-numbers
 words_to_numbers <- function(string) {
+
   ### Setting up constants
-  
   UNIT <- list(
     zero = 0,
     #  first = 1,
@@ -153,7 +153,7 @@ words_to_numbers <- function(string) {
            -1
     )
   
-  # Filling in all NAs between two other values - this means that each number is grouped together
+  # Filling in all NAs between two other identical values - this means that each number is grouped together
   stringSplit$group <-
     ifelse(
       tidyr::fill(stringSplit, group,  .direction = "down")$group == tidyr::fill(stringSplit, group,  .direction =  "up")$group,
@@ -162,7 +162,6 @@ words_to_numbers <- function(string) {
     )
   
   # Checking for number point number and converting it into "number.number"
-  ## NEED TO FIX IT SO "ten point five" != "10 .5" but rather "10.5"
   last_position <- nrow(stringSplit)
   
   stringSplit$point <- stringr::str_detect(stringSplit$stringSplit,
@@ -200,7 +199,7 @@ words_to_numbers <- function(string) {
     "", stringSplit$stringSplit)
   
   
-  # Replace  "dot" or "point" with points
+  # Replace  "dot" or "point" with points (as eg "ten point five")
   stringSplit$stringSplit <-
     ifelse(
       c(T, T, stringSplit$numberBinary[-((last_position - 1):last_position)]) &
