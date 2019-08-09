@@ -5,7 +5,7 @@
 
 # articles[articles$PMID == ]
 
-# Example sans text 
+# Example sans text # Appears to have been updated with full text
 # pmcID <- 4710337
 # call <- articles$oaiCall[articles$PMCID == pmcID]
 # ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
@@ -57,11 +57,10 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
       if( sum(stringr::str_count(as.character(extractedText), " ")) >  sum(stringr::str_count(as.character( pulledPMC$text ), " "))) {
       pulledPMC$text <-
         rbind(pulledPMC$text,  extractedText) }
-    }      
+    }  
       # Cleanup
       unlink( c( exdir, tempLoc ), recursive = T)
   }
      pulledPMC$text <- processPMC(pulledPMC$text)
      return(pulledPMC)
 }
-

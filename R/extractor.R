@@ -51,19 +51,6 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
     NA_real_
 }
 
-# Check whether element exists and is not NA
-# (or at least that the first element of an object is not NA)
-elementExists <- function( full_index_path ){
-  tryCatch({
-    len_element = length(full_index_path)
-    if(is.na(full_index_path)[[1]]) {return(F)}
-    exists_indicator = ifelse(len_element > 0, T, F)
-    return(exists_indicator)
-  }, error = function(e) {
-    return(F)
-  })
-}
-
 # Function to add plus and minus "contextSize" characters for a regex pattern
 addContext <- function(extracted, contextSize) {
   if (length(extracted) > 0) {
