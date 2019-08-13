@@ -1,74 +1,84 @@
-# words2Nums
-##  This is inspired by https://github.com/finnfiddle/words-to-numbers
+#' words_to_numbers
+#'
+#'
+#' words_to_numbers takes a character string and replaces numbers
+#' written in words with numerics.
+#'
+#'
+#' @param string a character string
+#'
+#' @return Returns a string with any detected numbers written as words replaced by numbers
+#'
+#' @examples
+#' library(wordstonumbers)
+#' words_to_numbers("ninety-nine red balloons")
+#'
+#' words_to_numbers("twelve")
+#'
+#' words_to_numbers("Forty-three thousand")
+#'
+#' words_to_numbers("There were one thousand, two hundred and thirty. Twelve.")
+#'
+#' example <-
+#' "The PRQ is a twelve-item, four-point Likert scale
+#' (from one = Never to four = Very Often) with three sub-scores
+#' bullying (PRQ-Bully), being victimized (PRQgroup-Victim),
+#' and pro-social behavior (PRQ-Prosocial). A translated,
+#' backtranslated final Arabic version of the scale was found
+#' to be accurate showing good internal consistency in this
+#' sample [PRQ-Victim (alpha = .seventy four)
+#' and PRQ-Bullies (alpha = seventy-four)]."
+#'
+#' words_to_numbers(example)
+#'
+#' @importFrom rlang .data
+#'
+#' @export
 words_to_numbers <- function(string) {
-
+  
+  if(length(unlist(string)) > 1 | class(string) != "character") {
+    warning("The argument which was passed to words_to_numbers is not a length 1 character element, only the first element has been used here. Consider using the apply or purrr::map functions to assess multiple elements at once.")
+    string <- unlist(string)[[1]]
+  }
+  
   ### Setting up constants
-  UNIT <- list(
+  UNITS <- list(
     zero = 0,
-    #  first = 1,
     one = 1,
-    #  second = 2,
     two = 2,
-    #  third = 3,
-    #  thirteenth = 13,
     thirteen = 13,
     three = 3,
-    #  fourth = 4,
-    #  fourteenth = 14,
     fourteen = 14,
     four = 4,
-    #  fifteenth = 15,
     fifteen = 15,
-    #  fifth = 5,
     five = 5,
-    #  sixth = 6,
-    #  sixteenth = 16,
     sixteen = 16,
     six = 6,
-    #  seventeenth = 17,
     seventeen = 17,
-    #  seventh = 7,
     seven = 7,
-    #  eighteenth = 18,
     eighteen = 18,
-    #  eighth = 8,
     eight = 8,
-    #  nineteenth = 19,
     nineteen = 19,
-    #  ninth = 9,
     nine = 9,
-    #  tenth = 10,
     ten = 10,
-    #  eleventh = 11,
     eleven = 11,
-    #  twelfth = 12,
     twelve = 12
   )
   
-  TEN <- list(
+  TENS <- list(
     ten = 10,
-    # tenth = 10,
     twenty = 20,
-    #  twentieth = 20,
     thirty = 30,
-    #  thirtieth = 30,
     forty = 40,
-    #  fortieth = 40,
     fifty = 50,
-    #  fiftieth = 50,
     sixty = 60,
-    #  sixtieth = 60,
     seventy = 70,
-    #  seventieth = 70,
     eighty = 80,
-    #  eightieth = 80,
-    ninety = 90 #,
-    #  ninetieth = 90
+    ninety = 90
   )
   
-  MAGNITUDE = list(
+  MAGNITUDES <- list(
     hundred = 100,
-    #  hundredth = 100,
     thousand = 1000,
     million = 1000000,
     billion = 1000000000,
@@ -82,45 +92,45 @@ words_to_numbers <- function(string) {
     decillion = 1000000000000000000000000000000000
   )
   
-  NUMBER <- c(UNIT, TEN, MAGNITUDE)
+  NUMBER <- c(UNITS, TENS, MAGNITUDES)
   
-  UNIT_KEYS <- names(UNIT)
-  TEN_KEYS <- names(TEN)
-  MAGNITUDE_KEYS <- names(MAGNITUDE)
+  UNIT_NAMES <- names(UNITS)
+  TEN_NAMES <- names(TENS)
+  MAGNITUDE_NAMES <- names(MAGNITUDES)
   
-  NUMBER_WORDS <- c(UNIT_KEYS, TEN_KEYS, MAGNITUDE_KEYS)
+  NUMBER_NAMES <- c(UNIT_NAMES, TEN_NAMES, MAGNITUDE_NAMES)
   
-  # Splitting vector at punctuation
+  # Splitting in to tokens at punctuation
   stringSplitVec <-
     stringr::str_split(string,
-                       "(?<=[[[:punct:]]|\\s])|(?=[[[:punct:]]|\\s])",
+                       "((?<=[[!\"\\#$%&'()*+,\\-/:;<=>?@\\[\\\\\\]^_`{|}~]|\\s]))|((?=[[!\"\\#$%&'()*+,\\-/:;<=>?@\\[\\\\\\]^_`{|}~]|\\s]))|((?<![\\d])(?<=\\.)(?![\\d]))|((?<![\\d])(?=\\.)(?![\\d]))",
                        simplify = T)
   
-  # create binaries for whitespace and for number words
+  # create binaries for whitespace or punctuation
   punctuationBinary <-
     stringr::str_detect(stringSplitVec, "[[:punct:]]|\\s|(^and$)")
   
-  # Ensuring that "." breaks numbers apart
+  # Ensuring that "." breaks numbers apart by counting it as non-punctuation
   punctuationBinary[stringr::str_detect(stringSplitVec, "\\.")] <-
     FALSE
   
-  # Detecting numbers
+  ### Detecting numbers
   # Detecting numerics
   numericBinary <-
     !is.na(suppressWarnings(as.numeric(stringSplitVec)))
   
-  # Detecting numbers
+  # Detecting numbers - i.e., any words that match any of the NUMBER_WORDS
   numberBinary <-
     stringr::str_detect(stringSplitVec, stringr::regex(
-      paste("^", NUMBER_WORDS, "$", collapse = "|", sep = ""),
+      paste("^", NUMBER_NAMES, "$", collapse = "|", sep = ""),
       ignore_case = T
     ))
   
-  # Quick exit if there are no numbers in words
+  # Quick exit if there are no numbers words detected
   if (sum(numberBinary[!numericBinary]) < 1) {
     return(string)
   }
-  # And quick exit if there is only one number element
+  # And quick exit if there is only one number word pressent
   if (length(stringSplitVec) == 1) {
     return(as.character(format(NUMBER[[tolower(string)]], scientific = F)))
   }
@@ -138,13 +148,12 @@ words_to_numbers <- function(string) {
   
   stringSplit$group <- NA
   
-  
   # Using cumulative sum to count the number of non-number items, not counting punctuation
   stringSplit$group[!stringSplit$punctuationBinary] <-
     cumsum(!stringSplit$numberBinary[!stringSplit$punctuationBinary])
   
   # Removing dots and other words from contention to ensure that groups get broken at points
-  stringSplit$group[stringr::str_detect(stringSplit$stringSplit, "\\.")] <-
+  stringSplit$group[stringr::str_detect(stringSplit$stringSplit, "^\\.$")] <-
     -1
   stringSplit$group  <-
     ifelse((stringSplit$numberBinary |
@@ -153,21 +162,23 @@ words_to_numbers <- function(string) {
            -1
     )
   
-  # Filling in all NAs between two other identical values - this means that each number is grouped together
+  # Filling in all NAs between two other identical values -
+  # this means that each set of number words is grouped together
   stringSplit$group <-
     ifelse(
-      tidyr::fill(stringSplit, group,  .direction = "down")$group == tidyr::fill(stringSplit, group,  .direction =  "up")$group,
-      tidyr::fill(stringSplit, group,  .direction = "down")$group,
+      tidyr::fill(stringSplit, "group",  .direction = "down")$group == tidyr::fill(stringSplit, "group",  .direction =  "up")$group,
+      tidyr::fill(stringSplit, "group",  .direction = "down")$group,
       NA
     )
   
-  # Checking for number point number and converting it into "number.number"
+  # Checking for [number] [point] [number] and converting it into "number.number"
   last_position <- nrow(stringSplit)
   
   stringSplit$point <- stringr::str_detect(stringSplit$stringSplit,
                                            stringr::regex("point|dot",
                                                           ignore_case = T))
   stringSplit$tokenAheadPoint <- c(stringSplit$point[-1], F)
+  
   stringSplit$tokenBehindPoint <-
     c(F, stringSplit$point[-last_position])
   
@@ -198,7 +209,6 @@ words_to_numbers <- function(string) {
     ,
     "", stringSplit$stringSplit)
   
-  
   # Replace  "dot" or "point" with points (as eg "ten point five")
   stringSplit$stringSplit <-
     ifelse(
@@ -215,34 +225,34 @@ words_to_numbers <- function(string) {
            yes = suppressWarnings(as.numeric(stringSplit$stringSplit)),
            no = NA)
   
-  # Pairing down to just those effects that have numerics
-  numericStrings <- dplyr::filter(stringSplit, group > -1)
+  # Filtering down to just those groups that have numerics
+  numericStrings <- dplyr::filter(stringSplit, .data$group > -1)
   
-  # Identifying the types of each numberic
+  # Identifying the types of each number
   numericStrings$magnitudeType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste0("^", MAGNITUDE_KEYS, "$", collapse = "|"),
+                        stringr::regex(paste0("^", MAGNITUDE_NAMES, "$", collapse = "|"),
                                        ignore_case = T)) |
     ifelse(
       !is.na(numericStrings$number),
-      as.numeric(numericStrings$number) %in% MAGNITUDE,
+      as.numeric(numericStrings$number) %in% MAGNITUDES,
       F
     )
   
   numericStrings$tenType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste0("^", TEN_KEYS, "$", collapse = "|"),
+                        stringr::regex(paste0("^", TEN_NAMES, "$", collapse = "|"),
                                        ignore_case = T)) |
     ifelse(!is.na(numericStrings$number),
            (
              as.numeric(numericStrings$number) == 10 |
-               (as.numeric(numericStrings$number) %in% TEN)
+               (as.numeric(numericStrings$number) %in% TENS)
            )
            , F)
   
   numericStrings$unitType <-
     stringr::str_detect(numericStrings$stringSplit,
-                        stringr::regex(paste0("^", UNIT_KEYS, "$", collapse = "|"),
+                        stringr::regex(paste0("^", UNIT_NAMES, "$", collapse = "|"),
                                        ignore_case = T)) |
     ifelse(
       !is.na(numericStrings$number),
@@ -251,14 +261,11 @@ words_to_numbers <- function(string) {
       F
     )
   
-  # Helper function to check whether the item is a number or matches a number and returns either the numeric or the string
+  # Helper function to check whether the token is a number or matches a number and returns either the numeric or the string
   token_to_number <- function(tokens) {
     tokens <- tolower(tokens)
     unlist(purrr::map(tokens,
                       function(token) {
-                        if (is.na(token)) {
-                          return("error")
-                        }
                         if (is.null(NUMBER[token][[1]])) {
                           return(as.numeric(token))
                         } else {
@@ -267,13 +274,14 @@ words_to_numbers <- function(string) {
                       }))
   }
   
+  
   # Breaking apart groups according to the following rules
   for (groups in unique(numericStrings$group)) {
     # Extracting numbers only
     numericsOnly <-
       dplyr::filter(numericStrings,
                     numericStrings$numberBinary,
-                    group ==
+                    numericStrings$group ==
                       groups)
     if (nrow(numericsOnly) < 2) {
       # If there is only one element it doesn't need to change
@@ -298,6 +306,10 @@ words_to_numbers <- function(string) {
           # And breatking if a a ten type is preceeded by a ten type
           (numericsOnly$tenType[pairs_to_test$e1] &
              numericsOnly$tenType[pairs_to_test$e2]) |
+          # And breatking if a a ten type is preceeded by a unit type above 10
+          (numericsOnly$tenType[pairs_to_test$e1] &
+             numericsOnly$unitType[pairs_to_test$e2]) &
+          token_to_number(numericsOnly$stringSplit[pairs_to_test$e2]) > 10 |
           # Adding break if a larger number in digits is followed by a word in
           # numbers of a smaller magnitude (e.g., "1000 hundred" or "100 ten")
           (
@@ -324,8 +336,8 @@ words_to_numbers <- function(string) {
       )
     }
     
-    
-    if (nrow(numericsOnly) > 3) {
+    # This part checks triplets
+    if (nrow(numericsOnly) > 2) {
       triplets_to_test <-
         tibble::tibble(
           e1 = 1:(nrow(numericsOnly) - 2),
@@ -335,14 +347,14 @@ words_to_numbers <- function(string) {
       numericsOnly$tochange <- c(
         # Note that unlike the doubles, this "centers" on the middle value
         # (i.e., e2 is still the value at which the break happens, not the last value)
-        # This means that we cannot change the first or the last value's break
         F,
-        #  If a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
+        #  This breaks if:
+        # a mangnitude is followed by a magnitude, and the latter magnitude is larger than the first
         # (e.g., "twenty thousand, one million" as compared to "one million, twenty thousand")
-        # unless the lower number is a hundred in which case we let it slide (one hundred twenty thousand makes sense)
-        
-        # This carves out some exceptions for when we have e.g., Hundreds of thousands
-        # When the number before the hundred is below ten
+        # unless the lower number is a hundred in which case we let it slide
+        # (because, for example "one hundred twenty thousand" can be parsed as a single number)
+        # This carves out some exceptions for when xs of hundreds of thousands
+        # And the number before the hundred is below ten
         c(
           T,
           !(
@@ -358,7 +370,19 @@ words_to_numbers <- function(string) {
               token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
               numericsOnly$magnitudeType[triplets_to_test$e1] &
               numericsOnly$magnitudeType[triplets_to_test$e3]
-          ),
+          ) |
+          # Also breaks tokens apart if the token before is equal to the token afterwards, AND
+          # The token in the middle is less than either the one before or after
+          # And the end tokens are both magnitudes e.g., "1.6 million three million"
+          (token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) ==
+             token_to_number(numericsOnly$stringSplit[triplets_to_test$e3]) &
+             (token_to_number(numericsOnly$stringSplit[triplets_to_test$e2]) <
+                token_to_number(numericsOnly$stringSplit[triplets_to_test$e1]) |
+                token_to_number(numericsOnly$stringSplit[triplets_to_test$e2]) <
+                token_to_number(numericsOnly$stringSplit[triplets_to_test$e3])) &
+             numericsOnly$magnitudeType[triplets_to_test$e1] &
+             numericsOnly$magnitudeType[triplets_to_test$e3])
+        ,
         F
       ) | numericsOnly$tochange
     }
@@ -366,20 +390,18 @@ words_to_numbers <- function(string) {
     numericsOnly$group <-
       stringr::str_c("a", numericsOnly$group, cumsum(numericsOnly$tochange))
     numericStrings[match(numericsOnly$id, numericStrings$id), ] <-
-      dplyr::select(numericsOnly,-tochange)
+      dplyr::select(numericsOnly,-"tochange")
   }
-  
   
   # Dropping unchanging tokens (i.e., those that are not required, like punctuation that should not be altered)
   numericStrings <- dplyr::filter(numericStrings,!is.na(groups))
   
   # Reassigning the now ungrouped non-numerics
-  numericStrings$group[!stringr::str_detect(numericStrings$group, "^a\\d")] <-
-    NA
+  numericStrings$group[!stringr::str_detect(numericStrings$group, "^a\\d")] <- NA
   numericStrings$group <-
     ifelse(
-      tidyr::fill(numericStrings, group,  .direction = "down")$group == tidyr::fill(numericStrings, group,  .direction =  "up")$group,
-      tidyr::fill(numericStrings, group,  .direction = "down")$group,
+      tidyr::fill(numericStrings, .data$group,  .direction = "down")$group == tidyr::fill(numericStrings, .data$group,  .direction =  "up")$group,
+      tidyr::fill(numericStrings, .data$group,  .direction = "down")$group,
       NA
     )
   # Helper function for assessing each group of numbers
@@ -388,7 +410,7 @@ words_to_numbers <- function(string) {
     numericsOnly <- dplyr::filter(processedNumerics, numberBinary)
     # Creating numbers columns
     numericsOnly$number[is.na(numericsOnly$number)] <-
-      as.numeric(NUMBER[match(tolower(numericsOnly$stringSplit[is.na(numericsOnly$number)]), NUMBER_WORDS)])
+      as.numeric(NUMBER[match(tolower(numericsOnly$stringSplit[is.na(numericsOnly$number)]), NUMBER_NAMES)])
     # Copying for tracking of original numbers, which impact the way that things are summed up
     numericsOnly$oldNumber <- numericsOnly$number
     # For all magnitiude types, count all smaller magnitude types as multipliers of the magnitude value
@@ -422,8 +444,8 @@ words_to_numbers <- function(string) {
   numericedOutput <- stringSplit
   
   # for each group of numbers
-  for (groups in unique(na.omit(numericStrings$group))) {
-    ids <- dplyr::filter(numericStrings, group == groups)$id
+  for (groups in unique(stats::na.omit(numericStrings$group))) {
+    ids <- dplyr::filter(numericStrings, .data$group == groups)$id
     # Blanking out the non-used numbers and repacing strings with numbers
     numericedOutput$number[numericedOutput$id %in% ids][1] <-
       identifyNumbers(numericStrings[numericStrings$group == groups, ])
