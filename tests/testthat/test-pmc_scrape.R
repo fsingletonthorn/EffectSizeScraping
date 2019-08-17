@@ -1,16 +1,4 @@
-context("test pubmed pull and process")
-
-test_that("extraction works from pdf", {
-  pdf <- extractPdf("https://osf.io/v7n6j/download")
-  pdf$PMCID <- "test"
-  extracted <- processPMC(pdf)
-  expect_identical(extracted$statisticalOutput[[7]][extracted$statisticalOutput$statistic == "chi"],
-                   c("4.541",
-                     "3.421",
-                     "2.202",
-                     "11.566",
-                     "19.236"))
-})
+context("test pmc_scrape")
 
 test_that("scrapePMC extracts files with correctly labeled sections", {
   # pmcID <- 4710337
@@ -22,7 +10,7 @@ test_that("scrapePMC extracts files with correctly labeled sections", {
   stringr::str_detect(output$text$text[output$text$names == "unlabelled"],
              "Prompt diagnosis is important as urgent")
   )
-  expect_true( is.na(output$text$statisticalOutput) )
+  expect_true(is.na( output$statisticalTests ) )
 })
 
 
@@ -39,7 +27,7 @@ test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
   )
   
   expect_true(all(
-    output$text$statisticalOutput$statistic == c("chi", "chi", "chi")
+    output$statisticalTests$statistic == "chi"
   )) 
 })
 
@@ -52,14 +40,14 @@ test_that("scrapePMC process excracts stats correctly from pmc5504157", {
  output <- scrapePMC(call, ftpCall, statcheck = F)
  
  
- expect_true(all(as.numeric(output$text$statisticalOutput$value[
-   output$text$statisticalOutput$statistic == "r"
+ expect_true(all(as.numeric(output$statisticalTests$value[
+   output$statisticalTests$statistic == "r"
    ]) %in%
  c(0.10,0.30,0.71,0.69,0.63,0.61,0.59,0.56,0.86,0.32,0.75,0.67,0.51,
  0.45,0.39,0.41,0.30,0.31,0.31,0.59,0.56,0.48,0.52,0.38,0.63,0.41)))
  
  expect_true(all(
-   as.numeric(output$text$statisticalOutput$value[output$text$statisticalOutput$statistic == "d"]) %in%
+   as.numeric(output$statisticalTests$value[output$statisticalTests$statistic == "d"]) %in%
      c(0.07,
        0.44,
        0.20)
@@ -111,4 +99,16 @@ test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
                         "The increased interest in the sense of touch over the last decades will hopefully continue as much still remains to be explored\\.$")
   )
 })
+
+
+test_that("test pmc extracts statistical test correctly", {
+  pmcID <- "PMC5504157"
+  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5504157&metadataPrefix=pmc"
+  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/4a/be/PMC5504157.tar.gz"
+  output <- scrapePMC(call, ftpCall)
+  
+  expect_true(output$metadata$PMCID == pmcID)
+  expect_identical(as.numeric(output$statisticalTests$value[output$statisticalTests$statistic == "d"]), c(.07, .44, .20))
+  
+  })
 

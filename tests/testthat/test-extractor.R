@@ -252,10 +252,8 @@ test_that("chi square extraction works w / weird formatting", {
 }
 )
 
-
 test_that("extractor can deal with real world examples", { 
-  
-  
+
   testString <- "Results. Our most fundamental prediction was th of causation and blame would be based more on whet behavior was good or bad than whether it was normat normative. The results confirmed this prediction. Gra as less causal when his behavior was good (M = 3.37) t was bad (M = 5.20), F(l, 178) = 17.12, p < .0001, an blamed less when his behavior was good (M = 2.92) tha bad (M = 5.19), F(l, 178) = 27.98, p < .0001. Overall, main effect of whether his behavior was normative or counternormative on causal ratings, F(l, 178) = 2.10, p< .15, or on blame, /\"(l, 178) = 1.59, p < .21."
   extractTestStats(testString)
   
@@ -266,11 +264,9 @@ test_that("extractor can deal with real world examples", {
   expect_equal(extractTestStats(  "F(  l, 178  ) = 17.12, p < .0001" )[[1]], "F")
   expect_equal(extractTestStats("F( l , 17l ) = 17.12, p < .0001" , context = T)[[1]], "F")
   expect_equal(extractTestStats(  "F( 1, l78 ) = 17.12, p < .0001" , context = T)[[1]], "F")
-  
   }) 
 
 test_that("extractor can extract context or not", { 
-  
   expect_equal(extractTestStats(  "F(  1, 178  ) = 17.12, p < .0001", context = F )[[4]], "17.12")
   expect_null(extractTestStats("F( l , 171 ) = 17.12, p < .0001" , context = F)$context)
   expect_equal(extractTestStats("test patern F( 1, 178 ) = 17.12, p < .0001 test pattern" , context = T, contextSize = 5)$context, 
@@ -281,8 +277,6 @@ test_that("t test extractor doesn't extract values without test statistic values
   expect_equal(extractTestStats("t(1) = 1, p = .8, and t(12) = .12")[,4], c('1','.12')) 
   expect_true(all(is.na(extractTestStats("t(1), p = .8, and t(c) = .12")[,4])))
 })
-
-
 
 test_that("chi square can deal with annoying characters", {
 expect_equal(extractTestStats("c2 = 1.232, and x2(12) = .12")[,4], c('1.232','.12')) 
