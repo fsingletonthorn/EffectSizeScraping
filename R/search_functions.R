@@ -46,7 +46,7 @@ findN <- function(input) {
   # Setting up regexs
   SSOf <- "(\\ba?\\s*sample\\s*size\\s*of\\s*\\d+)"
   nOf <- "((\\bN\\s*(\\=|(of))\\s*)\\d+)"
-  nPar <- "(\\b\\d+((?![:punct:]|\\d).)*(participants|participated|volunteer(s|ed)|observations))"
+  nPar <- "(\\b\\d+((?![:punct:]|\\d).)*((took\\spart)|participants|participated|volunteer(s|ed)|observations))"
   parWere <- "(\\b(subjects|participants)((?!\\[:punct:]|[\\(\\)\\.\\,]).|\\d)*\\s*were((?![:punct:]|\\d).)*\\d+)"
   
   # pullting together regex 
