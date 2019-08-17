@@ -156,61 +156,8 @@ if( elementExists(unlabPs) ) {
   
   text =
     tibble::tibble(PMCID = PMCID, 
-      names = unlist(processText(c("abstract", textOutput[, 1]))),
-               text = c(ifelse(purrr::is_empty(abstract), NA, unlist(processText(abstract))), unlist(processText(textOutput[, 2]))))
+      names = unlist(cleanText(c("abstract", textOutput[, 1]))),
+               text = c(ifelse(purrr::is_empty(abstract), NA, unlist(cleanText(abstract))), unlist(cleanText(textOutput[, 2]))))
  )
  return(output)
 }
-
-
-processPMC <- function(paper_text_list, statcheck = F) {
-  # This function takes a list of the paper's paragraphs, and runs the extraction function on each
-  # Note that it expects the list to take a specific form - as produced 
-  # If statcheck = T, it also runs statcheck on the file
-
-  # processing all but the PMID with extract test stats
-  output <- as.list(paper_text_list[c("names", "text")])
-  
-  statisticalOutput <-
-    apply(data.frame(unlist(output[1]), unlist(output[2]), stringsAsFactors = F), 1,
-          function(x) {
-            extractTestStats(x[2], sectionName = x[1], context = T)
-          })
-  
-  # NA rows removed here using a filter:
-  notNAs <- unlist(lapply(statisticalOutput, function(x) !is.na(x[[2]][1])))
-
-  if (any(notNAs)) {
-    output$statisticalOutput <-
-      data.frame(PMCID = paper_text_list$PMCID[[1]],
-                 dplyr::bind_rows(statisticalOutput[notNAs]), 
-                 stringsAsFactors = F)
-  } else {
-    output$statisticalOutput <- NA
-  }
-  
-  if(statcheck == TRUE) {
-  statCheckOutput <- lapply(output$text[-1], function(x) {
-    if (length(x) > 0) {
-      if (is.na(x)) {
-        return(NA)
-      } else{
-        statcheck::statcheck(x)
-      }
-    } else
-      NA
-})
-  
-  # NA rows removed here using a filter:
-   notNAs <-
-     unlist(lapply(X = statCheckOutput, FUN =  elementExists))
-   if (any(notNAs)) {
-     output$statCheckOutput <-
-       data.frame(PMCID = paper_text_list$PMCID[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
-   } else {
-     output$statCheckOutput <- NA
-   }
-  }
-  return(output)
-}
-  

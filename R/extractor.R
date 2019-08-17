@@ -105,7 +105,6 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   # This is a test of one that does not capture MSEs, actually does not work because of the way that the context capture works
   # stringr::str_extract("F(1,3) = 1232.12, MSE = 1232, p = 1.1232", "\\bF\\s*\\(?\\s*\\d{1,},\\s*\\d{1,}\\s*\\)?(?:\\,\\s{0,5}MSE\\s{0,5}\\,\\s{0,5}\\=\\d{1,}\\.?\\d{1,}\\,)?\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?")
 
-
   if (purrr::is_empty(inputText) | !elementExists(inputText)) {
     if (context == F) {
       return(

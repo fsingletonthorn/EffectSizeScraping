@@ -153,7 +153,7 @@ extractedText <- pdftools::pdf_text(path)
 
 extractedText <- splitPdf(extractedText, labelSections = T)
 
-extractedText$text <- unlist(processText(extractedText$text))
+extractedText$text <- unlist(cleanText(extractedText$text))
 
 return(extractedText)
 

@@ -31,7 +31,7 @@ elementExists <- function( full_index_path ){
 
 # This function is adapted from statcheck https://github.com/MicheleNuijten/statcheck/blob/master/R/htmlImport.R,
 # does some final extra cleaning if any tags / weird characters remain
-processText <- function(strings){
+cleanText <- function(strings){
   
   # Replace html codes:
   strings <- lapply(strings, gsub, pattern = "&#60;", replacement = "<", fixed = TRUE)

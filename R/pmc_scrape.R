@@ -1,26 +1,4 @@
-
-# Download article from PMC
-
-# Pull PMC
-
-# articles[articles$PMID == ]
-
-# Example sans text # Appears to have been updated with full text
-# pmcID <- 4710337
-# call <- articles$oaiCall[articles$PMCID == pmcID]
-# ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
-
-## Example with text
-# pmcID <- 5393010
-# call <- articles$oaiCall[articles$PMCID == pmcID]
-# ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
-
-## Example with correlation coefficients etc. 
-# pmcID <- 5504157
-# call <- articles$oaiCall[articles$PMCID == pmcID]
-# ftpCall  <- articles$tpfCall[articles$PMCID == pmcID]
-
-
+# Download article from PMC and run all test extraction and search functions on
 scrapePMC <- function(call, ftpCall, statcheck = T) {
   pulledPMC <-  pullPMC(call = call)
   
@@ -63,6 +41,7 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
       # Cleanup
       unlink( c( exdir, tempLoc ), recursive = T)
   }
-     pulledPMC$text <- processPMC(pulledPMC$text)
+     pulledPMC$statisticalTests <- processText(pulledPMC$text)
+     
      return(pulledPMC)
 }
