@@ -65,7 +65,7 @@ findN <- function(input) {
 }
 
 # Function to process text output in the categorisation functions of this package
-extract_ns_from_processed <- function(text){
+extractNsFromProcessed <- function(text){
   # Text must be a tibble / df with column 1 = "names", column 2 = "text"
 dplyr::bind_rows(
   apply(text, MARGIN = 1, function(x) {

@@ -32,7 +32,7 @@ expect_identical(findN("Forty Princeton University volunteers at the student cam
 expect_identical(findN("Fifty-one Hebrew University undergraduates participated in the experiment in exchange for course credit or pay.")[[2]][[1]], "51")
 expect_identical(findN("Ninety-three Hebrew University undergraduates participated in exchange for course credit or pay.")[[2]][[1]], "93")
 expect_identical(findN("Twenty Princeton University undergraduate took part")[[2]][[1]], "20")
-expect_identical(findN("40 Princeton University students took part.")[[2]][[1]])
+expect_identical(findN("40 Princeton University students took part.")[[2]][[1]], "40")
 expect_identical(findN("Fifty-one Hebrew University undergraduates participated in the experiment in exchange for course credit or pay.")[[2]][[1]], "51")
 expect_identical(findN("Ninety-three Hebrew University undergraduates participated in exchange for course credit or pay. 
                        In experiment 2, 23 Princeton University volunteers at the student campus center read a short review of a new MP3 player,
@@ -52,7 +52,7 @@ test_that("the correct number is extracted", {
   pdf <- extractPdf("https://osf.io/v7n6j/download")
   expect_true(
     max( as.numeric(
-      extract_ns_from_processed( pdf )$n )) == 510
+      extractNsFromProcessed( pdf )$n )) == 510
     )
   
   expect_equal(
@@ -64,7 +64,7 @@ test_that("the correct number is extracted", {
   
   expect_true(
     max( as.numeric(
-      extract_ns_from_processed( pdf )$n)) == 185
+      extractNsFromProcessed( pdf )$n)) == 185
     )
 })
 
