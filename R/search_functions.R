@@ -68,10 +68,24 @@ findN <- function(input) {
 extractNsFromProcessed <- function(text){
   # Text must be a tibble / df with column 1 = "names", column 2 = "text"
 dplyr::bind_rows(
-  apply(text, MARGIN = 1, function(x) {
-    name <- x[1]
-    Ns <- findN(x[2])
+  purrr::map2_dfr(text$names, text$text, function(x, y) {
+    if(is.na(y)) {return(suppressWarnings(tibble::tibble(name = NA, nString = NA, n = NA)))}
+    name <- x
+    Ns <- findN(y)
     return(suppressWarnings(tibble::tibble(name = rep(name, nrow(Ns)), nString = Ns[[1]], n = Ns[[2]])))
+  }
+  )
+)
+  
+}# Function to process text output in the categorisation functions of this package
+extractCIFromProcessed <- function(text){
+  # Text must be a tibble / df with column 1 = "names", column 2 = "text"
+dplyr::bind_rows(
+  purrr::map2_dfr(text$names, text$text, function(x, y) {
+    # if(is.na(y)) {return(suppressWarnings(tibble::tibble(name = NA, nString = NA, n = NA)))}
+    name <- x
+    CIs <- checkCIs(y)
+    return(suppressWarnings(tibble::tibble(name = rep(name, nrow(CIs)), CIString = CIs$CIs, CIBinary = CIs$CIBinary)))
   }
   )
 )
