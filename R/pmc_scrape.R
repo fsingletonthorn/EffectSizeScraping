@@ -43,5 +43,9 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
   }
      pulledPMC$statisticalTests <- processText(pulledPMC$text)
      
+     pulledPMC$sampleSizes <- extractNsFromProcessed(pulledPMC$text[c("names", "text")])
+     
+     pulledPMC$CIs <- extractCIFromProcessed(pulledPMC$text[c("names", "text")])
+     
      return(pulledPMC)
 }
