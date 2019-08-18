@@ -33,7 +33,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
         stringr::str_detect(statistic, "chi") ~
           stringr::str_extract(
             cleanedTestStat,
-            "(?<=\\((df\\s{0,10}=\\s{0,10})?)\\d{1,}"
+            "(?<=(\\((df\\s{0,10}=\\s{0,10})?)|df\\=)\\d{1,}"
           ),
         TRUE ~ NA_character_
       )

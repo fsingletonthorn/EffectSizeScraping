@@ -282,3 +282,12 @@ test_that("chi square can deal with annoying characters", {
 expect_equal(extractTestStats("c2 = 1.232, and x2(12) = .12")[,4], c('1.232','.12')) 
 })
 
+test_that("chi square extractor picks up ideosyncratically reported DFs", {
+expect_equal(extractTestStats("χdf=22 = 3.4210.181")$df2, "22") 
+expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22") 
+expect_equal(extractTestStats("χ df =42 = 4.541")$df2, "42") 
+})
+
+
+
+
