@@ -4,11 +4,11 @@
 checkCIs <- function(input,
                      context = T,
                      contextSize = 0) {
-  CI_REGEX  <- "((\\d{1,2}%?)?\\s*(\\bCIs?|\\bconfidence\\s*intervals?))\\s*(of)?=?\\s*\\[?\\d*,?\\s*\\d*\\]?"
+  CI_REGEX  <- "(\\bconfidence\\s*intervals?\\b)|(\\bCIs?\\b(?!\\.|!).*(\\(|\\[)\\d+,?\\s*\\d+(\\]|\\)))|(\\d{2}\\s*\\%\\s*CI\\b)"
   
   CIregContext <-
-      paste0(".{0,", contextSize, "}",
-      CI_REGEX, ".{0,", contextSize, "}")
+      paste0(".{0,", contextSize, "}(",
+      CI_REGEX, ").{0,", contextSize, "}")
   
   # Extract CIs with context
   CIs_context <- stringr::str_extract_all(input,
@@ -17,7 +17,7 @@ checkCIs <- function(input,
                                   simplify = T)
   
   # If CIs is empty, CIs are not captured
-  CIsBinary <- elementExists(CIs_context)
+  CIsBinary <- dim(CIs_context)[2] > 0
   
   if(CIsBinary) {
   # Extract just CIs

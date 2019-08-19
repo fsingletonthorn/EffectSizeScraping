@@ -69,13 +69,27 @@ test_that("the correct number is extracted", {
 })
 
 
-# To be added: 
-test_that("CI extractor works", {
+test_that("CI extractor works I", {
    ciTexts <- list("Confidence interval", 
                    "as fsad f 95% CI 10, 20 fasd", 
                    "95% CI around the latest [1,10]", 
                    "95$ confidence range", 
                    "not very good at confidence ratings")
-   testthat::expect_equivalent(checkCIs(ciTexts, context = T, contextSize = 10)$context[c(1,2)], as.character(ciTexts[1:2]))
+   testthat::expect_equivalent(checkCIs(ciTexts, context = T, contextSize = 100)$context[c(1,2)], as.character(ciTexts[1:2]))
    testthat::expect_equivalent(unlist(lapply(ciTexts, checkCIs, context = F)), c(T,T,T,F,F))
  })
+
+test_that("CI extractor works II", {
+   ciTexts <- list("CI = [1, 2]", 
+                   "f 95% CI 10, 20 fa", 
+                   "95% CI around the latest [1,10]", 
+                   "23% confidence range of 1 to 5", 
+                   "70% CI of 1, 2",
+                   "CI = 1, 2")
+   testthat::expect_equivalent(checkCIs(ciTexts, context = T, contextSize = 30)$context,
+                               as.character(c(ciTexts[1:3], "", ciTexts[5], "")))
+   testthat::expect_equivalent(unlist(lapply(ciTexts, checkCIs, context = F)), c(T,T,T,F,T,F))
+ })
+
+
+
