@@ -21,3 +21,7 @@ scrapePMC(pmcCall, ftpCall) {
 	# This searches for CIs, for sample sizes, and later for power analysis
 	}
 }
+
+Important notes:
+
+Confidence interval detection accepts either a fully written out "confidence interval" as a hit, or "[2 digits]% CI", or "CI" followed by just two numbers in parentheses "(" or square "[" brackets (ignores whitespace). 

@@ -35,7 +35,7 @@
 #'
 #' @export
 words_to_numbers <- function(string) {
-  
+  if(is.na(string)){return(NA)}
   if(length(unlist(string)) > 1 | class(string) != "character") {
     warning("The argument which was passed to words_to_numbers is not a length 1 character element, only the first element has been used here. Consider using the apply or purrr::map functions to assess multiple elements at once.")
     string <- unlist(string)[[1]]
