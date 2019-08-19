@@ -16,7 +16,7 @@ test_that("scrapePMC extracts files with correctly labeled sections", {
 
 
 test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
-  pmcID <- 5393010
+  # pmcID <- 5393010
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
   ftpCall  <-"ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
   output <- scrapePMC(call, ftpCall, statcheck = F)
@@ -33,7 +33,7 @@ test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
 
 
 test_that("scrapePMC process excracts stats correctly from pmc5504157", {
-  pmcID <- 5504157
+  # pmcID <- 5504157
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5504157&metadataPrefix=pmc"
   ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/4a/be/PMC5504157.tar.gz"
 
@@ -78,18 +78,6 @@ test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
 })
 
 test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
-  # pmcID <- 4710337
-  call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
-  ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/a2/4e/PMC5393010.tar.gz"
-  output <- scrapePMC(call, ftpCall, statcheck = F)
-
-  expect_true(
-    stringr::str_detect(output$text$text[output$text$names == "Discussion"],
-                        "The findings of this study must be")
-  )
-})
-
-test_that("scrapePMC extracts the pdf when text is not otherwise avaliable", {
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4311551&metadataPrefix=pmc"
   ftpCall  <- "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz"
   output <- scrapePMC(call, ftpCall, statcheck = F)
@@ -111,4 +99,27 @@ test_that("test pmc extracts statistical test correctly", {
   expect_identical(as.numeric(output$statisticalTests$value[output$statisticalTests$statistic == "d"]), c(.07, .44, .20))
   
   })
+
+
+test_that("initial test set gives accurate information", {
+ output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4311551&metadataPrefix=pmc",
+          ftpCall =  "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz", statcheck = T)
+  expect_equal(output$metadata$title, "Body in mind")
+  expect_equal(output$metadata$doi, "10.3389/fpsyg.2015.00056")
+  expect_true(all(is.na(output$sampleSizes)))
+  expect_true(is.na(output$statisticalTests))
+
+  
+  output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4311551&metadataPrefix=pmc",
+                      ftpCall =  "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz", statcheck = T)
+  expect_equal(output$metadata$title, "Body in mind")
+  expect_equal(output$metadata$doi, "10.3389/fpsyg.2015.00056")
+  expect_true(all(is.na(output$sampleSizes)))
+  expect_true(is.na(output$statisticalTests))
+  
+  
+  
+  
+  }
+)
 
