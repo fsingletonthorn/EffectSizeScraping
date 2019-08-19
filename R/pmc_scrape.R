@@ -2,11 +2,9 @@
 scrapePMC <- function(call, ftpCall, statcheck = T) {
   pulledPMC <-  pullPMC(call = call)
   
-  # Checking if we've got more than just the abstract
-  if ((length(unlist(pulledPMC$text)) == 4) |
+  # Checking if we've got more than just the abstract, and guessing if we've got the full text based on whether we have <500 words
+  if (all(pulledPMC$text$names == "abstract") |
       sum(stringr::str_count(as.character( pulledPMC$text ), " ")) < 500) {
-    # To check if abstract is NA  add "& is.na(textTemp$text[2,2][[1]])"
-    # articles$tpfCall[articles$PMCID == pmcID]
     
     # Create temp file location
     tempLoc <- tempfile()
@@ -29,7 +27,7 @@ scrapePMC <- function(call, ftpCall, statcheck = T) {
     # If PDF file exists
     if (length(pdfLoc) > 0) {
       # Always only work on the first PDF, just in case there is more than 1
-      # This also binds in the PMC number, although it excludes
+      # This also binds in the PMC number
       extractedText <- extractPdf(pdfLoc[[1]])
       extractedText$PMCID <- pulledPMC$metadata$PMCID
       # test if the extracted text is longer than that already stored
