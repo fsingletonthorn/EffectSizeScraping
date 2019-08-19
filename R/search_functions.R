@@ -4,6 +4,7 @@
 checkCIs <- function(input,
                      context = T,
                      contextSize = 0) {
+  
   CI_REGEX  <- "(\\bconfidence\\s*intervals?\\b)|(\\bCIs?\\b(?!\\.|!).*(\\(|\\[)\\d+,?\\s*\\d+(\\]|\\)))|(\\d{2}\\s*\\%\\s*CI\\b)"
   
   CIregContext <-
@@ -17,7 +18,7 @@ checkCIs <- function(input,
                                   simplify = T)
   
   # If CIs is empty, CIs are not captured
-  CIsBinary <- dim(CIs_context)[2] > 0
+  CIsBinary <- (dim(CIs_context)[2] > 0) & any(!is.na(CIs_context))
   
   if(CIsBinary) {
   # Extract just CIs
