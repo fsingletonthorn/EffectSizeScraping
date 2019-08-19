@@ -144,12 +144,12 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   
   extracted <-
     stringr::str_extract_all(inputText , pattern = stringr::regex(patterns, ignore_case = TRUE))
-
+  # Removing all Rs with captial Rs
+  extracted[[3]] <- extracted[[3]][(!stringr::str_detect(extracted[[3]], "\\bR"))]
   # removing whitespace that can be captured in the regular expressions above
   extractedClean <-
     lapply(extracted,  stringr::str_remove_all, pattern = "\\s")
 
-  
   # The following extracts the context around each extracted part:
   # Putting the following into a single string that will expand to the number of patterns
 
@@ -201,6 +201,3 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
    }
   if(is.na(sectionName)) {output} else {data.frame(names = as.character(sectionName), output, stringsAsFactors = F, row.names = NULL)}
 }
-
-
-
