@@ -87,7 +87,7 @@ title <-
 
 # Article key words # possibly trim
 keywords <-
-  xml2::xml_text(xml2::xml_find_all(paper, '//front/article-meta/kwd-group/kwd'))
+  stringr::str_replace_all(xml2::xml_text(xml2::xml_find_all(paper, '//front/article-meta/kwd-group/kwd')), "\\n", "")
 
 ### Authors
 # author names:
@@ -141,7 +141,7 @@ if( elementExists(unlabPs) ) {
     volume,
     pPub,
     ePub,
-    abstract = ifelse(purrr::is_empty(abstract), NA, abstract),
+ #   abstract = ifelse(purrr::is_empty(abstract), NA, abstract),
     call
   ),
   keywords = tibble::tibble(

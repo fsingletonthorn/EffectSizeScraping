@@ -21,3 +21,8 @@ test_that("pull PMC extracts and includes unlabelled text", {
   expect_true(stringr::str_detect(processedText$text$text[processedText$text$names== "unlabelled"], stringr::fixed("Sir,")))
   expect_true(stringr::str_detect(processedText$text$text[processedText$text$names== "unlabelled"], stringr::fixed("cutaneous features")))
 })
+
+test_that("pubmebPull doesn't bring line breaks with keywords", {
+  processedText <- pullPMC(call =  "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5414266&metadataPrefix=pmc")
+  expect_false(any(stringr::str_detect(processedText$keywords$keywords, "\\n")))
+  })
