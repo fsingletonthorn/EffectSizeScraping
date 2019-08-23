@@ -49,7 +49,7 @@ findN <- function(input) {
   nOf <- "((\\bN\\s*(\\=|(of))\\s*)\\d+)"
   nPar <- "(\\b\\d+((?![:punct:]|\\d).)*((took\\s+part)|participants|participated|volunteer(s|ed)|observations))"
   parWere <- "(\\b(subjects|participants)((?!\\[:punct:]|[\\(\\)\\.\\,]).|\\d)*\\s*were((?![:punct:]|\\d).)*\\d+)"
-  aTotalofN <- "a\\s+total\\s+of\\s+\\d+.((?!\\[:punct:]).|\\d)*(participants|undergraduate|college|students|rats|mice|subjects|men|woman|people|mturk|samples|took\\s+part)((?!\\[:punct:]|[\\(\\)\\.\\,]).|\\d)*"
+  aTotalofN <- "a\\s+total\\s+of\\s+\\d+.((?![\\.\\n]).)*(participants|undergraduate|college|students|rats|mice|subjects|men|woman|people|mturk|samples|took\\s+part|involved)((?![\\.\\n]).)*"
   
   # pullting together regex 
   NRegex <-  paste(SSOf, nOf, nPar, parWere, aTotalofN , sep = "|")

@@ -160,8 +160,8 @@ output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=Ge
   expect_equal(output$metadata$volume,  "16")
   expect_equal(output$metadata$ePub,  as.POSIXlt.character("2016-06-10", tz = "UTC"))
 
-  expect_equal(max(as.numeric(output$sampleSizes$n)), 385)
-  expect_true(all(as.numeric(output$sampleSizes$n) %in% c(385, 16,  49, 231, 374, 363, 271, 365, 353, 385, 196, 171, 104, 95, 
+  expect_equal(max(as.numeric(output$sampleSizes$n)), 3147)
+  expect_true(all(as.numeric(output$sampleSizes$n) %in% c(385, 3147, 16,  49, 231, 374, 363, 271, 365, 353, 385, 196, 171, 104, 95, 
                                                           16, 236, 12, 385, 239, 293, 257, 216, 194, 385,  15,  2))
   )
   expect_true(is.na(output$keywords$keywords[1]))
@@ -193,6 +193,26 @@ output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=Ge
   expect_true(stringr::str_detect(output$text$text[output$text$names == "unlabelled"], "hether any difficulties arise out of enforcing the Act"))
 
   
+  
+output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172542&metadataPrefix=pmc",
+                      ftpCall = "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/64/34/PMC3172542.tar.gz", statcheck = T)
+ 
+  expect_equal(output$authors$surname, "Channabasavanna")
+  expect_equal(output$authors$firstname, "S.M.")
+  expect_equal(output$metadata$PMCID, "PMC3172542")
+  expect_true(is.na(output$metadata$doi))
+  expect_equal(output$metadata$journalID, "Indian Journal of Psychiatry")
+  expect_equal(output$metadata$journalIDAbrev, "Indian J Psychiatry")
+  expect_equal(output$metadata$title, "THE NARCOTIC DRUGS ACT AND THE PSYCHIATRIST")
+  expect_equal(output$metadata$issue, "2")
+  expect_equal(output$metadata$volume,  "28")
+  expect_equal(output$metadata$pPub,  as.POSIXlt.character("1986-01-01", tz = "UTC"))
+
+  expect_true(is.na(output$sampleSizes$n))
+  expect_true(is.na(output$keywords$keywords[1]))
+  expect_false(any(output$CIs$CIBinary))
+  expect_true(stringr::str_detect(output$text$text[output$text$names == "unlabelled"], "The legislation to make stringent provision"))
+  expect_true(stringr::str_detect(output$text$text[output$text$names == "unlabelled"], "hether any difficulties arise out of enforcing the Act"))
   
 output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172542&metadataPrefix=pmc",
                       ftpCall = "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/64/34/PMC3172542.tar.gz", statcheck = T)
