@@ -13,7 +13,6 @@ test_that("scrapePMC extracts files with correctly labeled sections", {
   expect_true(is.na( output$statisticalTests ) )
 })
 
-
 test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
   # pmcID <- 5393010
   call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5393010&metadataPrefix=pmc"
@@ -106,7 +105,7 @@ test_that("initial test set gives accurate information", {
   expect_equal(output$metadata$title, "Body in mind")
   expect_equal(output$metadata$doi, "10.3389/fpsyg.2015.00056")
   expect_true(all(is.na(output$sampleSizes)))
-  expect_true(is.na(output$statisticalTests))
+  expect_true(all(is.na(output$statisticalTests)))
   
   output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5572533&metadataPrefix=pmc",
                       ftpCall =  "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/b1/cd/PMC5572533.tar.gz", statcheck = T)
@@ -123,7 +122,7 @@ test_that("initial test set gives accurate information", {
   expect_true(is.na(output$metadata$doi))
   expect_true(is.na(output$sampleSizes$n))
   expect_equal(dim(output$keywords)[1], 0)
-  expect_true(is.na(output$statisticalTests))
+  expect_true(all(is.na(output$statisticalTests)))
   expect_false(any(output$CIs$CIBinary))
   
   
@@ -133,7 +132,7 @@ test_that("initial test set gives accurate information", {
   expect_true(output$metadata$ePub == as.Date("2013-07-08 UTC"))
   expect_true(is.na(output$sampleSizes$n))
   expect_equal(dim(output$keywords)[1], 0)
-  expect_true(is.na(output$statisticalTests))
+  expect_true(is.na(output$statisticalTests)[1])
   expect_false(any(output$CIs$CIBinary))
   
 
