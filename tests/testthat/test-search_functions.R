@@ -34,6 +34,7 @@ expect_identical(findN("Ninety-three Hebrew University undergraduates participat
 expect_identical(findN("Twenty Princeton University undergraduate took part")[[2]][[1]], "20")
 expect_identical(findN("40 Princeton University students took part.")[[2]][[1]], "40")
 expect_identical(findN("Fifty-one Hebrew University undergraduates participated in the experiment in exchange for course credit or pay.")[[2]][[1]], "51")
+expect_identical(findN("a total of Fifty-one Hebrew University undergraduates")[[2]][[1]], "51")
 expect_identical(findN("Ninety-three Hebrew University undergraduates participated in exchange for course credit or pay. 
                        In experiment 2, 23 Princeton University volunteers at the student campus center read a short review of a new MP3 player,
                        Experiment 3: 94 participants read the paper. ")$N, c("93", "23", "94"))
