@@ -12,7 +12,8 @@ LazyData: true
 RoxygenNote: 6.1.1
 Suggests: 
     testthat,
-    covr
+    covr,
+    testthis
 Requires: 
     purrr
     stringr
@@ -23,3 +24,5 @@ Requires:
     statcheck
     zoo
     magrittr
+    wordstonumbers
+    

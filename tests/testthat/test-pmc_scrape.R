@@ -101,7 +101,7 @@ test_that("test pmc extracts statistical test correctly", {
 
 test_that("initial test set gives accurate information", {
  output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4311551&metadataPrefix=pmc",
-          ftpCall =  "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz", statcheck = T)
+          ftpCall =  "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/26/85/PMC4311551.tar.gz", statcheck = F)
   expect_equal(output$metadata$title, "Body in mind")
   expect_equal(output$metadata$doi, "10.3389/fpsyg.2015.00056")
   expect_true(all(is.na(output$sampleSizes)))

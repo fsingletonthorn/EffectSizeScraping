@@ -27,7 +27,7 @@ processText <- function(paper_text_tibble, statcheck = F) {
   }
   
   if(statcheck == TRUE) {
-    statCheckOutput <- lapply(output$text[-1], function(x) {
+    statCheckOutput <- lapply(paper_text_list$text, function(x) {
       if (length(x) > 0) {
         if (is.na(x[1])) {
           return(NA)
