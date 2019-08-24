@@ -233,6 +233,13 @@ output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=Ge
   expect_false(any(output$CIs$CIBinary))
   expect_true(stringr::str_detect(output$text$text[output$text$names == "unlabelled"], "The legislation to make stringent provision"))
   expect_true(stringr::str_detect(output$text$text[output$text$names == "unlabelled"], "hether any difficulties arise out of enforcing the Act"))
+  
+})
+
+test_that("PMCSCrape doesn't break when fed results with statcheck results", {
+  output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5650980&metadataPrefix=pmc", 
+                      ftpCall = "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/15/30/PMC5650980.tar.gz", statcheck = T)
+  
   }
 )
 

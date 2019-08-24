@@ -21,7 +21,7 @@ processText <- function(paper_text_tibble, statcheck = F) {
     statisticalOutput <-
       data.frame(PMCID = paper_text_tibble$PMCID[[1]],
                  dplyr::bind_rows(statisticalOutput[notNAs]), 
-                 stringsAsFactors = F)
+                 stringsAsFactors = FALSE)
   } else {
     statisticalOutput <- NA
   }
@@ -32,7 +32,11 @@ processText <- function(paper_text_tibble, statcheck = F) {
         if (is.na(x[1])) {
           return(NA)
         } else{
-          statcheck::statcheck(x)
+          statout <- statcheck::statcheck(x)
+          if(!is.null(statout)) {
+            statout <- dplyr::mutate_all(statout, as.character)
+            }
+          return(statout)
         }
       } else
         NA
@@ -43,7 +47,7 @@ processText <- function(paper_text_tibble, statcheck = F) {
       unlist(lapply(X = statCheckOutput, FUN =  elementExists))
     if (any(notNAs)) {
       statCheckOutput <-
-        data.frame(PMCID = paper_text_list$PMCID[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
+        tibble::tibble(PMCID = paper_text_tibble$PMCID[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
     } else {
       statCheckOutput <- NA
     }
