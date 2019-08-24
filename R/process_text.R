@@ -27,7 +27,7 @@ processText <- function(paper_text_tibble, statcheck = F) {
   }
   
   if(statcheck == TRUE) {
-    statCheckOutput <- lapply(paper_text_list$text, function(x) {
+    statCheckOutput <- purrr::map_df(paper_text_list$text, function(x) {
       if (length(x) > 0) {
         if (is.na(x[1])) {
           return(NA)
@@ -46,12 +46,11 @@ processText <- function(paper_text_tibble, statcheck = F) {
     notNAs <-
       unlist(lapply(X = statCheckOutput, FUN =  elementExists))
     if (any(notNAs)) {
-      statCheckOutput <-
-        tibble::tibble(PMCID = paper_text_tibble$PMCID[[1]], dplyr::bind_rows(statCheckOutput[notNAs], .id = "section"))
+      statCheckOutput$PMCID <- paper_text_tibble$PMCID[[1]]
     } else {
       statCheckOutput <- NA
     }
-    return(list(statisticalOutput, statCheckOutput))
+    return(list(statistics = statisticalOutput, statcheck = statCheckOutput))
   }
   return(statisticalOutput)
 }

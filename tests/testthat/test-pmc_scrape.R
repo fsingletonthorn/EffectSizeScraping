@@ -239,7 +239,10 @@ output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=Ge
 test_that("PMCSCrape doesn't break when fed results with statcheck results", {
   output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:5650980&metadataPrefix=pmc", 
                       ftpCall = "ftp://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_package/15/30/PMC5650980.tar.gz", statcheck = T)
-  
+  expect_equal(output$metadata$title, "The Orienting Response in Healthy Aging: Novelty P3 Indicates No General Decline but Reduced Efficacy for Fast Stimulation Rates")
+  expect_equal(output$statcheck$Statistic,  c("F", "F", "F", "F", "F", "F", "t", "t", "t", "F", "F", "F", "F", "F"))
+  expect_true(all(as.numeric(output$statcheck$Value) %in% as.numeric(output$statisticalTests$value)))
+  expect_equal(max(as.numeric(output$sampleSizes$n)), 43)
   }
 )
 

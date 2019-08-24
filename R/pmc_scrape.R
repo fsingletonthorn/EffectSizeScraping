@@ -39,7 +39,12 @@ scrapePMC <- function(call, ftpCall, statcheck = FALSE) {
       # Cleanup
       unlink( c( exdir, tempLoc ), recursive = T)
   }
-     pulledPMC$statisticalTests <- processText(pulledPMC$text, statcheck = statcheck)
+    
+    statout <- processText(pulledPMC$text, statcheck = statcheck)
+    
+    if(statcheck & !is.na(statout$statcheck$Value[1]))  pulledPMC$statcheck <- statout$statcheck
+    
+     pulledPMC$statisticalTests <- statout$statistics
      
      pulledPMC$sampleSizes <- extractNsFromProcessed(pulledPMC$text[c("names", "text")])
      
