@@ -52,6 +52,6 @@ processText <- function(paper_text_tibble, statcheck = F) {
     }
     return(list(statistics = statisticalOutput, statcheck = statCheckOutput))
   }
-  return(statisticalOutput)
+  return(list(statistics = statisticalOutput))
 }
 
