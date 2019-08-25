@@ -43,7 +43,7 @@ scrapePMC <- function(call, ftpCall, statcheck = FALSE) {
     statout <- processText(pulledPMC$text, statcheck = statcheck)
     
     if(statcheck) {  
-      if(!is.na(statout$statcheck$Value[1])) {
+      if(!is.null(statout$statcheck)){
         pulledPMC$statcheck <- statout$statcheck
         }
       }

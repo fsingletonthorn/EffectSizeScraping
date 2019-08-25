@@ -243,6 +243,7 @@ test_that("PMCSCrape doesn't break when fed results with statcheck results", {
   expect_equal(output$statcheck$Statistic,  c("F", "F", "F", "F", "F", "F", "t", "t", "t", "F", "F", "F", "F", "F"))
   expect_true(all(as.numeric(output$statcheck$Value) %in% as.numeric(output$statisticalTests$value)))
   expect_equal(max(as.numeric(output$sampleSizes$n)), 43)
+  expect_true(any(output$CIs$CIBinary))
   }
 )
 

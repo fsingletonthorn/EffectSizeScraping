@@ -30,7 +30,10 @@ processText <- function(paper_text_tibble, statcheck = F) {
     statCheckOutput <- purrr::map_df(paper_text_list$text, function(x) {
       if (length(x) > 0) {
         if (is.na(x[1])) {
-          return(NA)
+          return(data.frame(Source = NA,             Statistic = NA,          df1 = NA,                df2 = NA,               
+                            Test.Comparison = NA,    Value = NA,              Reported.Comparison = NA, Reported.P.Value = NA,  
+                            Computed = NA,           Raw = NA,                Error = NA,              DecisionError = NA,     
+                            OneTail = NA,            OneTailedInTxt = NA,     APAfactor= NA))
         } else{
           statout <- statcheck::statcheck(x)
           if(!is.null(statout)) {
