@@ -101,10 +101,11 @@ test_that("CI extractor works II", {
                    "95% CI around the latest [1,10]", 
                    "23% confidence range of 1 to 5", 
                    "70% CI of 1, 2",
-                   "CI = 1, 2")
+                   "CI = 1, 2",
+                   "p < 0.001. OR = 1.14; 95% C.I. 1.07–1.21")
    testthat::expect_equivalent(checkCIs(ciTexts, context = T, contextSize = 30)$context,
-                               as.character(c(ciTexts[1:3], "", ciTexts[5], "")))
-   testthat::expect_equivalent(unlist(lapply(ciTexts, checkCIs, context = F)), c(T,T,T,F,T,F))
+                               as.character(c(ciTexts[1:3], "", ciTexts[5], "",ciTexts[7])))
+   testthat::expect_equivalent(unlist(lapply(ciTexts, checkCIs, context = F)), c(T,T,T,F,T,F,T))
  })
 
 test_that("CI extractor does not return True for NA", {

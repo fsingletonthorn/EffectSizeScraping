@@ -5,7 +5,7 @@ checkCIs <- function(input,
                      context = T,
                      contextSize = 0) {
   
-  CI_REGEX  <- "(\\bconfidence\\s*intervals?\\b)|(\\bCIs?\\b(?!\\.|!).*(\\(|\\[)\\d+,?\\s*\\d+(\\]|\\)))|(\\d{2}\\s*\\%\\s*CI\\b)"
+  CI_REGEX  <- "(\\bconfidence\\s*intervals?\\b)|(\\bC\\.?I\\.?s?\\b(?!\\.|!).*(\\(|\\[)\\d+,?\\s*\\-?\\s*\\d+(\\]|\\)))|(\\d{2}\\s*\\%\\s*C\\.?I\\.?\\b)"
   
   CIregContext <-
       paste0(".{0,", contextSize, "}(",
