@@ -49,7 +49,9 @@ test_that("false positive sample sizes are avoided as much as is possible", {
   expect_true(is.na(findN("participants filled out a 40 item measure ")[[1]][1]))
   expect_true(is.na(findN("a 40 item measure was filled out by participants ")[[1]][1]))
   expect_true(is.na(findN("We recruited 40% of Princeton University undergraduate volunteers at the student campus center to complete the three-item CRT ")[[1]][1]))
-  expect_true(is.na(findN("they got a 40 Princeton University undergraduate volunteers at the student campus center to complete the three-item CRT ")[[1]][1]))
+  expect_true(is.na(findN("they got a 40 question survey filled out by Princeton University undergraduates vulunteers")[[1]][1]))
+  expect_true(is.na(findN("they got a 40 measure survey filled out by Princeton University undergraduates vulunteers")[[1]][1]))
+  expect_true(is.na(findN("n= das1 survey filled out by Princeton University undergraduates vulunteers")[[1]][1]))
 }
 )
 

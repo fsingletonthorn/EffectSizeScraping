@@ -45,11 +45,11 @@ findN <- function(input) {
   # At the moment this does not pull out context 
   
   # Setting up regexs
-  SSOf <- "(\\ba?\\s*sample\\s*size\\s*of\\s*\\d+\\d*(?!(\\d{0,}\\s{0,}(%|(percent)|(question)|(item)))))"
-  nOf <- "((\\bN\\s*(\\=|(of))\\s*)\\d*(?!(\\d{0,}\\s{0,}(%|(percent)|(question)|(item)))))"
-  nPar <- "(\\b\\d+((?!([:punct:]|(\\d{0,}\\s{0,}(%|(percent)|(question)|(item))))).)*((took\\s+part)|participants|participated|volunteer(s|ed)|observations))"
-  parWere <- "(\\b(subjects|participants)(?!\\[:punct:]|[\\(\\)\\.\\,])\\s*were\\s*(?!\\[:punct:])\\d+(?!(\\d{0,}\\s{0,}(%|(percent)|(question)|(item)))))"
-  aTotalofN <- "a\\s+total\\s+of\\s+\\d+\\d*(?!(\\d{0,}\\s{0,}(%|(percent)|(question)|(item))))((?![\\.\\n]).)*(participants|undergraduate|college|students|rats|mice|subjects|men|woman|people|mturk|samples|took\\s+part|involved)((?![\\.\\n]).)*"
+  SSOf <- "(\\ba?\\s*sample\\s*size\\s*of\\s*\\d+(?!(\\d{0,}\\s{0,}(%|(percent)|(measure)|(question)|(item)))))"
+  nOf <- "((\\bN\\s*(\\=|(of))\\s*)\\d+(?!(\\d{0,}\\s{0,}(%|(percent)|(measure)|(question)|(item)))))"
+  nPar <- "(\\b\\d+((?!([:punct:]|(\\d{0,}\\s{0,}(%|(percent)|(measure)|(question)|(item))))).)*((took\\s+part)|participants|participated|volunteer(s|ed)|observations))"
+  parWere <- "(\\b(subjects|participants)(?!\\[:punct:]|[\\(\\)\\.\\,])\\s*were\\s*(?!\\[:punct:])\\d+(?!(\\d{0,}\\s{0,}(%|(percent)|(measure)|(question)|(item)))))"
+  aTotalofN <- "a\\s+total\\s+of\\s+\\d+(?!(\\d{0,}\\s{0,}(%|(percent)|(measure)|(question)|(item))))((?![\\.\\n]).)*(participants|undergraduate|college|students|rats|mice|subjects|men|woman|people|mturk|samples|took\\s+part|involved)((?![\\.\\n]).)*"
   
   # pullting together regex 
   NRegex <-  paste(SSOf, nOf, nPar, parWere, aTotalofN , sep = "|")
