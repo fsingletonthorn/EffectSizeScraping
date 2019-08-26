@@ -41,7 +41,15 @@ expect_identical(findN("Ninety-three Hebrew University undergraduates participat
 })
 
 test_that("false positive sample sizes are avoided as much as is possible", {
+  expect_true(is.na(findN("20% Princeton University undergraduate took part")[[1]][1]))
+  expect_true(is.na(findN("20 % Princeton University undergraduate took part")[[1]][1]))
+  expect_true(is.na(findN("participants were 43% individuals")[[1]][1]))
   expect_true(is.na(findN("Looked at 40 Princeton University students' photos. None took part.")[[1]][1]))
+  expect_true(is.na(findN("We recruited 40% of Princeton University undergraduate volunteers at the student campus center to complete the three-item CRT ")[[1]][1]))
+  expect_true(is.na(findN("participants filled out a 40 item measure ")[[1]][1]))
+  expect_true(is.na(findN("a 40 item measure was filled out by participants ")[[1]][1]))
+  expect_true(is.na(findN("We recruited 40% of Princeton University undergraduate volunteers at the student campus center to complete the three-item CRT ")[[1]][1]))
+  expect_true(is.na(findN("they got a 40 Princeton University undergraduate volunteers at the student campus center to complete the three-item CRT ")[[1]][1]))
 }
 )
 
