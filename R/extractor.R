@@ -74,7 +74,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   patternT <-
     "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*=\\s*-?\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternF <-
-    "\\bF\\s*\\(?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bF\\s*\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternR <-
     "\\b(((r(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d{0,10}\\s*\\)?\\s*[=]\\s*)|((correlation)\\s*(coefficient)?\\s*([=]|(of))\\s*))(\u2212?\\-?\\s*(0?\\.\\d{1,})|(1|0)))(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
   patternChiSq <-

@@ -291,3 +291,16 @@ expect_equal(extractTestStats("χdf=22 = 3.4210.181")$df2, "22")
 expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22") 
 expect_equal(extractTestStats("χ df =42 = 4.541")$df2, "42") 
 })
+
+
+test_that("some additional ideosyncractic methods of reporting work", {
+  test <- extractTestStats("F(df = 1, 2) = 3, p = .04")
+  expect_true(all(test$statistic == "F", test$cleaned == "F(df=1,2)=3,p=.04", 
+      test$reported =="F(df = 1, 2) = 3, p = .04", test$value == "3", 
+      test$df1 == "1", test$df2 == "2", test$p == ".04"))
+  test <- extractTestStats("F(1, 2) : 3, p : .04")
+  expect_true(all(test$statistic == "F", test$cleaned == "F(df=1,2)=3,p=.04", 
+                  test$reported =="F(df = 1, 2) = 3, p = .04", test$value == "3", 
+                  test$df1 == "1", test$df2 == "2", test$p == ".04"))
+}
+)
