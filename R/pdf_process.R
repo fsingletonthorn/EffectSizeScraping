@@ -88,6 +88,9 @@ splitPdf <- function(x, pattern = "(\\p{WHITE_SPACE}{3,})", labelSections = F) {
         "summary",
         "results and discussion",
         "discussion and results",
+        "design and procedure",
+        "design",
+        "procedure",
         "limitations",
         # "study" is not a section, but may suggest a new study is being introed
         "study",
