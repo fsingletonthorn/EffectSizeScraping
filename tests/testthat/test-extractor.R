@@ -299,8 +299,24 @@ test_that("some additional ideosyncractic methods of reporting work", {
       test$reported =="F(df = 1, 2) = 3, p = .04", test$value == "3", 
       test$df1 == "1", test$df2 == "2", test$p == ".04"))
   test <- extractTestStats("F(1, 2) : 3, p : .04")
-  expect_true(all(test$statistic == "F", test$cleaned == "F(df=1,2)=3,p=.04", 
-                  test$reported =="F(df = 1, 2) = 3, p = .04", test$value == "3", 
-                  test$df1 == "1", test$df2 == "2", test$p == ".04"))
+  expect_true(all(test$statistic == "F", test$cleaned == "F(1,2):3,p:.04", 
+                  test$reported =="F(1, 2) : 3, p : .04", test$value == "3", 
+                  test$df1 == "1", test$df2 == "2", test$p == ".04"))  
+  test <- extractTestStats("T(1) : 3, p : .04")
+  expect_true(all(test$statistic == "t", test$value == "3", 
+                  test$df2 == "1", test$p == ".04"))
+  test <- extractTestStats("Chi2(3) : 1, p : .04")
+  expect_true(all(test$statistic == "chi", test$value == "1", 
+                  test$df2 == "3", test$p == ".04"))
+  test <- extractTestStats("r(df : 12) : .99999, p : .04")
+  expect_true(all(test$statistic == "r", test$value == ".99999", 
+                  test$df2 == "12", test$p == ".04"))
+  
+  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$df2, "121" )
+  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$value, "0.98" )
+  test <- extractTestStats("F(df : 1, 2) : 3, p : .04")
+  
+  
+  
 }
 )

@@ -5,8 +5,9 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
     testStatistic <-
       stringr::str_extract(
         stringr::str_split(cleanedTestStat,
-                           "(?<!n|N|df|DF|df2)=", simplify = T)[, 2],
+                           "(?<!n|N|df|DF|df2)(=|:)", simplify = T)[, 2],
         "-?\\d*\\.?\\d*"
+        
       )
     
     df1 <-
@@ -20,27 +21,27 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
                                                 "(?<=,)\\d{1,}"),
         # If people have reported r(n=x) return as n df2 = n - 2
         stringr::str_detect(statistic, "r") &
-          stringr::str_detect(cleanedTestStat, "n=") ~
+          stringr::str_detect(cleanedTestStat, "n(=|:)") ~
           as.character(as.numeric(
             stringr::str_extract(cleanedTestStat,
-                                 "(?<=([a-zA-Z])\\(?(n\\=)?)\\d{1,}")
+                                 "(?<=([a-zA-Z]|\\u03C1)\\(?(n(\\=|:))?)\\d{1,}")
           ) - 2),
         stringr::str_detect(statistic, "T|t|r|R") ~
           stringr::str_extract(
             cleanedTestStat,
-            "(?<=([a-zA-Z])\\(?(df\\s{0,10}\\=\\s{0,10})?)\\d{1,}"
+            "(?<=([a-zA-Z])\\(?(df\\s{0,10}(\\=|:)\\s{0,10})?)\\d{1,}"
           ),
         stringr::str_detect(statistic, "chi") ~
           stringr::str_extract(
             cleanedTestStat,
-            "(?<=(\\((df\\s{0,10}=\\s{0,10})?)|df\\=)\\d{1,}"
+            "(?<=(\\((df\\s{0,10}(=|:)\\s{0,10})?)|df(\\=|:))\\d{1,}"
           ),
         TRUE ~ NA_character_
       )
     p <-
       stringr::str_extract(
         cleanedTestStat,
-        "(?<=((p|P)\\=?))[<>]?\\d?\\.?\\d+e?-?\\d*")
+        "(?<=((p|P)(\\=|:)?))[<>]?\\d?\\.?\\d+e?-?\\d*")
     tibble::tibble(
       value = testStatistic,
       df1 = df1,
@@ -72,21 +73,21 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
 
   # patterns -
   patternT <-
-    "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*=\\s*-?\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*(\\=|:)\\s*-?\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternF <-
-    "\\bF\\s*\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*=\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bF\\s*\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*(\\=|:)\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternR <-
-    "\\b(((r(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d{0,10}\\s*\\)?\\s*[=]\\s*)|((correlation)\\s*(coefficient)?\\s*([=]|(of))\\s*))(\u2212?\\-?\\s*(0?\\.\\d{1,})|(1|0)))(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\b((((r|\\u03C1)(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[\\=\\:]?\\s*\\d{0,10}\\s*\\)?\\s*[\\=\\:]\\s*)|((correlation)\\s*(coefficient)?\\s*([\\=\\:]|(of))\\s*))(\u2212?\\-?\\s*(0?\\.\\d{1,})|(1|0)))(\\s*,?\\s*p\\s*[<>\\=\\:]\\s*0?\\.\\d+e?-?\\d*)?"
   patternChiSq <-
-    "\\b(chi|x(?=2|(\\(\\d))|c(?=2|(\\(\\d))|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s*(2|square|squared)?\\s*\\(?\\s*(df|n)?\\s*[=]?\\s*\\d*\\s*\\,?\\s*(df|n)?\\s*\\=?\\s*\\d*\\s*\\)?\\s*([=]|(of))\\s*-?\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\b(chi|x(?=2|(\\(\\d))|c(?=2|(\\(\\d))|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s*(2|square|squared)?\\s*\\(?\\s*(df|n)?\\s*[=|:]?\\s*\\d*\\s*\\,?\\s*(df|n)?\\s*(\\=|:)?\\s*\\d*\\s*\\)?\\s*([\\=\\:]|(of))\\s*-?\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>\\=\\:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternD <-
-    "\\b[dg]\\s*[\\.\\,\\:\\;]?\\s*([=]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+    "\\b[dg]\\s*[\\.\\,\\:\\;]?\\s*([\\=\\:]|(of))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
   patternEta <-
-    "\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?\\s*([=]|(of))\\s*-?\\s*\\d*\\.?\\d{1,}"
+    "\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?\\s*([\\=\\:)]|(of))\\s*-?\\s*\\d*\\.?\\d{1,}"
   patternHR <-
-    "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+    "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=|:))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
   patternOR <-
-    "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
+    "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=|:))\\s*(\\-?\\s*\\d*\\.?\\d{1,})"
 
 
   # Do not change order of patterns, that will break everything
@@ -103,7 +104,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
     )
 
   # This is a test of one that does not capture MSEs, actually does not work because of the way that the context capture works
-  # stringr::str_extract("F(1,3) = 1232.12, MSE = 1232, p = 1.1232", "\\bF\\s*\\(?\\s*\\d{1,},\\s*\\d{1,}\\s*\\)?(?:\\,\\s{0,5}MSE\\s{0,5}\\,\\s{0,5}\\=\\d{1,}\\.?\\d{1,}\\,)?\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?")
+  # stringr::str_extract("F(1,3) = 1232.12, MSE = 1232, p = 1.1232", "\\bF\\s*\\(?\\s*\\d{1,},\\s*\\d{1,}\\s*\\)?(?:\\,\\s{0,5}MSE\\s{0,5}\\,\\s{0,5}(\\=|:)\\d{1,}\\.?\\d{1,}\\,)?\\s*=\\s*\\d*\\.?\\d*(\\s*,?\\s*p\\s*[<>=]\\s*\\d?\\.\\d+e?-?\\d*)?")
 
   if (purrr::is_empty(inputText) | !elementExists(inputText)) {
     if (context == F) {
