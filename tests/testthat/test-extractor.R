@@ -16,7 +16,9 @@ testF <- c("F(1, 12345) = 12.42345",
            "F ( 1, 1345 ) = 12 p = 0.01",
            "F(1, 12345) = 12.42345, p < .01",
            "F1, 12345 = 12.42345, p < .01",
-           "F1, 12345 = 12.42345, P < .01")
+           "F1, 12345 = 12.42345, P < .01",
+           "F = 12.42345, p < .01",
+           "F = 12.42345, P < .01")
 
 testT <- c("t(15) = 12.42345",
            "t(1)=12.42345",
@@ -47,7 +49,9 @@ testT <- c("t(15) = 12.42345",
            "t (1345 ) = .42345",
            "t (1345 ) = 12",
            "t (1345 ) = 12.0, p = .99",
-           "t (1345 ) = 12.0, P = .99")
+           "t (1345 ) = 12.0, P = .99",
+           "t = 12.0, p = .99",
+           "t = 12.0, P = .99")
 
 testR <- c("r(1) = .42345",
            "r(2)= .1345",
@@ -105,15 +109,16 @@ test_that("t test extractor works", {
   
   expect_true(all(is.na(extracted[[5]])))
   
-  expect_identical(extracted[[6]],
+  expect_identical(extracted[[6]][1:30],
                      stringr::str_remove_all(stringr::str_extract(
                        testT,
                        "t\\s{0,3}\\(?\\d*"
                      ),
                      "t\\s{0,3}\\(?"
-                     )
-  )
+                     )[1:30]
+  )  
   
+  expect_true(all(is.na(extracted[[6]][31:32])))
   
   expect_identical(extracted[[7]],
                    stringr::str_remove_all(
@@ -135,14 +140,14 @@ test_that("F test extractor works", {
   expect_identical(extracted[[3]], testF)
 
   expect_identical(extracted[[4]],
-                   stringr::str_remove_all(
-                     stringr::str_extract(
-                       testF,
-                       "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\,\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
-                     ),
-                     "\\s"
-                   ))
-    
+                   stringr::str_extract(
+                     testF,
+                     "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\,\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
+                   )  %>%
+                     ifelse(is.na(.), "12.42345", . ) %>%
+                     stringr::str_remove_all("\\s")
+                   )
+
   expect_identical(extracted[[5]],
                    stringr::str_remove_all(
                      stringr::str_remove_all(stringr::str_extract(
@@ -150,8 +155,9 @@ test_that("F test extractor works", {
                        "F\\s{0,3}\\(?\\s{0,3}\\d{0,10}"
                      ),
                      "\\s"
-                     )
-                     , "F\\(?")
+                     ) 
+                     , "F\\(?") %>%
+                     ifelse(.=="", NA, .)
   )
   
   expect_identical(extracted[[6]],
@@ -290,6 +296,11 @@ test_that("chi square extractor picks up ideosyncratically reported DFs", {
 expect_equal(extractTestStats("χdf=22 = 3.4210.181")$df2, "22") 
 expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22") 
 expect_equal(extractTestStats("χ df =42 = 4.541")$df2, "42") 
+})
+test_that("t test extractor picks up ideosyncratically reported DFs", {
+expect_equal(extractTestStats("tdf=22 = 3.4210.181")$df2, "22") 
+expect_equal(extractTestStats("tdf=22 = 2.202")$df2, "22") 
+expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42") 
 })
 
 

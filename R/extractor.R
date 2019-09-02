@@ -7,12 +7,11 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
         stringr::str_split(cleanedTestStat,
                            "(?<!n|N|df|DF|df2)(=|:)", simplify = T)[, 2],
         "-?\\d*\\.?\\d*"
-        
       )
     
     df1 <-
       dplyr::case_when(statistic == "F" ~ c(stringr::str_extract(cleanedTestStat,
-                                                          "\\d{1,}(?=,)")),
+                                                          "(?<=(\\(|\\F|DF=|DF:|df=|df:))\\d{1,}(?=,)")),
                 TRUE ~ NA_character_)
     # Add other statistics here below in addition to F
     df2 <-
@@ -73,9 +72,9 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
 
   # patterns -
   patternT <-
-    "\\bt\\s*\\(\\s*\\d{1,}\\.?\\d*\\s*\\)\\s*(\\=|:)\\s*-?\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bt\\s*(\\(\\s*\\d{1,}\\.?\\d*\\s*\\))?\\s*(\\=|:)\\s*-?\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternF <-
-    "\\bF\\s*\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?\\s*(\\=|:)\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bF\\s*(\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?)?\\s*(\\=|:)\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternR <-
     "\\b((((r|\\u03C1)(pb)?(?!2)\\s*\\(?\\s*(df|n)?\\s*[\\=\\:]?\\s*\\d{0,10}\\s*\\)?\\s*[\\=\\:]\\s*)|((correlation)\\s*(coefficient)?\\s*([\\=\\:]|(of))\\s*))(\u2212?\\-?\\s*(0?\\.\\d{1,})|(1|0)))(\\s*,?\\s*p\\s*[<>\\=\\:]\\s*0?\\.\\d+e?-?\\d*)?"
   patternChiSq <-
