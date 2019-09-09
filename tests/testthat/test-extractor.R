@@ -294,12 +294,13 @@ expect_true(is.na(extractTestStats("R = 1.1")$value))
 
 test_that("chi square extractor picks up ideosyncratically reported DFs", {
 expect_equal(extractTestStats("χdf=22 = 3.4210.181")$df2, "22") 
-expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22") 
+expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22")
 expect_equal(extractTestStats("χ df =42 = 4.541")$df2, "42") 
 })
 test_that("t test extractor picks up ideosyncratically reported DFs", {
-expect_equal(extractTestStats("tdf=22 = 3.4210.181")$df2, "22") 
-expect_equal(extractTestStats("tdf=22 = 2.202")$df2, "22") 
+  expect_equal(extractTestStats("t22 = 3.4210.181")$df2, "22") 
+  expect_equal(extractTestStats("tdf=22 = 2.202")$df2, "22") 
+expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42") 
 expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42") 
 })
 
@@ -332,6 +333,6 @@ test_that("some additional ideosyncractic methods of reporting work", {
   expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$value, "0.98" )
   test <- extractTestStats("F(df : 1, 2) : 3, p : .04")
   
-  expect_true(is.na(ESExtractor::extractTestStats("Tdsfa2")[[1]]))
+  expect_true(is.na(ESExtractor::extractTestStats("T2")[[1]]))
 }
 )

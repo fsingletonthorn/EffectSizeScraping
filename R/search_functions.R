@@ -96,3 +96,8 @@ dplyr::bind_rows(
 # findPowerAnalysis <- {
 #   stringr::str_extract_all()
 #   }
+
+# findReliabilityCheck <- {
+#   stringr::str_extract_all()
+# "internal consistency" "reliability of the measures was \\d [not followed by a full stop followed by whitespace (in order to avoid .9 being rejected). ]" etc. 
+#   }

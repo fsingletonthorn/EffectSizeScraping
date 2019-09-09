@@ -25,7 +25,7 @@ test_that("scrapePMC doesn't extract from PDFs when it is not necessary", {
   )
   
   expect_true(all(
-    output$statisticalTests$statistic == "chi"
+    output$statisticalTests$statistic == "chi" | output$statisticalTests$statistic == "OR"
   )) 
 })
 
