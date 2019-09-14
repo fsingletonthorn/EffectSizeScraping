@@ -11,13 +11,13 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
     
     df1 <-
       dplyr::case_when(statistic == "F" ~ c(stringr::str_extract(cleanedTestStat,
-                                                          "(?<=(\\(|\\F|DF=|DF:|df=|df:))\\d{1,}(?=,)")),
+                                                          "((?<=(\\(|\\F|DF=|DF:|df=|df:))\\d{1,}(?=,))|((?<=(((df1)|(DF1))=|:))\\d{1,})")),
                 TRUE ~ NA_character_)
     # Add other statistics here below in addition to F
     df2 <-
       dplyr::case_when(
         statistic == "F" ~ stringr::str_extract(cleanedTestStat,
-                                                "(?<=,)\\d{1,}"),
+                                                "((?<=,)\\d{1,})|((?<=(df2=|:))\\d{1,})"),
         # If people have reported r(n=x) return as n df2 = n - 2
         stringr::str_detect(statistic, "r") &
           stringr::str_detect(cleanedTestStat, "n(=|:)") ~
@@ -28,12 +28,12 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
         stringr::str_detect(statistic, "T|t|r|R") ~
           stringr::str_extract(
             cleanedTestStat,
-            "(?<=([a-zA-Z])\\(?(df\\s{0,10}(\\=|:)\\s{0,10})?)\\d{1,}"
+            "(?<=([a-zA-Z])\\(?(df(\\=|:))?)\\d{1,}|(?<=(df=|:))\\d{1,}"
           ),
         stringr::str_detect(statistic, "chi") ~
           stringr::str_extract(
             cleanedTestStat,
-            "(?<=(\\((df\\s{0,10}(=|:)\\s{0,10})?)|df(\\=|:))\\d{1,}"
+            "(?<=(\\((df(=|:))?)|df(\\=|:))\\d{1,}"
           ),
         TRUE ~ NA_character_
       )
@@ -72,7 +72,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
 
   # patterns -
   patternT <-
-    "\\bt\\s*((df\\s*)?\\(?\\s*\\d{1,}\\.?\\d*\\s*\\)?)?\\s*(\\=|:)\\s*-?\\s*\\d*\\.?\\d{1,}(\\,?\\s?(df\\s*)?\\(?\\s*\\d{1,}\\.?\\d*\\s*\\)?)?(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
+    "\\bt\\s*((df\\s*)?\\(?\\s*\\d{1,}\\.?\\d*\\s*\\)?)?\\s*(\\=|:)\\s*-?\\s*\\d*\\.?\\d{1,}(\\,?\\s?(df\\s*)?\\(?\\s*\\d{1,}\\.?\\d*\\s*\\)?)?(\\,?\\s*?df\\s*(\\=|:)\\s*\\d{1,})?(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?(\\,?\\s*?df\\s*(\\=|:)\\s*\\d{1,})?"
   patternF <-
     "\\bF\\s*(\\(?(df\\s*=?:?)?\\s*\\d{1,}\\s*,\\s*\\d{1,}\\s*\\)?)?\\s*(\\=|:)\\s*\\d*\\.?\\d{1,}(\\s*,?\\s*p\\s*[<>(\\=|:)]\\s*0?\\.\\d+e?-?\\d*)?"
   patternR <-
