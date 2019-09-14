@@ -306,7 +306,7 @@ expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42")
 
 test_that("F test extractor picks up ideosyncratically reported DFs", {
 expect_equal(extractTestStats("F1,2 = 2.202")$df2, "2") 
-expect_equal(extractTestStats("F = 2, df1 = 42, df2 = 1.23,  p <.02")$df2, "42") 
+expect_equal(extractTestStats("F = 2, df1 = 42, df2 = 1,  p <.02")$df2, "1") 
 })
 
 
@@ -328,6 +328,9 @@ test_that("some additional ideosyncractic methods of reporting work", {
   test <- extractTestStats("r(df : 12) : .99999, p : .04")
   expect_true(all(test$statistic == "r", test$value == ".99999", 
                   test$df2 == "12", test$p == ".04"))
+  
+  expect_true(extractTestStats("t(df=22) = 2.202")$df2 == 22)
+  expect_true(extractTestStats("t(df=22) = 2.202")$value == 2.202)
   
   expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$df2, "121" )
   expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$value, "0.98" )
