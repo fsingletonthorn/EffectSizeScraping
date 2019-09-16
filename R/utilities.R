@@ -67,7 +67,6 @@ cleanText <- function(strings){
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb01", replacement = "fi")
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb00", replacement = "ff")
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\ufb02", replacement = "fl")
-  strings <- lapply(strings, stringr::str_replace_all, pattern = "(?<=\\d)\\,(?=\\d)", replacement = "")
   
   return(strings)
 }
