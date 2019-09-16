@@ -1,0 +1,73 @@
+---
+title: "pilot_paper"
+author: "Felix Singleton Thorn"
+date: "16/09/2019"
+output: pdf_document
+---
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+
+library(ESExtractor)
+
+exampleOutput <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc", ftpCall = "", statcheck = T) 
+# Inititalising table counter
+
+```
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+table <- 0
+library(citr)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+```
+
+
+### Article intended for e.g., "Data" or  "Journal of Open Psychology Data (JOPD)"
+
+# Abstract
+In this data deposit, I describe the results of content mining a total of [NArticles] psychology and psychiatry articles in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. This dataset includes a total of [nStatisticalTestResults] statistical test results and [nEffectSizes] reported effect sizes from [nArticlesWithResults] articles. In addition to the statistical test results and effect sizes, each extracted element is reported with 100 characters of context on either side of the extracted result, and information on which section of the paper it was extracted from (e.g., the introduction, results, methods or discussion section). These statistical test results and effect sizes are provided with extensive metadata from each examined original article, including PMCids, author names, journal, keywords, and Digital Object Identifiers (DOIs).
+
+This article also reports the results of a  reliability analysis of the results of this analysis, showing that [sensitivity]% of reported test statistics and effect sizes were extracted, and that the extracted test statistics had a [specificity]% false positive rate. All materials, scripts for effect size extraction are available from [], and are archived at [].
+
+## Summary 
+
+In this data deposit, I describe the results of content mining a total of [NArticles] psychology and psychiatry articles in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. These effect sizes and test statistics were extracted using the R program "ESExtractor", a program designed to interface with the PMC database and extract all reported test statistics and effect sizes.
+
+Only psychology articles were included in this search as statistical test and effect sizes are reported more consistently than in other domains, with hundreds if not thousands of journals at least nominally following the American Psychological Association's (APA) reporting guidelines and statistical reporting practices outside of these journals often following an approximately similar format [@fidlerAmericanPsychologicalAssociation2010]. This program follows the general approach of programs like statcheck [@nuijtenValidityToolStatcheck2017] and papers like [@szucsEmpiricalAssessmentPublished2017], using regular expressions to extract reported statistics. However, unlike statcheck and Szucs and Ioannidis (2017) which focused on extracting tests statistics that were reported in strict APA format, ESextractor extracts effects reported in a broader array of formats, as well as extracting more diverse statistics (including F tests, Chi Square Tests, t tests, correlational tests with associated test statistics, *p* values and degrees of freedom, as well as standardised effect sizes reported as Cohen's d values, odds ratios, hazard ratios, and correlations).
+
+This dataset has a number of potential uses.
+The most obvious include examining these results for potential errors (as statcheck does by default), looking for trends in reporting practices over time, using this data in combination with manual checks of the extracted context in order to help develop machine learning algorithms to classify tests as central to the main hypotheses or as peripheral tests. 
+These examples are by no means exhaustive, and I hope that others will conceive of additional interesting and innovative ways of putting this large database to work.
+
+##  Data description
+A total of 4 data-tables are included in this data deposit, each presented in .csv format. 1) a table of statistical test results, 2) a table containing extensive metadata on each paper, 3) a table of author names, 3) a table of keywords. All of these tables are presented in tidy data format [@wickhamTidyData2014], including one observation  per row and one variable per column. Each table is keyed with the PMC ID associated with an included article. See tables 1-4 for variable labels and descriptions for each of these tables. 
+
+The main data table presented here consists of the statistical test results and effect sizes extracted in this content mining effort.
+This data-table includes a total of [nStatisticalTestResults] statistical test results and [nEffectSizes] reported effect sizes from [nArticlesWithResults] articles. In addition to the statistical test results (i.e., test statistics, degrees of freedom and p values) and effect sizes, each extracted result is reported with 100 characters of context extracted on either side of the detected result, and the label of the section that each result was extracted from (e.g., "Results" or "Methods").
+
+The other tables included in this data deposit include data about each of the journal articles included in this database. The second table includes a set of metadata about each paper.
+The metadata extracted includes the PMC ID, DOI, the publication journal of each included article, the title of the paper, the volume and issue number, the print and or electronic publication date, and the PubMed call to the PubMed hosted XML version of the article (which includes the full text of the article in most cases). 
+The third table includes the first and last name of all authors of each paper. The fourth and final table includes the keywords associated with each paper that presented keywords, allowing for filtering of this database by keyword.
+
+*Table* `r table <- table + 1; table` Variables presented in Data-table 1, which contains the statistical test results extracted from each paper. 
+
+```{r}
+data_table_stats <- tibble(variable_name = names(exampleOutput$statisticalTests),
+                           variable = c("PMC ID", "Label of the section the result was extracted from", "Statistic type", "Statistical test or effect size with all whitespace removed", "Full reported statistical test or effect size", "Reported statistical test or effect size with 100 characters of context on both sides", "Test statistic or effect size", "Numerator degrees of freedom  for F tests", "Denominator degrees of freedom for for F tests or degrees of freedom for other statistical tests", "reported p value"),
+                           # example_1 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[1,]), 140),
+                           # example_2 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[2,]), 50),
+                           # example_3 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[3,]), 50)
+                           )
+
+kable(data_table_stats, row.names = F, col.names = c("Variable name", "Variable")) %>% #, "Example 1", "Example 2", "Example 3"))  %>%
+ column_spec(1, width = "3cm") %>%
+ column_spec(2, width = "15cm") # %>%
+ # column_spec(3, width = "4cm")%>%
+ # column_spec(4:5, width = "4cm")
+```
+
+
+
+
