@@ -337,5 +337,12 @@ test_that("some additional ideosyncractic methods of reporting work", {
   test <- extractTestStats("F(df : 1, 2) : 3, p : .04")
   
   expect_true(is.na(ESExtractor::extractTestStats("T2")[[1]]))
-}
+
+  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$value, "0,345")
+  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$df1, "1")
+  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$df2, "2")
+  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$p, "0,06")
+  
+  
+  }
 )
