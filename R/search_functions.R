@@ -40,7 +40,7 @@ checkCIs <- function(input,
 findN <- function(input) {
   
   # Converting words to numbers for sample size extraction
-  inputProcessed <-  words_to_numbers( input )
+  inputProcessed <- words_to_numbers( input )
   
   inputProcessed <- lapply(inputProcessed, stringr::str_replace_all, pattern = "(?<=\\d)\\,(?=\\d)", replacement = "")
   # At the moment this does not pull out context 
