@@ -11,6 +11,9 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 # F statistics: https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc
 # https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc
 # "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc"
+# example from frontiers where the editor and reviewers are identified 
+#call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:6379263&metadataPrefix=pmc"
+#call <- "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:4648576&metadataPrefix=pmc"
 
 # call <-"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3172423&metadataPrefix=pmc"
 
@@ -85,7 +88,7 @@ ePub <-
 title <-
   xml2::xml_text(xml2::xml_find_first(paper, '//front/article-meta/title-group/article-title'))
 
-# Article key words # possibly trim
+# Article key words, all new lines replaced
 keywords <-
   stringr::str_replace_all(xml2::xml_text(xml2::xml_find_all(paper, '//front/article-meta/kwd-group/kwd')), "\\n", "")
 
@@ -104,6 +107,31 @@ AuthorFirstNames <-
     xml2::xml_find_all(
       paper,
       '//contrib[@contrib-type="author"]/name/given-names/text()'
+    )
+  )
+
+### Edited by 
+edited_by_in_text <-
+  xml2::xml_text(
+    xml2::xml_find_all(
+      paper,
+      '//author-notes/fn[@fn-type="edited-by"]'
+    )
+  )
+
+edited_by_contrib_node_surname <-
+  xml2::xml_text(
+    xml2::xml_find_all(
+      paper,
+      '//contrib[@contrib-type="editor"]//surname'
+    )
+  )
+
+edited_by_contrib_node_given <-
+  xml2::xml_text(
+    xml2::xml_find_all(
+      paper,
+      '//contrib[@contrib-type="editor"]//given-names'
     )
   )
 
@@ -153,7 +181,17 @@ if( elementExists(unlabPs) ) {
     surname = AuthorSurnames,
     firstname = AuthorFirstNames),
   
-  
+ editors = tibble::tibble(
+   PMCID,
+   surname = edited_by_contrib_node_surname,
+   firstname = edited_by_contrib_node_given
+   ),
+ 
+ editors_unstructured = tibble::tibble(
+   PMCID,
+  unstructured_editors = edited_by_in_text
+   ),
+ 
   text =
     tibble::tibble(PMCID = PMCID, 
       names = unlist(cleanText(c("abstract", textOutput[, 1]))),
