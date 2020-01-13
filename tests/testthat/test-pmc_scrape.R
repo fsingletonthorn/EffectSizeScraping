@@ -247,4 +247,14 @@ test_that("PMCSCrape doesn't break when fed results with statcheck results", {
   }
 )
 
+test_that("PMCSCrape can find F tests where the dfs are not separated by spaces", {
+  output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc", ftpCall = "", statcheck = T) 
+  expect_equal(output$metadata$title, "Healing Pathways: A Program for Women with Physical Disabilities and Depression")
+  expect_equal(output$statcheck$Statistic,  c("F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F"))
+  expect_true(all(as.numeric(output$statcheck$Value) %in% as.numeric(output$statisticalTests$value)))
+  }
+)
+
+
+
 
