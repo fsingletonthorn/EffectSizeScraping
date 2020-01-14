@@ -140,7 +140,7 @@ abstract_node <- xml2::xml_find_all(paper, "//abstract")
 # add abstract text 
 abstract <- concatPlus(xml2::xml_text(abstract_node))
 # unlablled sections 
-unlabPs <-  concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//body/p")))
+unlabPs <-  concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//body/p|//article/p")))
 # article sections
 sections <-  xml2::xml_find_all(paper, "//article/sec")
 # article section titles
