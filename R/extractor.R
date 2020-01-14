@@ -215,7 +215,11 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
   # Removing any detected stats without a detected value 
   output <- dplyr::filter(output, !(is.na(value)))
   
-  if( nrow(output) == 0) { output[1,] <- NA}
+  if( nrow(output) == 0) {
+    output <- tibble::tibble(
+      statistic = NA, cleaned = NA, reported = NA, value = NA,
+      df1 = NA, df2  = NA, p = NA)
+  }
   
   if(is.na(sectionName)) {output} else {data.frame(names = as.character(sectionName), output, stringsAsFactors = F, row.names = NULL)}
 }
