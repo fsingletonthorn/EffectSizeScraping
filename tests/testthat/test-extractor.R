@@ -347,11 +347,6 @@ test_that("some additional ideosyncractic methods of reporting work", {
 )
 
 
-test_that("false positives that caused issue #59 are solved", {
-  test <- extractTestStats("F; 400")
-})  
-
-
 test_that("; are accepted in test stats", {
   expect_silent(
   test <- extractTestStats("F; 400")
