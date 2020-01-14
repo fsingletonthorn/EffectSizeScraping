@@ -194,7 +194,8 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
                  tibble::tibble(statistic = "HR",  cleaned = extractedClean[[7]], reported = extracted[[7]]),
                  tibble::tibble(statistic = "OR",  cleaned = extractedClean[[8]], reported = extracted[[8]]),
                  stringsAsFactors = F, row.names = NULL)
-    }
+    }   
+  
  if(purrr::is_empty(statisticalOutput[[1]]) |  (nrow(statisticalOutput) < 1)) {
    if(context == F) {
      output <- tibble::tibble(
@@ -211,5 +212,10 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
                            cleanedTestStat = statisticalOutput$cleaned),
          stringsAsFactors = F)
    }
+  # Removing any detected stats without a detected value 
+  output <- dplyr::filter(output, !(is.na(value)))
+  
+  if( nrow(output) == 0) { output[1,] <- NA}
+  
   if(is.na(sectionName)) {output} else {data.frame(names = as.character(sectionName), output, stringsAsFactors = F, row.names = NULL)}
 }

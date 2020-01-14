@@ -346,13 +346,21 @@ test_that("some additional ideosyncractic methods of reporting work", {
   }
 )
 
-
-test_that("; are accepted in test stats", {
+test_that("; does not break the function", {
   expect_silent(
   test <- extractTestStats("F; 400")
   )
   expect_silent(
     test <- extractTestStats("F; 400 F;400")
+  )
+})  
+
+test_that("; are accepted in test stats", {
+  expect_true(
+   is.na(extractTestStats("F; 400")[1])
+  )
+  expect_true(
+    all(is.na(extractTestStats("F; 400F; 400")))
   )
 })  
 
