@@ -2,10 +2,22 @@
 # helper function to split the output into constituate parts
 splitTestStatToDF <- function(statistic, cleanedTestStat) {
   if ((length(cleanedTestStat) > 0) & (length(statistic) > 0)) {
+    
+    testStatistic <- stringr::str_split(cleanedTestStat,
+                           "(?<!n|N|df|DF|df2)(=|:)", simplify = T)
+    
+    # If no splits have occoured, stop function and return an empty
+    # This gets rid of some false positives where there are no detected tests
+    if(dim(testStatistic)[2] == 1) {   return( tibble::tibble(
+      value = NA,
+      df1 = NA,
+      df2 = NA,
+      p = NA
+    ) )
+    }
+    
     testStatistic <-
-      stringr::str_extract(
-        stringr::str_split(cleanedTestStat,
-                           "(?<!n|N|df|DF|df2)(=|:)", simplify = T)[, 2],
+      stringr::str_extract(testStatistic[, 2],
         "-?\\d*(\\.|(,(?=\\d)))?\\d*"
       )
     

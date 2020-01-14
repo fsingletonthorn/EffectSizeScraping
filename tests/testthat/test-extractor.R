@@ -343,6 +343,22 @@ test_that("some additional ideosyncractic methods of reporting work", {
   expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$df2, "2")
   expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$p, "0,06")
   
-  
   }
 )
+
+
+test_that("false positives that caused issue #59 are solved", {
+  test <- extractTestStats("F; 400")
+})  
+
+
+test_that("; are accepted in test stats", {
+  expect_silent(
+  test <- extractTestStats("F; 400")
+  )
+  expect_silent(
+    test <- extractTestStats("F; 400 F;400")
+  )
+})  
+
+
