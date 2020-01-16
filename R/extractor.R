@@ -4,7 +4,7 @@ splitTestStatToDF <- function(statistic, cleanedTestStat) {
   if ((length(cleanedTestStat) > 0) & (length(statistic) > 0)) {
     
     testStatistic <- stringr::str_split(cleanedTestStat,
-                           "(?<!n|N|df|DF|df2)(=|:)", simplify = T)
+                           "(?<!n|N|df|DF|df2)(=|:|of)", simplify = T)
     
     # If no splits have occoured, stop function and return an empty
     # This gets rid of some false positives where there are no detected tests

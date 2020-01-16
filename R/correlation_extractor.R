@@ -17,7 +17,7 @@ extractCorrelations <- function(input) {
   correlationRegex_symbolic  <- "(\\b(r|\u03c1|rho|((?i)(correlation(\\s{0,5}coefficient)?)(?-i)))\\b)"
   numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)?)"
   
-  numbericRegex_commasdecimals <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)(\\.\\d+)?)"
+  numbericRegex_commas_decimals <- "((((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
   
   degreesOfFreedomRegex_commas <- paste0("((?i)\\(?\\s*((df\\s*\\=?\\s*)|(n\\s*\\=\\s*))?\\s*",
                                          numbericRegex_commas,
