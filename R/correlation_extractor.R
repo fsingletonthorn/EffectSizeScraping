@@ -1,0 +1,117 @@
+#' Extract correlation coefficents from text
+#' extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)
+#' @param inputText A number.
+#' @param contextSize = size of context around extracted test statistics
+#' @return A tibble contaitning all detected correlation coefficents, 
+#' associated degrees of freedom and p values, with context of size contextSize.
+#' 
+#' 
+#' @examples
+#' extractCorrelations("r(123) = .01, p = < .001")
+#' 
+#' 
+
+extractCorrelations <- function(input) {
+
+  # Setting up all possible parts of the regex
+  correlationRegex_symbolic  <- "(\\b(r|\u03c1|rho|((?i)(correlation(\\s+coefficient)?)(?-i)))\\b)"
+  numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)?)"
+  numbericRegex_commasdecimals <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)(\\.\\d+)?)"
+  degreesOfFreedomRegex_commas <- paste0("(\\(?",
+                                         numbericRegex_commas,
+                                         "\\)?)")
+  ofOrEqualsRegex <- "((of)|=|:)"
+  numbericBelow1Regex <- "(\\.\\d+|0(\\.\\d+)?|(1\\.0+)|(1(?!(\\d|(\\.([1-9]))))))"
+  # additional p value detector
+  # additional p value detector
+  pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns)]\\s*((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
+  
+  # Additional df = detector
+  # Additional n = detector
+  
+  
+  correlationExtractorRegex <- paste0(
+    correlationRegex_symbolic,
+    # Allowing spaces
+    "\\s*",
+    degreesOfFreedomRegex_commas,
+    # Making degrees of freedom optional
+    "?",
+    # Allowing spaces
+    "\\s*",
+    ofOrEqualsRegex,
+    # Allowing spaces or negatives
+    "\\s*",
+    "\\-?",
+    "\\s*",
+    numbericBelow1Regex,
+    "\\s*",
+    "\\;?",
+    ",?",
+    "\\s*",
+    pValueRegex, 
+    "?" # Making p values optional
+  ) 
+  
+  ### All values between 0 and 1 with decimals
+  ### This one is for correlation coefficents
+  detected_correlations <- stringr::str_extract_all(
+    input, correlationExtractorRegex
+  )
+  
+  # Getting the look behind to extract test statistic values
+  # TODO Just remove everything before the numbericBelow1Regex and use that
+  
+  value_with_p <- stringr::str_remove(
+    detected_correlations,
+  paste0(
+    correlationRegex_symbolic,
+    # Allowing spaces
+    "\\s*",
+    degreesOfFreedomRegex_commas,
+    # Making degrees of freedom optional
+    "?",
+    # Allowing spaces
+    "\\s*",
+    ofOrEqualsRegex,
+    # Allowing spaces or negatives
+    "\\s*"))
+  
+  
+  value <- stringr::str_extract(
+    value_with_p, 
+    paste0("^",
+           "(\\s*",
+           "\\-?",
+           "\\s*",
+           numbericBelow1Regex, ")")
+  )
+    
+  
+  ps <-
+    stringr::str_trim(
+    stringr::str_extract(
+    detected_correlations,
+    pValueRegex
+  ))
+  #
+  
+  df2 <- 
+    
+    
+    
+    
+ # preceedingCorValue
+  
+  # The regex excludes things that start with c to avoid splitting on correlation
+  # stringr::str_split(detected_correlations, paste0("(?=(" , , ")", ofOrEqualsRegex))
+  
+
+  return(tibble::tibble(statistic = "r",
+    raw = unlist(detected_correlations), 
+    df1 = NA,
+    df2 = "",
+    p = unlist(ps),
+    value = unlist(value) 
+  ))
+}
