@@ -160,3 +160,8 @@ expect_true( all(extractCorrelations(
   })
 
 
+##
+test_that("prose descriptions of correlations are picked up", {
+  expect_equal(extractCorrelations("a correlation coefficient of .01")$value, 
+               ".01")
+  })
