@@ -17,21 +17,20 @@ test_that("ftest extractor works as expected", {
     expect_equal(extracted$p, "p = 0.123")
 })
 
-
-
-
 testF <- c("F(1, 12345) = 12.42345",
-           "F(2,12345)=12.42345",
+           "F(2,1)=12.42345",
            "F(3, 12345) = 12.42345",
-           "F (4, 1234) = 12.42345",
+           "F (4, 99) = 12.42345",
            "F ( 5, 1235 ) = 1",
            "F ( 6, 12345 ) = .42345",
            "F ( 7, 1245 ) = 12",
            "F ( 8, 12345 ) = 12,  p = .01",
            "F ( 9, 1345 ) = 12 p = 0.01",
-           "F(10, 12345) = 12.42345, p < .01",
-           "F11, 12345 = 12.42345, p < .01",
-           "F12, 12345 = 12.42345, P < .01",
+           "F(10, 12345) = 1, p < .01",
+           "F(11, 12345) = 12.42345, p < .01",
+           "F(11, 12345) = 12.42345",
+           "F12, 12345 = 12.42345, p < .01",
+           "F13, 12345 = 12.42345, P < .01",
            "F = 12.42345, p < .01",
            "F = 12.42345, P < .01")
 
@@ -76,4 +75,12 @@ test_that("F test extractor works", {
   
   expect_identical(extracted$p,
                    stringr::str_remove_all(stringr::str_extract(testF, "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"), "\\s"))
+})
+
+
+# expec
+
+test_that("Ideosyncratic F tests values are caught", { 
+  expect_equal(extractFTests("F1 2 = 999, p = .99")$df1, "1")
+  expect_equal(extractFTests("F(99999 2) = 1333, p = .01")$df2, "2")
 })

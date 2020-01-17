@@ -11,18 +11,18 @@
 
 extractFTests <- function(input) {
   # Setting up all possible parts of the regex
-  ftestRegex  <- "(\\bF\\b)"
+  ftestRegex  <- "(\\bF)"
   
   numbericRegex <- "\\d{1,99})"
   
   numbericRegex_decimals <- "((\\d{1,99}(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
   
   degreesOfFreedomRegex_decimals <-
-    paste0("(\\s{0,5}\\(\\s{0,5}",
+    paste0("(\\s{0,5}?\\(?\\s{0,5}?",
            numbericRegex_decimals,
-           "\\s{0,5}[,;\\s{1,5}]\\s{0,5}",
+           "\\s{0,5}?[,;\\s{1,5}]\\s{0,5}?",
            numbericRegex_decimals,
-           "\\s{0,5}\\))")
+           "\\s{0,5}\\)?)")
   
   paste0("((?i)\\(?\\s{0,5}((df\\s{0,5}\\=?\\s{0,5})|(n\\s{0,5}\\=\\s{0,5}))?\\s{0,5}",
                                                   numbericRegex_decimals,
