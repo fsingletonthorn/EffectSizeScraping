@@ -38,7 +38,7 @@ testF <- c("F(1, 12345) = 12.42345",
 testFString  <- stringr::str_flatten(testF, collapse = " ")
 
 test_that("F test extractor works", {
-  extracted <- extractTestStats(testFString)
+  extracted <- extractFTests(testFString)
   
   testthat::expect_identical(extracted$reported, testF)
 
@@ -73,8 +73,7 @@ test_that("F test extractor works", {
                    )
   )
   
-  expect_identical(extracted$p,
-                   stringr::str_remove_all(stringr::str_extract(testF, "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"), "\\s"))
+  expect_identical(extracted$p, stringr::str_extract(testF, "(((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"), "\\s")
 })
 
 

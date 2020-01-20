@@ -27,7 +27,7 @@ extractCorrelations <- function(input) {
   numbericBelow1Regex <- "((?<![1-9])\\.\\d+|0(\\.\\d+)?|(1\\.0*(?!(0*[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector
   # additional p value detector
-  pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns)]\\s*((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
+  pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns)]\\s*[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
   
   # Additional df = detector
   # Additional n = detector
