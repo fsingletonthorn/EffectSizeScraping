@@ -120,7 +120,7 @@ extractFTests <- function(input) {
   df2 <- stringr::str_extract(dfs, "(?<=\\d{1,99}\\s{0,5}[,;\\s{1,5}]\\s{0,5})\\d+")
   
   
-  return(tibble::tibble(statistic = "r",
+  return(tibble::tibble(statistic = "F",
                         reported = stringr::str_trim(detected_ftests), 
                         df1 = df1,
                         df2 = df2,

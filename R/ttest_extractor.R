@@ -125,13 +125,13 @@ extractTTests <- function(input) {
           # Allowing spaces
           ")",
           "\\s{0,5}",
-          degreesOfFreedomRegex_commas
+          degreesOfFreedomRegex_commas_decimals
         )),
       stringr::regex("[^0-9.]")
     )
   
   
-  df2 <- ifelse(df2 == "", stringr::str_remove_all(
+  df2 <- ifelse(df2 == "" | is.na(df2), stringr::str_remove_all(
                 stringr::str_extract(detected_ttests,
                   paste0("(?i)df\\s*[\\=\\:\\;]\\s*", 
                          numbericRegex_commas_decimals,
@@ -142,7 +142,7 @@ extractTTests <- function(input) {
                 df2
   )
   
-  return(tibble::tibble(statistic = "r",
+  return(tibble::tibble(statistic = "t",
                         raw = stringr::str_trim(detected_ttests), 
                         df1 = NA,
                         df2 = df2,
