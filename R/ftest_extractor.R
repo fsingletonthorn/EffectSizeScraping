@@ -67,9 +67,7 @@ extractFTests <- function(input) {
     input, ftestExtractionRegex
   ))
   
-  # Getting the look behind to extract test statistic values
-  # TODO Just remove everything before the numbericBelow1Regex and use that
-  
+  # Extracting the value with P
   value_with_p <- stringr::str_remove(
     detected_ftests,
     paste0(

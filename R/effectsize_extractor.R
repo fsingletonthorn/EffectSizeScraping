@@ -1,25 +1,29 @@
-#' Extract effect sizes from text
+#' Extract cohen's ds from text
 #' extractES <- function(inputText)
 #' @param inputText input text 
-#' @return A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d, 
+#' @return A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d and eta 
 #' associated degrees of freedom and p values, with context of size contextSize.
 #' 
 #' 
 #' @examples
-#' extractCorrelations("r(123) = .01, p = < .001")
+#' extractES("a cohen's d of .05, p < .01, and a partial eta squared of .1")
 #' 
 #' 
-extractCorrelations <- function(input) {
+#' 
+extractES <- function(input) {
   
   # Setting up all possible parts of the regex
-  correlationRegex_symbolic  <- "(\\b(r|\u03c1|rho|((?i)(correlation(\\s{0,5}coefficient)?)(?-i)))\\b)"
+  dRegex <-
+    "\\b[dg]"
+
+  ORRegex <- "(\\b((OR)|((?i)odds\\s{1,5}?ratio(?-i))))"
+  HRRegex <- "(\\b((HR)|((?i)hazard\\s{1,5}?ratio(?-i))))"
+  etaRegex <- "(?i)\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?(?-i)"
+  
   numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)?)"
   
   numbericRegex_commas_decimals <- "((((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
   
-  degreesOfFreedomRegex_commas <- paste0("((?i)\\(?\\s*((df\\s*\\=?\\s*)|(n\\s*\\=\\s*))?\\s*",
-                                         numbericRegex_commas,
-                                         "\\s*\\)?(?-i))")
   ofOrEqualsRegex <- "((of)|=|:)"
   
   numbericBelow1Regex <- "((?<![1-9])\\.\\d+|0(\\.\\d+)?|(1\\.0*(?!(0*[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
@@ -27,25 +31,17 @@ extractCorrelations <- function(input) {
   # additional p value detector
   pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns)]\\s*[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
   
-  # Additional df = detector
-  # Additional n = detector
-  
-  
-  correlationExtractorRegex <- paste0(
-    correlationRegex_symbolic,
+  DPRegex <- paste0(
+    dRegex,
     # Allowing spaces
     "\\s{0,5}",
-    degreesOfFreedomRegex_commas,
-    # Making degrees of freedom optional
-    "?",
-    # Allowing spaces
-    "\\s*",
     ofOrEqualsRegex,
+    # Making degrees of freedom optional
     # Allowing spaces or negatives
-    "\\s*",
+    "\\s{0,5}",
     "\\-?",
-    "\\s*",
-    numbericBelow1Regex,
+    "\\s{0,5}",
+    numbericRegex_commas_decimals,
     "\\s*",
     "\\;?",
     ",?",
@@ -54,98 +50,99 @@ extractCorrelations <- function(input) {
     "?" # Making p values optional
   ) 
   
-  ### All values between 0 and 1 with decimals
-  ### This one is for correlation coefficents
-  detected_correlations <- unlist(stringr::str_extract_all(
-    input, correlationExtractorRegex
-  ))
   
-  # Getting the look behind to extract test statistic values
-  # TODO Just remove everything before the numbericBelow1Regex and use that
+  ORPRegex <- paste0(
+    "(",
+    ORRegex,
+    "|",
+    HRRegex,
+    ")",
+    # Allowing spaces
+    "\\s{0,5}",
+    ofOrEqualsRegex, 
+    "\\s{0,5}",
+    numbericRegex_commas_decimals,
+    "\\s{0,5}",
+    "\\;?",
+    ",?",
+    "\\s*",
+    pValueRegex, 
+    "?" # Making p values optional
+  ) 
   
-  value_with_p <- stringr::str_remove(
-    detected_correlations,
-    paste0(
-      correlationRegex_symbolic,
-      # Allowing spaces
-      "\\s*",
-      degreesOfFreedomRegex_commas,
-      # Making degrees of freedom optional
-      "?",
-      # Allowing spaces
-      "\\s*",
-      ofOrEqualsRegex,
-      # Allowing spaces or negatives
-      "\\s*"))
-  
-  
-  value <- stringr::str_extract(
-    value_with_p, 
-    paste0("^",
-           "(\\s*",
-           "\\-?",
-           "\\s*",
-           numbericBelow1Regex, ")")
+  etaPRegex <- paste0(
+    etaRegex,
+    # Allowing spaces
+    "\\s{0,5}",
+    ofOrEqualsRegex,
+    # Making degrees of freedom optional
+    # Allowing spaces or negatives
+    "\\s{0,5}",
+    numbericBelow1Regex,
+    "\\s*",
+    "\\;?",
+    ",?",
+    "\\s*",
+    pValueRegex, 
+    "?" # Making p values optional
   )
   
-  ps <-
+  detected_d <- unlist(stringr::str_extract_all(
+    input, DPRegex
+  ))
+  
+  detected_OR <- unlist(stringr::str_extract_all(
+    input, ORPRegex
+  ))
+  
+  detected_eta <- unlist(stringr::str_extract_all(
+    input, etaPRegex
+  ))
+  
+  
+  value_d <- stringr::str_extract(
+    detected_d, numbericRegex_commas_decimals)
+  
+  ps_d <-
     stringr::str_trim(
       stringr::str_extract(
-        detected_correlations,
+        detected_d,
+        pValueRegex
+      ))  
+  
+  value_OR <- stringr::str_extract(
+    detected_OR, numbericRegex_commas_decimals)
+  
+  ps_OR <-
+    stringr::str_trim(
+      stringr::str_extract(
+        detected_OR,
         pValueRegex
       ))
   
-  cors_with_ns <- 
-    stringr::str_detect(
-      detected_correlations, 
-      "((?!=[nt])n\\s*\\=\\s*)"
-    )
+  value_eta <- stringr::str_extract(
+    detected_eta, numbericRegex_commas_decimals)
   
-  df2 <- 
-    stringr::str_remove_all(
+  ps_eta <-
+    stringr::str_trim(
       stringr::str_extract(
-        detected_correlations,
-        paste0(
-          "(?<=",
-          correlationRegex_symbolic,
-          # Allowing spaces
-          ")",
-          "\\s{0,5}",
-          degreesOfFreedomRegex_commas
-        )),
-      stringr::regex("[^0-9.]")
-    )
+        detected_eta,
+        pValueRegex
+      ))
   
-  df2 <- ifelse(cors_with_ns, 
-                as.numeric(df2)-2,
-                df2
-  )
   
-  return(tibble::tibble(statistic = "r",
-                        raw = stringr::str_trim(detected_correlations), 
+  output <- 
+    dplyr::bind_rows(
+    list(d = tibble::tibble(raw = detected_d,  statistic = "d",  value = value_d, p = ps_d),
+         OR = tibble::tibble(raw = detected_OR, statistic = "OR", value = value_OR, p = ps_OR),
+         eta = tibble::tibble(raw = detected_eta, statistic = "eta", value = value_eta, p = ps_eta)
+                        ))
+
+  return(tibble::tibble(statistic = output$statistic,
+                        raw = stringr::str_trim(output$raw), 
                         df1 = NA,
-                        df2 = df2,
-                        p = unlist(ps),
-                        value = unlist(value)
+                        df2 = NA,
+                        p = output$p,
+                        value = output$value
   ))
 }
-
-
-
-
-patternD <-
-  "\\b[dg]"
-"\\s{0,5}"
-""
-
-
--
-
-
-\\s*[\\.\\,\\:\\;]?\\s*([\\=\\:]|(of))\\s*(\\-?\\s*\\d*(\\.|(,(?=\\d)))?\\d{1,})"
-patternEta <-
-  "\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?\\s*([\\=\\:)]|(of))\\s*-?\\s*\\d*(\\.|(,(?=\\d)))?\\d{1,}"
-patternHR <-
-  "\\b((HR)|(hazzard.{1,3}?ratio))\\s*((of)|(=|:))\\s*(\\-?\\s*\\d*(\\.|(,(?=\\d)))?\\d{1,})"
-patternOR <-
-  "\\b((OR)|(odd.{1,3}?ratio))\\s*((of)|(=|:))\\s*(\\-?\\s*\\d*(\\.|(,(?=\\d)))?\\d{1,})"

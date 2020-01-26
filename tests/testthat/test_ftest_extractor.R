@@ -1,6 +1,5 @@
 context("ftest_extractor")
 
-
 test_that("ftest extractor works as expected", {
     extracted <- extractFTests("F(1, 2) = 12.3, p = 0.123")
     expect_equal(extracted$df1, "1")
