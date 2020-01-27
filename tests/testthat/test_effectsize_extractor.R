@@ -9,5 +9,10 @@ test_that("effectsize_extractor works as expected", {
   expect_true(all(is.na(output$df2)))
   expect_true(output$p[output$statistic == "d"] == "p = < .001") 
   expect_true(output$p[output$statistic == "eta"] == "p < .01") 
-  expect_true(output$p[output$statistic == "OR" & stringr::str_detect(output$raw, "HR")] == "p < .05") 
+  expect_true(output$p[output$statistic == "OR" & stringr::str_detect(output$reported, "HR")] == "p < .05") 
+  })
+
+test_that("effectsize_extractor works with eta squared tests that are reported as \\eta2", {
+  extractES("χ2 = 122.23,p = .13")
+  
   })

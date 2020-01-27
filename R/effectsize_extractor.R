@@ -29,7 +29,7 @@ extractES <- function(input) {
   numbericBelow1Regex <- "((?<![1-9])\\.\\d+|0(\\.\\d+)?|(1\\.0*(?!(0*[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector
   # additional p value detector
-  pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns)]\\s*[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
+  pValueRegex <- "((?i)((\\s*,?\\s*)(ns))|(p\\s*[<>=(ns):]\\s*[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d+e?-?\\d*)|(\\.\\d+)))(?-i))"
   
   DPRegex <- paste0(
     dRegex,
@@ -121,7 +121,11 @@ extractES <- function(input) {
       ))
   
   value_eta <- stringr::str_extract(
-    detected_eta, numbericRegex_commas_decimals)
+    detected_eta,
+    paste0("(?<=",
+      ofOrEqualsRegex,
+           "\\s{0,5})",
+    numbericRegex_commas_decimals))
   
   ps_eta <-
     stringr::str_trim(
@@ -139,10 +143,10 @@ extractES <- function(input) {
                         ))
 
   return(tibble::tibble(statistic = output$statistic,
-                        raw = stringr::str_trim(output$raw), 
+                        reported = stringr::str_trim(output$raw), 
                         df1 = NA,
                         df2 = NA,
                         p = output$p,
-                        value = output$value
+                        value = as.numeric(output$value)
   ))
 }
