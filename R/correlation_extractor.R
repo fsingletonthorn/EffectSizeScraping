@@ -124,10 +124,10 @@ extractCorrelations <- function(input) {
     )
   
   return(tibble::tibble(statistic = "r",
-    raw = stringr::str_trim(detected_correlations), 
+    reported = stringr::str_trim(detected_correlations), 
     df1 = NA,
-    df2 = df2,
-    p = unlist(ps),
-    value = unlist(value)
+    df2 = as.numeric(df2),
+    p = as.character(unlist(ps)),
+    value = as.numeric(unlist(value))
   ))
 }

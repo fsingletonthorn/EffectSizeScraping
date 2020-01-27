@@ -32,7 +32,7 @@ extractFTests <- function(input) {
   numbericBelow1Regex <- "((?<![1-9])\\.\\d{1,99}|0(\\.\\d{1,99})?|(1\\.0{0,99}(?!(0{0,99}[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector
   # additional p value detector
-  pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns)]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
+  pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns):]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
   
   # Additional df = detector
   # Additional n = detector
@@ -120,9 +120,9 @@ extractFTests <- function(input) {
   
   return(tibble::tibble(statistic = "F",
                         reported = stringr::str_trim(detected_ftests), 
-                        df1 = df1,
-                        df2 = df2,
-                        p = unlist(ps),
-                        value = unlist(value)
+                        df1 = as.numeric(df1),
+                        df2 = as.numeric(df2),
+                        p = as.character(unlist(ps)),
+                        value = as.numeric(unlist(value))
   ))
 }

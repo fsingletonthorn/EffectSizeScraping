@@ -61,7 +61,7 @@ cor_test_strings_df_ps <- stringr::str_remove_all(cor_test_strings_df_ps, "\\s(?
 ### Test for all combinations
 test_that("Raw text of correlation coefficients are extracted (with df)", {
   expect_equal(
-    extractCorrelations(cor_test_strings_df)$raw, 
+    extractCorrelations(cor_test_strings_df)$reported, 
     cor_test_strings_df
   )
 }
@@ -70,7 +70,7 @@ test_that("Raw text of correlation coefficients are extracted (with df)", {
 ### Test for all combinations
 test_that("Raw text of correlation coefficients are extracted (without df)", {
   expect_equal(
-    extractCorrelations(cor_test_strings)$raw, 
+    extractCorrelations(cor_test_strings)$reported, 
     cor_test_strings
   )
   }
@@ -79,7 +79,7 @@ test_that("Raw text of correlation coefficients are extracted (without df)", {
 ### Test for all combinations with df a p values 
 test_that("Raw text of correlation coefficients are extracted (s with df a p values)", {
   expect_equal(
-    extractCorrelations(cor_test_strings_df_ps)$raw, 
+    extractCorrelations(cor_test_strings_df_ps)$reported, 
     cor_test_strings_df_ps
   )
   
@@ -90,7 +90,9 @@ test_that("Raw text of correlation coefficients are extracted (s with df a p val
   
   expect_equal(
     extractCorrelations(cor_test_strings_df_ps)$value,
+    as.numeric(
     stringr::str_remove(df_cor_test_df_ps$Var4, stringr::fixed(", "))
+    )
   )  
   
 
@@ -101,7 +103,9 @@ test_that("Raw text of correlation coefficients are extracted (s with df a p val
 
   expect_equal(
     extractCorrelations(cor_test_strings_df_ps)$df2,
+    as.numeric(
     stringr::str_remove_all(df_cor_test_df_ps$Var2,  "\\D")
+    )
   )
 }
 )
@@ -126,7 +130,7 @@ testRString  <- stringr::str_flatten(testR, collapse = " ")
 
 test_that("correlation extractor works", {
   extracted <- extractCorrelations(testRString)
-  expect_identical(extracted$raw, testR)
+  expect_identical(extracted$reported, testR)
   expect_true(all(as.numeric(extracted$df2[1:7]) == 1:7))
   expect_true(all(is.na(extracted$df1)))
 })
@@ -163,5 +167,5 @@ expect_true( all(extractCorrelations(
 ##
 test_that("prose descriptions of correlations are picked up", {
   expect_equal(extractCorrelations("a correlation coefficient of .01")$value, 
-               ".01")
+               .01)
   })

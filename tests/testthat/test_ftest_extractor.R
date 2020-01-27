@@ -2,17 +2,17 @@ context("ftest_extractor")
 
 test_that("ftest extractor works as expected", {
     extracted <- extractFTests("F(1, 2) = 12.3, p = 0.123")
-    expect_equal(extracted$df1, "1")
-    expect_equal(extracted$df2, "2")
-    expect_equal(extracted$value, "12.3")
+    expect_equal(extracted$df1, 1)
+    expect_equal(extracted$df2, 2)
+    expect_equal(extracted$value, 12.3)
     expect_equal(extracted$p, "p = 0.123")
 })
 
 test_that("ftest extractor works as expected", {
     extracted <- extractFTests("F(1, 2) = 12.3, p = 0.123")
-    expect_equal(extracted$df1, "1")
-    expect_equal(extracted$df2, "2")
-    expect_equal(extracted$value, "12.3")
+    expect_equal(extracted$df1, 1)
+    expect_equal(extracted$df2, 2)
+    expect_equal(extracted$value, 12.3)
     expect_equal(extracted$p, "p = 0.123")
 })
 
@@ -42,16 +42,18 @@ test_that("F test extractor works", {
   testthat::expect_identical(extracted$reported, testF)
 
   
-  expect_identical(extracted$value,
+  expect_equal(extracted$value,
+               as.numeric(
                    stringr::str_extract(
                      testF,
                      "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\,\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
                    )  %>%
                      ifelse(is.na(.), "12.42345", . ) %>%
                      stringr::str_remove_all("\\s")
-  )
+  ))
   
   expect_identical(extracted$df1,
+                   as.numeric(
                    stringr::str_remove_all(
                      stringr::str_remove_all(stringr::str_extract(
                        testF,
@@ -60,15 +62,17 @@ test_that("F test extractor works", {
                      "\\s"
                      ) 
                      , "F\\(?") %>%
-                     ifelse(.=="", NA, .)
+                     ifelse(.=="", NA, .))
   )
   
   expect_identical(extracted$df2,
+                   as.numeric(
                    stringr::str_remove_all(stringr::str_extract(
                      testF,
                      "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3},)\\s*\\d*"
                    ),
                    "\\s*"
+                   )
                    )
   )
   
@@ -76,9 +80,7 @@ test_that("F test extractor works", {
 })
 
 
-# expec
-
 test_that("Ideosyncratic F tests values are caught", { 
-  expect_equal(extractFTests("F1 2 = 999, p = .99")$df1, "1")
-  expect_equal(extractFTests("F(99999 2) = 1333, p = .01")$df2, "2")
+  expect_equal(extractFTests("F1 2 = 999, p = .99")$df1, 1)
+  expect_equal(extractFTests("F(99999 2) = 1333, p = .01")$df2, 2)
 })

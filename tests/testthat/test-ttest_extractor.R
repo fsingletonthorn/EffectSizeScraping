@@ -1,10 +1,5 @@
 context("t test extractor")
 
-
-
-
-
-
 test_that("t test works for simple cases" , {
 
   expect_true(
@@ -85,24 +80,23 @@ testTString  <- stringr::str_flatten(testT, collapse = " ")
 test_that("t test extractor works", {
   extracted <- extractTTests(testTString)
   
-  expect_identical(extracted$raw, testT)
+  expect_identical(extracted$reported, testT)
 
   expect_identical(extracted$value,
+                   as.numeric(
                    stringr::str_remove_all(
                      stringr::str_extract(
                        testT,
                        "(?<=t\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
                      ),
                      "\\s"
-                   ))
+                   )))
   
   expect_true(all(is.na(extracted$df1)))
   
-  expect_identical(extracted$df2[1:33], as.character(1:33)
+  expect_equal(extracted$df2[1:33], 1:33
   )  
   
-  
- # expect_true(all(is.na(extracted$p[31:32])))
   
   expect_identical(extracted$p,
                      stringr::str_extract(

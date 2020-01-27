@@ -35,12 +35,12 @@ dfs[7] <- "12"
 
 test_that("chi squared test extractor works", {
   extracted <- extractChiSquare(testChiString)
-  expect_identical(extracted$raw, testChi)
+  expect_identical(extracted$reported, testChi)
   expect_identical(extracted$value,
-                   chis)
+                   as.numeric(chis))
   expect_true(all(is.na(extracted$df1)))
-  expect_identical(extracted$df2,
-                   dfs
+  expect_equal(extracted$df2,
+                   as.double(dfs)
                    )
   
   
@@ -51,11 +51,12 @@ test_that("chi squared test extractor works", {
                      )
 )
   
-  expect_identical(extracted$n,
+  expect_equal(extracted$n,
+               as.numeric(
                      stringr::str_extract(
                        testChi,
                        "(?<=((N|n)\\s{0,5}=\\s{0,5}))\\d+"
-                     ))
+                     )))
   
 })
 

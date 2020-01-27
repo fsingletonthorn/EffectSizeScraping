@@ -78,7 +78,7 @@ testD <- c("g = 12.32",
            "d = 1232.23")
 
 testEta <- c("η2 = .3213",
-             "eta squared = 1.232",
+             "eta squared = .1232",
              "η2 = .3213")
 
 
@@ -93,62 +93,57 @@ testEtaString <- stringr::str_flatten(testEta, collapse = " ")
 test_that("t test extractor works", {
   extracted <- extractTestStats(testTString)
   
-  expect_identical(extracted[[3]], testT)
+  expect_identical(extracted$reported, testT)
   
-  expect_identical(extracted[[2]],
-                     stringr::str_remove_all(testT, "\\s"))
-  
-  expect_identical(extracted[[4]],
+  expect_identical(extracted$value,
+                   as.numeric(
                    stringr::str_remove_all(
                      stringr::str_extract(
                        testT,
                        "(?<=t\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
                      ),
                      "\\s"
-                   ))
+                   )))
   
-  expect_true(all(is.na(extracted[[5]])))
+  expect_true(all(is.na(extracted$df1)))
   
-  expect_identical(extracted[[6]][1:30],
+  expect_identical(extracted$df2[1:30],
+                   as.numeric(
                      stringr::str_remove_all(stringr::str_extract(
                        testT,
                        "t\\s{0,3}\\(?\\d*"
                      ),
                      "t\\s{0,3}\\(?"
                      )[1:30]
-  )  
+  )  )
   
-  expect_true(all(is.na(extracted[[6]][31:32])))
+  expect_true(all(is.na(extracted$df2[31:32])))
   
-  expect_identical(extracted[[7]],
-                   stringr::str_remove_all(
+  expect_identical(extracted$p,
                      stringr::str_extract(
                        testT,
-                       "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"
-                     ),
-                     "\\s"
-                   ))
+                       "(p|P)\\s{0,5}\\=?\\s{0,5}(<\\s*)?(>\\s*)?0?\\.\\d*"
+                     ))
   
 })
 
 test_that("F test extractor works", {
   extracted <- extractTestStats(testFString)
-    
-  testthat::expect_identical(extracted[[2]],
-                     stringr::str_remove_all(testF, "\\s"))
   
-  expect_identical(extracted[[3]], testF)
+  expect_identical(extracted$reported, testF)
 
-  expect_identical(extracted[[4]],
+  expect_identical(extracted$value,
+                   as.numeric(
                    stringr::str_extract(
                      testF,
                      "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\,\\s{0,3}\\d{0,10}\\s{0,3}\\)?\\s{0,3}\\=\\s{0,3})\\s{0,3}-?\\s{0,3}\\d*\\.?\\d*"
                    )  %>%
                      ifelse(is.na(.), "12.42345", . ) %>%
                      stringr::str_remove_all("\\s")
-                   )
+                   ))
 
-  expect_identical(extracted[[5]],
+  expect_identical(extracted$df1,
+                   as.numeric(
                    stringr::str_remove_all(
                      stringr::str_remove_all(stringr::str_extract(
                        testF,
@@ -158,26 +153,25 @@ test_that("F test extractor works", {
                      ) 
                      , "F\\(?") %>%
                      ifelse(.=="", NA, .)
-  )
+  ))
   
-  expect_identical(extracted[[6]],
+  expect_identical(extracted$df2,
+                   as.numeric(
                    stringr::str_remove_all(stringr::str_extract(
                      testF,
                      "(?<=F\\s{0,3}\\(?\\s{0,3}\\d{0,10}\\s{0,3},)\\s*\\d*"
                    ),
                    "\\s*"
                    )
-  )
+  ))
   
-expect_identical(extracted[[7]],
-                stringr::str_remove_all(stringr::str_extract(testF, "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"), "\\s"))
+expect_identical(extracted$p,
+                stringr::str_extract(testF, "((p|P)\\s{0,5}\\=?\\s{0,5})(<\\s*)?(>\\s*)?0?\\.\\d*"))
 })
 
 test_that("correlation extractor works", {
   extracted <- extractTestStats(testRString)
-  expect_identical(extracted[[3]], testR[-9])
-  expect_identical(extracted[[2]],
-                     stringr::str_remove_all(testR, "\\s")[-9])
+  expect_identical(extracted$reported, testR)
 })
 
 # Setting up chi square values
@@ -192,45 +186,40 @@ chis[6] <- 22.31
 
 test_that("chi squared test extractor works", {
   extracted <- extractTestStats(testChiString)
-  expect_identical(extracted[[3]], testChi)
-  expect_identical(extracted[[2]],
-                     stringr::str_remove_all(testChi, "\\s"))
-  expect_identical(extracted[[4]],
-                    chis)
-  expect_true(all(is.na(extracted[[5]])))
-  expect_identical(extracted[[6]],
+  expect_identical(extracted$reported, testChi)
+  
+  expect_identical(extracted$value,
+                    as.numeric(chis))
+  expect_true(all(is.na(extracted$df1)))
+  expect_identical(extracted$df2,
+                   as.numeric(
                    stringr::str_remove_all(stringr::str_extract(testChi,
                                               "((chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?))\\s{0,3}\\(\\d*"),
-                                  "(chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?)\\s{0,3}\\(|\\("))
+                                  "(chi square)|(χ2)|(<U\\+03C7>)|(chi squared)|(chisquared)|(chisquare)|(chi2?)\\s{0,3}\\(|\\(")))
   
   
-  expect_identical(extracted[[7]],
-                   stringr::str_remove_all(
+  expect_identical(extracted$p,
                      stringr::str_extract(
                        testChi,
-                       "(?<=((p|P)\\s{0,5}\\=?\\s{0,5}))(<\\s*)?(>\\s*)?0?\\.\\d*"
-                     ),
-                     "\\s"
-                   ))
+                       "((p|P)\\s{0,5}\\=?\\s{0,5})(<\\s*)?(>\\s*)?0?\\.\\d*"
+                     ))
 })
 
 test_that("eta squared extractor works", {
   extracted <- extractTestStats(testEtaString)
-  expect_identical(extracted[[3]], testEta)
-  expect_identical(extracted[[2]],
-                   stringr::str_remove_all(testEta, "\\s"))
-  expect_identical(extracted[[4]], 
-                   stringr::str_remove_all(testEta, "(η2)?(η)?[a-zA-Z]*\\s*\\=*\\s*")) 
-  expect_true(all(is.na(extracted[[5]])))
+  expect_identical(extracted$reported, testEta)
+  expect_identical(extracted$value, 
+                   as.numeric(
+                   stringr::str_remove_all(testEta, "(η2)?(η)?[a-zA-Z]*\\s*\\=*\\s*")))
+  
+  expect_true(all(is.na(extracted$df1)))
 })
 
 test_that("cohen's d extractor works", {
   extracted <- extractTestStats(testDString)
-  expect_identical(extracted[[3]], testD)
-  expect_identical(extracted[[2]],
-                   stringr::str_remove_all(testD, "\\s"))
-  expect_identical(extracted[[4]], stringr::str_remove_all(testD, "[a-zA-Z]*\\s*\\=*\\s*")) 
-  expect_true(all(is.na(extracted[[5]])))
+  expect_identical(extracted$reported, testD)
+  expect_identical(extracted$value, as.numeric(stringr::str_remove_all(testD, "[a-zA-Z]*\\s*\\=*\\s*")) )
+  expect_true(all(is.na(extracted$df1)))
 }
 )
 
@@ -250,7 +239,7 @@ testTextChi <- paste(c("χdf2 =4 = 4.541",
 
 test_that("chi square extraction works w / weird formatting", {
   extracted <- extractTestStats(testTextChi)
-  expect_identical(extracted[[4]], c("4.541",
+  expect_identical(extracted$value, c("4.541",
                                         "3.421",
                                         "2.202",
                                         "11.566",
@@ -311,23 +300,21 @@ expect_equal(extractTestStats("F = 2, df1 = 42, df2 = 1,  p <.02")$df2, "1")
 
 
 test_that("some additional ideosyncractic methods of reporting work", {
-  test <- extractTestStats("F(df = 1, 2) = 3, p = .04")
-  expect_true(all(test$statistic == "F", test$cleaned == "F(df=1,2)=3,p=.04", 
-      test$reported =="F(df = 1, 2) = 3, p = .04", test$value == "3", 
-      test$df1 == "1", test$df2 == "2", test$p == ".04"))
+  
+  
   test <- extractTestStats("F(1, 2) : 3, p : .04")
-  expect_true(all(test$statistic == "F", test$cleaned == "F(1,2):3,p:.04", 
+  expect_true(all(test$statistic == "F", 
                   test$reported =="F(1, 2) : 3, p : .04", test$value == "3", 
-                  test$df1 == "1", test$df2 == "2", test$p == ".04"))  
+                  test$df1 == "1", test$df2 == "2", test$p == "p : .04"))  
   test <- extractTestStats("T(1) : 3, p : .04")
   expect_true(all(test$statistic == "t", test$value == "3", 
                   test$df2 == "1", test$p == ".04"))
   test <- extractTestStats("Chi2(3) : 1, p : .04")
   expect_true(all(test$statistic == "chi", test$value == "1", 
-                  test$df2 == "3", test$p == ".04"))
+                  test$df2 == "3", test$p == "p : .04"))
   test <- extractTestStats("r(df : 12) : .99999, p : .04")
   expect_true(all(test$statistic == "r", test$value == ".99999", 
-                  test$df2 == "12", test$p == ".04"))
+                  test$df2 == "12", test$p == "p : .04"))
   
   expect_true(extractTestStats("t(df=22) = 2.202")$df2 == 22)
   expect_true(extractTestStats("t(df=22) = 2.202")$value == 2.202)
@@ -360,8 +347,8 @@ test_that("; are accepted in test stats", {
    is.na(extractTestStats("F; 400")[1])
   )
   expect_true(
-    all(is.na(extractTestStats("F; 400F; 400")))
-  )
+    nrow(extractTestStats("F; 400F; 400")) == 0)
+  
 })  
 
 

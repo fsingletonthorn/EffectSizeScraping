@@ -29,7 +29,7 @@ extractChiSquare <- function(input) {
   
   ofOrEqualsRegex <- "((of)|=|:)"
   
-  pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns)]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
+  pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns):]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
   
   chisquareExtractionRegex <- paste0(
     chiRegex,
@@ -108,11 +108,12 @@ extractChiSquare <- function(input) {
   n <- stringr::str_extract(dfs, paste0("(?<=((n|N)\\s{0,5}(=|;|:)?\\s{0,5}))", numbericRegex_commas_decimals))
   
   return(tibble::tibble(statistic = "chi",
-                        raw = stringr::str_trim(detected_chisquare), 
+                        reported = stringr::str_trim(detected_chisquare), 
                         df1 = NA,
-                        df2 = df2,
-                        p = unlist(ps),
-                        n = n,
-                        value = unlist(value)
+                        df2 = as.numeric(df2),
+                        p = as.character(unlist(ps)),
+                        n = as.numeric(n),
+                        value = as.numeric(unlist(value))
   ))
 }
+
