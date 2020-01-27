@@ -82,7 +82,7 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
     extracted$context <- unlist(extractedContext)
   }
   
-  if(!is.na(sectionName)) {}
-    
+  if(!is.na(sectionName) & class(sectionName) == "character" & length(sectionName) == 1) {extracted$sectionName <- sectionName}
+  
   return(extracted)
 }
