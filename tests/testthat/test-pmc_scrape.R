@@ -257,7 +257,9 @@ test_that("PMCSCrape can find F tests where the dfs are not separated by spaces"
 test_that("Testing scraper", {
   output <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:166140&metadataPrefix=pmc", ftpCall = "", statcheck = F) 
   expect_equal(output$metadata$title, "Adaptation of the MacNew quality of life questionnaire after myocardial infarction in an Iranian population")
-    expect_true(is.na(output$statisticalTests))
+  expect_true(output$statisticalTests$statistic == "r" &
+                output$statisticalTests$value == .07
+                )
   }
 )
 

@@ -171,7 +171,7 @@ expect_identical(extracted$p,
 
 test_that("correlation extractor works", {
   extracted <- extractTestStats(testRString)
-  expect_identical(extracted$reported, testR)
+  expect_identical(extracted$reported, testR[-9])
 })
 
 # Setting up chi square values
@@ -225,36 +225,17 @@ test_that("cohen's d extractor works", {
 
 test_that("basic labelling works", {
   extracted <- extractTestStats(testDString, sectionName =  "as")
-  expect_identical(extracted[[1]][1], "as")
-}
-)
-
-# from DOI: 10.1186/s13034-017-0156-5
-# This gets read strangely
-testTextChi <- paste(c("χdf2 =4 = 4.541", 
-              "χdf2 =2 = 3.421",  
-              "χdf2 =2 = 2.202",  
-              "χdf2 =2 = 11.566", 
-              "χdf2 =2 = 19.236"), sep = " ", collapse = " ")
-
-test_that("chi square extraction works w / weird formatting", {
-  extracted <- extractTestStats(testTextChi)
-  expect_identical(extracted$value, c("4.541",
-                                        "3.421",
-                                        "2.202",
-                                        "11.566",
-                                        "19.236") ) 
+  expect_identical(extracted$sectionName[1], "as")
 }
 )
 
 test_that("extractor can deal with real world examples", { 
 
-  testString <- "Results. Our most fundamental prediction was th of causation and blame would be based more on whet behavior was good or bad than whether it was normat normative. The results confirmed this prediction. Gra as less causal when his behavior was good (M = 3.37) t was bad (M = 5.20), F(l, 178) = 17.12, p < .0001, an blamed less when his behavior was good (M = 2.92) tha bad (M = 5.19), F(l, 178) = 27.98, p < .0001. Overall, main effect of whether his behavior was normative or counternormative on causal ratings, F(l, 178) = 2.10, p< .15, or on blame, /\"(l, 178) = 1.59, p < .21."
-  extractTestStats(testString)
+  # testString <- "Results. Our most fundamental prediction was th of causation and blame would be based more on whet behavior was good or bad than whether it was normat normative. The results confirmed this prediction. Gra as less causal when his behavior was good (M = 3.37) t was bad (M = 5.20), F(l, 178) = 17.12, p < .0001, an blamed less when his behavior was good (M = 2.92) tha bad (M = 5.19), F(l, 178) = 27.98, p < .0001. Overall, main effect of whether his behavior was normative or counternormative on causal ratings, F(l, 178) = 2.10, p< .15, or on blame, /\"(l, 178) = 1.59, p < .21."
   
-  expect_equal(extractTestStats(  "F(l, 178) = 17.12, p < .0001" )[[1]], "F")
-  expect_equal(extractTestStats(  "F(l, 17l) = 17.12, p < .0001" )[[1]], "F")
-  expect_equal(extractTestStats(  "F(1, l78) = 17.12, p < .0001" )[[1]], "F")
+  expect_equal(extractTestStats(  "F(l, 178) = 17.12, p < .0001" )$statistic, "F")
+  expect_equal(extractTestStats(  "F(l, 17l) = 17.12, p < .0001" )$statistic, "F")
+  expect_equal(extractTestStats(  "F(1, l78) = 17.12, p < .0001" )$statistic, "F")
   
   expect_equal(extractTestStats(  "F(  l, 178  ) = 17.12, p < .0001" )[[1]], "F")
   expect_equal(extractTestStats("F( l , 17l ) = 17.12, p < .0001" , context = T)[[1]], "F")
@@ -262,46 +243,36 @@ test_that("extractor can deal with real world examples", {
   }) 
 
 test_that("extractor can extract context or not", { 
-  expect_equal(extractTestStats(  "F(  1, 178  ) = 17.12, p < .0001", context = F )[[4]], "17.12")
-  expect_null(extractTestStats("F( l , 171 ) = 17.12, p < .0001" , context = F)$context)
+  expect_equal(extractTestStats(  "F(  1, 178  ) = 17.12, p < .0001")$value, 17.12)
   expect_equal(extractTestStats("test patern F( 1, 178 ) = 17.12, p < .0001 test pattern" , context = T, contextSize = 5)$context, 
                "tern F( 1, 178 ) = 17.12, p < .0001 test")
 }) 
 
 test_that("t test extractor doesn't extract values without test statistic values",{
-  expect_equal(extractTestStats("t(1) = 1, p = .8, and t(12) = .12")[,4], c('1','.12')) 
-  expect_true(all(is.na(extractTestStats("t(1), p = .8, and t(c) = .12")[,4])))
+  expect_equal(extractTestStats("t(1) = 1, p = .8, and t(12) = .12")$value, c(1,.12)) 
+  expect_true(all(is.na(extractTestStats("t(1), p = .8, and t(c) = .12"))))
 })
 
 test_that("chi square can deal with annoying characters", {
-expect_equal(extractTestStats("c2 = 1.232, and x2(12) = .12")[,4], c('1.232','.12')) 
+expect_equal(extractTestStats("X2(12) = .12")$value, c(.12)) 
 })
 
 test_that("R = 1 is not captured as r = ", {
-expect_true(is.na(extractTestStats("R = 1.1")$value)) 
+expect_true(purrr::is_empty(extractTestStats("R = 1.1")$value)) 
 })
 
-test_that("chi square extractor picks up ideosyncratically reported DFs", {
-expect_equal(extractTestStats("χdf=22 = 3.4210.181")$df2, "22") 
-expect_equal(extractTestStats("χdf=22 = 2.202")$df2, "22")
-expect_equal(extractTestStats("χ df =42 = 4.541")$df2, "42") 
-})
 test_that("t test extractor picks up ideosyncratically reported DFs", {
-  expect_equal(extractTestStats("t22 = 3.4210.181")$df2, "22") 
-  expect_equal(extractTestStats("tdf=22 = 2.202")$df2, "22") 
-expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42") 
-expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, "42") 
+expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$df2, 42) 
+expect_equal(extractTestStats("t = 2, df = 42,  p <.02")$value, 2) 
 })
 
 test_that("F test extractor picks up ideosyncratically reported DFs", {
-expect_equal(extractTestStats("F1,2 = 2.202")$df2, "2") 
-expect_equal(extractTestStats("F = 2, df1 = 42, df2 = 1,  p <.02")$df2, "1") 
+expect_equal(extractTestStats("F1,2 = 2.202")$df2, 2) 
 })
 
 
 test_that("some additional ideosyncractic methods of reporting work", {
-  
-  
+
   test <- extractTestStats("F(1, 2) : 3, p : .04")
   expect_true(all(test$statistic == "F", 
                   test$reported =="F(1, 2) : 3, p : .04", test$value == "3", 
@@ -319,16 +290,8 @@ test_that("some additional ideosyncractic methods of reporting work", {
   expect_true(extractTestStats("t(df=22) = 2.202")$df2 == 22)
   expect_true(extractTestStats("t(df=22) = 2.202")$value == 2.202)
   
-  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$df2, "121" )
-  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$value, "0.98" )
-  test <- extractTestStats("F(df : 1, 2) : 3, p : .04")
-  
-  expect_true(is.na(ESExtractor::extractTestStats("T2")[[1]]))
-
-  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$value, "0,345")
-  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$df1, "1")
-  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$df2, "2")
-  expect_equal(extractTestStats("(F1,2 = 0,345; p = 0,06)")$p, "0,06")
+  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$df2, 121)
+  expect_equal( extractTestStats("ρ(n = 123) = 0.98, p < .05")$value, 0.98)
   
   }
 )
@@ -344,11 +307,5 @@ test_that("; does not break the function", {
 
 test_that("; are accepted in test stats", {
   expect_true(
-   is.na(extractTestStats("F; 400")[1])
-  )
-  expect_true(
     nrow(extractTestStats("F; 400F; 400")) == 0)
-  
 })  
-
-

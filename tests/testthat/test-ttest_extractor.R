@@ -110,6 +110,8 @@ test_that("t test doesn't pick up tests without reported values", {
   
   expect_equal(
     dim(extractTTests("t(1), p = .8, and t(c) = .12")), c(0, 6))
-  
   })
 
+test_that("t test works with bad minus characters as long as text has been cleaned", {
+  extractTTests(cleanText("[t(10) = –0.90, p = 0.39]"))
+  })
