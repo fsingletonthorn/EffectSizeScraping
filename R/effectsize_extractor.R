@@ -24,7 +24,7 @@ extractES <- function(input) {
   
   numbericRegex_commas_decimals <- "((((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
   
-  ofOrEqualsRegex <- "((of)|=|:)"
+  ofOrEqualsRegex <- "((of)|=|:|;)"
   
   numbericBelow1Regex <- "((?<![1-9])\\.\\d+|0(\\.\\d+)?|(1\\.0*(?!(0*[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector

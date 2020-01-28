@@ -32,7 +32,7 @@ extractChiSquare <- function(input) {
   degreesOfFreedomRegex_decimals,
   "\\s{0,5}(2|square|squared)(?-i))")
   
-  ofOrEqualsRegex <- "((of)|=|:)"
+  ofOrEqualsRegex <- "((of)|=|:|;)"
   
   pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns):]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
   

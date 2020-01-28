@@ -14,7 +14,7 @@
 extractTTests <- function(input) {
 
   # Setting up all possible parts of the regex
-  ttestRegex  <- "(\\bt\\b)"
+  ttestRegex  <- "(\\bt)"
   
   numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})?)"
   
@@ -23,7 +23,7 @@ extractTTests <- function(input) {
   degreesOfFreedomRegex_commas_decimals <- paste0("((?i)\\(?\\s{0,5}((df\\s{0,5}\\=?\\s{0,5})|(n\\s{0,5}\\=\\s{0,5}))?\\s{0,5}",
                                                   numbericRegex_commas_decimals,
                                          "\\s{0,5}\\)?(?-i))")
-  ofOrEqualsRegex <- "((of)|=|:)"
+  ofOrEqualsRegex <- "((of)|=|:|;)"
   
   numbericBelow1Regex <- "((?<![1-9])\\.\\d{1,99}|0(\\.\\d{1,99})?|(1\\.0{0,99}(?!(0{0,99}[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector

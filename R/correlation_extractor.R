@@ -22,7 +22,7 @@ extractCorrelations <- function(input) {
   degreesOfFreedomRegex_commas <- paste0("((?i)\\(?\\s*((df\\s*\\=?\\s*)|(n\\s*\\=\\s*))?\\s*",
                                          numbericRegex_commas,
                                          "\\s*\\)?(?-i))")
-  ofOrEqualsRegex <- "((of)|=|:)"
+  ofOrEqualsRegex <- "((of)|=|:|;)"
   
   numbericBelow1Regex <- "((?<![1-9])\\.\\d+|0(\\.\\d+)?|(1\\.0*(?!(0*[1-9])))|((?<![0-9\\.])1(?![\\.0-9])))"
   # additional p value detector
