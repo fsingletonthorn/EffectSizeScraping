@@ -52,6 +52,11 @@ cleanText <- function(strings){
   strings <- lapply(strings, gsub, pattern = "[Ââˆ\\’Ï„œ€$!\\“\u009d]", replacement = " ")
   # replacing unicode minus sign with R recognised minus sign
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2212", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u8211", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u8212", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u8210", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u65112", replacement = "-")
+  strings <- lapply(strings, stringr::str_replace_all, pattern = "–", replacement = "-")
   # replcaing unicode short spaces that are not always picked up above
   strings <- lapply(strings, stringr::str_replace_all, pattern = "\\u2009", replacement = " ")
   # replcaing mathematical symbols with interpretable ones 
