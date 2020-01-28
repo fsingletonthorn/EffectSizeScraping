@@ -11,7 +11,7 @@
 
 extractChiSquare <- function(input) {
   # Setting up all possible parts of the regex
-  chiRegex  <- "(\\b(?i)(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s{0,5}(2|square|squared)?(?-i))"
+  chiRegex  <- "(\\b((?i)(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s{0,5}(2|square|squared)(?-i))|((X2)))"
   
   numbericRegex <- "\\d{1,99})"
   

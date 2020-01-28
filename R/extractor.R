@@ -82,7 +82,12 @@ extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sect
     extracted$context <- unlist(extractedContext)
   }
   
-  if(!is.na(sectionName) & class(sectionName) == "character" & length(sectionName) == 1) {extracted$sectionName <- sectionName}
+  # Adding in the context name 
+  if(!is.na(sectionName) & class(sectionName) == "character" & length(sectionName) == 1) {
+    # Checking that extracted has at least 1 row, else initialising with an empty character
+    if(nrow(extracted) == 0) {extracted$sectionName <- character()}
+    else{ extracted$sectionName <- as.character(unlist(sectionName[[1]])) }
+    }
   
   return(extracted)
 }
