@@ -38,12 +38,12 @@ ps <- c("p = .05", "p < .001", "p = 1", "p > .05",
 # Creating all combinations of the above 
 # First without degrees of freedom 
 df_cor_test <- expand.grid(designatiors, connectors, rs, stringsAsFactors = F)
-cor_test_strings <-  as.character(tidyr::unite(df_cor_test, sep = " ", )[,1])
+cor_test_strings <-  as.character(tidyr::unite(df_cor_test, col = "nc", names(df_cor_test), sep = " ", )[,1])
 
 # with degrees of freedom 
 df_cor_test_df <- expand.grid(designatiors[-c(1:5)], dfs,
                            connectors, rs, stringsAsFactors = F)
-cor_test_strings_df <- as.character(tidyr::unite(df_cor_test_df, sep = " ", )[,1])
+cor_test_strings_df <- as.character(tidyr::unite(df_cor_test_df, col = "nc", names(df_cor_test_df), sep = " ")[,1])
 # Makign the df slightly more realistic
 cor_test_strings_df <- stringr::str_remove_all(cor_test_strings_df, "\\s(?=\\()")
 
@@ -52,7 +52,7 @@ df_cor_test_df_ps <- expand.grid(designatiors[-c(1:5)], dfs,
                            connectors, rs,
                            ps,
                            stringsAsFactors = F)
-cor_test_strings_df_ps <- as.character(tidyr::unite(df_cor_test_df_ps, sep = " ", )[,1])
+cor_test_strings_df_ps <- as.character(tidyr::unite(df_cor_test_df_ps,"nc", names(df_cor_test_df_ps), sep = " ")[,1])
 
 # Makign the commas slightly more realistic
 cor_test_strings_df_ps <- stringr::str_remove_all(cor_test_strings_df_ps, "\\s(?=,)")
