@@ -11,13 +11,14 @@
 
 extractChiSquare <- function(input) {
   # Setting up all possible parts of the regex
-  chiRegex  <- "(\\b((?i)(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s{0,5}(2|square|squared)(?-i))|((X2)))"
-  
+  chiRegex  <- "(\\b((?i)(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s{0,5}(2|square|squared)(?-i))|(X2))"
+
   numbericRegex <- "\\d{1,99})"
   
   numbericRegex_decimals <- "((\\d{1,99}(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
   
   numbericRegex_commas_decimals <- "((((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})(\\.\\d{1,99})?)|(\\.\\d{1,99}))"
+  
   
   degreesOfFreedomRegex_decimals <-
     paste0("((?i)" ,
@@ -27,20 +28,28 @@ extractChiSquare <- function(input) {
            numbericRegex_commas_decimals,
            "?\\s{0,5}\\)?)?(?-i))")
   
+  chiMisreadRegex <- paste0("\\b((?i)(chi|\\u03C7|\\u1D712|\\u1D61|\\u1D6a|\\u2439|\\u1D712|\\u1D74C|\\u1D86|\\u1D7C0)\\s{0,5}",
+  degreesOfFreedomRegex_decimals,
+  "\\s{0,5}(2|square|squared)(?-i))")
+  
   ofOrEqualsRegex <- "((of)|=|:)"
   
   pValueRegex <- "((?i)((\\s{0,5},?\\s{0,5})(ns))|(p\\s{0,5}[<>=(ns):]\\s{0,5}[<>]?\\s{0,5}((ns)|(\\d?\\.?\\d{1,99}e?-?\\d{0,99})|(\\.\\d{1,99})))(?-i))"
   
   chisquareExtractionRegex <- paste0(
+    "((",
     chiRegex,
     # Allowing spaces
     "\\s{0,5}",
     degreesOfFreedomRegex_decimals,
     # Making degrees of freedom optional,
     "?",
-    "\\s{0,5}", #### ! "?<!(\\n|N|(df))\\)?\\s{0,5})"
+    "\\s{0,5}",
     # Allowing spaces 
     # "\\s{0,5}",
+    ")|",
+    chiMisreadRegex,   
+    ")\\s{0,5}",
     ofOrEqualsRegex,
     # Allowing spaces
     "\\s{0,5}",
@@ -53,8 +62,7 @@ extractChiSquare <- function(input) {
     "?" # Making p values optional
   ) 
   
-  ### All values between 0 and 1 with decimals
-  ### This one is for ttest coefficents
+  # Extrracting all detected
   detected_chisquare <- unlist(stringr::str_extract_all(
     input, chisquareExtractionRegex
   ))
@@ -64,16 +72,21 @@ extractChiSquare <- function(input) {
   value_with_p <- stringr::str_remove(
     detected_chisquare,
     paste0(
+      "((",
       chiRegex,
       # Allowing spaces
       "\\s{0,5}",
       degreesOfFreedomRegex_decimals,
-      # Making degrees of freedom optional
+      # Making degrees of freedom optional,
       "?",
-      # Allowing spaces
       "\\s{0,5}",
+      # Allowing spaces 
+      # "\\s{0,5}",
+      ")|",
+      chiMisreadRegex,   
+      ")\\s{0,5}",
       ofOrEqualsRegex,
-      # Allowing spaces or negatives
+      # Allowing spaces
       "\\s{0,5}"))
   
   
