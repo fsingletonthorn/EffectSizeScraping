@@ -60,3 +60,19 @@ test_that("chi squared test extractor works", {
   
 })
 
+
+test_that("Chi squares that are misread are properly detected", {
+  extracted <- extractChiSquare("χ(2)2=2.12,p < 0.001")
+  expect_equal(extracted$value, 2.12)
+  expect_equal(extracted$df2, 2)
+  expect_equal(extracted$p, "p < 0.001")
+})
+
+test_that("Chi squares that are misread are properly detected", {
+  extracted <- extractChiSquare("χ(2,  n = 123)2=2.12,p < 0.001")
+  expect_equal(extracted$value, 2.12)
+  expect_equal(extracted$df2, 2)
+  expect_equal(extracted$p, "p < 0.001")
+  expect_equal(extracted$n, 123)
+})
+

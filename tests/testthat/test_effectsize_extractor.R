@@ -13,6 +13,5 @@ test_that("effectsize_extractor works as expected", {
   })
 
 test_that("effectsize_extractor works with eta squared tests that are reported as \\eta2", {
-  extractES("χ2 = 122.23,p = .13")
-  
+  expect_equal(extractES("eta2 = .23,p = .13")$value, .23)
   })
