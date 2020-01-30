@@ -6,12 +6,11 @@ output: pdf_document
 ---
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-
 library(ESExtractor)
-
-exampleOutput <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc", ftpCall = "", statcheck = T) 
+# exampleOutput <- scrapePMC(call = "https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc", ftpCall = "", statcheck = T) 
 # Inititalising table counter
 
+articles <- readr::read_rds("data_/articles_list.RDS")
 ```
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
@@ -20,29 +19,28 @@ library(citr)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
-
 ```
 
 
 ### Article intended for e.g., "Data" or  "Journal of Open Psychology Data (JOPD)"
 
 # Abstract
-In this data deposit, I describe the results of content mining a total of [NArticles] psychology and psychiatry articles in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. This dataset includes a total of [nStatisticalTestResults] statistical test results and [nEffectSizes] reported effect sizes from [nArticlesWithResults] articles. In addition to the statistical test results and effect sizes, each extracted element is reported with 100 characters of context on either side of the extracted result, and information on which section of the paper it was extracted from (e.g., the introduction, results, methods or discussion section). These statistical test results and effect sizes are provided with extensive metadata from each examined original article, including PMCids, author names, journal, keywords, and Digital Object Identifiers (DOIs).
+In this data deposit, I describe the results of content mining a total of `r nrow(articles)` articles from `r length(unique(articles$Journal))` psychology and psychiatry journals archived in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. This dataset includes a total of [nStatisticalTestResults] statistical test results and [nEffectSizes] reported effect sizes. In addition to the statistical test results and effect sizes, each extracted statistic is reported with 200 characters of context on either side of the extracted result, and information on which section of the paper it was extracted from (e.g., the introduction, results, methods or discussion section). These statistical test results and effect sizes are provided with extensive metadata from each examined original article, including PMCids, author names, journal, keywords, and Digital Object Identifiers (DOIs).
 
-This article also reports the results of a  reliability analysis of the results of this analysis, showing that [sensitivity]% of reported test statistics and effect sizes were extracted, and that the extracted test statistics had a [specificity]% false positive rate. All materials, scripts for effect size extraction are available from [], and are archived at [].
+This article also reports the results of a  reliability analysis of the results of this analysis based on a manual examination of 100 articles, finding that just 0.001% (1/623) of the extracted statistics included in the reliability check were incorrectly extracted and that approxiatmely 89% of test statistics reported in origianl papers were extracted (41/46). All materials, scripts for effect size extraction are available from [], and are archived at [].
 
-## Summary 
+## Summary
 
-In this data deposit, I describe the results of content mining a total of [NArticles] psychology and psychiatry articles in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. These effect sizes and test statistics were extracted using the R program "ESExtractor", a program designed to interface with the PMC database and extract all reported test statistics and effect sizes.
+In this data deposit, I describe the results of content mining a total of `r nrow(articles)` articles from `r length(unique(articles$Journal))` psychology and psychiatry journals archived in the PubMed Central (PMC) open access subset for statistical test results and reported effect sizes. These effect sizes and test statistics were extracted using the R program "ESExtractor", a program designed to interface with the PMC database and extract reported test statistics and effect sizes. 
 
-Only psychology articles were included in this search as statistical test and effect sizes are reported more consistently than in other domains, with hundreds if not thousands of journals at least nominally following the American Psychological Association's (APA) reporting guidelines and statistical reporting practices outside of these journals often following an approximately similar format [@fidlerAmericanPsychologicalAssociation2010]. This program follows the general approach of programs like statcheck [@nuijtenValidityToolStatcheck2017] and papers like [@szucsEmpiricalAssessmentPublished2017], using regular expressions to extract reported statistics. However, unlike statcheck and Szucs and Ioannidis (2017) which focused on extracting tests statistics that were reported in strict APA format, ESextractor extracts effects reported in a broader array of formats, as well as extracting more diverse statistics (including F tests, Chi Square Tests, t tests, correlational tests with associated test statistics, *p* values and degrees of freedom, as well as standardised effect sizes reported as Cohen's d values, odds ratios, hazard ratios, and correlations).
+Only psychology articles were included in this search as statistical test and effect sizes are reported more consistently than in other domains, with hundreds if not thousands of journals at least nominally following the American Psychological Association's (APA) reporting guidelines, and statistical reporting practices outside of these journals often following an similar format [@fidlerAmericanPsychologicalAssociation2010]. This program follows the general approach of programs like statcheck [@nuijtenValidityToolStatcheck2017] and papers like [@szucsEmpiricalAssessmentPublished2017], using regular expressions to extract reported statistics. Unlike statcheck and Szucs and Ioannidis (2017), which focused on extracting tests statistics that were reported in strict APA format, ESextractor extracts effects reported in a broader array of formats, as well as extracting more diverse statistics (including F tests, Chi Square Tests, t tests, correlational tests, and standardised effect sizes reported as Cohen's d values, eta squared values, odds ratios, hazard ratios, and correlations).
 
 This dataset has a number of potential uses.
-The most obvious include examining these results for potential errors (as statcheck does by default), looking for trends in reporting practices over time, using this data in combination with manual checks of the extracted context in order to help develop machine learning algorithms to classify tests as central to the main hypotheses or as peripheral tests. 
+The most obvious include examining these results for potential errors (as statcheck does by default), looking for trends in reporting practices over time, using this data in combination with manual checks of the extracted context in order to help develop machine learning algorithms to classify tests as central to the main hypotheses or as peripheral tests.  
 These examples are by no means exhaustive, and I hope that others will conceive of additional interesting and innovative ways of putting this large database to work.
 
 ##  Data description
-A total of 4 data-tables are included in this data deposit, each presented in .csv format. 1) a table of statistical test results, 2) a table containing extensive metadata on each paper, 3) a table of author names, 3) a table of keywords. All of these tables are presented in tidy data format [@wickhamTidyData2014], including one observation  per row and one variable per column. Each table is keyed with the PMC ID associated with an included article. See tables 1-4 for variable labels and descriptions for each of these tables. 
+A total of 4 data-tables are included in this data deposit, each presented in .csv format. 1) A table of statistical test results, 2) a table containing extensive metadata on each paper, 3) a table of author names, 3) a table of the  keywords of each article. All of these tables are presented in tidy data format [@wickhamTidyData2014], including one observation  per row and one variable per column. Each table is keyed with the PumMedCentral ID associated with an included article. See tables 1-4 for variable labels and descriptions for each of these tables. 
 
 The main data table presented here consists of the statistical test results and effect sizes extracted in this content mining effort.
 This data-table includes a total of [nStatisticalTestResults] statistical test results and [nEffectSizes] reported effect sizes from [nArticlesWithResults] articles. In addition to the statistical test results (i.e., test statistics, degrees of freedom and p values) and effect sizes, each extracted result is reported with 100 characters of context extracted on either side of the detected result, and the label of the section that each result was extracted from (e.g., "Results" or "Methods").
@@ -51,11 +49,25 @@ The other tables included in this data deposit include data about each of the jo
 The metadata extracted includes the PMC ID, DOI, the publication journal of each included article, the title of the paper, the volume and issue number, the print and or electronic publication date, and the PubMed call to the PubMed hosted XML version of the article (which includes the full text of the article in most cases). 
 The third table includes the first and last name of all authors of each paper. The fourth and final table includes the keywords associated with each paper that presented keywords, allowing for filtering of this database by keyword.
 
-*Table* `r table <- table + 1; table` Variables presented in Data-table 1, which contains the statistical test results extracted from each paper. 
+*Table* `r table <- table + 1; table` Variables presented in Data-table 1, which contains the statistical test results extracted from each paper.
 
-```{r}
-data_table_stats <- tibble(variable_name = names(exampleOutput$statisticalTests),
-                           variable = c("PMC ID", "Label of the section the result was extracted from", "Statistic type", "Statistical test or effect size with all whitespace removed", "Full reported statistical test or effect size", "Reported statistical test or effect size with 100 characters of context on both sides", "Test statistic or effect size", "Numerator degrees of freedom  for F tests", "Denominator degrees of freedom for for F tests or degrees of freedom for other statistical tests", "reported p value"),
+```{r message=FALSE, warning=FALSE, include=FALSE}
+data_table_stats <-
+  tibble(
+    variable_name =  c("PMCID", "statistic", "reported", "df1", "df2", "p", "value", "n", "context", "sectionName"),
+    variable = c(
+      "PMC ID",
+      "Label of the section the result was extracted from",
+      "Statistic type",
+      "Statistical test or effect size with all whitespace removed",
+      "Full reported statistical test or effect size",
+      "Reported statistical test or effect size with 100 characters of context on both sides",
+      "Test statistic or effect size",
+      "Numerator degrees of freedom  for F tests",
+      "Denominator degrees of freedom for for F tests or degrees of freedom for other statistical tests",
+      "reported p value"
+    ),
+    
                            # example_1 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[1,]), 140),
                            # example_2 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[2,]), 50),
                            # example_3 = stringr::str_trunc(as.character(exampleOutput$statisticalTests[3,]), 50)
@@ -69,5 +81,73 @@ kable(data_table_stats, row.names = F, col.names = c("Variable name", "Variable"
 ```
 
 
+```{r reliabilityCheck, message=FALSE, warning=FALSE, include=FALSE}
+test_out <- readr::read_rds("tests/testthat/testdata/manually_curated_test_set.rds") 
+
+# Selecting out tests that were seen in the papers
+applicable_tests <- test_out %>%
+   dplyr::filter(!is.na(statistic))
+
+no_applicable_tests <- test_out %>%
+  dplyr::filter(is.na(statistic))
+
+text <- readr::read_rds("tests/testthat/testdata/testSetText.RDS")
+
+statistical_tests <- purrr::pmap_df(text,
+              .f = function(PMCID, names, text) {
+                testStats  <- ESExtractor::extractTestStats(ESExtractor::cleanText(text))
+                if(nrow(testStats) == 0) {testStats[1,] <- NA}
+                testStats$PMCID <- PMCID
+                testStats$section <- names
+                return(testStats)
+                }
+)
+
+checked_papers <- unique(statistical_tests$PMCID)
+
+extractedTests <- statistical_tests %>%
+  dplyr::filter(!is.na(statistic))
 
 
+# Finding those tests where there were missing values (i.e., the false negatives)
+missingVals <- applicable_tests %>%
+  dplyr::mutate(value = as.numeric(value)) %>%
+  dplyr::anti_join(statistical_tests, by = c("PMC_ID" = "PMCID", "statistic", "value"))
+
+
+## Check in which papers we detected outcome with the program but there were none in the check
+articles_with_detected_tests <- unique(statistical_tests$PMCID[!is.na(statistical_tests$statistic)])
+articles_with_detected_tests[articles_with_detected_tests %in% no_applicable_tests$PMC_ID]
+
+# One article detected 
+statistical_tests %>% 
+  dplyr::filter(PMCID == "PMC5651266")
+
+```
+
+One hundred articles were randomly selected from the larger body of articles for the reliability check. The program was run on all 100 selected articles, detecting a total of `r sum(!is.na(statistical_tests$statistic))` statistical tests  in `r length(unique(statistical_tests$PMCID[!is.na(statistical_tests$statistic)]))` articles.  
+All `r sum(!is.na(statistical_tests$statistic))` statistical tests that were detected in this body of reserach were manually checked verifyied by the author of this paper (FST).
+Only one of these `r sum(!is.na(statistical_tests$statistic))` extracted statistical tests was a false positive (i.e., `r (1/ sum(!is.na(statistical_tests$statistic))) * 100`% of checked results). 
+The false positive was a detected "Cohen's d" value in an article in which d was being used to indicate a different paramter of interest (i.e., not a Cohen's d value). 
+
+Before checking the the results of the extraction efforts (i.e., blinded to the extracted test results), FST
+examined each of these `r nrow(test_out)` articles and manually extracted one randomly selected statistical test  (i.e., by counting the statistical tests in the article and using a random number generator to select the statistical test to extract) and checked that this value was extracted by the program. Statistical tests or effect sizes were eligable for extraction if they were reported in text and provided a t, F or chi square test statistic, of if they reported an effect size as a correlation coefficent, Cohen's d, eta squared, omega square, epsilon squared, odds ratio or hazard ratio. A total of `r sum( !is.na( test_out$statistic ) )` articles contained an appliacable statistic, `r round(sum( !is.na( test_out$statistic ) )/nrow(test_out)*100)`% of examined articles. Of the `r sum( !is.na( test_out$statistic ) )` manually extracted statistical test results, a total of `r sum( !is.na( test_out$statistic ) )- nrow(missingVals)` were correctly detected by the program, meaning that `r  round((1-nrow(missingVals)/sum(!is.na( test_out$statistic) ))*100)`% of the manually extracted tests were accurately extracted by the program. 
+
+Examining each of the manually extracted values that were not detected by the program, the reasons that each of these `r nrow(missingVals)` statistics were not detected becomes clear. One value one was reported in a footnote in the PDF version of the paper and was not exported by PubMed. One used commas instead of decimals when reporting statistics (i.e., "F3,223 = 0,672; p = 0,03"). One identified the statistic that was reported after the value in brackets (i.e., "... with an effect size of 0.89 (Cohen's d)"). Finally, an odds ratio was reported as "OR 59.69", which was not picked up by the program which requires an equals sign (or a colon, semicolon or the word "of") between the characters "OR" and the number in order to read this set of characters as an odds ratio.
+
+```{r statcheck reliability check, message=FALSE, warning=FALSE, include=FALSE}
+###### Reliability check of statcheck results
+statcheckResults <- readr::read_rds("tests/testthat/testdata/statcheck_results.RDS") %>%
+  dplyr::filter(!is.na(Statistic))
+
+missingValsStatcheck <- statcheckResults %>%
+  # Chi2 -> chi
+  dplyr::mutate(Statistic = ifelse(Statistic == "Chi2", "chi", Statistic) ) %>% 
+  # Removing z tests
+  dplyr::filter(Statistic != "Z") %>%
+  dplyr::anti_join(extractedTests, by = c("PMCID",  "Statistic" = "statistic", "Value" = "value"))
+```
+
+Because the number of manually extracted statistical tests was quite small, I also assessed the performance of this program against the program statcheck [@nuijtenValidityToolStatcheck2017], the closest avaliable analogue to the current program. Statcheck is designed to extract t, F, r, chi squared or Z tests  reported in APA style, i.e., as "t(df) = value, p = value", "F(df1,df2) = value, p = value",  "r(df) = value, p = value" "[chi]2 (df, N = value) = value, p = value" or "Z = value, p = value". @nuijtenValidityToolStatcheck2017 also accounts for inconsistant spacing, allows for exact of inexact p value reporting (e.g., "p = .012" and "p < .05"). Statcheck has been shown to be highly accurate at detecting statistical reporting errors. @nuijtenValidityToolStatcheck2017 showed that statcheck has a high sensativity (true positive rate) of between 85.3% and 100%, and a high specificity (true negative rate) of between 96.0% and 100% depending on the program's settings. 
+
+statcheck extracted a total of `r nrow (statcheckResults %>% dplyr::filter(Statistic != "Z"))` Chi square, t tests and F tests from the `r nrow(test_out)` papers in the reliability check subsample. All but `r nrow(missingValsStatcheck)` of the statistical tests extracted by statcheck were also extracted by the current program. Both of the missing test results were not extracted as they reported "t < [value], p = [value]", using a less than sign as opposed to an equals sign between the test statistic and the test statistic value.
