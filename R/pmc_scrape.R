@@ -1,5 +1,5 @@
 # Download article from PMC and run all test extraction and search functions on
-scrapePMC <- function(call, ftpCall, statcheck = FALSE) {
+scrapePMC <- function(call, ftpCall, statcheck = FALSE, extract_ns = TRUE, extract_CIs = TRUE) {
   pulledPMC <-  pullPMC(call = call)
   
   # Checking if we've got more than just the abstract, and guessing if we've got the full text based on whether we have <500 words
@@ -49,10 +49,14 @@ scrapePMC <- function(call, ftpCall, statcheck = FALSE) {
       }
     
      pulledPMC$statisticalTests <- statout$statistics
+    
+     if(extract_ns == T) { 
+    pulledPMC$sampleSizes <- extractNsFromProcessed(pulledPMC$text[c("names", "text")])
+     }
      
-     pulledPMC$sampleSizes <- extractNsFromProcessed(pulledPMC$text[c("names", "text")])
-     
-     pulledPMC$CIs <- extractCIFromProcessed(pulledPMC$text[c("names", "text")])
+     if(extract_CIs == T) {
+    pulledPMC$CIs <- extractCIFromProcessed(pulledPMC$text[c("names", "text")])
+     }
      
      return(pulledPMC)
 }

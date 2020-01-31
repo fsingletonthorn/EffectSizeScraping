@@ -110,6 +110,11 @@ AuthorFirstNames <-
     )
   )
 
+if(length(AuthorSurnames) != length(AuthorFirstNames)) {
+  
+  AuthorFirstNames <- rep("",length(AuthorSurnames))
+  }
+
 ### Edited by 
 edited_by_in_text <-
   xml2::xml_text(
