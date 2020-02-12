@@ -16,7 +16,7 @@ addContext <- function(extracted, contextSize) {
 # For this to work it needs to be fed a single string
 # function to extract text, remove whitespaces and unicode encodings of the
 # minus sign and return test statistic original data plus df
-extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA) {
+extractTestStats <- function(inputText, context = FALSE, contextSize = 300, sectionName = NA) {
 
   if (purrr::is_empty(inputText) | !elementExists(inputText)) {
     if (context == F) {
