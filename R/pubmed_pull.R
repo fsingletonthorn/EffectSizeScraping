@@ -21,6 +21,7 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 
 # example with F and t stats : articles$oaiCall[7023]
 
+
 pullPMC <- function(call) {
 paper <- xml2::read_html(call) #"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
 
@@ -148,13 +149,18 @@ abstract <- concatPlus(xml2::xml_text(abstract_node))
 unlabPs <-  concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//body/p|//article/p")))
 # article sections
 sections <-  xml2::xml_find_all(paper, "//article/sec")
+# Checking that titles exist and if not building in a NA for name 
 # article section titles
-titles <-  xml2::xml_text(xml2::xml_find_all(sections, "title"))
+titles <- xml2::xml_text(xml2::xml_find_first(sections, "title"))
+
+
 # Getting all paragraphs just in case the rest of this has failed
 if (!elementExists(concatPlus(c(
   xml2::xml_text(sections),  unlabPs
 )))
 ) {unlabPs <- concatPlus( xml2::xml_text( xml2::xml_find_all(paper, "//p") ) ) }
+
+# adding in blank titles if the title
 
 # seperating the sections by, if there are any sections titled matching the section heads
 textOutput <- data.frame(titles = titles, text = xml2::xml_text(sections), stringsAsFactors = F)
