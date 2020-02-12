@@ -18,7 +18,7 @@ extractES <- function(input) {
 
   ORRegex <- "(\\b((OR)|((?i)odds\\s{1,5}?ratio(?-i))))"
   HRRegex <- "(\\b((HR)|((?i)hazard\\s{1,5}?ratio(?-i))))"
-  etaRegex <- "(?i)\\b(partial\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?(?-i)"
+  etaRegex <- "(?i)\\b(partial(-)?\\s*)?(\u03B7|(eta))\\s*p?\\s*2?(squared)?(?-i)"
   
   numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3})*)|\\d+)?)"
   
