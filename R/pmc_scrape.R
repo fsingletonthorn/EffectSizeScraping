@@ -4,7 +4,8 @@ scrapePMC <- function(call, ftpCall, statcheck = FALSE, extract_ns = TRUE, extra
   
   # Checking if we've got more than just the abstract, and guessing if we've got the full text based on whether we have <500 words
   if (all(pulledPMC$text$names == "abstract") |
-      sum(stringr::str_count(as.character( pulledPMC$text ), " ")) < 500) {
+      sum(stringr::str_count(as.character( pulledPMC$text ), " ")) < 500 &
+      pulledPMC$metadata$journalID != "Neuropsychopharmacology") { # This avoids issues where articels from "Neuropsychopharmacology" do not have FTP package locations now
     
     # Create temp file location
     tempLoc <- tempfile()

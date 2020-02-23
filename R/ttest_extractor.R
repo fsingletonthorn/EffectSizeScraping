@@ -14,7 +14,7 @@
 extractTTests <- function(input) {
 
   # Setting up all possible parts of the regex
-  ttestRegex  <- "(\\bt)"
+  ttestRegex  <- "(\\b(t|T))"
   
   numbericRegex_commas <- "(((\\d{1,3}(?=,)(,\\d{3}){0,99})|\\d{1,99})?)"
   
