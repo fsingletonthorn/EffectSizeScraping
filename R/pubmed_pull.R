@@ -33,7 +33,8 @@ pmcIDCheck <-
   xml2::xml_text(xml2::xml_find_first(paper, '//article-id[@pub-id-type="pmcid"]'))
 
 # Checking that these match, otherwise we've a problem
-if (PMCID != pmcIDCheck) {
+  
+if (!isTRUE( PMCID == pmcIDCheck)) {
   stop("PMCID of database does not match that extracted from call")
 }
 
