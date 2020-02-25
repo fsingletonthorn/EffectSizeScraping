@@ -10,11 +10,11 @@ test_that("processPMC extracts correct values", {
   expect_equal(statisticalOutput$reported[1], "r=0.676, p<0.05")
   }
 )
-
-test_that("extraction works from pdf", {
-  pdf <- extractPdf("https://osf.io/v7n6j/download")
-  pdf$PMCID <- "test"
-  extracted <- processText(pdf)$statistics
-  expect_identical(extracted$value[extracted$statistic == "OR"],
-                   c(71.79,  3.76))
-})
+#  Commented out because OSF is being a little unreliable with producing the file at the moment
+# test_that("extraction works from pdf", {
+#   pdf <- extractPdf("https://osf.io/v7n6j/download")
+#   pdf$PMCID <- "test"
+#   extracted <- processText(pdf)$statistics
+#   expect_identical(extracted$value[extracted$statistic == "OR"],
+#                    c(71.79,  3.76))
+# })

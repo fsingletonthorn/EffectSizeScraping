@@ -278,8 +278,8 @@ test_that("some additional ideosyncractic methods of reporting work", {
                   test$reported =="F(1, 2) : 3, p : .04", test$value == "3", 
                   test$df1 == "1", test$df2 == "2", test$p == "p : .04"))  
   test <- extractTestStats("T(1) : 3, p : .04")
-  expect_true(all(test$statistic == "t", test$value == "3", 
-                  test$df2 == "1", test$p == ".04"))
+  expect_true(all(test$statistic == "t", test$value == 3, 
+                  test$df2 == 1, test$p == "p : .04"))
   test <- extractTestStats("Chi2(3) : 1, p : .04")
   expect_true(all(test$statistic == "chi", test$value == "1", 
                   test$df2 == "3", test$p == "p : .04"))
