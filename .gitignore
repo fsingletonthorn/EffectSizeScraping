@@ -92,3 +92,4 @@ tests/testthat/~$manually_curated_test_set.xlsx
 data_/
 paperFunctions/
 old/
+*.tmp
