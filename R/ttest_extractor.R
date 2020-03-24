@@ -1,13 +1,13 @@
 #' Extract t tests from text
 #' 
 #' @param inputText input text 
-#' @param contextSize = size of context around extracted test statistics
+#' @param contextSize number of characters of context around extracted test statistics
 #' @return A tibble contaitning all detected ttest coefficents, 
 #' associated degrees of freedom and p values, with context of size contextSize.
 #' 
 #' 
 #' @examples
-#' extractTTests("t(123) = .01, p = < .001")
+#' extractTTests("t(123) = .01, p = .001")
 #' 
 #' 
 

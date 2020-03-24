@@ -1,5 +1,5 @@
-#' Extract cohen's ds from text
-#' extractES <- function(inputText)
+#' Extract cohen's ds, odds ratios, hazard ratios and partial eta sqaured tests from text
+#' 
 #' @param inputText input text 
 #' @return A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d and eta 
 #' associated degrees of freedom and p values, with context of size contextSize.

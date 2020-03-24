@@ -309,3 +309,4 @@ test_that("; are accepted in test stats", {
   expect_true(
     nrow(extractTestStats("F; 400F; 400")) == 0)
 })  
+

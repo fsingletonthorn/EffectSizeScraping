@@ -89,3 +89,5 @@ old/ExamplePapers/PMC5472180.nxml
 packrat/src/packrat/packrat_0.5.0.tar.gz
 packrat/packrat.opts
 tests/testthat/~$manually_curated_test_set.xlsx
+data_/
+paperFunctions/

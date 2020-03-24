@@ -111,10 +111,6 @@ test_that("t test doesn't pick up tests without reported values", {
     dim(extractTTests("t(1), p = .8, and t(c) = .12")), c(0, 6))
   })
 
-test_that("t test works with bad minus characters as long as text has been cleaned", {
-  expect_identical(extractTTests(cleanText("[t(10) = –0.90, p = 0.39]"))$value, -.9)
-  })
-
 test_that("t tests works with dfs that are in subscripts", {
   expect_identical(extractTTests("t10 = -0.90, p = 0.39")$value, -.9)
   })
