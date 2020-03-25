@@ -8,15 +8,12 @@ extractTTests(input)
 }
 \arguments{
 \item{inputText}{input text}
-
-\item{contextSize}{= size of context around extracted test statistics}
 }
 \value{
-A tibble contaitning all detected ttest coefficents, 
-associated degrees of freedom and p values, with context of size contextSize.
+A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value and the value reported.
 }
 \description{
-Extract t tests from text
+Extract t tests from text.
 }
 \examples{
 extractTTests("t(123) = .01, p = .001")

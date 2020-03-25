@@ -2,8 +2,7 @@
 % Please edit documentation in R/effectsize_extractor.R
 \name{extractES}
 \alias{extractES}
-\title{Extract cohen's ds from text
-extractES <- function(inputText)}
+\title{Extract cohen's ds, odds ratios, hazard ratios and partial eta sqaured tests from text}
 \usage{
 extractES(input)
 }
@@ -15,8 +14,7 @@ A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d 
 associated degrees of freedom and p values, with context of size contextSize.
 }
 \description{
-Extract cohen's ds from text
-extractES <- function(inputText)
+Extract cohen's ds, odds ratios, hazard ratios and partial eta sqaured tests from text
 }
 \examples{
 extractES("a cohen's d of .05, p < .01, and a partial eta squared of .1")

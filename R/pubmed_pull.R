@@ -21,7 +21,20 @@ discussionNames <- ("discussion|conclusion|conclud|summary")
 
 # example with F and t stats : articles$oaiCall[7023]
 
-
+#' Pull files from the PubMed Central Open Access subset.
+#' 
+#' To use this function, pass a PubMed Central Open Access Subset OAI-PMH service full XML text URL to the pullPMC function (see https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/ for information on this service and https://www.ncbi.nlm.nih.gov/pmc/tools/oai/ for information on how to request the full text in XML format). 
+#' This function returns a list containing "metadata", any keywords associated with the file, a list of authors, and the full text of the article separated into the sections as labelled in the XML file (or, if any text was not labelled, marked as "unlabeled"). 
+#'
+#' Returns tibbles in tidydata format, keyed using the PMCID, the unique identifier used by the PubMed Central database. The metadata returned includes the PMCID, DOI, the journal name, an abbreviated journal name, the title of the record, the record's issue number, the volume of the journal the article was included in, the print publication date, the electronic publication date, and the call used to request the XML file). 
+#' 
+#' @param call A PubMed Central Open Access Subset OAI-PMH service full XML text URL to the pullPMC function (see https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/ for information on this service and https://www.ncbi.nlm.nih.gov/pmc/tools/oai/ for information on how to request the full text in XML format). 
+#' 
+#' 
+#' @examples
+#' pullPMC("https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
+#' 
+#' 
 pullPMC <- function(call) {
 paper <- xml2::read_html(call) #"https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
 

@@ -1,11 +1,13 @@
 #' Extract  chi square tests from text
-#' extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)
-#' @param input input text 
-#' @return A tibble contaitning all detected  chi square tests, 
-#' associated degrees of freedom and p values
+#' 
+#' Extract  chi square tests from text
+#'  
+#' @param inputText input text 
+#' @return A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the sample size included in the test, the p value, and the chi square value reported. 
+#' 
 #' 
 #' @examples
-#' extractChiSquare("chi2(123, n = 12) = .01, p = > .05")
+#' extractChiSquare("chi2(123, n = 12) = .01, p > .05")
 #' 
 #' 
 

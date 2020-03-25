@@ -2,21 +2,18 @@
 % Please edit documentation in R/chisquare_extractor.R
 \name{extractChiSquare}
 \alias{extractChiSquare}
-\title{Extract  chi square tests from text
-extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)}
+\title{Extract  chi square tests from text}
 \usage{
 extractChiSquare(input)
 }
 \arguments{
-\item{input}{input text}
+\item{inputText}{input text}
 }
 \value{
-A tibble contaitning all detected  chi square tests, 
-associated degrees of freedom and p values
+A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value and the value reported.
 }
 \description{
 Extract  chi square tests from text
-extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)
 }
 \examples{
 extractChiSquare("chi2(123, n = 12) = .01, p = > .05")

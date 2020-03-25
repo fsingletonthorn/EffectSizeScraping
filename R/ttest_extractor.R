@@ -1,9 +1,9 @@
 #' Extract t tests from text
 #' 
+#'  Extract t tests from text. 
+#'  
 #' @param inputText input text 
-#' @param contextSize number of characters of context around extracted test statistics
-#' @return A tibble contaitning all detected ttest coefficents, 
-#' associated degrees of freedom and p values, with context of size contextSize.
+#' @return A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value and the value reported. 
 #' 
 #' 
 #' @examples
