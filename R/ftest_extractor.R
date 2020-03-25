@@ -1,8 +1,9 @@
 #' Extract F tests from text
-#' extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)
+#' 
+#' Extract F tests from text. 
+#' 
 #' @param input input text 
-#' @return A tibble contaitning all detected F tests, 
-#' associated degrees of freedom and p values
+#' @return A tibble contaitning all detected F tests,  with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value, and the reported test statistic value.
 #' 
 #' @examples
 #' extractFTests("F(1, 23) = .01, p = < .001")

@@ -3,7 +3,7 @@
 #'  Extract t tests from text. 
 #'  
 #' @param inputText input text 
-#' @return A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value and the value reported. 
+#' @return A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value, and the reported test statistic value. 
 #' 
 #' 
 #' @examples

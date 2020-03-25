@@ -10,13 +10,13 @@ extractChiSquare(input)
 \item{inputText}{input text}
 }
 \value{
-A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value and the value reported.
+A tibble containing all extracted values, with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the sample size included in the test, the p value, and the chi square value reported.
 }
 \description{
 Extract  chi square tests from text
 }
 \examples{
-extractChiSquare("chi2(123, n = 12) = .01, p = > .05")
+extractChiSquare("chi2(123, n = 12) = .01, p > .05")
 
 
 }

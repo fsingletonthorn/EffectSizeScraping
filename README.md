@@ -64,9 +64,9 @@ hazard ratios, Eta squared values and Cohen’s d values). The
 functionality to extract context is not available when using the
 specific extractor functions.
 
-    extractTTests("Across all 200 sessions, the hit rate was in the predicted direction but not significantly different from chance, 49.1%, t = 1.31, p = .096, d = 0.09, F(1,232)=12.3, p < .001 (I now wish I had simply continued to use subliminal exposures.) Nevertheless, stimulus seeking was again positively correlated with psi performance (lower hit rates).")
-
 ###### Example
+
+    extractTTests("Across all 200 sessions, the hit rate was in the predicted direction but not significantly different from chance, 49.1%, t = 1.31, p = .096, d = 0.09, F(1,232)=12.3, p < .001 (I now wish I had simply continued to use subliminal exposures.) Nevertheless, stimulus seeking was again positively correlated with psi performance (lower hit rates).")
 
 | statistic | reported           | df1 | df2 | p        | value |
 | :-------- | :----------------- | :-- | --: | :------- | ----: |
@@ -76,7 +76,7 @@ specific extractor functions.
 
 This package also includes a function to extract text from articles on
 the PubMed Central Open Access Subset. To use this function, pass a
-PubMed Central Open Access Subse OAI-PMH service full XML text URL to
+PubMed Central Open Access Subset OAI-PMH service full XML text URL to
 the pullPMC function (see
 <https://www.ncbi.nlm.nih.gov/pmc/tools/openftlist/> for information on
 this service and <https://www.ncbi.nlm.nih.gov/pmc/tools/oai/> for
@@ -92,17 +92,74 @@ returned includes the PMCID, DOI, the journal name, an abbreviated
 journal name, the title of the record, the record’s issue number, the
 volume of the journal the article was included in, the print publication
 date, the electronic publication date, and the call used to request the
-XML file).
+XML file.
+
+###### Example
+
+``` r
+
+PMC_results <- pullPMC("https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc")
+```
+
+    PMC_results$metadata
+
+| PMCID      | doi                 | journalID                            | journalIDAbrev    | title                                                                           | issue | volume | pPub       | ePub       | call                                                                                                                          |
+| :--------- | :------------------ | :----------------------------------- | :---------------- | :------------------------------------------------------------------------------ | :---- | :----- | :--------- | :--------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| PMC3659440 | 10.1155/2013/649875 | Rehabilitation Research and Practice | Rehabil Res Pract | Healing Pathways: A Program for Women with Physical Disabilities and Depression | NA    | 2013   | 2013-01-01 | 2013-05-02 | <https://www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:3659440&metadataPrefix=pmc> |
 
 #### Experimental features
 
+There are several undocumented experimental features. If you want to use
+these functions please be aware that they have not been extensively
+tested.
+
 ##### Sample size extractor
 
-Using words\_to\_numbers LINK
+Using the package
+[`words_to_numbers`](https://github.com/fsingletonthorn/words_to_numbers)
+`findN` converts all numbers written as words to numerics and looks for
+phrases that report the sample sizes (e.g., “We included nine hundred
+and twelve participants” or “12 student participants”, “N = 12”,
+“participants were one hundred and 12 student volunteers”).
+
+###### Example
+
+    findN("We included nine hundred and twelve participants")
+
+| string           | N   |
+| :--------------- | :-- |
+| 912 participants | 912 |
+
+    findN("N = 12")
+
+| string | N  |
+| :----- | :- |
+| N = 12 | 12 |
+
+    findN("participants were one hundred and 12 student vulunteers")
+
+| string                | N   |
+| :-------------------- | :-- |
+| participants were 112 | 112 |
 
 ##### CI extractor
 
-Confidence interval detection accepts either a fully written out
-“confidence interval” as a hit, or “\[digits\]% CI”, or “CI” followed
-by just two numbers separated by commas in parentheses “(digit, digit)”
-or square brackets “\[digit, digit\]” (ignores white-space).
+`checkCIs()` checks input text for reported confidence intervals.
+`checkCIs()` accepts either a fully written out “confidence interval” as
+a hit, or “\[digits\]% CI”, or “CI” followed by just two numbers
+separated by commas in parentheses “(digit, digit)” or square brackets
+“\[digit, digit\]” (ignores white-space). Context is extracted if the
+argument “`context`” is set to TRUE, and the number of characters
+extracted is set using the argument “`contextSize`”.
+
+    checkCIs("the world is round, p < .05, d = 1.1, 95% CI [.9, 1.2], although some people may not accept this fact", context = TRUE, contextSize = 25)
+
+| CIs    | context                                                     | CIBinary |
+| :----- | :---------------------------------------------------------- | :------- |
+| 95% CI | round, p \< .05, d = 1.1, 95% CI \[.9, 1.2\], although some | TRUE     |
+
+    checkCIs("The effect was 95% effective")
+
+| CIs | context | CIBinary |
+| :-- | :------ | :------- |
+| NA  | NA      | FALSE    |

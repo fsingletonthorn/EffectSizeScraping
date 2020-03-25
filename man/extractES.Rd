@@ -10,8 +10,7 @@ extractES(input)
 \item{inputText}{input text}
 }
 \value{
-A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d and eta 
-associated degrees of freedom and p values, with context of size contextSize.
+A tibble contaitning all detected effect sizes in odds ratios, Hazard ratios, d and eta squared,  with columns identifying the type of statistic extracted, the reported effect size as reported in the text, an empty column for the degrees of freedom (for comparability with the other extractor functions), a column for reported p values, and the effect size value reported.
 }
 \description{
 Extract cohen's ds, odds ratios, hazard ratios and partial eta sqaured tests from text

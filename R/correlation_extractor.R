@@ -1,9 +1,11 @@
 #' Extract correlation coefficents from text
-#' extractTestStats <- function(inputText, context = FALSE, contextSize = 100, sectionName = NA)
+#' 
+#' 
+#' Extract correlation coefficents from text
+#' 
+#' 
 #' @param inputText input text 
-#' @param contextSize = size of context around extracted test statistics
-#' @return A tibble contaitning all detected correlation coefficents, 
-#' associated degrees of freedom and p values, with context of size contextSize.
+#' @return A tibble contaitning all detected correlation coefficents,  with columns identifying the type of statistic extracted, the reported test as reported in the text, the degrees of freedom, the p value, and the reported correlation coefficient value.
 #' 
 #' 
 #' @examples
